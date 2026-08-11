@@ -13,7 +13,8 @@
 </head>
 <body class="onboarding-body">
 
-  <div class="onboarding-wrapper">
+  <!-- STEP 1: STATUS SELECTION VIEW -->
+  <div class="onboarding-wrapper" id="stepStatusView">
     <!-- Brand Logo Header -->
     <div class="onboarding-brand">EMPOWHER</div>
 
@@ -80,6 +81,74 @@
         <span>Continue</span>
         <i class="fa-solid fa-arrow-right"></i>
       </button>
+    </div>
+  </div>
+
+
+  <!-- STEP 2: CONDITIONAL PROFILE FORM VIEW -->
+  <div class="onboarding-wrapper profile-form-wrapper" id="stepFormView" style="display: none;">
+    <!-- Top Navigation Header -->
+    <div class="form-nav-header">
+      <button class="btn-back" id="backToStatusBtn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </button>
+      <div class="onboarding-brand">EMPOWHER</div>
+      <div class="step-badge">Step 1 of 1</div>
+    </div>
+
+    <!-- Main Profile Card Container -->
+    <div class="profile-card-container">
+      
+      <!-- Dynamic Title & Subtitle Header -->
+      <div class="form-header-box">
+        <h1 class="form-main-title" id="formTitle">Tell us about your education</h1>
+        <p class="form-main-subtitle" id="formSubtitle">Help us understand where you are today so we can personalize your Empowher journey.</p>
+      </div>
+
+      <!-- Dynamic Form Container -->
+      <form id="profileForm" novalidate>
+        <div id="dynamicFormFields">
+          <!-- Populated by onboarding.js based on userStatus -->
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary-red btn-submit-profile" id="submitProfileBtn">
+            <span>Create My Profile</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- STEP 3: TRANSITION & BUILDING EXPERIENCE SCREEN -->
+  <div class="onboarding-wrapper transition-wrapper" id="stepTransitionView" style="display: none;">
+    <div class="transition-card">
+      <div class="transition-spinner-box">
+        <div class="empowher-spinner"></div>
+      </div>
+      <h2 class="transition-title">Building your Empowher experience...</h2>
+      <p class="transition-subtitle">We're setting up personalized recommendations and opportunities tailored to your status.</p>
+      
+      <div class="transition-steps">
+        <div class="t-step" id="tStep1">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Profile created</span>
+        </div>
+        <div class="t-step" id="tStep2">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Your goals identified</span>
+        </div>
+        <div class="t-step" id="tStep3">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Opportunities being prepared</span>
+        </div>
+        <div class="t-step" id="tStep4">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Personalized recommendations coming up</span>
+        </div>
+      </div>
     </div>
   </div>
 

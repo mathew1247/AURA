@@ -4,9 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Retrieve stored user status for future personalization ---
+  // --- Retrieve stored user status & profile for future personalization foundation ---
   const userStatus = localStorage.getItem('userStatus');
-  console.log('EMPowHER Dashboard loaded for userStatus:', userStatus);
+  const userProfile = JSON.parse(localStorage.getItem('userProfile')) || null;
+  console.log('EMPowHER Dashboard loaded for userStatus:', userStatus, 'userProfile:', userProfile);
 
   // --- Element References ---
   const topNavItems = document.querySelectorAll('.nav-item');

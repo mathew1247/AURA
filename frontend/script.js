@@ -9,6 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const userProfile = JSON.parse(localStorage.getItem('userProfile')) || null;
   console.log('EMPowHER Dashboard loaded for userStatus:', userStatus, 'userProfile:', userProfile);
 
+  // If onboarding is not completed, redirect to onboarding page first
+  if (!userStatus || !userProfile) {
+    window.location.href = 'onboarding.html';
+    return;
+  }
+
+  // Update UI with stored profile name if available
+  if (userProfile && userProfile.basic && userProfile.basic.name) {
+    const userNameElem = document.querySelector('.user-profile-chip .user-name');
+    if (userNameElem) {
+      userNameElem.textContent = userProfile.basic.name;
+    }
+    
+    const firstBotMsg = document.querySelector('#chatBody .chat-msg.bot');
+    if (firstBotMsg) {
+      const firstName = userProfile.basic.name.split(' ')[0];
+      firstBotMsg.textContent = `Hello ${firstName}! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?`;
+    }
+  }
+
   // --- Element References ---
   const topNavItems = document.querySelectorAll('.nav-item');
   const sidebarItems = document.querySelectorAll('.menu-item');
@@ -154,31 +174,53 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  function getAiResponse(userText) {
-    const textLower = userText.toLowerCase();
-    if (textLower.includes('scheme') || textLower.includes('eligible')) {
-      return "Based on your profile, you are eligible for the Sukanya Samriddhi Yojana, Mudra Loan for female entrepreneurs, and Stand-Up India funding programs!";
-    } else if (textLower.includes('career') || textLower.includes('guidance')) {
-      return "I can help you build a personalized career transition plan! We offer skill gap analysis, resume reviews, and targeted web development or leadership courses.";
-    } else if (textLower.includes('job') || textLower.includes('opportunity')) {
-      return "Currently there are 140+ active remote and hybrid job openings matching your skillset in Web Development, Management, and Design!";
-    } else {
-      return "I'm here to support your journey! You can ask me about government financial schemes, job openings, mentorship, or legal assistance.";
+  // Dialogue history array to keep conversation context
+  let chatMessages = [
+    { 
+      role: "assistant", 
+      content: `Hello ${(userProfile && userProfile.basic && userProfile.basic.name) ? userProfile.basic.name.split(' ')[0] : 'there'}! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?` 
     }
-  }
+  ];
 
   function handleUserSendMessage(overrideText = null) {
     const text = overrideText || chatInput.value.trim();
     if (!text) return;
 
     appendMessage('user', text);
+    chatMessages.push({ role: "user", content: text });
     if (!overrideText) chatInput.value = '';
 
-    // Show typing indicator / simulated AI response
-    setTimeout(() => {
-      const aiReply = getAiResponse(text);
-      appendMessage('bot', aiReply);
-    }, 600);
+    // Show typing indicator
+    const typingIndicator = document.createElement('div');
+    typingIndicator.classList.add('chat-msg', 'bot');
+    typingIndicator.style.opacity = '0.7';
+    typingIndicator.textContent = "Thinking...";
+    chatBody.appendChild(typingIndicator);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Send query to the backend Cerebras endpoint
+    fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ messages: chatMessages })
+    })
+    .then(response => response.json())
+    .then(data => {
+      typingIndicator.remove();
+      if (data.reply && data.reply.content) {
+        chatMessages.push(data.reply);
+        appendMessage('bot', data.reply.content);
+      } else {
+        appendMessage('bot', data.error || "Sorry, I encountered an error. Please try again.");
+      }
+    })
+    .catch(error => {
+      typingIndicator.remove();
+      console.error("Chat API Error:", error);
+      appendMessage('bot', "Could not connect to the assistant server. Make sure the backend is running.");
+    });
   }
 
   chatSendBtn.addEventListener('click', () => handleUserSendMessage());
@@ -215,8 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Hero Slider Animation ---
+  const firstNameVal = (userProfile && userProfile.basic && userProfile.basic.name) ? userProfile.basic.name.split(' ')[0] : '';
+  const greeting = firstNameVal ? `Hi ${firstNameVal}, I'm your` : "Hi, I'm your";
+
   const heroTitles = [
-    { title: 'Hi, I\'m your<br><span class="highlight-red">AI</span> Personal Assistant', subtitle: 'I\'m here to guide, inform and empower you at every step of your journey.' },
+    { title: `${greeting}<br><span class="highlight-red">AI</span> Personal Assistant`, subtitle: 'I\'m here to guide, inform and empower you at every step of your journey.' },
     { title: 'Discover Top<br><span class="highlight-red">Government</span> Schemes', subtitle: 'Explore financial aid, interest subventions, and welfare initiatives tailored for you.' },
     { title: 'Accelerate Your<br><span class="highlight-red">Career</span> Growth', subtitle: 'Access skill training programs, tech bootcamps, and top tier job opportunities.' }
   ];
@@ -226,16 +271,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTitleElem = document.querySelector('.hero-title');
     const heroSubElem = document.querySelector('.hero-subtitle');
     
-    heroTitleElem.style.opacity = '0';
-    heroSubElem.style.opacity = '0';
-    
-    setTimeout(() => {
-      heroTitleElem.innerHTML = heroTitles[heroIdx].title;
-      heroSubElem.innerHTML = heroTitles[heroIdx].subtitle;
-      heroTitleElem.style.opacity = '1';
-      heroSubElem.style.opacity = '1';
-    }, 200);
+    if (heroTitleElem && heroSubElem) {
+      heroTitleElem.style.opacity = '0';
+      heroSubElem.style.opacity = '0';
+      
+      setTimeout(() => {
+        heroTitleElem.innerHTML = heroTitles[heroIdx].title;
+        heroSubElem.innerHTML = heroTitles[heroIdx].subtitle;
+        heroTitleElem.style.opacity = '1';
+        heroSubElem.style.opacity = '1';
+      }, 200);
+    }
   }
+
+  // Set the initial customized slide contents
+  updateHeroSlide();
 
   heroNextBtn.addEventListener('click', () => {
     heroIdx = (heroIdx + 1) % heroTitles.length;

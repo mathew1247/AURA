@@ -772,6 +772,22 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('userStatus', selectedStatus);
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
+    // Save to MongoDB database via backend
+    fetch('/api/onboarding', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userProfile)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Profile saved to database:', data);
+    })
+    .catch(error => {
+      console.error('Failed to save profile to database:', error);
+    });
+
     // Show Step 3 Transition & Experience Building Screen
     showTransitionScreen();
   });

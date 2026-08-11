@@ -1,15 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMPOWHER - AI Powered Empowerment Platform</title>
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<h1> AURA</h1>
-</body>
 
+  <!-- Outer Dashboard App Container -->
+  <div class="app-container">
+
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+      <!-- Search Box -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search">
+      </div>
+
+      <!-- Center Top Nav Links -->
+      <ul class="top-nav-links">
+        <li><a class="nav-item active" href="#" data-tab="home">Home</a></li>
+        <li><a class="nav-item" href="#" data-tab="opportunities">Opportunities</a></li>
+        <li><a class="nav-item" href="#" data-tab="learn">Learn</a></li>
+        <li><a class="nav-item" href="#" data-tab="support">Support</a></li>
+        <li><a class="nav-item" href="#" data-tab="community">Community</a></li>
+        <li><a class="nav-item" href="#" data-tab="profile">Profile</a></li>
+      </ul>
+
+      <!-- Right Actions: Notifications & User Profile -->
+      <div class="header-right">
+        <button class="icon-btn" id="notificationBtn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+        <div class="user-profile-chip" id="profileMenuBtn">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Alex Morgan" class="user-avatar">
+          <span class="user-name">Alex Morgan</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout Body (Sidebar + Content) -->
+    <div class="main-layout">
+
+      <!-- Left Sidebar Navigation -->
+      <aside class="sidebar">
+        <!-- Brand Title -->
+        <div class="brand-logo">EMPOWHER</div>
+
+        <!-- Top Menu Items -->
+        <div class="menu-section">
+          <a class="menu-item active" href="#" data-view="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+          <a class="menu-item" href="#" data-view="ai-assistant">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Personal Assistant</span>
+          </a>
+        </div>
+
+        <!-- Section 1: OPPORTUNITIES -->
+        <div class="menu-section">
+          <div class="section-label">OPPORTUNITIES</div>
+          <a class="menu-item" href="#" data-view="gov-schemes">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Government Schemes</span>
+          </a>
+          <a class="menu-item" href="#" data-view="financial-benefits">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <span>Financial Benefits</span>
+          </a>
+          <a class="menu-item" href="#" data-view="jobs">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Jobs</span>
+          </a>
+          <a class="menu-item" href="#" data-view="training">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Training</span>
+          </a>
+        </div>
+
+        <!-- Section 2: LEARN -->
+        <div class="menu-section">
+          <div class="section-label">LEARN</div>
+          <a class="menu-item" href="#" data-view="courses">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Courses</span>
+          </a>
+          <a class="menu-item" href="#" data-view="certifications">
+            <i class="fa-solid fa-award"></i>
+            <span>Certifications</span>
+          </a>
+          <a class="menu-item" href="#" data-view="skill-gap">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Skill Gap</span>
+          </a>
+        </div>
+
+        <!-- Section 3: SUPPORT -->
+        <div class="menu-section">
+          <div class="section-label">SUPPORT</div>
+          <a class="menu-item" href="#" data-view="legal">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Legal</span>
+          </a>
+          <a class="menu-item" href="#" data-view="healthcare">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>Healthcare</span>
+          </a>
+          <a class="menu-item" href="#" data-view="ngos">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span>NGOs</span>
+          </a>
+        </div>
+
+        <!-- Section 4: COMMUNITY -->
+        <div class="menu-section">
+          <div class="section-label">COMMUNITY</div>
+          <a class="menu-item" href="#" data-view="peer-groups">
+            <i class="fa-solid fa-people-group"></i>
+            <span>Peer Groups</span>
+          </a>
+          <a class="menu-item" href="#" data-view="mentorship">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>Mentorship</span>
+          </a>
+          <a class="menu-item" href="#" data-view="success-stories">
+            <i class="fa-solid fa-star"></i>
+            <span>Success Stories</span>
+          </a>
+        </div>
+
+        <!-- Section 5: PROFILE -->
+        <div class="menu-section">
+          <div class="section-label">PROFILE</div>
+          <a class="menu-item" href="#" data-view="documents">
+            <i class="fa-solid fa-folder"></i>
+            <span>Documents</span>
+          </a>
+          <a class="menu-item" href="#" data-view="applications">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Applications</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard Content Area -->
+      <main class="dashboard-content">
+
+        <!-- Hero AI Banner Container -->
+        <section class="hero-banner">
+          <!-- Left Hero Content -->
+          <div class="hero-left-content">
+            <h1 class="hero-title">
+              Hi, I'm your<br>
+              <span class="highlight-red">AI</span> Personal Assistant
+            </h1>
+            <p class="hero-subtitle">
+              I'm here to guide, inform and empower<br>
+              you at every step of your journey.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary-red" id="openChatBtn">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Chat with me</span>
+              </button>
+              <button class="btn-chip" data-prompt="What schemes am I eligible for?">Ask Anything</button>
+              <button class="btn-chip" data-prompt="Guide me on career transition">Get Guidance</button>
+              <button class="btn-chip" data-prompt="Show latest job opportunities for women">Find Opportunities</button>
+            </div>
+          </div>
+
+          <!-- Right Hero Woman Media & Fade Effect -->
+          <div class="hero-right-media">
+            <img src="assets/hero_ai_woman.png" alt="AI Personal Assistant" class="hero-woman-img">
+            <div class="hero-overlay-fade"></div>
+          </div>
+
+          <!-- Vertical Slide Navigation Chevrons -->
+          <div class="hero-nav-controls">
+            <button class="hero-nav-btn" id="heroPrevBtn" title="Previous Banner"><i class="fa-solid fa-chevron-up"></i></button>
+            <button class="hero-nav-btn" id="heroNextBtn" title="Next Banner"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+        </section>
+
+        <!-- Recommended for You Section -->
+        <section class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Recommended for You</h2>
+            <a href="#" class="see-all-link" id="seeAllBtn">See all</a>
+          </div>
+
+          <!-- 4 Cards Grid -->
+          <div class="cards-grid" id="cardsGrid">
+            <!-- Card 1 -->
+            <div class="rec-card" data-card-id="sukanya">
+              <img src="assets/sukanya_scheme.png" alt="Sukanya Samriddhi Yojana" class="card-bg-img">
+              <div class="card-overlay-content">
+                <div class="card-text-wrapper">
+                  <span class="card-title">Sukanya Samriddhi Yojana</span>
+                  <span class="card-subtitle">Government Scheme</span>
+                </div>
+                <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rec-card" data-card-id="webdev">
+              <img src="assets/web_dev_course.png" alt="Web Development Course" class="card-bg-img">
+              <div class="card-overlay-content">
+                <div class="card-text-wrapper">
+                  <span class="card-title">Web Development Course</span>
+                  <span class="card-subtitle">Online Course</span>
+                </div>
+                <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rec-card" data-card-id="job">
+              <img src="assets/dream_job.png" alt="Find Your Dream Job" class="card-bg-img">
+              <div class="card-overlay-content">
+                <div class="card-text-wrapper">
+                  <span class="card-title">Find Your Dream Job</span>
+                  <span class="card-subtitle">Latest Job Openings</span>
+                </div>
+                <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="rec-card" data-card-id="legal">
+              <img src="assets/legal_help.png" alt="Free Legal Help" class="card-bg-img">
+              <div class="card-overlay-content">
+                <div class="card-text-wrapper">
+                  <span class="card-title">Free Legal Help</span>
+                  <span class="card-subtitle">Get Expert Support</span>
+                </div>
+                <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Access Floating Dock Container -->
+        <div class="dock-wrapper">
+          <div class="quick-dock">
+            <button class="dock-item active" title="Home" data-dock="home">
+              <i class="fa-solid fa-house"></i>
+            </button>
+            <button class="dock-item" title="AI Assistant" data-dock="bot">
+              <i class="fa-solid fa-robot"></i>
+            </button>
+            <button class="dock-item" title="Jobs & Opportunities" data-dock="briefcase">
+              <i class="fa-solid fa-briefcase"></i>
+            </button>
+            <button class="dock-item" title="Learn Courses" data-dock="book">
+              <i class="fa-solid fa-book-open"></i>
+            </button>
+            <button class="dock-item" title="Support & Wellness" data-dock="heart">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="dock-item" title="Community Groups" data-dock="users">
+              <i class="fa-solid fa-user-group"></i>
+            </button>
+            <button class="dock-item" title="My Profile" data-dock="profile">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Interactive Detail Modal -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      <img src="" alt="Detail Image" class="modal-header-img" id="modalImg">
+      <span class="modal-badge" id="modalBadge">Government Scheme</span>
+      <h3 class="modal-title" id="modalTitle">Sukanya Samriddhi Yojana</h3>
+      <p class="modal-desc" id="modalDesc">
+        Comprehensive details about this program, application procedure, key benefits, and eligibility criteria.
+      </p>
+      <button class="btn-primary-red" style="align-self: flex-start; padding: 12px 28px;" id="modalActionBtn">
+        Apply Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive AI Assistant Chat Drawer -->
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="chat-title">AI Personal Assistant</div>
+          <div class="chat-status">Online & Ready to Help</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hello Alex! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything...">
+      <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

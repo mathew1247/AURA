@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMPOWHER - Choose Your Journey</title>
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="onboarding-body">
+
+  <div class="onboarding-wrapper">
+    <!-- Brand Logo Header -->
+    <div class="onboarding-brand">EMPOWHER</div>
+
+    <!-- Onboarding Text Header -->
+    <div class="onboarding-header">
+      <h1 class="onboarding-title">Where are you in your journey?</h1>
+      <p class="onboarding-subtitle">Choose your current situation so we can personalize your Empowher experience.</p>
+    </div>
+
+    <!-- 3 Selection Cards Grid -->
+    <div class="onboarding-cards-grid">
+      <!-- Card 1: Student -->
+      <div class="status-card" data-status="student">
+        <div class="status-card-top">
+          <div class="status-icon-wrapper">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="status-check-badge">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </div>
+        <div class="status-card-content">
+          <h3 class="status-title">Student</h3>
+          <p class="status-desc">Currently pursuing education</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Employed -->
+      <div class="status-card" data-status="employed">
+        <div class="status-card-top">
+          <div class="status-icon-wrapper">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="status-check-badge">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </div>
+        <div class="status-card-content">
+          <h3 class="status-title">Employed</h3>
+          <p class="status-desc">Currently working</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Looking for Work -->
+      <div class="status-card" data-status="looking_for_work">
+        <div class="status-card-top">
+          <div class="status-icon-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="status-check-badge">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </div>
+        <div class="status-card-content">
+          <h3 class="status-title">Looking for Work</h3>
+          <p class="status-desc">Currently seeking employment</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Action -->
+    <div class="onboarding-footer">
+      <button class="btn-primary-red btn-continue disabled" id="continueBtn" disabled>
+        <span>Continue</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="onboarding.js"></script>
+</body>
+</html>

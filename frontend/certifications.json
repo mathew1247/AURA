@@ -1,0 +1,335 @@
+{
+  "certifications": [
+    {
+      "certification_id": "CERT001",
+      "name": "Google Data Analytics Professional Certificate",
+      "provider": "Google",
+      "category": "Data Analytics",
+      "skills": [
+        "Data Analysis",
+        "SQL",
+        "Excel",
+        "Data Visualization"
+      ],
+      "skill_ids": [
+        "SKILL011",
+        "SKILL012",
+        "SKILL018"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "Data Analyst",
+        "Junior Data Analyst",
+        "Business Analyst"
+      ],
+      "duration": "6 months",
+      "mode": "Online",
+      "certificate_type": "Professional Certificate",
+      "exam_required": false,
+      "free": false,
+      "cost": "₹2,500 / month",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://grow.google/certificates/data-analytics/",
+      "enrollment_url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+    },
+    {
+      "certification_id": "CERT002",
+      "name": "AWS Certified Solutions Architect – Associate",
+      "provider": "Amazon Web Services (AWS)",
+      "category": "Cloud & DevOps",
+      "skills": [
+        "Amazon Web Services (AWS)",
+        "Docker",
+        "Microservices Architecture"
+      ],
+      "skill_ids": [
+        "SKILL031",
+        "SKILL034",
+        "SKILL040"
+      ],
+      "level": "Intermediate",
+      "target_roles": [
+        "AWS Cloud Engineer",
+        "Cloud Solutions Architect",
+        "DevOps Engineer"
+      ],
+      "duration": "3 months",
+      "mode": "Online / Testing Center",
+      "certificate_type": "Industry Certification",
+      "exam_required": true,
+      "free": false,
+      "cost": "$150 USD",
+      "validity": "3 Years",
+      "prerequisites": [
+        "Basic Cloud & Networking Knowledge"
+      ],
+      "provider_url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+      "enrollment_url": "https://aws.amazon.com/certification/"
+    },
+    {
+      "certification_id": "CERT003",
+      "name": "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      "provider": "Microsoft",
+      "category": "Cloud & DevOps",
+      "skills": [
+        "Microsoft Azure",
+        "Cloud Computing"
+      ],
+      "skill_ids": [
+        "SKILL032",
+        "SKILL031"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "Azure Administrator",
+        "Cloud Associate",
+        "Systems Administrator"
+      ],
+      "duration": "1 month",
+      "mode": "Online",
+      "certificate_type": "Fundamentals Certificate",
+      "exam_required": true,
+      "free": false,
+      "cost": "₹3,696 INR",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+      "enrollment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/"
+    },
+    {
+      "certification_id": "CERT004",
+      "name": "Meta Front-End Developer Professional Certificate",
+      "provider": "Meta",
+      "category": "Web Development",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js"
+      ],
+      "skill_ids": [
+        "SKILL021",
+        "SKILL022",
+        "SKILL023"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "Frontend Developer",
+        "React Developer",
+        "Web Engineer"
+      ],
+      "duration": "7 months",
+      "mode": "Online",
+      "certificate_type": "Professional Certificate",
+      "exam_required": false,
+      "free": false,
+      "cost": "₹2,500 / month",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://www.meta.com/",
+      "enrollment_url": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+    },
+    {
+      "certification_id": "CERT005",
+      "name": "Naan Mudhalvan Advanced Python & Data Science Certificate",
+      "provider": "TNSDC / Govt. of Tamil Nadu",
+      "category": "Data Analytics",
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Machine Learning"
+      ],
+      "skill_ids": [
+        "SKILL001",
+        "SKILL015",
+        "SKILL051"
+      ],
+      "level": "Intermediate",
+      "target_roles": [
+        "Data Analyst",
+        "Python Developer",
+        "Junior Data Scientist"
+      ],
+      "duration": "3 months",
+      "mode": "Hybrid / Online",
+      "certificate_type": "State Government Skill Certificate",
+      "exam_required": true,
+      "free": true,
+      "cost": "Free",
+      "validity": "No Expiration",
+      "prerequisites": [
+        "College student in Tamil Nadu"
+      ],
+      "provider_url": "https://www.naanmudhalvan.tn.gov.in/",
+      "enrollment_url": "https://www.naanmudhalvan.tn.gov.in/"
+    },
+    {
+      "certification_id": "CERT006",
+      "name": "Certified Associate in Project Management (CAPM)",
+      "provider": "Project Management Institute (PMI)",
+      "category": "Business & Management",
+      "skills": [
+        "Project Management",
+        "Agile Methodology",
+        "Risk Management"
+      ],
+      "skill_ids": [
+        "SKILL062",
+        "SKILL063",
+        "SKILL067"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "Project Coordinator",
+        "Junior Project Manager",
+        "Business Associate"
+      ],
+      "duration": "3 months",
+      "mode": "Online / Examination Center",
+      "certificate_type": "Global Professional Certification",
+      "exam_required": true,
+      "free": false,
+      "cost": "$300 USD",
+      "validity": "3 Years",
+      "prerequisites": [
+        "Secondary degree (High school diploma / Equivalent)"
+      ],
+      "provider_url": "https://www.pmi.org/certifications/certified-associate-capm",
+      "enrollment_url": "https://www.pmi.org/certifications/certified-associate-capm"
+    },
+    {
+      "certification_id": "CERT007",
+      "name": "Certified ScrumMaster (CSM)",
+      "provider": "Scrum Alliance",
+      "category": "Business & Management",
+      "skills": [
+        "Agile Methodology",
+        "Scrum Framework",
+        "Leadership"
+      ],
+      "skill_ids": [
+        "SKILL063",
+        "SKILL064",
+        "SKILL092"
+      ],
+      "level": "Intermediate",
+      "target_roles": [
+        "Scrum Master",
+        "Agile Coach",
+        "Project Manager"
+      ],
+      "duration": "2 Days Workshop",
+      "mode": "Live Virtual Class",
+      "certificate_type": "Agile Certification",
+      "exam_required": true,
+      "free": false,
+      "cost": "₹22,000 INR",
+      "validity": "2 Years",
+      "prerequisites": [],
+      "provider_url": "https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster",
+      "enrollment_url": "https://www.scrumalliance.org/"
+    },
+    {
+      "certification_id": "CERT008",
+      "name": "Tally Prime Professional Certification",
+      "provider": "Tally Education",
+      "category": "Finance & Commerce",
+      "skills": [
+        "Corporate Accounting",
+        "Tally Prime",
+        "Goods & Services Tax (GST) Compliance"
+      ],
+      "skill_ids": [
+        "SKILL072",
+        "SKILL074",
+        "SKILL075"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "Tally Accountant",
+        "Accounts Executive",
+        "GST Consultant"
+      ],
+      "duration": "2 months",
+      "mode": "Online / Authorized Center",
+      "certificate_type": "Software Skill Certification",
+      "exam_required": true,
+      "free": false,
+      "cost": "₹3,500 INR",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://tallyeducation.com/",
+      "enrollment_url": "https://tallyeducation.com/certifications/"
+    },
+    {
+      "certification_id": "CERT009",
+      "name": "Google UX Design Professional Certificate",
+      "provider": "Google",
+      "category": "Design & Creative",
+      "skills": [
+        "UI Design",
+        "UX Design",
+        "Figma",
+        "Wireframing & Prototyping"
+      ],
+      "skill_ids": [
+        "SKILL081",
+        "SKILL082",
+        "SKILL083",
+        "SKILL090"
+      ],
+      "level": "Beginner",
+      "target_roles": [
+        "UI/UX Designer",
+        "UX Researcher",
+        "Product Designer"
+      ],
+      "duration": "6 months",
+      "mode": "Online",
+      "certificate_type": "Professional Certificate",
+      "exam_required": false,
+      "free": false,
+      "cost": "₹2,500 / month",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://grow.google/certificates/ux-design/",
+      "enrollment_url": "https://www.coursera.org/professional-certificates/google-ux-design"
+    },
+    {
+      "certification_id": "CERT010",
+      "name": "IBM Data Science Professional Certificate",
+      "provider": "IBM",
+      "category": "AI & Machine Learning",
+      "skills": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "Machine Learning"
+      ],
+      "skill_ids": [
+        "SKILL001",
+        "SKILL011",
+        "SKILL015",
+        "SKILL051"
+      ],
+      "level": "Intermediate",
+      "target_roles": [
+        "Data Scientist",
+        "Machine Learning Engineer",
+        "Data Analyst"
+      ],
+      "duration": "5 months",
+      "mode": "Online",
+      "certificate_type": "Professional Certificate",
+      "exam_required": false,
+      "free": false,
+      "cost": "₹2,500 / month",
+      "validity": "No Expiration",
+      "prerequisites": [],
+      "provider_url": "https://www.ibm.com/training/badge/data-science-professional-certificate",
+      "enrollment_url": "https://www.coursera.org/professional-certificates/ibm-data-science"
+    }
+  ]
+}

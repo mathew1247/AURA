@@ -1,0 +1,130 @@
+{
+  "jobs": [
+    {
+      "job_id": "JOB001",
+      "title": "Junior Data Analyst",
+      "company": "TCS (Tata Consultancy Services)",
+      "location": "Chennai, Tamil Nadu",
+      "work_mode": "Hybrid",
+      "employment_type": "Full-time",
+      "salary_range": "₹4,50,000 - ₹6,50,000 / year",
+      "experience_required": "0-2 years",
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Microsoft Excel",
+        "Data Visualization"
+      ],
+      "skill_ids": [
+        "SKILL001",
+        "SKILL011",
+        "SKILL012",
+        "SKILL018"
+      ],
+      "category": "Data Analytics",
+      "application_url": "https://www.tcs.com/careers",
+      "posted_date": "2026-08-01"
+    },
+    {
+      "job_id": "JOB002",
+      "title": "Full-Stack Web Developer",
+      "company": "Zoho Corporation",
+      "location": "Chennai / Tenkasi, Tamil Nadu",
+      "work_mode": "On-site",
+      "employment_type": "Full-time",
+      "salary_range": "₹6,00,000 - ₹9,50,000 / year",
+      "experience_required": "1-3 years",
+      "required_skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js",
+        "Node.js"
+      ],
+      "skill_ids": [
+        "SKILL021",
+        "SKILL022",
+        "SKILL023",
+        "SKILL024"
+      ],
+      "category": "Web Development",
+      "application_url": "https://www.zoho.com/careers/",
+      "posted_date": "2026-08-05"
+    },
+    {
+      "job_id": "JOB003",
+      "title": "Associate AWS Cloud Engineer",
+      "company": "Cognizant Technology Solutions",
+      "location": "Coimbatore, Tamil Nadu",
+      "work_mode": "Remote",
+      "employment_type": "Full-time",
+      "salary_range": "₹5,50,000 - ₹8,00,000 / year",
+      "experience_required": "0-2 years",
+      "required_skills": [
+        "Amazon Web Services (AWS)",
+        "Docker",
+        "Linux System Administration",
+        "Git & GitHub"
+      ],
+      "skill_ids": [
+        "SKILL031",
+        "SKILL034",
+        "SKILL038",
+        "SKILL036"
+      ],
+      "category": "Cloud & DevOps",
+      "application_url": "https://www.cognizant.com/careers",
+      "posted_date": "2026-08-08"
+    },
+    {
+      "job_id": "JOB004",
+      "title": "UI/UX Designer",
+      "company": "Freshworks",
+      "location": "Chennai, Tamil Nadu",
+      "work_mode": "Hybrid",
+      "employment_type": "Full-time",
+      "salary_range": "₹5,00,000 - ₹8,50,000 / year",
+      "experience_required": "1-3 years",
+      "required_skills": [
+        "UI Design",
+        "UX Design",
+        "Figma",
+        "Wireframing & Prototyping"
+      ],
+      "skill_ids": [
+        "SKILL081",
+        "SKILL082",
+        "SKILL083",
+        "SKILL090"
+      ],
+      "category": "Design & Creative",
+      "application_url": "https://www.freshworks.com/company/careers/",
+      "posted_date": "2026-08-10"
+    },
+    {
+      "job_id": "JOB005",
+      "title": "Accounts & GST Executive",
+      "company": "Murugappa Group",
+      "location": "Madurai, Tamil Nadu",
+      "work_mode": "On-site",
+      "employment_type": "Full-time",
+      "salary_range": "₹3,50,000 - ₹5,00,000 / year",
+      "experience_required": "0-2 years",
+      "required_skills": [
+        "Corporate Accounting",
+        "Tally Prime",
+        "Goods & Services Tax (GST) Compliance",
+        "Excel for Finance"
+      ],
+      "skill_ids": [
+        "SKILL072",
+        "SKILL074",
+        "SKILL075",
+        "SKILL076"
+      ],
+      "category": "Finance & Commerce",
+      "application_url": "https://www.murugappa.com/careers/",
+      "posted_date": "2026-08-04"
+    }
+  ]
+}

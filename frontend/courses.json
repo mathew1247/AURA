@@ -1,0 +1,201 @@
+{
+  "courses": [
+    {
+      "id": "C001",
+      "title": "Python for Data Analysis & Visualization",
+      "provider": "Naan Mudhalvan (TNSDC)",
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Data Analysis"
+      ],
+      "skill_ids": [
+        "SKILL001",
+        "SKILL015",
+        "SKILL016",
+        "SKILL018"
+      ],
+      "level": "Beginner",
+      "free": true,
+      "certificate": true,
+      "url": "https://www.naanmudhalvan.tn.gov.in/"
+    },
+    {
+      "id": "C002",
+      "title": "Programming, Data Structures and Algorithms using Python",
+      "provider": "NPTEL (IIT Madras)",
+      "skills": [
+        "Python",
+        "Data Structures",
+        "Algorithms",
+        "Problem Solving"
+      ],
+      "skill_ids": [
+        "SKILL001",
+        "SKILL094"
+      ],
+      "level": "Intermediate",
+      "free": true,
+      "certificate": true,
+      "url": "https://onlinecourses.nptel.ac.in/noc24_cs01/preview"
+    },
+    {
+      "id": "C003",
+      "title": "Full-Stack Web Development with React & Node.js",
+      "provider": "Coursera",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js",
+        "Node.js",
+        "MongoDB"
+      ],
+      "skill_ids": [
+        "SKILL021",
+        "SKILL022",
+        "SKILL023",
+        "SKILL024",
+        "SKILL043"
+      ],
+      "level": "Intermediate",
+      "free": false,
+      "certificate": true,
+      "url": "https://www.coursera.org/specializations/full-stack-react"
+    },
+    {
+      "id": "C004",
+      "title": "SQL for Data Science & Relational Databases",
+      "provider": "edX",
+      "skills": [
+        "SQL",
+        "PostgreSQL",
+        "Data Querying"
+      ],
+      "skill_ids": [
+        "SKILL011",
+        "SKILL042"
+      ],
+      "level": "Beginner",
+      "free": true,
+      "certificate": true,
+      "url": "https://www.edx.org/learn/sql"
+    },
+    {
+      "id": "C005",
+      "title": "Artificial Intelligence & Machine Learning Fundamentals",
+      "provider": "Infosys Springboard (Naan Mudhalvan Partner)",
+      "skills": [
+        "Machine Learning",
+        "Scikit-Learn",
+        "Deep Learning"
+      ],
+      "skill_ids": [
+        "SKILL051",
+        "SKILL052",
+        "SKILL059"
+      ],
+      "level": "Intermediate",
+      "free": true,
+      "certificate": true,
+      "url": "https://infyspringboard.onwingspan.com/"
+    },
+    {
+      "id": "C006",
+      "title": "Google Data Analytics Professional Certificate Course",
+      "provider": "Google",
+      "skills": [
+        "Data Analysis",
+        "Microsoft Excel",
+        "SQL",
+        "Tableau"
+      ],
+      "skill_ids": [
+        "SKILL011",
+        "SKILL012",
+        "SKILL014",
+        "SKILL018"
+      ],
+      "level": "Beginner",
+      "free": false,
+      "certificate": true,
+      "url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+    },
+    {
+      "id": "C007",
+      "title": "Digital Marketing & E-Commerce Management",
+      "provider": "Naan Mudhalvan (TNSDC)",
+      "skills": [
+        "Digital Marketing",
+        "SEO",
+        "Social Media Marketing"
+      ],
+      "skill_ids": [
+        "SKILL085"
+      ],
+      "level": "Beginner",
+      "free": true,
+      "certificate": true,
+      "url": "https://www.naanmudhalvan.tn.gov.in/"
+    },
+    {
+      "id": "C008",
+      "title": "Financial Accounting & Corporate Business Management",
+      "provider": "SWAYAM (MHRD India)",
+      "skills": [
+        "Corporate Accounting",
+        "Tally Prime",
+        "Goods & Services Tax (GST) Compliance"
+      ],
+      "skill_ids": [
+        "SKILL072",
+        "SKILL074",
+        "SKILL075"
+      ],
+      "level": "Beginner",
+      "free": true,
+      "certificate": true,
+      "url": "https://swayam.gov.in/"
+    },
+    {
+      "id": "C009",
+      "title": "Microsoft Azure Cloud Fundamentals (AZ-900)",
+      "provider": "Microsoft Learn",
+      "skills": [
+        "Microsoft Azure",
+        "Amazon Web Services (AWS)",
+        "Cloud Computing"
+      ],
+      "skill_ids": [
+        "SKILL031",
+        "SKILL032"
+      ],
+      "level": "Beginner",
+      "free": true,
+      "certificate": true,
+      "url": "https://learn.microsoft.com/en-us/training/paths/az-900-describe-cloud-concepts/"
+    },
+    {
+      "id": "C010",
+      "title": "User Interface (UI) & User Experience (UX) Design",
+      "provider": "Coursera",
+      "skills": [
+        "UI Design",
+        "UX Design",
+        "Figma",
+        "Wireframing & Prototyping"
+      ],
+      "skill_ids": [
+        "SKILL081",
+        "SKILL082",
+        "SKILL083",
+        "SKILL090"
+      ],
+      "level": "Beginner",
+      "free": false,
+      "certificate": true,
+      "url": "https://www.coursera.org/specializations/ui-ux-design"
+    }
+  ]
+}

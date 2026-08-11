@@ -247,4 +247,42 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeroSlide();
   });
 
+  // --- Real-Time Success Stories Carousel Slider ---
+  const storiesTrack = document.getElementById('storiesTrack');
+  const storyPrevBtn = document.getElementById('storyPrevBtn');
+  const storyNextBtn = document.getElementById('storyNextBtn');
+  let storyIndex = 0;
+
+  function updateStoriesSlider() {
+    if (!storiesTrack) return;
+    const cards = storiesTrack.querySelectorAll('.story-card');
+    if (cards.length === 0) return;
+    const cardWidth = cards[0].offsetWidth + 16;
+    const maxShift = cards.length - 3;
+    const maxIndex = maxShift > 0 ? maxShift : cards.length - 1;
+
+    if (storyIndex > maxIndex) storyIndex = 0;
+    if (storyIndex < 0) storyIndex = maxIndex;
+
+    storiesTrack.style.transform = `translateX(-${storyIndex * cardWidth}px)`;
+  }
+
+  if (storyNextBtn && storyPrevBtn) {
+    storyNextBtn.addEventListener('click', () => {
+      storyIndex++;
+      updateStoriesSlider();
+    });
+
+    storyPrevBtn.addEventListener('click', () => {
+      storyIndex--;
+      updateStoriesSlider();
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+      storyIndex++;
+      updateStoriesSlider();
+    }, 5000);
+  }
+
 });

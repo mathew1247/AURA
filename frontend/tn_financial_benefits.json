@@ -1,0 +1,300 @@
+{
+  "financial_benefits": [
+    {
+      "id": "FIN-TN-001",
+      "name": "Pudhumai Penn Moovalur Ramamirtham Ammaiyar Higher Education Financial Assistance",
+      "type": "Monthly Education Stipend",
+      "provider": "Tamil Nadu Higher Education & Social Welfare Department",
+      "amount": "₹1,000 / month (₹12,000 per year)",
+      "eligibility": [
+        "Female student",
+        "Studied Class 6 to 12 in Tamil Nadu Government Schools",
+        "Enrolled in Undergraduate Degree, Diploma, ITI, or Professional course"
+      ],
+      "education_level": "Undergraduate / Diploma / ITI",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Aadhaar Card",
+        "Class 6 to 12 School Study / TC Certificates",
+        "College Admission Fee Receipt & Student ID Card",
+        "Bank Passbook (Aadhaar/DBT seeded)"
+      ],
+      "application_url": "https://penkalvi.tn.gov.in/",
+      "deadline": "2026-10-31"
+    },
+    {
+      "id": "FIN-TN-002",
+      "name": "Kalaignar Magalir Urimai Thittam (KMUT)",
+      "type": "Monthly Basic Income Support",
+      "provider": "Government of Tamil Nadu",
+      "amount": "₹1,000 / month (₹12,000 per year)",
+      "eligibility": [
+        "Female head of family",
+        "Family annual income below ₹2.5 lakh",
+        "Annual electricity consumption below 3,600 units",
+        "Valid Tamil Nadu Smart Ration Card holder"
+      ],
+      "education_level": "All Education Levels",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Tamil Nadu Smart Family Card (Ration Card)",
+        "Aadhaar Card",
+        "Bank Account Passbook (Aadhaar Seeded)",
+        "Self-Declaration Form"
+      ],
+      "application_url": "https://kmut.tn.gov.in/",
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": "FIN-TN-003",
+      "name": "Dr. Muthulakshmi Reddy Maternity Financial Benefit Scheme",
+      "type": "Maternity Cash Assistance & Nutrition Kit",
+      "provider": "Health and Family Welfare Department, Govt. of Tamil Nadu",
+      "amount": "₹18,000 Cash + 2 Nutrition Kits (Valued ₹4,000)",
+      "eligibility": [
+        "Pregnant women aged 19 years and above",
+        "Applicable for first two deliveries",
+        "Registered in PICME portal within 12 weeks of pregnancy"
+      ],
+      "education_level": "All Education Levels",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "PICME RCH ID Card",
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "Bank Account Passbook"
+      ],
+      "application_url": "https://picme.tn.gov.in/",
+      "deadline": "2026-11-30"
+    },
+    {
+      "id": "FIN-TN-004",
+      "name": "Chief Minister's Girl Child Protection Financial Deposit Scheme",
+      "type": "Fixed Deposit Assistance",
+      "provider": "Department of Social Welfare & Women Empowerment, Tamil Nadu",
+      "amount": "₹50,000 (Single Girl Child) / ₹25,000 each (Two Girl Children)",
+      "eligibility": [
+        "Family with 1 or 2 girl children and no male child",
+        "One parent sterilized before age 35",
+        "Family annual income below ₹72,000",
+        "Permanent resident of Tamil Nadu for minimum 10 years"
+      ],
+      "education_level": "Primary / High School",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Birth Certificate of Girl Child",
+        "Sterilization Certificate of Parent",
+        "Income Certificate from VAO",
+        "Community Certificate",
+        "Aadhaar Cards of Parents"
+      ],
+      "application_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "deadline": "2026-12-15"
+    },
+    {
+      "id": "FIN-TN-005",
+      "name": "Moovalur Ramamirtham Ammaiyar Marriage Assistance Scheme",
+      "type": "Marriage Grant & Gold Coin Assistance",
+      "provider": "Social Welfare Department, Govt. of Tamil Nadu",
+      "amount": "₹25,000 to ₹50,000 Financial Grant + 8 Grams 22kt Gold Coin",
+      "eligibility": [
+        "Bride aged 18 years or older",
+        "Bride passed 10th standard or Degree/Diploma",
+        "Family annual income below ₹72,000"
+      ],
+      "education_level": "10th / Diploma / Graduate",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Marriage Invitation Card",
+        "10th Marksheet or Degree/Diploma Certificate",
+        "Income Certificate from VAO",
+        "Aadhaar Card",
+        "Bank Passbook"
+      ],
+      "application_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "deadline": "2026-11-15"
+    },
+    {
+      "id": "FIN-TN-006",
+      "name": "Unemployed Youth Employment Generation Programme (UYEGP) Subsidy",
+      "type": "Capital Subsidy / Business Grant",
+      "provider": "MSME Department, Govt. of Tamil Nadu",
+      "amount": "Up to ₹1.25 Lakh (25% Capital Subsidy on Project Cost up to ₹15 Lakhs)",
+      "eligibility": [
+        "Unemployed youth aged 18 to 45 years (relaxation for women/SC/ST)",
+        "Minimum 8th pass qualification",
+        "Family annual income below ₹5 lakh",
+        "Resident of Tamil Nadu for minimum 3 years"
+      ],
+      "education_level": "8th Pass / High School / Diploma / Degree",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Proof of Age (TC / Birth Certificate)",
+        "8th Pass Marksheet or higher degree certificate",
+        "Community Certificate",
+        "Income Certificate",
+        "Business Project Report",
+        "Aadhaar Card & Smart Ration Card"
+      ],
+      "application_url": "https://msmeonline.tn.gov.in/uyegp/",
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": "FIN-TN-007",
+      "name": "New Entrepreneur-cum-Enterprise Development Scheme (NEEDS)",
+      "type": "Entrepreneurship Capital Subsidy & Subvention",
+      "provider": "MSME Department, Govt. of Tamil Nadu",
+      "amount": "Up to ₹75 Lakhs (25% Capital Subsidy + 3% Interest Subvention)",
+      "eligibility": [
+        "Educated first-generation entrepreneur aged 21 to 45 years",
+        "Degree, Diploma, ITI, or Vocational training qualification",
+        "Setting up new manufacturing or service enterprise in Tamil Nadu"
+      ],
+      "education_level": "Diploma / Undergraduate / Postgraduate / ITI",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Degree/Diploma/ITI Qualification Certificate",
+        "Detailed Business Project Report",
+        "Aadhaar Card & PAN Card",
+        "Community Certificate",
+        "Bank Loan Sanction Letter"
+      ],
+      "application_url": "https://msmeonline.tn.gov.in/needs/",
+      "deadline": "2026-10-15"
+    },
+    {
+      "id": "FIN-TN-008",
+      "name": "Post-Matric Scholarship for SC/ST/SCC Students",
+      "type": "Full Tuition Fee Waiver & Maintenance Grant",
+      "provider": "Adi Dravidar and Tribal Welfare Department, Tamil Nadu",
+      "amount": "100% Tuition Fee Reimbursement + ₹12,000 Annual Maintenance Allowance",
+      "eligibility": [
+        "SC / ST / Scheduled Caste Converted Christian student",
+        "Family annual income below ₹2.5 lakh",
+        "Enrolled in Post-Matric, Diploma, UG, or PG course in Tamil Nadu"
+      ],
+      "education_level": "Undergraduate / Postgraduate / Diploma",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Aadhaar Card",
+        "Community Certificate issued by competent authority",
+        "Income Certificate from VAO/Tahsildar",
+        "College Admission Fee Structure & Student ID",
+        "Bank Passbook copy (Aadhaar linked)"
+      ],
+      "application_url": "https://tnadwscholarship.tn.gov.in/",
+      "deadline": "2026-10-31"
+    },
+    {
+      "id": "FIN-TN-009",
+      "name": "BC/MBC/DNC Higher Education Post-Matric Scholarship",
+      "type": "Tuition Scholarship & Maintenance Assistance",
+      "provider": "Backward Classes, Most Backward Classes & Minorities Welfare Department",
+      "amount": "₹6,000 to ₹20,000 per annum + Hostel Fee Exemption",
+      "eligibility": [
+        "BC / MBC / DNC category student",
+        "Family annual income below ₹2.5 lakh",
+        "Pursuing 3-year Degree, Engineering, Medicine, Agriculture, or Diploma"
+      ],
+      "education_level": "Undergraduate / Postgraduate / Diploma",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Aadhaar Card",
+        "BC/MBC Community Certificate",
+        "Income Certificate",
+        "Previous Academic Marksheet",
+        "Bank Passbook"
+      ],
+      "application_url": "https://bcmbcw.tn.gov.in/",
+      "deadline": "2026-11-30"
+    },
+    {
+      "id": "FIN-TN-010",
+      "name": "Tamil Nadu Destitute Widow Financial Pension Scheme",
+      "type": "Monthly Social Security Pension",
+      "provider": "Revenue & Disaster Management Department, Tamil Nadu",
+      "amount": "₹1,200 / month + Free Rice & Free Saree/Dhoti (Bi-annually)",
+      "eligibility": [
+        "Destitute widow female resident of Tamil Nadu",
+        "Age 18 years and above",
+        "Family annual income below ₹72,000"
+      ],
+      "education_level": "All Education Levels",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Death Certificate of Husband",
+        "Destitute Widow Certificate from Tahsildar",
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "Bank Passbook"
+      ],
+      "application_url": "https://tnesevai.tn.gov.in/",
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": "FIN-TN-011",
+      "name": "Tamil Nadu Maintenance Allowance Scheme for Differently Abled",
+      "type": "Monthly Disability Pension Support",
+      "provider": "Department for Welfare of Differently Abled Persons, Tamil Nadu",
+      "amount": "₹2,000 / month",
+      "eligibility": [
+        "Persons with 40% or more disability benchmark",
+        "Resident of Tamil Nadu",
+        "Family income within prescribed limits"
+      ],
+      "education_level": "All Education Levels",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "National Disability ID Card (UDID) / Disability Certificate",
+        "Aadhaar Card",
+        "Bank Account Passbook",
+        "Smart Ration Card"
+      ],
+      "application_url": "https://www.tn.gov.in/scda/",
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": "FIN-TN-012",
+      "name": "Uzhavar Padhukappu Thittam (Farmers Security Educational & Pension Grant)",
+      "type": "Educational Grant & Social Pension",
+      "provider": "Revenue Department, Govt. of Tamil Nadu",
+      "amount": "₹1,000/month Pension + ₹2,000 to ₹10,000 Educational & Marriage Grants",
+      "eligibility": [
+        "Registered small/marginal farmer or agricultural landless labourer in Tamil Nadu",
+        "Enrolled member of Uzhavar Padhukappu Thittam card"
+      ],
+      "education_level": "School / High School / College",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Uzhavar Padhukappu Thittam Identity Card",
+        "Aadhaar Card",
+        "Land Chitta / Adangal or Agricultural Labour Certificate",
+        "Bank Passbook"
+      ],
+      "application_url": "https://tnesevai.tn.gov.in/",
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": "FIN-TN-013",
+      "name": "Tamil Nadu Chief Minister Fellowship Financial Grant",
+      "type": "Fellowship & Research Financial Grant",
+      "provider": "Special Programme Implementation Department, Tamil Nadu",
+      "amount": "₹65,000 / month Stipend + ₹10,000 Monthly Research Allowance",
+      "eligibility": [
+        "Postgraduate or Professional degree holder from recognized university",
+        "First class academic record",
+        "Native or resident of Tamil Nadu"
+      ],
+      "education_level": "Postgraduate / Doctorate",
+      "state": "Tamil Nadu",
+      "documents_required": [
+        "Postgraduate Degree Certificate & Transcripts",
+        "Aadhaar Card",
+        "Resume & Statement of Purpose",
+        "Bank Passbook"
+      ],
+      "application_url": "https://www.tn.gov.in/",
+      "deadline": "2026-09-30"
+    }
+  ]
+}

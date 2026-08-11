@@ -1,0 +1,355 @@
+{
+  "schemes": [
+    {
+      "id": "tn-pudhumai-penn",
+      "Name": "Pudhumai Penn Scheme (Moovalur Ramamirtham Ammaiyar Higher Education Assurance Scheme)",
+      "Description": "Financial assistance scheme to encourage female students from Tamil Nadu Government schools to pursue higher education without financial constraints.",
+      "Category": "Education & Women Empowerment",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Monthly financial aid of ₹1,000 directly credited to the student's bank account.",
+        "Coverage extends across Degree, Diploma, ITI, and professional courses until completion.",
+        "Reduces financial barriers and higher education dropout rates for women."
+      ],
+      "Eligibility": {
+        "Gender": "Female",
+        "School Education": "Must have studied Class 6 to Class 12 in Tamil Nadu Government Schools",
+        "Course Enrollment": "Enrolled in undergraduate degree, diploma, ITI, or professional course",
+        "Residency": "Permanent resident of Tamil Nadu"
+      },
+      "Documents": [
+        "Aadhaar Card",
+        "School TC / Study Certificates (Class 6 to 12)",
+        "College Admission Fee Receipt & Student ID Card",
+        "Bank Account Passbook (linked with Aadhaar)",
+        "Passport Size Photograph"
+      ],
+      "Application Process": "Students can apply online via the official Pudhumai Penn (Penkalvi) portal or through designated nodal officers in their respective colleges.",
+      "Official URL": "https://penkalvi.tn.gov.in/",
+      "Source / Last Updated": "Social Welfare and Women Empowerment Department, Govt. of Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-magalir-urimai",
+      "Name": "Kalaignar Magalir Urimai Thittam",
+      "Description": "Flagship basic income support scheme providing direct financial aid of ₹1,000 per month to eligible women heads of households across Tamil Nadu.",
+      "Category": "Financial Assistance & Women Empowerment",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Direct Benefit Transfer (DBT) of ₹1,000 per month into bank accounts.",
+        "Provides financial independence and livelihood security to over 1 crore women.",
+        "No middleman intervention with transparent digital transfer."
+      ],
+      "Eligibility": {
+        "Gender": "Female (Head of Family)",
+        "Age": "21 years and above",
+        "Family Annual Income": "Less than ₹2.5 Lakhs per annum",
+        "Electricity Consumption": "Less than 3,600 units per year",
+        "Land Holding": "Wetland less than 5 acres or dry land less than 10 acres",
+        "Residency": "Resident of Tamil Nadu with valid Smart Ration Card"
+      },
+      "Documents": [
+        "Tamil Nadu Smart Family Card (Ration Card)",
+        "Aadhaar Card",
+        "Bank Passbook copy (DBT enabled)",
+        "Self-declaration form / Income proof"
+      ],
+      "Application Process": "Applications are collected during special camps conducted at local ration shops/e-Sevai centers across Tamil Nadu.",
+      "Official URL": "https://kmut.tn.gov.in/",
+      "Source / Last Updated": "Special Programme Implementation Department, Govt. of Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-muthulakshmi-maternity",
+      "Name": "Dr. Muthulakshmi Reddy Maternity Benefit Scheme",
+      "Description": "Maternal health and financial assistance scheme aimed at providing financial support and nutrition kits to poor pregnant women in Tamil Nadu.",
+      "Category": "Healthcare & Maternity Support",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Total financial assistance of ₹18,000 disbursed in 5 installments.",
+        "2 Nutrition Kits valued at ₹4,000 containing health supplements, iron syrup, and nutrition mix.",
+        "Ensures institutional delivery and proper antenatal care."
+      ],
+      "Eligibility": {
+        "Gender": "Female (Pregnant women)",
+        "Age": "19 years and above",
+        "Delivery Limit": "Applicable for first two deliveries",
+        "Residency": "Resident of Tamil Nadu registered in PICME portal"
+      },
+      "Documents": [
+        "PICME (Pregnancy and Infant Cohort Monitoring and Evaluation) RCH ID Card",
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "Bank Passbook details"
+      ],
+      "Application Process": "Register pregnancy within 12 weeks at local Village Health Nurse (VHN) or Urban Health Nurse (UHN) / Primary Health Centre (PHC).",
+      "Official URL": "https://picme.tn.gov.in/",
+      "Source / Last Updated": "Health and Family Welfare Department, Govt. of Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-naan-mudhalvan",
+      "Name": "Naan Mudhalvan Skill Development Scheme",
+      "Description": "Comprehensive skill enhancement and career guidance initiative for students and youth in Tamil Nadu to make them globally competitive and industry-ready.",
+      "Category": "Employment & Skill Development",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Free industry-aligned training in AI, Machine Learning, Data Analytics, Coding, Robotics, and Soft Skills.",
+        "Free access to top global learning platforms (Coursera, Infosys Springboard, etc.).",
+        "Direct placement drives and internship connections with leading corporate companies."
+      ],
+      "Eligibility": {
+        "Target Group": "School and College Students (Arts, Science, Engineering, Polytechnic, ITI) & Unemployed Youth",
+        "Residency": "Tamil Nadu"
+      },
+      "Documents": [
+        "College / School Student ID",
+        "Aadhaar Card",
+        "Educational Qualification Marksheets",
+        "Email ID and Mobile Number"
+      ],
+      "Application Process": "Students can register online via the official Naan Mudhalvan portal or access courses through their college portal integration.",
+      "Official URL": "https://www.naanmudhalvan.tn.gov.in/",
+      "Source / Last Updated": "Tamil Nadu Skill Development Corporation (TNSDC) - August 2026"
+    },
+    {
+      "id": "tn-free-laptop",
+      "Name": "Tamil Nadu Free Laptop Scheme for Students",
+      "Description": "Welfare scheme providing free laptops to students in Government and Government-aided institutions to facilitate digital learning and tech literacy.",
+      "Category": "Education & Digital Empowerment",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Free branded laptop preloaded with educational software, operating system, and study tools.",
+        "Enables digital learning, online research, and technical skill development."
+      ],
+      "Eligibility": {
+        "Target Group": "Students of Class 11 & 12 in Government and Aided Schools, and Arts, Science, Polytechnic & Engineering College students",
+        "Institution": "Government and Government-aided schools & colleges in Tamil Nadu"
+      },
+      "Documents": [
+        "School / College Roll Number & Student ID Card",
+        "Aadhaar Card",
+        "Ration Card copy"
+      ],
+      "Application Process": "No individual application required; eligible students are identified directly through school and college administration lists.",
+      "Official URL": "https://www.tn.gov.in/scheme/data_view/6837",
+      "Source / Last Updated": "School Education Department, Govt. of Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-girl-child-protection",
+      "Name": "Chief Minister’s Girl Child Protection Scheme",
+      "Description": "Social welfare scheme promoting education of girl children, discouraging female infanticide, and preventing child marriage through long-term financial deposits.",
+      "Category": "Child Welfare & Financial Security",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Scheme I: Fixed deposit of ₹50,000 for families with only 1 girl child.",
+        "Scheme II: Fixed deposit of ₹25,000 each for families with 2 girl children.",
+        "Maturity amount with interest released when the girl reaches 18 years of age after completing Class 10."
+      ],
+      "Eligibility": {
+        "Family Structure": "Families with 1 or 2 girl children and no male child",
+        "Sterilization Condition": "One parent must have undergone sterilization before 35 years of age",
+        "Income Limit": "Family annual income below ₹72,000 per annum",
+        "Residency": "Resident of Tamil Nadu for minimum 10 years"
+      },
+      "Documents": [
+        "Birth Certificate of Girl Child",
+        "Sterilization Certificate",
+        "Income Certificate from Village Administrative Officer (VAO)",
+        "Community Certificate",
+        "Aadhaar Cards of Parents"
+      ],
+      "Application Process": "Apply at the District Social Welfare Office or Block Development Office (BDO) within 3 years of the child's birth.",
+      "Official URL": "https://www.tnsocialwelfare.tn.gov.in/",
+      "Source / Last Updated": "Department of Social Welfare & Women Empowerment, Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-uyegp-entrepreneurship",
+      "Name": "Unemployed Youth Employment Generation Programme (UYEGP)",
+      "Description": "State credit-linked subsidy scheme encouraging micro-enterprise creation among unemployed youth in manufacturing, service, and trading sectors.",
+      "Category": "Employment & Entrepreneurship",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Project cost support up to ₹15 Lakhs for manufacturing and ₹5 Lakhs for service/business activities.",
+        "Government Capital Subsidy of 25% of the project cost (max ₹1.25 Lakhs).",
+        "Low promoter contribution (5% for special category / women, 10% for general)."
+      ],
+      "Eligibility": {
+        "Age": "18 to 45 years (relaxation up to 45 years for women, SC/ST, BC/MBC, Divyangjan)",
+        "Education": "Passed 8th Standard minimum",
+        "Family Income": "Family income not exceeding ₹5 Lakhs per annum",
+        "Residency": "Resident of Tamil Nadu for minimum 3 years"
+      },
+      "Documents": [
+        "Proof of Age (TC / Birth Certificate)",
+        "8th Pass Marksheet or higher certificate",
+        "Community Certificate",
+        "Income Certificate",
+        "Project Report of proposed business",
+        "Aadhaar Card & Smart Ration Card"
+      ],
+      "Application Process": "Apply online through the District Industries Centre (DIC) portal (msmeonline.tn.gov.in/uyegp).",
+      "Official URL": "https://msmeonline.tn.gov.in/uyegp/",
+      "Source / Last Updated": "Micro, Small and Medium Enterprises (MSME) Department, Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-needs-scheme",
+      "Name": "New Entrepreneur-cum-Enterprise Development Scheme (NEEDS)",
+      "Description": "Assistance scheme for educated first-generation entrepreneurs to establish commercial production enterprises in Tamil Nadu.",
+      "Category": "Entrepreneurship & Business",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Project cost financing from ₹10 Lakhs up to ₹5 Crores.",
+        "25% Capital Subsidy on project cost (maximum limit up to ₹75 Lakhs).",
+        "3% Interest Subvention throughout the loan repayment tenure."
+      ],
+      "Eligibility": {
+        "Age": "21 to 45 years (up to 45 years for Women, SC/ST, BC/MBC)",
+        "Education": "Degree, Diploma, ITI, or Vocational Training qualification",
+        "Entrepreneur Type": "First Generation Entrepreneur",
+        "Residency": "Permanent resident of Tamil Nadu"
+      },
+      "Documents": [
+        "Educational Qualification Certificates (Degree/Diploma/ITI)",
+        "Detailed Business Project Report",
+        "Aadhaar Card & PAN Card",
+        "Community Certificate",
+        "Land / Lease Agreement for business premises"
+      ],
+      "Application Process": "Submit application online via MSME Online TN portal and attend District Level Selection Committee (DLSC) interview.",
+      "Official URL": "https://msmeonline.tn.gov.in/needs/",
+      "Source / Last Updated": "MSME Department, Govt. of Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-sewing-machine",
+      "Name": "Sathyavani Muthu Ammaiyar Ninaivu Free Supply of Sewing Machines Scheme",
+      "Description": "Social welfare scheme to empower destitute women, widows, deserted wives, and physically handicapped women by supplying free motor-operated sewing machines.",
+      "Category": "Self Employment & Livelihood",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Free power-operated / motor-driven sewing machine.",
+        "Enables home-based self-employment and sustainable monthly income."
+      ],
+      "Eligibility": {
+        "Gender": "Female (Widows, Destitute Women, Deserted Wives, Differently Abled)",
+        "Age": "20 to 40 years",
+        "Skills": "Must possess tailoring training certificate from recognized institute",
+        "Income Limit": "Annual family income less than ₹72,000"
+      },
+      "Documents": [
+        "Tailoring Training Certificate (minimum 6 months training)",
+        "Income Certificate from VAO",
+        "Destitute / Widow / Deserted Wife Certificate",
+        "Aadhaar Card & Smart Ration Card",
+        "Passport size photographs"
+      ],
+      "Application Process": "Submit hard copy application form along with certificates to District Social Welfare Officer (DSWO) or e-Sevai center.",
+      "Official URL": "https://www.tnsocialwelfare.tn.gov.in/",
+      "Source / Last Updated": "Department of Social Welfare & Women Empowerment, Tamil Nadu - August 2026"
+    },
+    {
+      "id": "tn-cmchis-insurance",
+      "Name": "Chief Minister’s Comprehensive Health Insurance Scheme (CMCHIS)",
+      "Description": "Universal health coverage scheme providing cashless medical and surgical treatment to low-income families in government and private empanelled hospitals.",
+      "Category": "Healthcare & Insurance",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Cashless medical coverage up to ₹5,000,000 per family per year.",
+        "Covers 1,500+ medical procedures, surgeries, organ transplants, and critical care.",
+        "Includes diagnostic tests and post-hospitalization follow-up care."
+      ],
+      "Eligibility": {
+        "Target Group": "Families registered under Tamil Nadu Smart Ration Card",
+        "Income Limit": "Annual family income less than ₹1,20,000 (or listed on Smart Ration Card)",
+        "Residency": "Resident of Tamil Nadu"
+      },
+      "Documents": [
+        "Tamil Nadu Smart Ration Card",
+        "Aadhaar Card of all family members",
+        "Income Certificate (if ration card status requires income verification)"
+      ],
+      "Application Process": "Enrolment camps held at District Collectorates; card issued at Kiosk after biometric verification.",
+      "Official URL": "https://www.cmchistn.com/",
+      "Source / Last Updated": "Tamil Nadu Health Systems Project, Health and Family Welfare Department - August 2026"
+    },
+    {
+      "id": "tn-cm-breakfast",
+      "Name": "Chief Minister’s Breakfast Scheme",
+      "Description": "Nutritional welfare initiative supplying free healthy breakfast to primary school children in Government schools across Tamil Nadu.",
+      "Category": "Nutrition & School Education",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Free hot cooked nutritious breakfast (upma, kichadi, pongal with sambar) served every school day.",
+        "Combats childhood malnutrition, improves classroom attendance, and enhances learning capacity."
+      ],
+      "Eligibility": {
+        "Target Group": "Primary school students (Class 1 to Class 5)",
+        "Institution": "All Government primary and middle schools in Tamil Nadu"
+      },
+      "Documents": [
+        "School Student Enrollment Record"
+      ],
+      "Application Process": "Automatically provided to all enrolled Class 1–5 students in Tamil Nadu Government schools; no separate registration required.",
+      "Official URL": "https://www.tn.gov.in/",
+      "Source / Last Updated": "Social Welfare and Nutritious Meal Programme Department - August 2026"
+    },
+    {
+      "id": "tn-tnrtp-vazhndhu-kaattuvoom",
+      "Name": "Tamil Nadu Rural Transformation Project (TNRTP / Vazhndhu Kaattuvoom)",
+      "Description": "Rural enterprise promotion project targeting women-led Self Help Groups (SHGs) to promote micro-enterprises, financial linkages, and collective business enterprises.",
+      "Category": "Women Empowerment & Rural Livelihoods",
+      "Government Level": "State",
+      "States": [
+        "Tamil Nadu"
+      ],
+      "Benefits": [
+        "Matching grant up to 30% for women enterprise startup and expansion.",
+        "Community Skill Schools training and business mentoring.",
+        "Direct access to bank linkage, Revolving Fund, and Producer Group grants."
+      ],
+      "Eligibility": {
+        "Target Group": "Women Self Help Group (SHG) members, rural women entrepreneurs, Producer Groups",
+        "Location": "Rural Panchayats covered under TNRTP blocks in Tamil Nadu"
+      },
+      "Documents": [
+        "SHG Membership ID / Book of Records",
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "Bank Passbook copy"
+      ],
+      "Application Process": "Contact Block Level Executive Committee (BLEC) or Village Poverty Reduction Committee (VPRC) office.",
+      "Official URL": "https://www.vazhndhukaattuvoom.tn.gov.in/",
+      "Source / Last Updated": "Department of Rural Development and Panchayat Raj, Tamil Nadu - August 2026"
+    }
+  ]
+}

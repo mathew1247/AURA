@@ -1,0 +1,259 @@
+{
+  "legal_resources": [
+    {
+      "id": "LEG-TN-001",
+      "title": "Tamil Nadu Prohibition of Harassment of Woman Act, 1998",
+      "category": "Women Safety & Anti-Harassment",
+      "description": "Pioneering state legislation strictly prohibiting any form of harassment of women in public spaces, educational institutions, workplaces, and public transport within Tamil Nadu.",
+      "rights": [
+        "Right to safety and freedom from intimidation or harassment in public spaces and workplaces",
+        "Right to file a non-bailable FIR against perpetrators of harassment",
+        "Right to immediate police intervention and protection from All-Women Police Stations"
+      ],
+      "steps": [
+        "Call the 24/7 Tamil Nadu Women Helpline 181 or Emergency Helpline 112",
+        "Use the Kavalan SOS Mobile App to alert the nearest Tamil Nadu Police Control Room instantly",
+        "Approach the nearest All-Women Police Station (AWPS) to submit a written complaint",
+        "Preserve electronic or physical evidence (messages, CCTV footage, audio/video recordings)"
+      ],
+      "support_organizations": [
+        "Tamil Nadu State Commission for Women",
+        "All-Women Police Stations (AWPS) Tamil Nadu",
+        "Department of Social Welfare & Women Empowerment TN"
+      ],
+      "helpline": "181 (Women Helpline) / 112 (Emergency Police) / 1091 (Women in Distress)",
+      "official_sources": [
+        "https://www.tnsocialwelfare.tn.gov.in/",
+        "https://eservices.tnpolice.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-002",
+      "title": "Tamil Nadu Prohibition of Ragging Act, 1997",
+      "category": "Student Protection & Education Safety",
+      "description": "Strict state legislation prohibiting ragging in all educational institutions across Tamil Nadu, establishing mandatory suspension, dismissal, and criminal prosecution for offenders.",
+      "rights": [
+        "Right of students to an environment free of physical, mental, or verbal abuse",
+        "Right to mandatory suspension and expulsion of offending students upon complaint",
+        "Right to file a criminal complaint resulting in imprisonment up to 2 years"
+      ],
+      "steps": [
+        "Report the incident immediately to the Anti-Ragging Committee or Principal of the institution",
+        "Submit an online complaint on the National Anti-Ragging Portal (antiragging.in)",
+        "File a complaint at the local police station if institutional action is delayed"
+      ],
+      "support_organizations": [
+        "UGC National Anti-Ragging Cell",
+        "Tamil Nadu Higher Education Department",
+        "District Anti-Ragging Monitoring Committees"
+      ],
+      "helpline": "1800-180-5522 (National Anti-Ragging Helpline)",
+      "official_sources": [
+        "https://www.antiragging.in/",
+        "https://www.tn.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-003",
+      "title": "Protection of Women from Domestic Violence Act (PWDVA) - TN Enforcement",
+      "category": "Domestic Safety & Marital Rights",
+      "description": "Comprehensive civil law providing immediate protection orders, residence rights, maintenance, and child custody to women facing domestic abuse in Tamil Nadu.",
+      "rights": [
+        "Right to reside in the shared household without illegal eviction by spouse or relatives",
+        "Right to Protection Orders prohibiting the abuser from committing violence or contacting the victim",
+        "Right to interim monetary relief, medical expenses, and emergency child custody"
+      ],
+      "steps": [
+        "Contact the District Protection Officer (DPO) at the District Social Welfare Office",
+        "File a Domestic Incident Report (DIR) through a registered Service Provider or All-Women Police Station",
+        "Approach the Magistrate Court for urgent ex-parte protection orders"
+      ],
+      "support_organizations": [
+        "District Social Welfare Protection Officers Tamil Nadu",
+        "District Legal Services Authority (DLSA) TN",
+        "One Stop Centres (Sakhi) Tamil Nadu"
+      ],
+      "helpline": "181 (Women Helpline TN) / 1091",
+      "official_sources": [
+        "https://www.tnsocialwelfare.tn.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-004",
+      "title": "Sexual Harassment of Women at Workplace (POSH) Act in Tamil Nadu",
+      "category": "Workplace Rights & Safety",
+      "description": "Mandates Internal Committees (IC) in all workplaces with 10+ employees and Local Committees (LC) at the district level across Tamil Nadu for resolving sexual harassment complaints.",
+      "rights": [
+        "Right to a safe workplace free from quid-pro-quo or hostile environment harassment",
+        "Right to submit a written complaint to the Internal Committee within 3 months of incident",
+        "Right to strict confidentiality and protection against retaliation or forced transfer during inquiry"
+      ],
+      "steps": [
+        "Submit a written complaint to the Internal Committee (IC) or Local Committee (LC) presiding officer",
+        "Participate in the inquiry process or request formal conciliation if desired",
+        "If workplace lacks an IC, submit the complaint directly to the District Local Committee headed by District Collector"
+      ],
+      "support_organizations": [
+        "Workplace Internal Complaints Committees (IC)",
+        "District Local Committees (LC) Tamil Nadu",
+        "Department of Labour Welfare and Skill Development TN"
+      ],
+      "helpline": "181 (Women Helpline) / 1098 (She-Box Portal)",
+      "official_sources": [
+        "https://shebox.wcd.gov.in/",
+        "https://www.tnlabour.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-005",
+      "title": "Equal Remuneration & Non-Discrimination Workplace Rights",
+      "category": "Labor Rights & Gender Equality",
+      "description": "Enforces equal payment of remuneration to men and women workers for same work or work of similar nature, prohibiting gender discrimination in recruitment and service conditions.",
+      "rights": [
+        "Right to equal wages without gender discrimination for identical or similar work",
+        "Right against discrimination in hiring, promotions, training, or transfers based on gender",
+        "Right to claim wage differential arrears through Labor Inspectors"
+      ],
+      "steps": [
+        "Submit a written representation to the HR or Employer identifying wage disparity",
+        "File a claim petition before the Inspector of Labor / Conciliation Officer",
+        "Approach the Labor Court if conciliation fails"
+      ],
+      "support_organizations": [
+        "Department of Labour Welfare and Skill Development TN",
+        "Tamil Nadu State Legal Services Authority (TNSLSA)"
+      ],
+      "helpline": "155214 (Labor Welfare Helpline TN)",
+      "official_sources": [
+        "https://www.tnlabour.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-006",
+      "title": "Maternity Benefit Act & Tamil Nadu 12-Month Paid Leave Provisions",
+      "category": "Maternal Rights & Employment Benefits",
+      "description": "Provides statutory paid maternity leave, crèche facility mandates, and complete protection against dismissal during pregnancy for working women in Tamil Nadu.",
+      "rights": [
+        "Right to 26 weeks paid maternity leave in private sector (12 months / 365 days paid leave for TN State Govt employees)",
+        "Right to mandatory crèche facility in establishments employing 50 or more workers",
+        "Right to work from home options post maternity leave where nature of work permits"
+      ],
+      "steps": [
+        "Provide formal written notice to employer regarding expected delivery date",
+        "Submit medical certificate from a registered medical practitioner",
+        "Claim full wage payment during the maternity leave period"
+      ],
+      "support_organizations": [
+        "Labor Commissionerate Tamil Nadu",
+        "Employees' State Insurance Corporation (ESIC) TN"
+      ],
+      "helpline": "1800-11-2526 (ESIC Helpline) / 181",
+      "official_sources": [
+        "https://www.tnlabour.gov.in/",
+        "https://www.esic.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-007",
+      "title": "Protection of Children from Sexual Offences (POCSO) Act in Tamil Nadu",
+      "category": "Child Safety & Youth Protection",
+      "description": "Strict legislation protecting children under 18 years from sexual abuse, harassment, and exploitation, supported by specialized fast-track courts across Tamil Nadu.",
+      "rights": [
+        "Right of every child to protection against sexual assault, harassment, and exploitation",
+        "Mandatory reporting duty for any adult aware of child abuse",
+        "Right to child-friendly recording of statement in presence of parents/guardians"
+      ],
+      "steps": [
+        "Call Childline 1098 or Emergency 112 immediately upon suspecting child abuse",
+        "Report to the Special Juvenile Police Unit (SJPU) or local All-Women Police Station",
+        "Child's identity remains strictly confidential by law"
+      ],
+      "support_organizations": [
+        "Childline 1098 Tamil Nadu",
+        "Tamil Nadu State Commission for Protection of Child Rights (TNSCPCR)",
+        "Specialized Fast Track Courts TN"
+      ],
+      "helpline": "1098 (Childline) / 112 (Emergency) / 181",
+      "official_sources": [
+        "https://wcd.nic.in/",
+        "https://eservices.tnpolice.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-008",
+      "title": "Women's Equal Property Inheritance Rights (Tamil Nadu Precedent Act)",
+      "category": "Property Rights & Inheritance",
+      "description": "Pioneering Tamil Nadu state amendment granting daughters equal coparcenary rights by birth in ancestral property, establishing full legal equality in family inheritance.",
+      "rights": [
+        "Right to equal share in ancestral property by birth, identical to sons",
+        "Right to claim partition and demand independent share of joint family property",
+        "Right to dispose of ancestral property share by will or gift"
+      ],
+      "steps": [
+        "Obtain legal heir certificate and ancestral property title documents",
+        "Issue a legal notice demanding partition of property share",
+        "File a Partition Suit in the appropriate Civil Court / District Court if share is denied"
+      ],
+      "support_organizations": [
+        "Tamil Nadu State Legal Services Authority (TNSLSA)",
+        "District Legal Services Authorities (DLSA) TN"
+      ],
+      "helpline": "15100 (TNSLSA Legal Aid Hotline)",
+      "official_sources": [
+        "https://slsa.tn.gov.in/",
+        "https://www.tncourts.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-009",
+      "title": "Maintenance and Welfare of Senior Citizens Act - TN Enforcement",
+      "category": "Senior Citizen Safety & Financial Maintenance",
+      "description": "Speedy legal protection mechanism for senior citizens and elderly women to claim monthly financial maintenance and revoke property transfers made under coercion.",
+      "rights": [
+        "Right to monthly financial maintenance up to ₹10,000 from adult children/heirs",
+        "Right to cancel property gift or transfer deed if children fail to provide basic care",
+        "Right to speedy disposal of maintenance applications within 90 days by RDO Tribunal"
+      ],
+      "steps": [
+        "Submit an application to the Senior Citizens Maintenance Tribunal headed by RDO",
+        "Attend conciliation proceedings organized by the Tribunal",
+        "Obtain a binding maintenance or property cancellation order"
+      ],
+      "support_organizations": [
+        "Revenue Divisional Officer (RDO) Tribunals TN",
+        "Elder Line Senior Citizen Helpline TN",
+        "Social Welfare Department TN"
+      ],
+      "helpline": "14567 (Elder Line National Helpline for Senior Citizens)",
+      "official_sources": [
+        "https://www.tnsocialwelfare.tn.gov.in/"
+      ]
+    },
+    {
+      "id": "LEG-TN-010",
+      "title": "Free Legal Aid & Representation Services (TNSLSA Tamil Nadu)",
+      "category": "Legal Aid & Access to Justice",
+      "description": "Guarantees free legal advocate services, court fee exemption, and Lok Adalat dispute resolution for women, children, SC/ST, and low-income citizens across Tamil Nadu.",
+      "rights": [
+        "Right to free legal representation by panel advocates in any civil, criminal, or family court for women",
+        "Exemption from court fees, process fees, and witness expenses",
+        "Right to resolve disputes amicably through Lok Adalats without appeal fees"
+      ],
+      "steps": [
+        "Visit the District Legal Services Authority (DLSA) office located in District Court campus",
+        "Fill a simple free legal aid application form with identity proof",
+        "A panel advocate will be assigned by DLSA to handle your case free of charge"
+      ],
+      "support_organizations": [
+        "Tamil Nadu State Legal Services Authority (TNSLSA)",
+        "High Court Legal Services Committee Chennai / Madurai Bench",
+        "District Legal Services Authorities (DLSA)"
+      ],
+      "helpline": "15100 (Legal Aid Helpline TN) / 044-25342834",
+      "official_sources": [
+        "https://slsa.tn.gov.in/",
+        "https://hclsc.tn.gov.in/"
+      ]
+    }
+  ]
+}

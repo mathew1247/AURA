@@ -335,4 +335,261 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 
+  // --- Government Schemes Dynamic Fetch & Modal Handler ---
+  let tnSchemesData = [];
+
+  // Fetch TN Schemes JSON
+  fetch('tamil_nadu_schemes.json')
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.schemes) {
+        tnSchemesData = data.schemes;
+        console.log('Loaded TN Schemes:', tnSchemesData.length);
+      }
+    })
+    .catch(err => console.error('Error loading tamil_nadu_schemes.json:', err));
+
+  const schemeDetailModal = document.getElementById('schemeDetailModal');
+  const schemeModalCloseBtn = document.getElementById('schemeModalCloseBtn');
+  const schemeModalCancelBtn = document.getElementById('schemeModalCancelBtn');
+  const schemeModalBadge = document.getElementById('schemeModalBadge');
+  const schemeModalTitle = document.getElementById('schemeModalTitle');
+  const schemeModalSub = document.getElementById('schemeModalSub');
+  const schemeModalDesc = document.getElementById('schemeModalDesc');
+  const schemeModalBenefits = document.getElementById('schemeModalBenefits');
+  const schemeModalEligibility = document.getElementById('schemeModalEligibility');
+  const schemeModalDocs = document.getElementById('schemeModalDocs');
+  const schemeModalProcess = document.getElementById('schemeModalProcess');
+  const schemeOfficialRegisterBtn = document.getElementById('schemeOfficialRegisterBtn');
+
+  function openSchemeModal(scheme) {
+    if (!schemeDetailModal) return;
+    
+    schemeModalBadge.textContent = scheme.Category || 'Government Scheme';
+    schemeModalTitle.textContent = scheme.Name || 'Scheme Details';
+    schemeModalSub.textContent = `Govt. of Tamil Nadu • ${scheme['Government Level'] || 'State'} Level`;
+    schemeModalDesc.textContent = scheme.Description || '';
+    
+    // Render Benefits List
+    schemeModalBenefits.innerHTML = '';
+    if (scheme.Benefits && Array.isArray(scheme.Benefits)) {
+      scheme.Benefits.forEach(b => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${b}</span>`;
+        schemeModalBenefits.appendChild(li);
+      });
+    }
+
+    // Render Eligibility Grid
+    schemeModalEligibility.innerHTML = '';
+    if (scheme.Eligibility && typeof scheme.Eligibility === 'object') {
+      Object.entries(scheme.Eligibility).forEach(([key, val]) => {
+        const div = document.createElement('div');
+        div.className = 'eligibility-item';
+        div.innerHTML = `<span class="eligibility-label">${key}</span><span class="eligibility-val">${val}</span>`;
+        schemeModalEligibility.appendChild(div);
+      });
+    }
+
+    // Render Documents Checklist
+    schemeModalDocs.innerHTML = '';
+    if (scheme.Documents && Array.isArray(scheme.Documents)) {
+      scheme.Documents.forEach(doc => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fa-solid fa-file-check"></i> <span>${doc}</span>`;
+        schemeModalDocs.appendChild(li);
+      });
+    }
+
+    // Process & URL
+    schemeModalProcess.textContent = scheme['Application Process'] || 'Apply online via the official portal.';
+    schemeOfficialRegisterBtn.setAttribute('href', scheme['Official URL'] || '#');
+
+    schemeDetailModal.classList.add('active');
+  }
+
+  function closeSchemeModal() {
+    if (schemeDetailModal) schemeDetailModal.classList.remove('active');
+  }
+
+  if (schemeModalCloseBtn) schemeModalCloseBtn.addEventListener('click', closeSchemeModal);
+  if (schemeModalCancelBtn) schemeModalCancelBtn.addEventListener('click', closeSchemeModal);
+  if (schemeDetailModal) {
+    schemeDetailModal.addEventListener('click', (e) => {
+      if (e.target === schemeDetailModal) closeSchemeModal();
+    });
+  }
+
+  // --- Show Schemes View in Main Dashboard ---
+  function showGovernmentSchemesView() {
+    const mainContent = document.querySelector('.dashboard-content');
+    if (!mainContent) return;
+
+    let schemesSection = document.getElementById('govSchemesSectionView');
+    if (!schemesSection) {
+      schemesSection = document.createElement('section');
+      schemesSection.id = 'govSchemesSectionView';
+      schemesSection.className = 'section-container';
+      
+      const sectionHeader = `
+        <div class="section-header">
+          <div class="section-title-box">
+            <h2 class="section-title">Government Schemes & Welfare Initiatives</h2>
+            <span class="section-subtitle-tag" style="color: var(--text-muted); font-size: 13px;">Financial aid, higher education assurance, and self-employment subsidies in Tamil Nadu</span>
+          </div>
+        </div>
+        <div class="schemes-grid" id="schemesGridTrack"></div>
+      `;
+      schemesSection.innerHTML = sectionHeader;
+      
+      const recSection = document.querySelector('.section-container');
+      if (recSection && recSection.parentNode) {
+        recSection.parentNode.insertBefore(schemesSection, recSection.nextSibling);
+      } else {
+        mainContent.appendChild(schemesSection);
+      }
+    }
+
+    schemesSection.scrollIntoView({ behavior: 'smooth' });
+
+    const gridTrack = document.getElementById('schemesGridTrack');
+    if (!gridTrack) return;
+    gridTrack.innerHTML = '';
+
+    const listToRender = tnSchemesData.length > 0 ? tnSchemesData : [
+      {
+        id: 'tn-pudhumai-penn',
+        Name: 'Pudhumai Penn Scheme',
+        Description: 'Financial assistance scheme providing ₹1,000 monthly aid to female students from TN Govt schools pursuing higher education.',
+        Category: 'Education & Women Empowerment',
+        'Government Level': 'State',
+        Benefits: ['Monthly ₹1,000 direct bank deposit until degree completion.'],
+        Eligibility: { Gender: 'Female', 'School Education': 'Govt School (Class 6-12)' },
+        Documents: ['Aadhaar Card', 'School Study Certificate', 'Bank Passbook'],
+        'Official URL': 'https://penkalvi.tn.gov.in/'
+      }
+    ];
+
+    listToRender.forEach(scheme => {
+      const card = document.createElement('div');
+      card.className = 'scheme-card';
+      
+      let benefitText = '₹1,000 / month';
+      if (scheme.Benefits && scheme.Benefits.length > 0) {
+        const firstB = scheme.Benefits[0];
+        if (firstB.includes('₹')) {
+          const match = firstB.match(/₹[\d,]+/);
+          if (match) benefitText = match[0];
+        } else if (firstB.toLowerCase().includes('subsidy')) {
+          benefitText = 'Financial Subsidy';
+        }
+      }
+
+      card.innerHTML = `
+        <div class="scheme-card-header">
+          <div class="scheme-provider-badge">
+            <div class="scheme-avatar-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="scheme-provider-info">
+              <span class="scheme-provider-name">Govt. of Tamil Nadu</span>
+              <span class="scheme-posted-time">State Scheme • Active 2026</span>
+            </div>
+          </div>
+          <button class="scheme-save-btn" title="Save Scheme">
+            <i class="fa-regular fa-bookmark"></i> Save
+          </button>
+        </div>
+
+        <div class="scheme-card-body">
+          <h3 class="scheme-card-title">${scheme.Name}</h3>
+          <p class="scheme-card-short-desc">${scheme.Description}</p>
+          <div class="scheme-chips-row">
+            <span class="scheme-chip-tag">${scheme.Category || 'Welfare'}</span>
+            <span class="scheme-chip-tag">${scheme.Eligibility?.Gender || 'Women'}</span>
+            <span class="scheme-chip-tag">Tamil Nadu</span>
+          </div>
+        </div>
+
+        <div class="scheme-card-footer">
+          <div class="scheme-benefit-highlight">
+            <span class="benefit-sub">Direct Benefit / Aid</span>
+            <span class="benefit-amount">${benefitText}</span>
+          </div>
+          <button class="btn-view-scheme-details" data-scheme-id="${scheme.id}">
+            View Details
+          </button>
+        </div>
+      `;
+
+      const saveBtn = card.querySelector('.scheme-save-btn');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          saveBtn.classList.toggle('saved');
+          if (saveBtn.classList.contains('saved')) {
+            saveBtn.innerHTML = `<i class="fa-solid fa-bookmark"></i> Saved`;
+          } else {
+            saveBtn.innerHTML = `<i class="fa-regular fa-bookmark"></i> Save`;
+          }
+        });
+      }
+
+      const viewBtn = card.querySelector('.btn-view-scheme-details');
+      if (viewBtn) {
+        viewBtn.addEventListener('click', () => {
+          openSchemeModal(scheme);
+        });
+      }
+
+      gridTrack.appendChild(card);
+    });
+  }
+
+  // --- Attach Triggers to Navigation & Recommendation Cards ---
+  sidebarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const viewName = item.getAttribute('data-view');
+      if (viewName === 'gov-schemes') {
+        showGovernmentSchemesView();
+      }
+    });
+  });
+
+  topNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const tabName = item.getAttribute('data-tab');
+      if (tabName === 'opportunities') {
+        showGovernmentSchemesView();
+      }
+    });
+  });
+
+  recCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const cardId = card.getAttribute('data-card-id');
+      if (cardId === 'sukanya') {
+        const sukanyaScheme = tnSchemesData.find(s => s.id.includes('sukanya') || s.Name.includes('Sukanya')) || {
+          Name: 'Sukanya Samriddhi Yojana (SSY)',
+          Description: 'Government backed small savings scheme for the financial security and higher education of the girl child with high 8.2% interest rate.',
+          Category: 'Financial Security & Girl Child Welfare',
+          'Government Level': 'Central / State',
+          Benefits: ['8.2% per annum compounding interest rate.', 'Triple Tax Exemption under Section 80C.'],
+          Eligibility: { 'Target Beneficiary': 'Girl Child below 10 years', Account: 'Opened by parent/legal guardian' },
+          Documents: ['Girl Child Birth Certificate', 'Guardian Aadhaar Card & PAN', 'Address Proof'],
+          'Application Process': 'Apply at any authorized Post Office or public/private bank across Tamil Nadu.',
+          'Official URL': 'https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx'
+        };
+        openSchemeModal(sukanyaScheme);
+      }
+    });
+  });
+
+  promptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const promptText = chip.getAttribute('data-prompt');
+      if (promptText && promptText.includes('schemes')) {
+        showGovernmentSchemesView();
+      }
+    });
+  });
+
 });

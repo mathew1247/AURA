@@ -30,8 +30,6 @@
         <li><a class="nav-item" href="#" data-tab="opportunities">Opportunities</a></li>
         <li><a class="nav-item" href="#" data-tab="learn">Learn</a></li>
         <li><a class="nav-item" href="#" data-tab="support">Support</a></li>
-        <li><a class="nav-item" href="#" data-tab="community">Community</a></li>
-        <li><a class="nav-item" href="#" data-tab="profile">Profile</a></li>
       </ul>
 
       <!-- Right Actions: Notifications & User Profile -->
@@ -54,8 +52,11 @@
 
       <!-- Left Sidebar Navigation -->
       <aside class="sidebar">
-        <!-- Brand Title -->
-        <div class="brand-logo">EMPOWHER</div>
+        <!-- Brand Logo & Title -->
+        <div class="brand-logo">
+          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-text">EMPOWHER</span>
+        </div>
 
         <!-- Top Menu Items -->
         <div class="menu-section">
@@ -121,36 +122,6 @@
           <a class="menu-item" href="#" data-view="ngos">
             <i class="fa-solid fa-hand-holding-heart"></i>
             <span>NGOs</span>
-          </a>
-        </div>
-
-        <!-- Section 4: COMMUNITY -->
-        <div class="menu-section">
-          <div class="section-label">COMMUNITY</div>
-          <a class="menu-item" href="#" data-view="peer-groups">
-            <i class="fa-solid fa-people-group"></i>
-            <span>Peer Groups</span>
-          </a>
-          <a class="menu-item" href="#" data-view="mentorship">
-            <i class="fa-solid fa-user-graduate"></i>
-            <span>Mentorship</span>
-          </a>
-          <a class="menu-item" href="#" data-view="success-stories">
-            <i class="fa-solid fa-star"></i>
-            <span>Success Stories</span>
-          </a>
-        </div>
-
-        <!-- Section 5: PROFILE -->
-        <div class="menu-section">
-          <div class="section-label">PROFILE</div>
-          <a class="menu-item" href="#" data-view="documents">
-            <i class="fa-solid fa-folder"></i>
-            <span>Documents</span>
-          </a>
-          <a class="menu-item" href="#" data-view="applications">
-            <i class="fa-solid fa-file-signature"></i>
-            <span>Applications</span>
           </a>
         </div>
       </aside>
@@ -358,6 +329,56 @@
         </section>
 
       </main>
+    </div>
+  </div>
+
+  <!-- Detailed Scheme Popup Modal -->
+  <div class="modal-overlay" id="schemeDetailModal">
+    <div class="modal-card scheme-detail-card">
+      <button class="modal-close-btn" id="schemeModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="modal-scheme-header">
+        <div class="modal-scheme-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" id="schemeModalBadge">Government Scheme</span>
+          <h2 class="modal-scheme-title" id="schemeModalTitle">Pudhumai Penn Scheme</h2>
+          <span class="modal-scheme-sub" id="schemeModalSub">Govt. of Tamil Nadu • State Level</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body">
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-circle-info"></i> About Scheme</h4>
+          <p id="schemeModalDesc">Scheme description details will load here...</p>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-gift"></i> Key Benefits</h4>
+          <ul class="modal-benefits-list" id="schemeModalBenefits"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-user-check"></i> Eligibility Criteria</h4>
+          <div class="modal-eligibility-grid" id="schemeModalEligibility"></div>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-file-shield"></i> Documents Required</h4>
+          <ul class="modal-docs-list" id="schemeModalDocs"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-clipboard-list"></i> Application Process</h4>
+          <p id="schemeModalProcess">Online application via official state portal.</p>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer">
+        <button class="btn-modal-cancel" id="schemeModalCancelBtn">Close</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" id="schemeOfficialRegisterBtn">
+          Register on Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
     </div>
   </div>
 

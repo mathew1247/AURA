@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Profile Menu Click to re-run Onboarding Journey
+  const profileMenuBtn = document.getElementById('profileMenuBtn');
+  if (profileMenuBtn) {
+    profileMenuBtn.title = 'Click to update your onboarding profile';
+    profileMenuBtn.style.cursor = 'pointer';
+    profileMenuBtn.addEventListener('click', () => {
+      if (confirm('Would you like to edit your onboarding profile?')) {
+        window.location.href = 'onboarding.html';
+      }
+    });
+  }
+
   // --- Element References ---
   const topNavItems = document.querySelectorAll('.nav-item');
   const sidebarItems = document.querySelectorAll('.menu-item');

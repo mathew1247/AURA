@@ -3,155 +3,478 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EMPOWHER - Choose Your Journey</title>
+  <title>EMPOWHER - Your Interactive Onboarding Journey</title>
   
-  <!-- FontAwesome Icons CDN -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom CSS Design System -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Custom Onboarding Stylesheet -->
+  <link rel="stylesheet" href="onboarding.css">
 </head>
-<body class="onboarding-body">
+<body class="onboarding-page">
 
-  <!-- STEP 1: STATUS SELECTION VIEW -->
-  <div class="onboarding-wrapper" id="stepStatusView">
-    <!-- Brand Logo Header -->
-    <div class="onboarding-brand">EMPOWHER</div>
+  <div class="onboarding-app">
 
-    <!-- Onboarding Text Header -->
-    <div class="onboarding-header">
-      <h1 class="onboarding-title">Where are you in your journey?</h1>
-      <p class="onboarding-subtitle">Choose your current situation so we can personalize your Empowher experience.</p>
-    </div>
+    <!-- TOP NAVBAR -->
+    <header class="onboarding-topbar">
+      <a href="#" class="brand-wrapper">
+        <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="brand-name">EMPOW<span>HER</span></div>
+      </a>
 
-    <!-- 3 Selection Cards Grid -->
-    <div class="onboarding-cards-grid">
-      <!-- Card 1: Student -->
-      <div class="status-card" data-status="student">
-        <div class="status-card-top">
-          <div class="status-icon-wrapper">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div class="status-check-badge">
-            <i class="fa-solid fa-circle-check"></i>
-          </div>
-        </div>
-        <div class="status-card-content">
-          <h3 class="status-title">Student</h3>
-          <p class="status-desc">Currently pursuing education</p>
+      <div class="top-progress-container">
+        <span class="progress-text-box" id="progressText">STEP 1 OF 14</span>
+        <div class="progress-track">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
         </div>
       </div>
+    </header>
 
-      <!-- Card 2: Employed -->
-      <div class="status-card" data-status="employed">
-        <div class="status-card-top">
-          <div class="status-icon-wrapper">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <div class="status-check-badge">
-            <i class="fa-solid fa-circle-check"></i>
-          </div>
-        </div>
-        <div class="status-card-content">
-          <h3 class="status-title">Employed</h3>
-          <p class="status-desc">Currently working</p>
-        </div>
-      </div>
+    <!-- MAIN SPLIT STAGE -->
+    <main class="onboarding-stage">
 
-      <!-- Card 3: Looking for Work -->
-      <div class="status-card" data-status="looking_for_work">
-        <div class="status-card-top">
-          <div class="status-icon-wrapper">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <div class="status-check-badge">
-            <i class="fa-solid fa-circle-check"></i>
+      <!-- LEFT PANEL: GUIDE CHARACTER & SPEECH BUBBLE -->
+      <aside class="character-panel">
+        <div class="bg-glow-orb"></div>
+
+        <!-- Dynamic Speech Bubble -->
+        <div class="speech-bubble" id="characterSpeechBubble">
+          Hi! I'm your Empowher Guide. Let's start by choosing where you are right now! ✨
+        </div>
+
+        <!-- Guide Character & Orbiting Badges -->
+        <div class="character-display-wrapper">
+          <img src="assets/guide_character.png" alt="Empowher Guide" class="guide-img" id="guideCharacterImg">
+          <div class="orbit-skills-container" id="orbitSkillsContainer">
+            <!-- Dynamic Floating Skill Badges will render here -->
           </div>
         </div>
-        <div class="status-card-content">
-          <h3 class="status-title">Looking for Work</h3>
-          <p class="status-desc">Currently seeking employment</p>
+
+        <!-- Character Badge Footer -->
+        <div class="character-env-footer">
+          <i class="fa-solid fa-sparkles"></i>
+          <span id="envFooterText">Your Journey Starts Here</span>
         </div>
-      </div>
-    </div>
+      </aside>
 
-    <!-- Footer Action -->
-    <div class="onboarding-footer">
-      <button class="btn-primary-red btn-continue disabled" id="continueBtn" disabled>
-        <span>Continue</span>
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
+      <!-- RIGHT PANEL: INTERACTIVE QUESTIONS & CONTROLS -->
+      <section class="content-panel">
 
+        <!-- ================= STEP 0: WELCOME ================= -->
+        <div class="step-container active" id="step0">
+          <span class="step-badge"><i class="fa-solid fa-compass"></i> Welcome</span>
+          <h1 class="step-title">Let's build your future.</h1>
+          <p class="step-subtitle">
+            Tell us a little about yourself. We'll use it to discover opportunities, skills, courses, government schemes and support made specially for you.
+          </p>
 
-  <!-- STEP 2: CONDITIONAL PROFILE FORM VIEW -->
-  <div class="onboarding-wrapper profile-form-wrapper" id="stepFormView" style="display: none;">
-    <!-- Top Navigation Header -->
-    <div class="form-nav-header">
-      <button class="btn-back" id="backToStatusBtn">
-        <i class="fa-solid fa-arrow-left"></i> Back
-      </button>
-      <div class="onboarding-brand">EMPOWHER</div>
-      <div class="step-badge">Step 1 of 1</div>
-    </div>
-
-    <!-- Main Profile Card Container -->
-    <div class="profile-card-container">
-      
-      <!-- Dynamic Title & Subtitle Header -->
-      <div class="form-header-box">
-        <h1 class="form-main-title" id="formTitle">Tell us about your education</h1>
-        <p class="form-main-subtitle" id="formSubtitle">Help us understand where you are today so we can personalize your Empowher journey.</p>
-      </div>
-
-      <!-- Dynamic Form Container -->
-      <form id="profileForm" novalidate>
-        <div id="dynamicFormFields">
-          <!-- Populated by onboarding.js based on userStatus -->
+          <div style="background: #FFF5F7; border: 1px solid #FFCDD2; padding: 20px; border-radius: 16px; margin-top: 10px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <i class="fa-solid fa-gamepad" style="font-size: 28px; color: var(--color-primary);"></i>
+              <div>
+                <h4 style="font-size: 16px; font-weight: 700;">Interactive Journey Mode</h4>
+                <p style="font-size: 13px; color: var(--text-secondary);">Takes about 2–3 minutes to unlock your personalized dashboard.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-actions">
-          <button type="submit" class="btn-primary-red btn-submit-profile" id="submitProfileBtn">
-            <span>Create My Profile</span>
-            <i class="fa-solid fa-arrow-right"></i>
+        <!-- ================= STEP 1: STATUS SELECTION (FIRST CHOICE) ================= -->
+        <div class="step-container" id="step1">
+          <span class="step-badge"><i class="fa-solid fa-user-gear"></i> Current Status</span>
+          <h1 class="step-title">Where are you right now?</h1>
+          <p class="step-subtitle">Choose your current situation so we can tailor every step specifically for you.</p>
+
+          <div class="cards-grid cols-2" id="statusGrid">
+            <div class="choice-card selected" data-status="student">
+              <div class="choice-icon-box">🎓</div>
+              <div class="choice-title">Student</div>
+              <div class="choice-desc">Currently studying or preparing for graduation</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+
+            <div class="choice-card" data-status="employed">
+              <div class="choice-icon-box">💼</div>
+              <div class="choice-title">Employed</div>
+              <div class="choice-desc">Currently working in a company or organization</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+
+            <div class="choice-card" data-status="unemployed">
+              <div class="choice-icon-box">🔎</div>
+              <div class="choice-title">Unemployed</div>
+              <div class="choice-desc">Looking for work or preparing for a career restart</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+
+            <div class="choice-card" data-status="entrepreneur">
+              <div class="choice-icon-box">🚀</div>
+              <div class="choice-title">Entrepreneur</div>
+              <div class="choice-desc">Building or running a business or startup</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 2: NAME ================= -->
+        <div class="step-container" id="step2">
+          <span class="step-badge"><i class="fa-solid fa-id-card"></i> Personalization</span>
+          <h1 class="step-title">First, what should we call you?</h1>
+          <p class="step-subtitle">This will be used to personalize your Empowher journey and assistant.</p>
+
+          <div class="large-input-wrapper">
+            <input type="text" id="nameInput" class="large-input" placeholder="e.g. Ananya" value="Ananya" autocomplete="given-name">
+          </div>
+        </div>
+
+        <!-- ================= STEP 3: AGE ================= -->
+        <div class="step-container" id="step3">
+          <span class="step-badge"><i class="fa-solid fa-cake-candles"></i> Age</span>
+          <h1 class="step-title">How old are you?</h1>
+          <p class="step-subtitle">Drag the slider or use +/- to set your current age.</p>
+
+          <div class="age-selector-box">
+            <div class="age-display-counter" id="ageDisplay">21</div>
+            <div class="age-controls-row">
+              <button type="button" class="age-btn" id="ageMinusBtn"><i class="fa-solid fa-minus"></i></button>
+              <input type="range" id="ageSlider" class="age-slider" min="18" max="60" value="21">
+              <button type="button" class="age-btn" id="agePlusBtn"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 4: LOCATION ================= -->
+        <div class="step-container" id="step4">
+          <span class="step-badge"><i class="fa-solid fa-location-dot"></i> Location</span>
+          <h1 class="step-title">Where are you based?</h1>
+          <p class="step-subtitle">We use your location to find state-specific government schemes and regional jobs.</p>
+
+          <div class="location-box">
+            <div class="location-options-row">
+              <button type="button" class="btn-loc-choice active" id="btnAutoLoc">
+                <i class="fa-solid fa-crosshairs"></i> Use My Location
+              </button>
+              <button type="button" class="btn-loc-choice" id="btnManualLoc">
+                <i class="fa-solid fa-pen"></i> Choose Manually
+              </button>
+            </div>
+
+            <div class="form-row-2">
+              <div>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">State</label>
+                <select id="stateSelect" class="select-custom">
+                  <option value="Tamil Nadu" selected>Tamil Nadu</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">City / District</label>
+                <input type="text" id="cityInput" class="select-custom" value="Chennai" placeholder="e.g. Chennai">
+              </div>
+            </div>
+
+            <div class="selected-loc-badge" id="locDisplayBadge">
+              <i class="fa-solid fa-map-pin"></i> 📍 Tamil Nadu • Chennai
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 5: DYNAMIC STATUS-SPECIFIC FORM ================= -->
+        <div class="step-container" id="step5">
+          <!-- Populated dynamically based on selected status (Student, Employed, Unemployed, Entrepreneur) -->
+          <div id="dynamicStatusFormContent"></div>
+        </div>
+
+        <!-- ================= STEP 6: SKILL TREE ================= -->
+        <div class="step-container" id="step6">
+          <span class="step-badge"><i class="fa-solid fa-network-wired"></i> Skill Tree</span>
+          <h1 class="step-title">Build your skill tree.</h1>
+          <p class="step-subtitle">Click once for "I know this" (✓), click twice for "I'm learning this" (◐).</p>
+
+          <div class="skill-tree-wrapper" id="skillTreeContainer">
+            <!-- Populated dynamically by onboarding.js -->
+          </div>
+        </div>
+
+        <!-- ================= STEP 7: CAREER GOAL (QUEST SELECTION) ================= -->
+        <div class="step-container" id="step7">
+          <span class="step-badge"><i class="fa-solid fa-flag-checkered"></i> Next Quest</span>
+          <h1 class="step-title">What's your next quest?</h1>
+          <p class="step-subtitle">Select your top goals on Empowher.</p>
+
+          <div class="cards-grid cols-2" id="questGrid">
+            <div class="choice-card selected" data-quest="Find a Job">
+              <div class="choice-icon-box">💼</div>
+              <div class="choice-title">Find a Job</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-quest="Get an Internship">
+              <div class="choice-icon-box">🚀</div>
+              <div class="choice-title">Get an Internship</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-quest="Learn New Skills">
+              <div class="choice-icon-box">🧠</div>
+              <div class="choice-title">Learn New Skills</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-quest="Get Certified">
+              <div class="choice-icon-box">🏆</div>
+              <div class="choice-title">Get Certified</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-quest="Prepare for Higher Studies">
+              <div class="choice-icon-box">🎓</div>
+              <div class="choice-title">Prepare for Higher Studies</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-quest="Start a Business">
+              <div class="choice-icon-box">💡</div>
+              <div class="choice-title">Start a Business</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 8: TARGET CAREER ================= -->
+        <div class="step-container" id="step8">
+          <span class="step-badge"><i class="fa-solid fa-bullseye"></i> Target Role</span>
+          <h1 class="step-title">What do you want to become?</h1>
+          <p class="step-subtitle">Choose your target career path.</p>
+
+          <div class="chips-cloud" id="targetRoleGrid">
+            <div class="tag-chip selected" data-role="Data Analyst">📊 Data Analyst</div>
+            <div class="tag-chip" data-role="Software Developer">💻 Software Developer</div>
+            <div class="tag-chip" data-role="Business Analyst">📈 Business Analyst</div>
+            <div class="tag-chip" data-role="UI/UX Designer">🎨 UI/UX Designer</div>
+            <div class="tag-chip" data-role="ML Engineer">🤖 ML Engineer</div>
+            <div class="tag-chip" data-role="Cybersecurity Analyst">🔐 Cybersecurity Analyst</div>
+            <div class="tag-chip" data-role="Digital Marketer">📱 Digital Marketer</div>
+            <div class="tag-chip" data-role="Financial Analyst">💰 Financial Analyst</div>
+            <div class="tag-chip" data-role="Not sure yet">🌟 Not sure yet</div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 9: WORK PREFERENCES ================= -->
+        <div class="step-container" id="step9">
+          <span class="step-badge"><i class="fa-solid fa-building"></i> Work Style</span>
+          <h1 class="step-title">Where would you like to work?</h1>
+          <p class="step-subtitle">Select preferred location types and work modes.</p>
+
+          <div class="cards-grid cols-2" id="workLocGrid">
+            <div class="choice-card selected" data-loc="Remote">
+              <div class="choice-icon-box">🌐</div>
+              <div class="choice-title">Remote</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card selected" data-loc="Same State">
+              <div class="choice-icon-box">🏙️</div>
+              <div class="choice-title">Same State</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-loc="Nearby">
+              <div class="choice-icon-box">📍</div>
+              <div class="choice-title">Nearby</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-loc="Anywhere in India">
+              <div class="choice-icon-box">🇮🇳</div>
+              <div class="choice-title">Anywhere in India</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 10: FINANCIAL ELIGIBILITY ================= -->
+        <div class="step-container" id="step10">
+          <span class="step-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Support Eligibility</span>
+          <h1 class="step-title">Help us find support you're eligible for.</h1>
+          <p class="step-subtitle">What is your approximate annual household income?</p>
+
+          <div class="cards-grid cols-3" id="incomeGrid">
+            <div class="choice-card" data-inc="Under ₹1 Lakh">
+              <div class="choice-title">Under ₹1 Lakh</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card selected" data-inc="₹1–3 Lakh">
+              <div class="choice-title">₹1–3 Lakh</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-inc="₹3–5 Lakh">
+              <div class="choice-title">₹3–5 Lakh</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-inc="₹5–10 Lakh">
+              <div class="choice-title">₹5–10 Lakh</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-inc="Above ₹10 Lakh">
+              <div class="choice-title">Above ₹10 Lakh</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-inc="Prefer not to say">
+              <div class="choice-title">Prefer not to say</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 11: LEARNING PREFERENCES ================= -->
+        <div class="step-container" id="step11">
+          <span class="step-badge"><i class="fa-solid fa-book-open"></i> Learning Mode</span>
+          <h1 class="step-title">How do you like to learn?</h1>
+          <p class="step-subtitle">Tell us your study preference and time commitment.</p>
+
+          <div class="cards-grid cols-3" id="learningFormatGrid">
+            <div class="choice-card selected" data-fmt="Interactive">
+              <div class="choice-icon-box">💻</div>
+              <div class="choice-title">Interactive</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-fmt="Video">
+              <div class="choice-icon-box">🎥</div>
+              <div class="choice-title">Video</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-fmt="Hands-on">
+              <div class="choice-icon-box">🧪</div>
+              <div class="choice-title">Hands-on</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 12: SUPPORT INTERESTS ================= -->
+        <div class="step-container" id="step12">
+          <span class="step-badge"><i class="fa-solid fa-heart"></i> Ecosystem Support</span>
+          <h1 class="step-title">What kind of support would help you most?</h1>
+          <p class="step-subtitle">Select all services you'd like on your dashboard.</p>
+
+          <div class="cards-grid cols-3" id="supportGrid">
+            <div class="choice-card selected" data-sup="Government Schemes">
+              <div class="choice-icon-box">🏛️</div>
+              <div class="choice-title">Government Schemes</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card selected" data-sup="Jobs">
+              <div class="choice-icon-box">💼</div>
+              <div class="choice-title">Jobs</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card selected" data-sup="Certifications">
+              <div class="choice-icon-box">🏆</div>
+              <div class="choice-title">Certifications</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-sup="Financial Support">
+              <div class="choice-icon-box">💰</div>
+              <div class="choice-title">Financial Support</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-sup="Legal Support">
+              <div class="choice-icon-box">⚖️</div>
+              <div class="choice-title">Legal Support</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+            <div class="choice-card" data-sup="Mentorship">
+              <div class="choice-icon-box">🧑‍🏫</div>
+              <div class="choice-title">Mentorship</div>
+              <i class="fa-solid fa-circle-check choice-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 13: AI ANALYSIS ================= -->
+        <div class="step-container" id="step13">
+          <div class="ai-analysis-box">
+            <div class="ai-orbit-spinner">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 6px;">Building your Empowher journey...</h2>
+              <p style="font-size: 14px; color: var(--text-secondary);">Matching eligible schemes, jobs, courses, and certifications.</p>
+            </div>
+
+            <div class="ai-checklist">
+              <div class="ai-check-item" id="aiItem1"><i class="fa-solid fa-circle-notch fa-spin"></i> Analyzing profile parameters...</div>
+              <div class="ai-check-item" id="aiItem2"><i class="fa-regular fa-circle"></i> Matching Tamil Nadu schemes...</div>
+              <div class="ai-check-item" id="aiItem3"><i class="fa-regular fa-circle"></i> Identifying job opportunities...</div>
+              <div class="ai-check-item" id="aiItem4"><i class="fa-regular fa-circle"></i> Mapping skill gap courses...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= STEP 14: JOURNEY COMPLETE ================= -->
+        <div class="step-container" id="step14">
+          <span class="step-badge" style="background: #E6F9F5; color: #00B894;"><i class="fa-solid fa-party-horn"></i> Journey Unlocked</span>
+          <h1 class="step-title">Your Empowher journey is ready! 🎉</h1>
+          <p class="step-subtitle">Here is your tailored profile summary and unlocked matches.</p>
+
+          <div class="summary-result-box">
+            <div class="summary-user-header">
+              <div class="user-avatar-placeholder" id="summaryAvatar">A</div>
+              <div>
+                <h3 style="font-size: 18px; font-weight: 800;" id="summaryName">Ananya</h3>
+                <p style="font-size: 13px; color: var(--text-secondary);" id="summarySub">Student • B.Sc Computer Science • Chennai</p>
+              </div>
+            </div>
+
+            <div class="stats-count-grid">
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statSchemes">7</div>
+                <div class="stat-label">Schemes</div>
+              </div>
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statJobs">12</div>
+                <div class="stat-label">Jobs</div>
+              </div>
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statCourses">5</div>
+                <div class="stat-label">Courses</div>
+              </div>
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statGaps">2</div>
+                <div class="stat-label">Skill Gaps</div>
+              </div>
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statCerts">3</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+              <div class="stat-metric-card">
+                <div class="stat-num" id="statBenefits">4</div>
+                <div class="stat-label">Benefits</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM NAVIGATION CONTROLS -->
+        <footer class="step-actions-footer">
+          <button type="button" class="btn-nav-back" id="btnBack" disabled>
+            <i class="fa-solid fa-arrow-left"></i> Back
           </button>
-        </div>
-      </form>
-    </div>
+
+          <button type="button" class="btn-nav-continue" id="btnContinue">
+            <span id="btnContinueText">Start My Journey →</span>
+            <i class="fa-solid fa-arrow-right" id="btnContinueIcon"></i>
+          </button>
+        </footer>
+
+      </section>
+    </main>
   </div>
 
+  <!-- Canvas for Celebration Confetti Effects -->
+  <canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999;"></canvas>
 
-  <!-- STEP 3: TRANSITION & BUILDING EXPERIENCE SCREEN -->
-  <div class="onboarding-wrapper transition-wrapper" id="stepTransitionView" style="display: none;">
-    <div class="transition-card">
-      <div class="transition-spinner-box">
-        <div class="empowher-spinner"></div>
-      </div>
-      <h2 class="transition-title">Building your Empowher experience...</h2>
-      <p class="transition-subtitle">We're setting up personalized recommendations and opportunities tailored to your status.</p>
-      
-      <div class="transition-steps">
-        <div class="t-step" id="tStep1">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Profile created</span>
-        </div>
-        <div class="t-step" id="tStep2">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Your goals identified</span>
-        </div>
-        <div class="t-step" id="tStep3">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Opportunities being prepared</span>
-        </div>
-        <div class="t-step" id="tStep4">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>Personalized recommendations coming up</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- JavaScript Application Script -->
   <script src="onboarding.js"></script>
 </body>
 </html>

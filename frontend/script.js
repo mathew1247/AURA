@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userNameElem) {
       userNameElem.textContent = userProfile.basic.name;
     }
-    
+
     const firstBotMsg = document.querySelector('#chatBody .chat-msg.bot');
     if (firstBotMsg) {
       const firstName = userProfile.basic.name.split(' ')[0];
@@ -40,15 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
   // --- Element References ---
   const topNavItems = document.querySelectorAll('.nav-item');
   const sidebarItems = document.querySelectorAll('.menu-item');
   const dockItems = document.querySelectorAll('.dock-item');
-  
+
   const searchInput = document.getElementById('searchInput');
   const recCards = document.querySelectorAll('.rec-card');
-  
+
   const openChatBtn = document.getElementById('openChatBtn');
   const chatDrawer = document.getElementById('chatDrawer');
   const chatCloseBtn = document.getElementById('chatCloseBtn');
@@ -64,34 +63,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
 
-  const heroPrevBtn = document.getElementById('heroPrevBtn');
-  const heroNextBtn = document.getElementById('heroNextBtn');
-
   // --- Card Data Details ---
   const cardData = {
-    sukanya: {
-      badge: 'Government Scheme',
-      title: 'Sukanya Samriddhi Yojana',
+    schemes: {
+      badge: '🏛️ Matched Schemes',
+      title: 'Matched Government Schemes',
       img: 'assets/sukanya_scheme.png',
-      desc: 'A small deposit scheme for the girl child launched as a part of the "Beti Bachao Beti Padhao" campaign. Currently offering a high interest rate of 8.2% per annum with complete tax benefits under Section 80C.'
+      desc: '7 personalized Tamil Nadu government schemes matched for your profile including Pudhumai Penn Scheme (₹1,000/mo), Moovalur Ramamirtham Ammiyar Higher Education Scheme, and UYEGP Self-Employment Subsidies.'
     },
-    webdev: {
-      badge: 'Online Course',
-      title: 'Full-Stack Web Development Course',
+    skillgap: {
+      badge: '🎯 AI Skill Analyzer',
+      title: 'AI Skill Gap Analyzer',
       img: 'assets/web_dev_course.png',
-      desc: 'Master HTML, CSS, JavaScript, React, and Node.js with live mentorship, real-world hands-on projects, portfolio building, and guaranteed career placement assistance.'
+      desc: 'Smart skill audit analyzing your target career role against top market demands. Recommends instant micro-courses in Python, SQL, Excel, and Data Analytics.'
     },
     job: {
-      badge: 'Latest Job Openings',
-      title: 'Find Your Dream Job',
+      badge: '💼 Verified Job Matches',
+      title: 'Female-Friendly Job Matches',
       img: 'assets/dream_job.png',
-      desc: 'Explore curated high-paying job opportunities from top tech companies and organizations supporting diversity, equity, and flexible remote work setups.'
+      desc: '12 new curated job openings from verified inclusive employers offering flexible remote work, equal pay policies, and mentorship.'
     },
     legal: {
-      badge: 'Get Expert Support',
-      title: 'Free Legal Aid & Guidance',
+      badge: '⚖️ 24/7 Helpline',
+      title: '24/7 Free Legal Rights Helpline',
       img: 'assets/legal_help.png',
-      desc: 'Connect with certified female legal counsel and rights advocates for confidential advice on workplace laws, property rights, business contracts, and personal safety.'
+      desc: 'Direct confidential legal assistance covering workplace rights, POSH Act regulations, maternity leave benefits, and equal pay advocacy.'
     }
   };
 
@@ -110,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       sidebarItems.forEach(m => m.classList.remove('active'));
       item.classList.add('active');
-      
+
       const viewName = item.getAttribute('data-view');
       if (viewName === 'ai-assistant') {
         openChat();
@@ -123,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dock.addEventListener('click', () => {
       dockItems.forEach(d => d.classList.remove('active'));
       dock.classList.add('active');
-      
+
       const dockType = dock.getAttribute('data-dock');
       if (dockType === 'bot') {
         openChat();
@@ -131,54 +127,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Card Click Handler for Detail Modal ---
-  recCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const cardId = card.getAttribute('data-card-id');
-      const data = cardData[cardId];
-      if (data) {
-        modalImg.src = data.img;
-        modalBadge.textContent = data.badge;
-        modalTitle.textContent = data.title;
-        modalDesc.textContent = data.desc;
-        detailModal.classList.add('active');
+  // --- Quick Action Power Hub Card Handlers ---
+  const matchedSchemesModal = document.getElementById('matchedSchemesModal');
+  const skillGapModal = document.getElementById('skillGapModal');
+  const jobMatchesModal = document.getElementById('jobMatchesModal');
+  const legalHelplineModal = document.getElementById('legalHelplineModal');
+
+  // --- Dropdown Sub-Item Event Handlers ---
+  const navJobsBtn = document.getElementById('navJobsBtn');
+  const navSkillGapBtn = document.getElementById('navSkillGapBtn');
+  const navLegalBtn = document.getElementById('navLegalBtn');
+  const topOpenChatBtn = document.getElementById('topOpenChatBtn');
+
+  // Card Click Routing Handlers
+  const cardGovSchemes = document.getElementById('cardGovSchemes');
+  const cardJobs = document.getElementById('cardJobs');
+  const cardSkillGaps = document.getElementById('cardSkillGaps');
+  const cardCourses = document.getElementById('cardCourses');
+  const cardLegalSupport = document.getElementById('cardLegalSupport');
+  const cardHealthcare = document.getElementById('cardHealthcare');
+  const compactFinancialCard = document.getElementById('compactFinancialCard');
+  const compactCertificationsCard = document.getElementById('compactCertificationsCard');
+  const seeAllBtn = document.getElementById('seeAllBtn');
+  if (seeAllBtn) seeAllBtn.addEventListener('click', (e) => { e.preventDefault(); if (matchedSchemesModal) matchedSchemesModal.classList.add('active'); });
+
+  if (cardGovSchemes) cardGovSchemes.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (matchedSchemesModal) matchedSchemesModal.classList.add('active'); });
+  if (cardJobs) cardJobs.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (jobMatchesModal) jobMatchesModal.classList.add('active'); });
+
+  document.querySelectorAll('.rec-card, [data-card-id="schemes"]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const cardId = el.getAttribute('data-card-id');
+      if (cardId === 'schemes' || !cardId) {
+        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+      } else if (cardId === 'skillgap') {
+        if (skillGapModal) skillGapModal.classList.add('active');
+      } else if (cardId === 'job') {
+        if (jobMatchesModal) jobMatchesModal.classList.add('active');
+      } else if (cardId === 'legal') {
+        if (legalHelplineModal) legalHelplineModal.classList.add('active');
       }
     });
   });
 
-  modalCloseBtn.addEventListener('click', () => {
-    detailModal.classList.remove('active');
-  });
+  if (compactFinancialCard) compactFinancialCard.addEventListener('click', () => { window.location.href = 'financial_benefits.html'; });
+  
+  if (cardSkillGaps) cardSkillGaps.addEventListener('click', () => { if (skillGapModal) skillGapModal.classList.add('active'); });
+  if (cardCourses) cardCourses.addEventListener('click', () => { alert('📚 Showing 5 AI-Recommended Courses tailored for ' + (userProfile?.goal || 'your goals') + ':\n1. Power BI Complete Bootcamp\n2. Tableau Data Visualization Masterclass\n3. Advanced SQL for Analytics\n4. Python for Data Science\n5. Data Storytelling & Business Insights'); });
+  if (cardLegalSupport) cardLegalSupport.addEventListener('click', () => { if (legalHelplineModal) legalHelplineModal.classList.add('active'); });
+  if (cardHealthcare) cardHealthcare.addEventListener('click', () => { alert('🏥 Local Healthcare & Welfare Resources (Tamil Nadu):\n1. Makkalai Thedi Maruthuvam Doorstep Healthcare\n2. Dr. Muthulakshmi Reddy Maternal Health Assistance\n3. CMCHIS Health Insurance Coverage'); });
+  if (compactCertificationsCard) compactCertificationsCard.addEventListener('click', () => { alert('🏆 Recommended Certifications for ' + (userProfile?.goal || 'your goals') + ':\n1. Google Data Analytics Professional Certificate\n2. Microsoft Certified: Power BI Data Analyst Associate\n3. Tableau Certified Data Analyst'); });
 
-  detailModal.addEventListener('click', (e) => {
-    if (e.target === detailModal) {
-      detailModal.classList.remove('active');
-    }
-  });
+  if (navJobsBtn) navJobsBtn.addEventListener('click', () => { window.location.href = 'jobs.html'; });
+  if (navSkillGapBtn) navSkillGapBtn.addEventListener('click', (e) => { e.preventDefault(); if (skillGapModal) skillGapModal.classList.add('active'); });
+  if (navLegalBtn) navLegalBtn.addEventListener('click', (e) => { e.preventDefault(); if (legalHelplineModal) legalHelplineModal.classList.add('active'); });
+  if (topOpenChatBtn) topOpenChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });entDefault(); openChat(); });
+
+  // Modal Close Control Helpers
+  function setupModalClose(modalElem, closeBtnId, cancelBtnId) {
+    if (!modalElem) return;
+    const closeBtn = document.getElementById(closeBtnId);
+    const cancelBtn = document.getElementById(cancelBtnId);
+
+    if (closeBtn) closeBtn.addEventListener('click', () => modalElem.classList.remove('active'));
+    if (cancelBtn) cancelBtn.addEventListener('click', () => modalElem.classList.remove('active'));
+
+    modalElem.addEventListener('click', (e) => {
+      if (e.target === modalElem) modalElem.classList.remove('active');
+    });
+  }
+
+  setupModalClose(detailModal, 'modalCloseBtn', null);
+  setupModalClose(matchedSchemesModal, 'matchedSchemesCloseBtn', 'matchedSchemesCancelBtn');
+  setupModalClose(skillGapModal, 'skillGapCloseBtn', 'skillGapCancelBtn');
+  setupModalClose(jobMatchesModal, 'jobMatchesCloseBtn', 'jobMatchesCancelBtn');
+  setupModalClose(legalHelplineModal, 'legalHelplineCloseBtn', 'legalHelplineCancelBtn');
 
   // --- AI Chat Drawer Handler ---
   function openChat(initialPrompt = '') {
-    chatDrawer.classList.add('active');
+    if (chatDrawer) chatDrawer.classList.add('active');
     if (initialPrompt) {
       handleUserSendMessage(initialPrompt);
     }
   }
 
   function closeChat() {
-    chatDrawer.classList.remove('active');
+    if (chatDrawer) chatDrawer.classList.remove('active');
   }
 
-  openChatBtn.addEventListener('click', () => openChat());
-  chatCloseBtn.addEventListener('click', closeChat);
+  if (openChatBtn) openChatBtn.addEventListener('click', () => openChat());
+  if (chatCloseBtn) chatCloseBtn.addEventListener('click', closeChat);
 
-  promptChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const prompt = chip.getAttribute('data-prompt');
-      openChat(prompt);
+  if (promptChips) {
+    promptChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const prompt = chip.getAttribute('data-prompt');
+        openChat(prompt);
+      });
     });
-  });
+  }
 
   function appendMessage(sender, text) {
+    if (!chatBody) return;
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
     msgDiv.textContent = text;
@@ -188,23 +239,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Dialogue history array to keep conversation context
   let chatMessages = [
-    { 
-      role: "assistant", 
-      content: `Hello ${(userProfile && userProfile.basic && userProfile.basic.name) ? userProfile.basic.name.split(' ')[0] : 'there'}! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?` 
+    {
+      role: "assistant",
+      content: `Hello ${(userProfile && userProfile.basic && userProfile.basic.name) ? userProfile.basic.name.split(' ')[0] : 'there'}! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?`
     }
   ];
 
   function handleUserSendMessage(overrideText = null) {
-    const text = overrideText || chatInput.value.trim();
+    const text = overrideText || (chatInput ? chatInput.value.trim() : '');
     if (!text) return;
 
     appendMessage('user', text);
     chatMessages.push({ role: "user", content: text });
-    if (!overrideText) chatInput.value = '';
+    if (!overrideText && chatInput) chatInput.value = '';
 
     // Show typing indicator
     const typingIndicator = document.createElement('div');
-    typingIndicator.classList.add('chat-msg', 'bot');
     typingIndicator.style.opacity = '0.7';
     typingIndicator.textContent = "Thinking...";
     chatBody.appendChild(typingIndicator);
@@ -218,21 +268,21 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       body: JSON.stringify({ messages: chatMessages })
     })
-    .then(response => response.json())
-    .then(data => {
-      typingIndicator.remove();
-      if (data.reply && data.reply.content) {
-        chatMessages.push(data.reply);
-        appendMessage('bot', data.reply.content);
-      } else {
-        appendMessage('bot', data.error || "Sorry, I encountered an error. Please try again.");
-      }
-    })
-    .catch(error => {
-      typingIndicator.remove();
-      console.error("Chat API Error:", error);
-      appendMessage('bot', "Could not connect to the assistant server. Make sure the backend is running.");
-    });
+      .then(response => response.json())
+      .then(data => {
+        typingIndicator.remove();
+        if (data.reply && data.reply.content) {
+          chatMessages.push(data.reply);
+          appendMessage('bot', data.reply.content);
+        } else {
+          appendMessage('bot', data.error || "Sorry, I encountered an error. Please try again.");
+        }
+      })
+      .catch(error => {
+        typingIndicator.remove();
+        console.error("Chat API Error:", error);
+        appendMessage('bot', "Could not connect to the assistant server. Make sure the backend is running.");
+      });
   }
 
   chatSendBtn.addEventListener('click', () => handleUserSendMessage());
@@ -245,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Live Search Filter ---
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
-    
+
     recCards.forEach(card => {
       const title = card.querySelector('.card-title').textContent.toLowerCase();
       const subtitle = card.querySelector('.card-subtitle').textContent.toLowerCase();
@@ -282,11 +332,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHeroSlide() {
     const heroTitleElem = document.querySelector('.hero-title');
     const heroSubElem = document.querySelector('.hero-subtitle');
-    
+
     if (heroTitleElem && heroSubElem) {
       heroTitleElem.style.opacity = '0';
       heroSubElem.style.opacity = '0';
-      
+
       setTimeout(() => {
         heroTitleElem.innerHTML = heroTitles[heroIdx].title;
         heroSubElem.innerHTML = heroTitles[heroIdx].subtitle;
@@ -376,12 +426,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openSchemeModal(scheme) {
     if (!schemeDetailModal) return;
-    
+
     schemeModalBadge.textContent = scheme.Category || 'Government Scheme';
     schemeModalTitle.textContent = scheme.Name || 'Scheme Details';
     schemeModalSub.textContent = `Govt. of Tamil Nadu • ${scheme['Government Level'] || 'State'} Level`;
     schemeModalDesc.textContent = scheme.Description || '';
-    
+
     // Render Benefits List
     schemeModalBenefits.innerHTML = '';
     if (scheme.Benefits && Array.isArray(scheme.Benefits)) {
@@ -442,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
       schemesSection = document.createElement('section');
       schemesSection.id = 'govSchemesSectionView';
       schemesSection.className = 'section-container';
-      
+
       const sectionHeader = `
         <div class="section-header">
           <div class="section-title-box">
@@ -453,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="schemes-grid" id="schemesGridTrack"></div>
       `;
       schemesSection.innerHTML = sectionHeader;
-      
+
       const recSection = document.querySelector('.section-container');
       if (recSection && recSection.parentNode) {
         recSection.parentNode.insertBefore(schemesSection, recSection.nextSibling);
@@ -485,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listToRender.forEach(scheme => {
       const card = document.createElement('div');
       card.className = 'scheme-card';
-      
+
       let benefitText = '₹1,000 / month';
       if (scheme.Benefits && scheme.Benefits.length > 0) {
         const firstB = scheme.Benefits[0];
@@ -558,50 +608,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Attach Triggers to Navigation & Recommendation Cards ---
   sidebarItems.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
       const viewName = item.getAttribute('data-view');
       if (viewName === 'gov-schemes') {
-        showGovernmentSchemesView();
+        e.preventDefault();
+        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
       }
     });
   });
 
   topNavItems.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
       const tabName = item.getAttribute('data-tab');
       if (tabName === 'opportunities') {
-        showGovernmentSchemesView();
+        e.preventDefault();
+        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
       }
     });
   });
 
   recCards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const cardId = card.getAttribute('data-card-id');
-      if (cardId === 'sukanya') {
-        const sukanyaScheme = tnSchemesData.find(s => s.id.includes('sukanya') || s.Name.includes('Sukanya')) || {
-          Name: 'Sukanya Samriddhi Yojana (SSY)',
-          Description: 'Government backed small savings scheme for the financial security and higher education of the girl child with high 8.2% interest rate.',
-          Category: 'Financial Security & Girl Child Welfare',
-          'Government Level': 'Central / State',
-          Benefits: ['8.2% per annum compounding interest rate.', 'Triple Tax Exemption under Section 80C.'],
-          Eligibility: { 'Target Beneficiary': 'Girl Child below 10 years', Account: 'Opened by parent/legal guardian' },
-          Documents: ['Girl Child Birth Certificate', 'Guardian Aadhaar Card & PAN', 'Address Proof'],
-          'Application Process': 'Apply at any authorized Post Office or public/private bank across Tamil Nadu.',
-          'Official URL': 'https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx'
-        };
-        openSchemeModal(sukanyaScheme);
+      if (cardId === 'schemes' || !cardId) {
+        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+      } else if (cardId === 'skillgap') {
+        if (skillGapModal) skillGapModal.classList.add('active');
+      } else if (cardId === 'job') {
+        if (jobMatchesModal) jobMatchesModal.classList.add('active');
+      } else if (cardId === 'legal') {
+        if (legalHelplineModal) legalHelplineModal.classList.add('active');
       }
     });
   });
 
   promptChips.forEach(chip => {
-    chip.addEventListener('click', () => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
       const promptText = chip.getAttribute('data-prompt');
       if (promptText && promptText.includes('schemes')) {
-        showGovernmentSchemesView();
+        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+      } else {
+        openChat(promptText);
       }
     });
   });
-
-});

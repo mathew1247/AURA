@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs & Career Matches | EMPOWHER</title>
+  <meta name="description" content="Explore verified female-friendly jobs, inclusive workplaces, remote work setups, and equal pay opportunities in Tamil Nadu.">
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styling for Dedicated Jobs Page */
+    .jobs-hero {
+      background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+      border-radius: var(--radius-hero);
+      padding: 40px 48px;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .jobs-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+    }
+
+    .jobs-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .jobs-hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .jobs-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .jobs-search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .jobs-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 14px;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .jobs-search-input:focus {
+      border-color: #4F46E5;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2);
+    }
+
+    .jobs-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 16px;
+    }
+
+    .jobs-pills-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .jobs-pill {
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .jobs-pill:hover, .jobs-pill.active {
+      background: #4F46E5;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .jobs-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    .job-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: rgba(79, 70, 229, 0.3);
+    }
+
+    .job-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .job-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #EEF2FF;
+      color: #4F46E5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .job-mode-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #4F46E5;
+      background: #EEF2FF;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .job-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    .job-company {
+      font-size: 13px;
+      color: #64748B;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+
+    .job-salary-badge {
+      background: #EEF2FF;
+      border: 1px solid #C7D2FE;
+      color: #3730A3;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .job-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .job-skill-chip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .job-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .btn-apply-job {
+      background: #4F46E5;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-apply-job:hover {
+      background: #4338CA;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header Navigation -->
+    <header class="top-header">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="top-nav-brand">
+        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+        <span class="brand-text">EMPOWHER</span>
+      </a>
+
+      <!-- Center Top Nav Links -->
+      <ul class="top-nav-links">
+        <li><a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+
+        <!-- Opportunities Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item active" href="#">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="financial_benefits.html" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="jobs.html" class="dropdown-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Training</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Certifications</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="index.html" style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Actions -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="jobSearchInput" placeholder="Search jobs, skills...">
+        </div>
+
+        <button class="icon-btn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+        <div class="user-profile-chip" id="profileMenuBtn">
+          <img src="assets/hero_ai_woman.png" alt="User Profile" class="user-avatar">
+          <span class="user-name">Welcome</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" style="width: 100%; padding-top: 24px;">
+      <div class="dashboard-grid">
+        <!-- Hero Header -->
+        <div class="jobs-hero">
+          <h1 class="jobs-hero-title">
+            <i class="fa-solid fa-briefcase" style="color: #A5B4FC;"></i>
+            Female-Friendly Job Opportunities & Careers
+          </h1>
+          <p class="jobs-hero-desc">
+            Explore curated job vacancies from inclusive employers in Tamil Nadu featuring equal pay assurances, maternity leave protection, flexible remote options, and day-shift security.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="jobs-filter-bar">
+          <div class="jobs-search-box">
+            <i class="fa-solid fa-magnifying-glass jobs-search-icon"></i>
+            <input type="text" id="jobSearchFilterInput" class="jobs-search-input" placeholder="Search by job title, company, or skills...">
+          </div>
+
+          <div class="jobs-pills-container">
+            <button class="jobs-pill active" data-category="all">All Jobs</button>
+            <button class="jobs-pill" data-category="both">Both (Men & Women)</button>
+            <button class="jobs-pill" data-category="web">Web Development</button>
+            <button class="jobs-pill" data-category="data">Data Analytics</button>
+            <button class="jobs-pill" data-category="remote">Remote Work</button>
+            <button class="jobs-pill" data-category="hr">HR & Operations</button>
+          </div>
+        </div>
+
+        <!-- Cards Grid Track -->
+        <div class="jobs-cards-grid" id="jobsGridTrack">
+          <!-- Dynamically populated via jobs.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detailed Job Modal Popup -->
+  <div class="modal-overlay" id="jobDetailModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 640px;">
+      <button class="modal-close-btn" id="jobModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header">
+        <div class="modal-scheme-icon" style="background: #EEF2FF; color: #4F46E5;"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #EEF2FF; color: #4F46E5;" id="modalJobMode">Hybrid</span>
+          <h2 class="modal-scheme-title" id="modalJobTitle">Job Title</h2>
+          <span class="modal-scheme-sub" id="modalJobCompany">Company • Location</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body">
+        <div style="background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 16px; padding: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #4F46E5;">Salary Package</div>
+            <div style="font-size: 20px; font-weight: 800; color: #3730A3; margin-top: 2px;" id="modalJobSalary">₹6,00,000 / year</div>
+          </div>
+          <span class="modal-badge" style="background: #4F46E5; color: #FFFFFF; font-weight: 700;" id="modalJobType">Full-time</span>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-layer-group" style="color: #4F46E5;"></i> Required Skills</h4>
+          <div class="job-skills-list" id="modalJobSkills" style="margin-top: 8px;"></div>
+        </div>
+
+        <div class="modal-section" style="margin-top: 14px;">
+          <h4><i class="fa-solid fa-user-clock" style="color: #4F46E5;"></i> Experience Required</h4>
+          <p id="modalJobExp" style="font-size: 13px; color: #475569; font-weight: 600;">0-2 years</p>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer">
+        <button class="btn-modal-cancel" id="jobModalCancelBtn">Close</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" style="background: #4F46E5;" id="modalJobApplyBtn">
+          Apply Now <i class="fa-solid fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="jobs.js"></script>
+</body>
+</html>

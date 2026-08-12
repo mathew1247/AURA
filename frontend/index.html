@@ -1,130 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EMPOWHER - AI Powered Empowerment Platform</title>
-  
+
   <!-- FontAwesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Custom CSS Design System -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- Outer Dashboard App Container -->
   <div class="app-container">
 
-    <!-- Top Navigation Header -->
+    <!-- Top Header Navigation (Full Width with Logo & Topic Dropdowns) -->
     <header class="top-header">
-      <!-- Search Box -->
-      <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="searchInput" placeholder="Search">
-      </div>
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="top-nav-brand">
+        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+        <span class="brand-text">EMPOWHER</span>
+      </a>
 
-      <!-- Center Top Nav Links -->
+      <!-- Center Top Nav Links with Topic Sub-Menus -->
       <ul class="top-nav-links">
-        <li><a class="nav-item active" href="#" data-tab="home">Home</a></li>
-        <li><a class="nav-item" href="#" data-tab="opportunities">Opportunities</a></li>
-        <li><a class="nav-item" href="#" data-tab="learn">Learn</a></li>
-        <li><a class="nav-item" href="#" data-tab="support">Support</a></li>
+        <li>
+          <a class="nav-item active" href="index.html">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+
+        <!-- Opportunities Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="schemes.html">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="financial_benefits.html" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="jobs.html" class="dropdown-item" id="navJobsBtn">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+            <a href="#" class="dropdown-item" id="navTrainingBtn">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Training</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="#">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item" id="navCoursesBtn">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses</span>
+            </a>
+            <a href="#" class="dropdown-item" id="navCertsBtn">
+              <i class="fa-solid fa-award"></i>
+              <span>Certifications</span>
+            </a>
+            <a href="#" class="dropdown-item" id="navSkillGapBtn">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="#">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item" id="navLegalBtn">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="#" class="dropdown-item" id="navHealthBtn">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="#" id="topOpenChatBtn"
+            style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
       </ul>
 
-      <!-- Right Actions: Notifications & User Profile -->
+      <!-- Right Actions: Search Box, Notifications & User Profile -->
       <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search schemes, jobs...">
+        </div>
+
         <button class="icon-btn" id="notificationBtn" title="Notifications">
           <i class="fa-regular fa-bell"></i>
           <span class="notification-badge"></span>
         </button>
 
         <div class="user-profile-chip" id="profileMenuBtn">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Alex Morgan" class="user-avatar">
-          <span class="user-name">Alex Morgan</span>
+          <img src="assets/hero_ai_woman.png" alt="User Profile" class="user-avatar">
+          <span class="user-name">Welcome</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
       </div>
     </header>
 
-    <!-- Main Layout Body (Sidebar + Content) -->
-    <div class="main-layout">
-
-      <!-- Left Sidebar Navigation -->
-      <aside class="sidebar">
-        <!-- Brand Logo & Title -->
-        <div class="brand-logo">
-          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
-          <span class="brand-text">EMPOWHER</span>
-        </div>
-
-        <!-- Top Menu Items -->
-        <div class="menu-section">
-          <a class="menu-item active" href="#" data-view="home">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-          </a>
-          <a class="menu-item" href="#" data-view="ai-assistant">
-            <i class="fa-solid fa-robot"></i>
-            <span>AI Personal Assistant</span>
-          </a>
-        </div>
-
-        <!-- Section 1: OPPORTUNITIES -->
-        <div class="menu-section">
-          <div class="section-label">OPPORTUNITIES</div>
-          <a class="menu-item" href="#" data-view="gov-schemes">
-            <i class="fa-solid fa-building-columns"></i>
-            <span>Government Schemes</span>
-          </a>
-          <a class="menu-item" href="#" data-view="financial-benefits">
-            <i class="fa-solid fa-indian-rupee-sign"></i>
-            <span>Financial Benefits</span>
-          </a>
-          <a class="menu-item" href="#" data-view="jobs">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Jobs</span>
-          </a>
-          <a class="menu-item" href="#" data-view="training">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>Training</span>
-          </a>
-        </div>
-
-        <!-- Section 2: LEARN -->
-        <div class="menu-section">
-          <div class="section-label">LEARN</div>
-          <a class="menu-item" href="#" data-view="courses">
-            <i class="fa-solid fa-book-open"></i>
-            <span>Courses</span>
-          </a>
-          <a class="menu-item" href="#" data-view="certifications">
-            <i class="fa-solid fa-award"></i>
-            <span>Certifications</span>
-          </a>
-          <a class="menu-item" href="#" data-view="skill-gap">
-            <i class="fa-solid fa-chart-column"></i>
-            <span>Skill Gap</span>
-          </a>
-        </div>
-
-        <!-- Section 3: SUPPORT -->
-        <div class="menu-section">
-          <div class="section-label">SUPPORT</div>
-          <a class="menu-item" href="#" data-view="legal">
-            <i class="fa-solid fa-scale-balanced"></i>
-            <span>Legal</span>
-          </a>
-          <a class="menu-item" href="#" data-view="healthcare">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <span>Healthcare</span>
-          </a>
-          <a class="menu-item" href="#" data-view="ngos">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            <span>NGOs</span>
-          </a>
-        </div>
-      </aside>
+    <!-- Main Layout Body (Full Width Content) -->
+    <div class="main-layout" style="width: 100%;">
 
       <!-- Main Dashboard Content Area -->
       <main class="dashboard-content">
@@ -160,51 +166,53 @@
 
           <!-- Vertical Slide Navigation Chevrons -->
           <div class="hero-nav-controls">
-            <button class="hero-nav-btn" id="heroPrevBtn" title="Previous Banner"><i class="fa-solid fa-chevron-up"></i></button>
-            <button class="hero-nav-btn" id="heroNextBtn" title="Next Banner"><i class="fa-solid fa-chevron-down"></i></button>
+            <button class="hero-nav-btn" id="heroPrevBtn" title="Previous Banner"><i
+                class="fa-solid fa-chevron-up"></i></button>
+            <button class="hero-nav-btn" id="heroNextBtn" title="Next Banner"><i
+                class="fa-solid fa-chevron-down"></i></button>
           </div>
         </section>
 
-        <!-- Recommended for You Section -->
+        <!-- Quick Action Power Hub Section -->
         <section class="section-container">
           <div class="section-header">
-            <h2 class="section-title">Recommended for You</h2>
+            <h2 class="section-title">⚡ Quick Action Power Hub</h2>
             <a href="#" class="see-all-link" id="seeAllBtn">See all</a>
           </div>
 
           <!-- 4 Cards Grid -->
           <div class="cards-grid" id="cardsGrid">
             <!-- Card 1 -->
-            <div class="rec-card" data-card-id="sukanya">
-              <img src="assets/sukanya_scheme.png" alt="Sukanya Samriddhi Yojana" class="card-bg-img">
+            <div class="rec-card" data-card-id="schemes" id="cardGovSchemes">
+              <img src="assets/sukanya_scheme.png" alt="Your Opportunities" class="card-bg-img">
               <div class="card-overlay-content">
                 <div class="card-text-wrapper">
-                  <span class="card-title">Sukanya Samriddhi Yojana</span>
-                  <span class="card-subtitle">Government Scheme</span>
+                  <span class="card-title">Your Opportunities</span>
+                  <span class="card-subtitle">🏛️ 7 schemes matched for you</span>
                 </div>
                 <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
               </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="rec-card" data-card-id="webdev">
-              <img src="assets/web_dev_course.png" alt="Web Development Course" class="card-bg-img">
+            <div class="rec-card" data-card-id="skillgap" id="cardSkillGaps">
+              <img src="assets/web_dev_course.png" alt="Your Growth" class="card-bg-img">
               <div class="card-overlay-content">
                 <div class="card-text-wrapper">
-                  <span class="card-title">Web Development Course</span>
-                  <span class="card-subtitle">Online Course</span>
+                  <span class="card-title">Your Growth</span>
+                  <span class="card-subtitle">🎯 Check missing skills & courses for your role</span>
                 </div>
                 <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="rec-card" data-card-id="job">
-              <img src="assets/dream_job.png" alt="Find Your Dream Job" class="card-bg-img">
+            <div class="rec-card" data-card-id="job" id="cardJobs">
+              <img src="assets/dream_job.png" alt="YOUR SUPPORT" class="card-bg-img">
               <div class="card-overlay-content">
                 <div class="card-text-wrapper">
-                  <span class="card-title">Find Your Dream Job</span>
-                  <span class="card-subtitle">Latest Job Openings</span>
+                  <span class="card-title">YOUR SUPPORT</span>
+                  <span class="card-subtitle">⚖️ Legal assistance & healthcare resources</span>
                 </div>
                 <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
               </div>
@@ -212,118 +220,14 @@
 
             <!-- Card 4 -->
             <div class="rec-card" data-card-id="legal">
-              <img src="assets/legal_help.png" alt="Free Legal Help" class="card-bg-img">
+              <img src="assets/legal_help.png" alt="24/7 Free Legal Rights Helpline" class="card-bg-img">
               <div class="card-overlay-content">
                 <div class="card-text-wrapper">
-                  <span class="card-title">Free Legal Help</span>
-                  <span class="card-subtitle">Get Expert Support</span>
+                  <span class="card-title">24/7 Legal Rights Helpline</span>
+                  <span class="card-subtitle">⚖️ Confidential expert support</span>
                 </div>
                 <div class="card-arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Real-Time Success Stories Sliding Cards Section -->
-        <section class="section-container stories-section">
-          <div class="section-header">
-            <div class="section-title-box">
-              <h2 class="section-title">Real-Time Success Stories</h2>
-            </div>
-            <div class="carousel-controls">
-              <button class="carousel-btn" id="storyPrevBtn" title="Previous Story"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="carousel-btn" id="storyNextBtn" title="Next Story"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-          </div>
-
-          <!-- Sliding Cards Track Container -->
-          <div class="stories-carousel-wrapper">
-            <div class="stories-track" id="storiesTrack">
-
-              <!-- Story Card 1 -->
-              <div class="story-card">
-                <div class="story-header">
-                  <img src="assets/story_deepika.png" alt="Deepika R." class="story-avatar">
-                  <div class="story-user-info">
-                    <h4 class="story-name">Deepika R.</h4>
-                    <span class="story-role">Software Developer • Chennai</span>
-                  </div>
-                  <div class="story-rating">
-                    <i class="fa-solid fa-star"></i> <span>5.0</span>
-                  </div>
-                </div>
-                <div class="story-body">
-                  <i class="fa-solid fa-quote-left story-quote-icon"></i>
-                  <p class="story-quote">"Pudhumai Penn scheme funded my degree. Now I work as a Full-Stack Developer at TCS!"</p>
-                </div>
-                <div class="story-footer">
-                  <span class="story-tag">Education Assistance</span>
-                </div>
-              </div>
-
-              <!-- Story Card 2 -->
-              <div class="story-card">
-                <div class="story-header">
-                  <img src="assets/story_priya.png" alt="Priya Selvam" class="story-avatar">
-                  <div class="story-user-info">
-                    <h4 class="story-name">Priya Selvam</h4>
-                    <span class="story-role">E-Commerce Founder • Madurai</span>
-                  </div>
-                  <div class="story-rating">
-                    <i class="fa-solid fa-star"></i> <span>5.0</span>
-                  </div>
-                </div>
-                <div class="story-body">
-                  <i class="fa-solid fa-quote-left story-quote-icon"></i>
-                  <p class="story-quote">"UYEGP subsidy helped me launch my textile business. I now employ 8 women in my town!"</p>
-                </div>
-                <div class="story-footer">
-                  <span class="story-tag">UYEGP Entrepreneur</span>
-                </div>
-              </div>
-
-              <!-- Story Card 3 -->
-              <div class="story-card">
-                <div class="story-header">
-                  <img src="assets/story_meena.png" alt="Meena K." class="story-avatar">
-                  <div class="story-user-info">
-                    <h4 class="story-name">Meena K.</h4>
-                    <span class="story-role">Data Analyst • Coimbatore</span>
-                  </div>
-                  <div class="story-rating">
-                    <i class="fa-solid fa-star"></i> <span>5.0</span>
-                  </div>
-                </div>
-                <div class="story-body">
-                  <i class="fa-solid fa-quote-left story-quote-icon"></i>
-                  <p class="story-quote">"Naan Mudhalvan courses gave me hands-on Data Analytics skills that landed me my dream job."</p>
-                </div>
-                <div class="story-footer">
-                  <span class="story-tag">Naan Mudhalvan Graduate</span>
-                </div>
-              </div>
-
-              <!-- Story Card 4 -->
-              <div class="story-card">
-                <div class="story-header">
-                  <img src="assets/story_kavitha.png" alt="Kavitha M." class="story-avatar">
-                  <div class="story-user-info">
-                    <h4 class="story-name">Kavitha M.</h4>
-                    <span class="story-role">Legal Executive • Trichy</span>
-                  </div>
-                  <div class="story-rating">
-                    <i class="fa-solid fa-star"></i> <span>5.0</span>
-                  </div>
-                </div>
-                <div class="story-body">
-                  <i class="fa-solid fa-quote-left story-quote-icon"></i>
-                  <p class="story-quote">"Empowher legal guidance helped me navigate workplace rights confidently and secure equal pay!"</p>
-                </div>
-                <div class="story-footer">
-                  <span class="story-tag">Legal Empowerment</span>
-                </div>
-              </div>
-
             </div>
           </div>
         </section>
@@ -336,7 +240,7 @@
   <div class="modal-overlay" id="schemeDetailModal">
     <div class="modal-card scheme-detail-card">
       <button class="modal-close-btn" id="schemeModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-      
+
       <div class="modal-scheme-header">
         <div class="modal-scheme-icon"><i class="fa-solid fa-building-columns"></i></div>
         <div class="modal-scheme-header-text">
@@ -375,7 +279,8 @@
 
       <div class="modal-scheme-footer">
         <button class="btn-modal-cancel" id="schemeModalCancelBtn">Close</button>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" id="schemeOfficialRegisterBtn">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official"
+          id="schemeOfficialRegisterBtn">
           Register on Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
@@ -398,6 +303,357 @@
     </div>
   </div>
 
+  <!-- Interactive Matched Opportunities Modal (Showing 2 Reference Cards) -->
+  <div class="modal-overlay" id="matchedSchemesModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 720px; padding: 28px;">
+      <button class="modal-close-btn" id="matchedSchemesCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header" style="margin-bottom: 20px;">
+        <div class="modal-scheme-icon" style="background: #FFF1F2; color: #FF1744;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #FFF1F2; color: #FF1744;">Empowher Profile Insights</span>
+          <h2 class="modal-scheme-title">Your Personal Opportunities</h2>
+          <span class="modal-scheme-sub">Personalized matches for Ananya (21 • Chennai, TN • Data Analyst)</span>
+        </div>
+      </div>
+
+      <!-- 2 Cards Grid Styled Like Reference Image -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 20px;">
+        
+        <!-- Reference Card 1: Matched Government Schemes (Red Card) -->
+        <div onclick="document.getElementById('popupSchemesList').style.display='flex'; document.getElementById('popupJobsList').style.display='none';" style="cursor: pointer; background: linear-gradient(135deg, #FF1744 0%, #D50000 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(255, 23, 68, 0.25); transition: transform 0.2s ease;">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">🏛️ 7 Matched Schemes</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">Matched Government Schemes</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">Pudhumai Penn, UYEGP & Central Grants</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button style="background: #FFFFFF; color: #FF1744; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #FF1744; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+        <!-- Reference Card 2: Matched Jobs (Blue Card) -->
+        <div onclick="document.getElementById('popupJobsList').style.display='flex'; document.getElementById('popupSchemesList').style.display='none';" style="cursor: pointer; background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25); transition: transform 0.2s ease;">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">💼 12 New Openings</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">Female-Friendly Job Matches</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">Verified Remote & Hybrid Corporate Roles</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button style="background: #FFFFFF; color: #2563EB; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #2563EB; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Expandable Details Section 1: Government Schemes -->
+      <div id="popupSchemesList" style="display: flex; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-building-columns" style="color: #FF1744;"></i> 7 Matched Government Welfare Schemes
+        </h4>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Moovalur Ramamirtham (Pudhumai Penn)</div>
+            <div style="font-size: 11px; color: #00B894; font-weight: 700;">💰 ₹1,000 / Month Higher Education Aid</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer;" onclick="window.open('https://penkalvi.tn.gov.in/', '_blank')">Apply</button>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Sukanya Samriddhi Yojana (SSY)</div>
+            <div style="font-size: 11px; color: #4F46E5; font-weight: 700;">📈 8.2% Interest Rate Tax Deposit</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer;" onclick="window.open('https://www.indiapost.gov.in/', '_blank')">Apply</button>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Unemployed Youth Employment (UYEGP)</div>
+            <div style="font-size: 11px; color: #EA580C; font-weight: 700;">💼 25% Capital Subsidy up to ₹3.75L</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer;" onclick="window.open('https://www.msmeonline.tn.gov.in/', '_blank')">Apply</button>
+        </div>
+      </div>
+
+      <!-- Expandable Details Section 2: Jobs (Hidden by default) -->
+      <div id="popupJobsList" style="display: none; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-briefcase" style="color: #2563EB;"></i> 12 Matched Female-Friendly Jobs
+        </h4>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Junior Full-Stack Web Developer • TCS</div>
+            <div style="font-size: 11px; color: #00B894; font-weight: 700;">💰 ₹6.5–8.0 LPA • Remote • Equal Pay</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer;" onclick="alert('🎉 Application submitted to TCS Talent Team! HR will contact you via email.')">Apply</button>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Data & Business Analyst • Infosys</div>
+            <div style="font-size: 11px; color: #4F46E5; font-weight: 700;">💰 ₹7.0–9.5 LPA • Day Shift • Mentorship</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer;" onclick="alert('🎉 Application submitted to Infosys Careers! HR will contact you via email.')">Apply</button>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer" style="margin-top: 20px;">
+        <button class="btn-modal-cancel" id="matchedSchemesCancelBtn">Close</button>
+        <button class="btn-register-official" onclick="alert('✅ Profile Matched! Showing verified options for Ananya.')">Verified Profile Options <i class="fa-solid fa-circle-check"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Your Growth Modal (Showing 2 Reference Cards) -->
+  <div class="modal-overlay" id="skillGapModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 720px; padding: 28px;">
+      <button class="modal-close-btn" id="skillGapCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header" style="margin-bottom: 20px;">
+        <div class="modal-scheme-icon" style="background: #E8F5E9; color: #059669;"><i class="fa-solid fa-rocket"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #E8F5E9; color: #059669;">Empowher Growth Engine</span>
+          <h2 class="modal-scheme-title">Your Growth & Skill Building</h2>
+          <span class="modal-scheme-sub">Personalized AI skill audit & courses for Ananya (Target: Data Analyst)</span>
+        </div>
+      </div>
+
+      <!-- 2 Cards Grid Styled Like Reference Image -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 20px;">
+        
+        <!-- Reference Card 1: Skill Gaps (Green Card) -->
+        <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(5, 150, 105, 0.25);">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">🎯 2 Skill Gaps Found</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">AI Skill Gap Audit</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">82% Ready • Power BI & Tableau Needed</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button onclick="document.getElementById('popupGapsList').style.display='flex'; document.getElementById('popupCoursesList').style.display='none';" style="background: #FFFFFF; color: #059669; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #059669; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+        <!-- Reference Card 2: Recommended Courses (Purple Card) -->
+        <div style="background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(124, 58, 237, 0.25);">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">📚 5 Curated Courses</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">Recommended Micro-Courses</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">Hands-On SQL, Power BI & Analytics</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button onclick="document.getElementById('popupCoursesList').style.display='flex'; document.getElementById('popupGapsList').style.display='none';" style="background: #FFFFFF; color: #7C3AED; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Details Section 1: Skill Gaps -->
+      <div id="popupGapsList" style="display: flex; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Profile Readiness Score</div>
+            <div style="font-size: 11px; color: #64748B;">For Data Analyst Role</div>
+          </div>
+          <div style="font-size: 20px; font-weight: 800; color: #059669;">82% Ready</div>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0;">
+          <div style="font-size: 12px; font-weight: 700; color: #059669; margin-bottom: 6px;">✓ Verified Skills</div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="background: #ECFDF5; color: #059669; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 12px;">Python</span>
+            <span style="background: #ECFDF5; color: #059669; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 12px;">SQL Queries</span>
+            <span style="background: #ECFDF5; color: #059669; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 12px;">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details Section 2: Recommended Courses (Hidden by default) -->
+      <div id="popupCoursesList" style="display: none; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-graduation-cap" style="color: #7C3AED;"></i> Recommended Free Micro-Courses
+        </h4>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Power BI Complete Analytics Bootcamp</div>
+            <div style="font-size: 11px; color: #7C3AED; font-weight: 700;">Top Skill Gap • 4 hrs duration</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 12px; font-size: 11px;" onclick="alert('Started Power BI Micro-Course!')">Start</button>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Tableau Data Visualization Masterclass</div>
+            <div style="font-size: 11px; color: #7C3AED; font-weight: 700;">High Market Demand • 5 hrs duration</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 12px; font-size: 11px;" onclick="alert('Started Tableau Masterclass!')">Start</button>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer" style="margin-top: 20px;">
+        <button class="btn-modal-cancel" id="skillGapCancelBtn">Close</button>
+        <button class="btn-register-official" onclick="alert('Full AI Skill Gap Audit Report downloaded!')">Download Full Audit Report <i class="fa-solid fa-download"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive YOUR SUPPORT Modal (Showing 2 Reference Cards) -->
+  <div class="modal-overlay" id="jobMatchesModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 720px; padding: 28px;">
+      <button class="modal-close-btn" id="jobMatchesCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header" style="margin-bottom: 20px;">
+        <div class="modal-scheme-icon" style="background: #FFF1F2; color: #E11D48;"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #FFF1F2; color: #E11D48;">Empowher Support Ecosystem</span>
+          <h2 class="modal-scheme-title">Your Support & Healthcare</h2>
+          <span class="modal-scheme-sub">Confidential legal rights, emergency lines & healthcare resources</span>
+        </div>
+      </div>
+
+      <!-- 2 Cards Grid Styled Like Reference Image -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 20px;">
+        
+        <!-- Reference Card 1: Legal Support (Rose Card) -->
+        <div style="background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(225, 29, 72, 0.25);">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">⚖️ 24/7 Protection</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">Legal Rights & Helpline</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">POSH Act, Equal Pay & Free Advice</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button onclick="document.getElementById('popupLegalList').style.display='flex'; document.getElementById('popupHealthList').style.display='none';" style="background: #FFFFFF; color: #E11D48; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #E11D48; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+        <!-- Reference Card 2: Healthcare (Teal Card) -->
+        <div style="background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%); border-radius: 20px; padding: 24px; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.25);">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">🏥 Local Welfare</span>
+            <h3 style="font-size: 20px; font-weight: 800; margin-top: 10px; line-height: 1.2;">Healthcare & Wellness</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 4px;">Maternal Health, CMCHIS & Clinics</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <button onclick="document.getElementById('popupHealthList').style.display='flex'; document.getElementById('popupLegalList').style.display='none';" style="background: #FFFFFF; color: #0D9488; border: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #0D9488; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 10px;"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> LEARN MORE
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Details Section 1: Legal Support -->
+      <div id="popupLegalList" style="display: flex; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <div style="background: linear-gradient(135deg, #FF1744 0%, #D50000 100%); border-radius: 12px; padding: 14px; color: #FFFFFF; display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 10px; text-transform: uppercase; font-weight: 800; opacity: 0.9;">Emergency 24/7 Line</div>
+            <div style="font-size: 16px; font-weight: 800;">📞 Call 181 (Women Helpline)</div>
+          </div>
+          <a href="tel:181" style="background: #FFFFFF; color: #FF1744; font-weight: 800; padding: 6px 12px; border-radius: 20px; font-size: 11px; text-decoration: none;">Call Now</a>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0;">
+          <div style="font-size: 12px; font-weight: 700; color: #E11D48; margin-bottom: 4px;">🛡️ Key Legal Rights</div>
+          <div style="font-size: 11px; color: #475569; line-height: 1.4;">• POSH Act: Internal Complaints Committee in 10+ employee firms<br>• Equal Remuneration Act: Guaranteed equal pay for equal work</div>
+        </div>
+      </div>
+
+      <!-- Details Section 2: Healthcare (Hidden by default) -->
+      <div id="popupHealthList" style="display: none; flex-direction: column; gap: 10px; background: #F8FAFC; padding: 16px; border-radius: 16px; border: 1px solid #E2E8F0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-hospital-user" style="color: #0D9488;"></i> Tamil Nadu Healthcare Schemes
+        </h4>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Makkalai Thedi Maruthuvam</div>
+            <div style="font-size: 11px; color: #0D9488; font-weight: 700;">Doorstep Medical Care & Free Screening</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 12px; font-size: 11px;" onclick="alert('Exploring Doorstep Healthcare!')">Details</button>
+        </div>
+        <div style="background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">Dr. Muthulakshmi Reddy Scheme</div>
+            <div style="font-size: 11px; color: #0D9488; font-weight: 700;">💰 ₹18,000 Financial Assistance for Pregnant Women</div>
+          </div>
+          <button class="btn-primary-red" style="padding: 6px 12px; font-size: 11px;" onclick="alert('Exploring Maternal Health Assistance!')">Details</button>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer" style="margin-top: 20px;">
+        <button class="btn-modal-cancel" id="jobMatchesCancelBtn">Close</button>
+        <button class="btn-register-official" onclick="alert('Connecting to Confidential Pro-Bono Legal & Health Support...')">Confidential Support <i class="fa-solid fa-shield-heart"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive 24/7 Legal Rights Helpline Modal -->
+  <div class="modal-overlay" id="legalHelplineModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 640px;">
+      <button class="modal-close-btn" id="legalHelplineCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header">
+        <div class="modal-scheme-icon" style="background: #FFF1F2; color: #E11D48;"><i
+            class="fa-solid fa-scale-balanced"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #FFF1F2; color: #E11D48;">24/7 Legal Protection</span>
+          <h2 class="modal-scheme-title">24/7 Legal Rights & Helpline</h2>
+          <span class="modal-scheme-sub">Free Legal Support, POSH Regulations & Emergency Assistance</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body">
+        <div
+          style="background: linear-gradient(135deg, #FF1744 0%, #D50000 100%); border-radius: 16px; padding: 20px; color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 12px; text-transform: uppercase; font-weight: 800; opacity: 0.9;">Emergency 24/7
+              Toll-Free Line</div>
+            <h3 style="font-size: 24px; font-weight: 800; margin-top: 2px;">📞 Call 181 (Women Helpline)</h3>
+            <p style="font-size: 12px; opacity: 0.85; margin-top: 2px;">Confidential rescue, legal advice & police
+              support</p>
+          </div>
+          <a href="tel:181" class="btn-primary-red"
+            style="background: #FFFFFF; color: #FF1744; font-weight: 800; padding: 12px 20px; white-space: nowrap;">Call
+            181 Now</a>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-shield-halved" style="color: #E11D48;"></i> Key Legal Protections for Women in India
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
+            <div style="border: 1px solid #E2E8F0; padding: 12px 16px; border-radius: 12px; background: #F8FAFC;">
+              <h5 style="font-size: 14px; font-weight: 700; color: #1E293B;">🛡️ POSH Act (Prevention of Sexual
+                Harassment)</h5>
+              <p style="font-size: 12px; color: #64748B; margin-top: 2px;">Mandatory Internal Complaints Committee (ICC)
+                in every organization with 10+ employees.</p>
+            </div>
+
+            <div style="border: 1px solid #E2E8F0; padding: 12px 16px; border-radius: 12px; background: #F8FAFC;">
+              <h5 style="font-size: 14px; font-weight: 700; color: #1E293B;">🤰 Maternity Benefit Act 2017</h5>
+              <p style="font-size: 12px; color: #64748B; margin-top: 2px;">26 weeks fully paid maternity leave &
+                mandatory creche facility for 50+ employee firms.</p>
+            </div>
+
+            <div style="border: 1px solid #E2E8F0; padding: 12px 16px; border-radius: 12px; background: #F8FAFC;">
+              <h5 style="font-size: 14px; font-weight: 700; color: #1E293B;">⚖️ Equal Remuneration Act 1976</h5>
+              <p style="font-size: 12px; color: #64748B; margin-top: 2px;">Guarantees equal pay for equal work
+                regardless of gender across all sectors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer">
+        <button class="btn-modal-cancel" id="legalHelplineCancelBtn">Close</button>
+        <button class="btn-register-official" onclick="alert('Connecting to Certified Pro-Bono Legal Advocate...')">Book
+          Free Legal Consultation <i class="fa-solid fa-user-doctor"></i></button>
+      </div>
+    </div>
+  </div>
+
   <!-- Interactive AI Assistant Chat Drawer -->
   <div class="chat-drawer" id="chatDrawer">
     <div class="chat-header">
@@ -413,7 +669,8 @@
 
     <div class="chat-body" id="chatBody">
       <div class="chat-msg bot">
-        Hello Alex! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+        Hello Alex! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth
+        today?
       </div>
     </div>
 
@@ -425,4 +682,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

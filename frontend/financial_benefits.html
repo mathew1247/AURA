@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Benefits & Subsidies | EMPOWHER</title>
+  <meta name="description" content="Explore direct income support, higher education stipends, maternity benefits, and self-employment capital subsidies in Tamil Nadu.">
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styling for Dedicated Financial Benefits Page */
+    .fin-hero {
+      background: linear-gradient(135deg, #064E3B 0%, #047857 100%);
+      border-radius: var(--radius-hero);
+      padding: 40px 48px;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .fin-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+    }
+
+    .fin-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fin-hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .fin-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .fin-search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .fin-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 14px;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .fin-search-input:focus {
+      border-color: #047857;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.2);
+    }
+
+    .fin-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 16px;
+    }
+
+    .fin-pills-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .fin-pill {
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .fin-pill:hover, .fin-pill.active {
+      background: #047857;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);
+    }
+
+    .fin-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    .fin-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .fin-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: rgba(4, 120, 87, 0.3);
+    }
+
+    .fin-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .fin-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #ECFDF5;
+      color: #047857;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .fin-type-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #047857;
+      background: #D1FAE5;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .fin-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    .fin-card-provider {
+      font-size: 13px;
+      color: #64748B;
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    .fin-amount-badge {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #15803D;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fin-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .btn-view-fin {
+      background: #047857;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-view-fin:hover {
+      background: #065F46;
+      box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header Navigation -->
+    <header class="top-header">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="top-nav-brand">
+        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+        <span class="brand-text">EMPOWHER</span>
+      </a>
+
+      <!-- Center Top Nav Links -->
+      <ul class="top-nav-links">
+        <li><a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+
+        <!-- Opportunities Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item active" href="#">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="financial_benefits.html" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="jobs.html" class="dropdown-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Training</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Certifications</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="index.html" style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Actions -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="finSearchInput" placeholder="Search financial aid...">
+        </div>
+
+        <button class="icon-btn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+        <div class="user-profile-chip" id="profileMenuBtn">
+          <img src="assets/hero_ai_woman.png" alt="User Profile" class="user-avatar">
+          <span class="user-name">Welcome</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" style="width: 100%; padding-top: 24px;">
+      <div class="dashboard-grid">
+        <!-- Hero Header -->
+        <div class="fin-hero">
+          <h1 class="fin-hero-title">
+            <i class="fa-solid fa-indian-rupee-sign" style="color: #6EE7B7;"></i>
+            Financial Benefits & Direct Subsidies
+          </h1>
+          <p class="fin-hero-desc">
+            Discover direct cash transfers, monthly education stipends, maternity support grants, and self-employment capital subsidies available for women in Tamil Nadu.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="fin-filter-bar">
+          <div class="fin-search-box">
+            <i class="fa-solid fa-magnifying-glass fin-search-icon"></i>
+            <input type="text" id="finSearchFilterInput" class="fin-search-input" placeholder="Search by benefit name, provider, or benefit type...">
+          </div>
+
+          <div class="fin-pills-container">
+            <button class="fin-pill active" data-category="all">All Benefits</button>
+            <button class="fin-pill" data-category="both">Both (Men & Women)</button>
+            <button class="fin-pill" data-category="male">Men's Benefits</button>
+            <button class="fin-pill" data-category="female">Women's Benefits</button>
+            <button class="fin-pill" data-category="stipend">Education Stipends</button>
+            <button class="fin-pill" data-category="income">Basic Income</button>
+            <button class="fin-pill" data-category="maternity">Maternity Aid</button>
+            <button class="fin-pill" data-category="business">Self-Employment</button>
+          </div>
+        </div>
+
+        <!-- Cards Grid Track -->
+        <div class="fin-cards-grid" id="finGridTrack">
+          <!-- Dynamically populated via financial_benefits.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detailed Financial Modal Popup -->
+  <div class="modal-overlay" id="finDetailModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 620px;">
+      <button class="modal-close-btn" id="finModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header">
+        <div class="modal-scheme-icon" style="background: #ECFDF5; color: #047857;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #D1FAE5; color: #047857;" id="modalFinType">Financial Benefit</span>
+          <h2 class="modal-scheme-title" id="modalFinTitle">Benefit Title</h2>
+          <span class="modal-scheme-sub" id="modalFinProvider">Provider</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body">
+        <div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 16px; padding: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #047857;">Total Financial Aid Amount</div>
+            <div style="font-size: 22px; font-weight: 800; color: #065F46; margin-top: 2px;" id="modalFinAmount">₹1,000 / month</div>
+          </div>
+          <span class="modal-badge" style="background: #047857; color: #FFFFFF; font-weight: 700;" id="modalFinState">Tamil Nadu</span>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-user-check" style="color: #047857;"></i> Eligibility Requirements</h4>
+          <ul class="modal-benefits-list" id="modalFinEligibility"></ul>
+        </div>
+
+        <div class="modal-section" style="margin-top: 14px;">
+          <h4><i class="fa-solid fa-file-shield" style="color: #047857;"></i> Required Documents</h4>
+          <ul class="modal-docs-list" id="modalFinDocs"></ul>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer">
+        <button class="btn-modal-cancel" id="finModalCancelBtn">Close</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" style="background: #047857;" id="modalFinApplyBtn">
+          Apply for Benefit <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="financial_benefits.js"></script>
+</body>
+</html>

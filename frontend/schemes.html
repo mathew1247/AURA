@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Schemes & Welfare Initiatives | EMPOWHER</title>
+  <meta name="description" content="Explore official Tamil Nadu government schemes, higher education assurance, financial assistance, and self-employment subsidies for women.">
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styling for Dedicated Schemes Page */
+    .schemes-hero {
+      background: linear-gradient(135deg, #111317 0%, #1A1D24 100%);
+      border-radius: var(--radius-hero);
+      padding: 40px 48px;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .schemes-hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(230, 57, 70, 0.25) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+    }
+
+    .schemes-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .schemes-hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    .schemes-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .schemes-search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .schemes-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 14px;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .schemes-search-input:focus {
+      border-color: var(--color-primary-red);
+      box-shadow: 0 4px 14px rgba(230, 57, 70, 0.15);
+    }
+
+    .schemes-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 16px;
+    }
+
+    .category-pills-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .cat-pill {
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cat-pill:hover, .cat-pill.active {
+      background: var(--color-primary-red);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
+    }
+
+    .scheme-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .scheme-page-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .scheme-page-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: rgba(230, 57, 70, 0.3);
+    }
+
+    .scheme-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .scheme-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #FFF1F2;
+      color: var(--color-primary-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .scheme-govt-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    .scheme-card-desc {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .scheme-badge-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .scheme-tag {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .scheme-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .scheme-benefit-amount {
+      font-size: 15px;
+      font-weight: 800;
+      color: #00B894;
+    }
+
+    .btn-view-scheme {
+      background: var(--color-primary-red);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-view-scheme:hover {
+      background: #D62828;
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header Navigation (Full Width with Logo & Topic Dropdowns) -->
+    <header class="top-header">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="top-nav-brand">
+        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+        <span class="brand-text">EMPOWHER</span>
+      </a>
+
+      <!-- Center Top Nav Links with Topic Sub-Menus -->
+      <ul class="top-nav-links">
+        <li>
+          <a class="nav-item" href="index.html">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+
+        <!-- Opportunities Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item active" href="schemes.html">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="schemes.html?cat=financial" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Training</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Certifications</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Topic Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="index.html">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="index.html" class="dropdown-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="index.html" style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Actions: Search Box, Notifications & User Profile -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="globalSearchInput" placeholder="Search schemes...">
+        </div>
+
+        <button class="icon-btn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+        <div class="user-profile-chip" id="profileMenuBtn">
+          <img src="assets/hero_ai_woman.png" alt="User Profile" class="user-avatar">
+          <span class="user-name">Welcome</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" style="width: 100%; padding-top: 24px;">
+
+      <!-- Page Content Grid Container -->
+      <div class="dashboard-grid">
+        <!-- Hero Header -->
+        <div class="schemes-hero">
+          <h1 class="schemes-hero-title">
+            <i class="fa-solid fa-building-columns" style="color: #FFD166;"></i>
+            Government Schemes & Welfare Initiatives
+          </h1>
+          <p class="schemes-hero-desc">
+            Explore verified financial assistance, higher education assurances, maternity benefits, and self-employment capital subsidies provided by the Government of Tamil Nadu and Central Government.
+          </p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="schemes-filter-bar">
+          <div class="schemes-search-box">
+            <i class="fa-solid fa-magnifying-glass schemes-search-icon"></i>
+            <input type="text" id="schemeSearchInput" class="schemes-search-input" placeholder="Search schemes by name, eligibility, or benefit...">
+          </div>
+
+          <div class="category-pills-container">
+            <button class="cat-pill active" data-category="all">All Schemes</button>
+            <button class="cat-pill" data-category="both">Both (Men & Women)</button>
+            <button class="cat-pill" data-category="male">Men's Schemes</button>
+            <button class="cat-pill" data-category="female">Women's Schemes</button>
+            <button class="cat-pill" data-category="education">Education</button>
+            <button class="cat-pill" data-category="financial">Financial Aid</button>
+            <button class="cat-pill" data-category="skill">Skill & Career</button>
+            <button class="cat-pill" data-category="maternity">Health & Welfare</button>
+            <button class="cat-pill" data-category="entrepreneurship">Self-Employment</button>
+          </div>
+        </div>
+
+        <!-- Scheme Cards Grid Track -->
+        <div class="scheme-cards-grid" id="schemesGridTrack">
+          <!-- Dynamically populated via schemes.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detailed Scheme Modal Popup -->
+  <div class="modal-overlay" id="schemePageDetailModal">
+    <div class="modal-card scheme-detail-card">
+      <button class="modal-close-btn" id="schemePageModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="modal-scheme-header">
+        <div class="modal-scheme-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" id="modalSchemeBadge">State Scheme</span>
+          <h2 class="modal-scheme-title" id="modalSchemeTitle">Scheme Title</h2>
+          <span class="modal-scheme-sub" id="modalSchemeSub">Govt. of Tamil Nadu</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body">
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-circle-info"></i> About Scheme</h4>
+          <p id="modalSchemeDesc">Scheme description details will load here...</p>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-gift"></i> Key Benefits</h4>
+          <ul class="modal-benefits-list" id="modalSchemeBenefits"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-user-check"></i> Eligibility Criteria</h4>
+          <div class="modal-eligibility-grid" id="modalSchemeEligibility"></div>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-file-shield"></i> Documents Required</h4>
+          <ul class="modal-docs-list" id="modalSchemeDocs"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-clipboard-list"></i> Application Process</h4>
+          <p id="modalSchemeProcess">Online application via official state portal.</p>
+        </div>
+      </div>
+
+      <div class="modal-scheme-footer">
+        <button class="btn-modal-cancel" id="modalSchemeCancelBtn">Close</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" id="modalSchemeOfficialBtn">
+          Register on Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="schemes.js"></script>
+</body>
+</html>

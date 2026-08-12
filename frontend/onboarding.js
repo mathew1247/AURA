@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================= DOM ELEMENT REFERENCES =================
   const progressText = document.getElementById('progressText');
   const progressBarFill = document.getElementById('progressBarFill');
-  
+
   const characterSpeechBubble = document.getElementById('characterSpeechBubble');
   const guideCharacterImg = document.getElementById('guideCharacterImg');
   const orbitSkillsContainer = document.getElementById('orbitSkillsContainer');
@@ -139,6 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const summaryName = document.getElementById('summaryName');
   const summarySub = document.getElementById('summarySub');
 
+  // ================= DYNAMIC STEP SEQUENCE SYSTEM =================
+  let currentStepIndex = 0;
+
+  function getStepSequence(status) {
+    if (status === 'student') {
+      return [0, 1, 2, 3, 4, 5, 6, 8, 13, 14];
+    } else if (status === 'employed') {
+      return [0, 1, 2, 3, 4, 5, 6, 8, 9, 13, 14];
+    } else if (status === 'unemployed') {
+      return [0, 1, 2, 3, 4, 5, 6, 8, 9, 13, 14];
+    }
+    return [0, 1, 2, 3, 4, 5, 6, 8, 13, 14];
+  }
+
   // ================= INIT ENGINE =================
   initSkillTree();
   updateStepView();
@@ -146,9 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ================= STEP NAVIGATION HANDLERS =================
   btnContinue.addEventListener('click', () => {
-    saveCurrentStepData();
+    try {
+      saveCurrentStepData();
+    } catch (err) {
+      console.warn("Save step data warning:", err);
+    }
 
-    if (currentStep === 14) {
+    const sequence = getStepSequence(profile.status);
+    const activeStepNumber = sequence[currentStepIndex];
+
+    if (activeStepNumber === 14) {
       // Finalize and save to localStorage
       localStorage.setItem('userStatus', profile.status);
       localStorage.setItem('userProfile', JSON.stringify(profile));
@@ -156,38 +177,47 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (currentStep < maxSteps) {
-      currentStep++;
+    if (currentStepIndex < sequence.length - 1) {
+      currentStepIndex++;
       updateStepView();
 
       // Trigger Happy React Animation on Character
-      guideCharacterImg.classList.add('react-happy');
-      setTimeout(() => guideCharacterImg.classList.remove('react-happy'), 600);
+      if (guideCharacterImg) {
+        guideCharacterImg.classList.add('react-happy');
+        setTimeout(() => guideCharacterImg.classList.remove('react-happy'), 600);
+      }
     }
   });
 
   btnBack.addEventListener('click', () => {
-    if (currentStep > 0) {
-      currentStep--;
+    if (currentStepIndex > 0) {
+      currentStepIndex--;
       updateStepView();
     }
   });
 
   // ================= UPDATE STEP VIEW =================
   function updateStepView() {
-    // Update progress bar
-    const percent = Math.round((currentStep / maxSteps) * 100);
-    progressText.textContent = `STEP ${currentStep} OF ${maxSteps}`;
-    progressBarFill.style.width = `${percent}%`;
+    const sequence = getStepSequence(profile.status);
+    const activeStepNumber = sequence[currentStepIndex];
+    currentStep = activeStepNumber;
+
+    const totalUserSteps = sequence.length - 2;
+    const displayStepNum = Math.min(currentStepIndex, totalUserSteps);
+
+    const percent = Math.round((currentStepIndex / (sequence.length - 1)) * 100);
+    if (progressText) progressText.textContent = `STEP ${displayStepNum} OF ${totalUserSteps}`;
+    if (progressBarFill) progressBarFill.style.width = `${percent}%`;
 
     // Render dynamic status form if entering Step 5
-    if (currentStep === 5) {
+    if (activeStepNumber === 5) {
       renderStatusSpecificForm();
     }
 
     // Toggle active step panel
-    document.querySelectorAll('.step-container').forEach((el, index) => {
-      if (index === currentStep) {
+    document.querySelectorAll('.step-container').forEach((el) => {
+      const idNum = parseInt(el.id.replace('step', ''), 10);
+      if (idNum === activeStepNumber) {
         el.classList.add('active');
       } else {
         el.classList.remove('active');
@@ -195,30 +225,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update back button disabled state
-    btnBack.disabled = (currentStep === 0 || currentStep === 13 || currentStep === 14);
+    if (btnBack) btnBack.disabled = (currentStepIndex === 0 || activeStepNumber === 13 || activeStepNumber === 14);
 
     // Update Continue button text
-    if (currentStep === 0) {
-      btnContinueText.textContent = "Start My Journey →";
-      btnContinueIcon.className = "fa-solid fa-arrow-right";
-    } else if (currentStep === 14) {
-      btnContinueText.textContent = "Explore My Journey →";
-      btnContinueIcon.className = "fa-solid fa-rocket";
-    } else {
-      btnContinueText.textContent = "Continue →";
-      btnContinueIcon.className = "fa-solid fa-arrow-right";
+    if (btnContinueText && btnContinueIcon) {
+      if (activeStepNumber === 0) {
+        btnContinueText.textContent = "Start My Journey →";
+        btnContinueIcon.className = "fa-solid fa-arrow-right";
+      } else if (activeStepNumber === 14) {
+        btnContinueText.textContent = "Explore My Journey →";
+        btnContinueIcon.className = "fa-solid fa-rocket";
+      } else {
+        btnContinueText.textContent = "Continue →";
+        btnContinueIcon.className = "fa-solid fa-arrow-right";
+      }
     }
 
     // Dynamic Dialogue & Environmental Text
     updateCharacterDialogue();
 
     // Trigger AI Step Processing logic if on Step 13
-    if (currentStep === 13) {
+    if (activeStepNumber === 13) {
       runAISimulation();
     }
 
     // Trigger Celebration logic if on Step 14
-    if (currentStep === 14) {
+    if (activeStepNumber === 14) {
       renderSummaryCard();
       launchConfetti();
     }
@@ -230,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dialogues = [
       /* Step 0 */ "Hi! I'm your Empowher Guide. Let's build your personalized future journey together! ✨",
-      /* Step 1 */ "Where are you right now? Choose your status (Student, Employed, Unemployed, Entrepreneur).",
+      /* Step 1 */ "Where are you right now? Choose your status (Student, Employed, Unemployed).",
       /* Step 2 */ `Nice! What should we call you?`,
       /* Step 3 */ `${profile.basic.age} is a fantastic age! We'll match relevant growth programs.`,
       /* Step 4 */ `📍 ${profile.basic.state} has great local programs!`,
@@ -246,16 +278,26 @@ document.addEventListener('DOMContentLoaded', () => {
       /* Step 14 */ `Woohoo, ${name}! Your custom Empowher journey is fully prepared!`
     ];
 
-    characterSpeechBubble.textContent = dialogues[currentStep] || dialogues[0];
-    envFooterText.textContent = `Step ${currentStep} of ${maxSteps} • ${percentComplete()}% Unlocked`;
+    if (characterSpeechBubble) {
+      characterSpeechBubble.textContent = dialogues[currentStep] || dialogues[0];
+    }
+    if (envFooterText) {
+      const sequence = getStepSequence(profile.status);
+      const totalUserSteps = sequence.length - 2;
+      const displayStepNum = Math.min(currentStepIndex, totalUserSteps);
+      envFooterText.textContent = `Step ${displayStepNum} of ${totalUserSteps} • ${percentComplete()}% Unlocked`;
+    }
   }
 
   function percentComplete() {
-    return Math.round((currentStep / maxSteps) * 100);
+    const sequence = getStepSequence(profile.status);
+    return Math.round((currentStepIndex / (sequence.length - 1)) * 100);
   }
 
   // ================= STEP 1: STATUS SELECTION =================
-  setupChoiceGrid(statusGrid, false);
+  if (statusGrid) {
+    setupChoiceGrid(statusGrid, false);
+  }
 
   // ================= RENDER DYNAMIC STATUS-SPECIFIC FORM (STEP 5) =================
   function renderStatusSpecificForm() {
@@ -267,74 +309,76 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1 class="step-title">Tell us about your studies</h1>
         <p class="step-subtitle">Help us understand your education level and specialization.</p>
 
-        <div class="form-row-2" style="margin-top: 10px;">
-          <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Education Level</label>
-            <select id="studentEduLevel" class="select-custom">
-              <option value="10th">10th</option>
-              <option value="12th">12th</option>
-              <option value="Diploma">Diploma</option>
-              <option value="Undergraduate" selected>Undergraduate (B.Tech, B.Sc, B.A, B.Com, BCA)</option>
-              <option value="Postgraduate">Postgraduate (M.Tech, M.Sc, MBA)</option>
-              <option value="Other">Other</option>
-            </select>
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 12px;">
+          <div class="form-row-2">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Education Level</label>
+              <select id="studentEduLevel" class="select-custom">
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Undergraduate" selected>Undergraduate (B.Tech, B.Sc, B.A, B.Com, BCA)</option>
+                <option value="Postgraduate">Postgraduate (M.Tech, M.Sc, MBA)</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Degree / Course</label>
+              <select id="studentDegree" class="select-custom">
+                <option value="B.Sc" selected>B.Sc</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="B.A">B.A</option>
+                <option value="B.Com">B.Com</option>
+                <option value="BCA">BCA</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="M.Sc">M.Sc</option>
+                <option value="MBA">MBA</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Degree / Course</label>
-            <select id="studentDegree" class="select-custom">
-              <option value="B.Sc" selected>B.Sc</option>
-              <option value="B.Tech">B.Tech</option>
-              <option value="B.A">B.A</option>
-              <option value="B.Com">B.Com</option>
-              <option value="BCA">BCA</option>
-              <option value="M.Tech">M.Tech</option>
-              <option value="M.Sc">M.Sc</option>
-              <option value="MBA">MBA</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="form-row-2" style="margin-top: 12px;">
-          <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Specialization</label>
-            <input type="text" id="studentSpec" class="select-custom" value="${profile.education.specialization || 'Computer Science'}" placeholder="e.g. Computer Science">
+          <div class="form-row-2">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Specialization</label>
+              <input type="text" id="studentSpec" class="select-custom" value="${profile.education.specialization || 'Computer Science'}" placeholder="e.g. Computer Science">
+            </div>
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Current Year</label>
+              <select id="studentYear" class="select-custom">
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year" selected>3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="Final Year">Final Year</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Current Year</label>
-            <select id="studentYear" class="select-custom">
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year" selected>3rd Year</option>
-              <option value="4th Year">4th Year</option>
-              <option value="Final Year">Final Year</option>
-              <option value="Completed">Completed</option>
-            </select>
-          </div>
-        </div>
 
-        <div style="margin-top: 16px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">What are you looking for right now?</label>
-          <div class="cards-grid cols-3" id="studentLookingForGrid">
-            <div class="choice-card selected" data-val="Internship">
-              <div class="choice-title">Internship</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card selected" data-val="Job after graduation">
-              <div class="choice-title">Job after Graduation</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Skill Courses">
-              <div class="choice-title">Skill Courses</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Scholarships">
-              <div class="choice-title">Scholarships</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Higher studies">
-              <div class="choice-title">Higher Studies</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
+          <div>
+            <label style="font-size: 14px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 10px;">What are you looking for right now?</label>
+            <div class="cards-grid cols-3" id="studentLookingForGrid">
+              <div class="choice-card selected" data-val="Internship">
+                <div class="choice-title">Internship</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card selected" data-val="Job after graduation">
+                <div class="choice-title">Job after Graduation</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Skill Courses">
+                <div class="choice-title">Skill Courses</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Scholarships">
+                <div class="choice-title">Scholarships</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Higher studies">
+                <div class="choice-title">Higher Studies</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -348,52 +392,54 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1 class="step-title">Tell us about your current job</h1>
         <p class="step-subtitle">We'll help you upskill, switch roles, or increase your compensation.</p>
 
-        <div class="form-row-2" style="margin-top: 10px;">
-          <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Current Job Title / Role</label>
-            <input type="text" id="employedRole" class="select-custom" value="${profile.employment.role || 'Software Developer'}" placeholder="e.g. Junior Developer">
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 12px;">
+          <div class="form-row-2">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Current Job Title / Role</label>
+              <input type="text" id="employedRole" class="select-custom" value="${profile.employment.role || 'Software Developer'}" placeholder="e.g. Junior Developer">
+            </div>
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Years of Experience</label>
+              <select id="employedExp" class="select-custom">
+                <option value="0-1 years">0-1 years</option>
+                <option value="1-3 years" selected>1-3 years</option>
+                <option value="3-5 years">3-5 years</option>
+                <option value="5+ years">5+ years</option>
+              </select>
+            </div>
           </div>
+
           <div>
-            <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Years of Experience</label>
-            <select id="employedExp" class="select-custom">
-              <option value="0-1 years">0-1 years</option>
-              <option value="1-3 years" selected>1-3 years</option>
-              <option value="3-5 years">3-5 years</option>
-              <option value="5+ years">5+ years</option>
+            <label style="font-size: 13px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 6px;">Industry</label>
+            <select id="employedIndustry" class="select-custom">
+              <option value="IT & Tech" selected>IT & Tech</option>
+              <option value="Banking & Finance">Banking & Finance</option>
+              <option value="Education">Education</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Retail & E-commerce">Retail & E-commerce</option>
+              <option value="Other">Other</option>
             </select>
           </div>
-        </div>
 
-        <div style="margin-top: 12px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Industry</label>
-          <select id="employedIndustry" class="select-custom">
-            <option value="IT & Tech" selected>IT & Tech</option>
-            <option value="Banking & Finance">Banking & Finance</option>
-            <option value="Education">Education</option>
-            <option value="Healthcare">Healthcare</option>
-            <option value="Retail & E-commerce">Retail & E-commerce</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div style="margin-top: 16px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">What would you like to achieve next?</label>
-          <div class="cards-grid cols-2" id="employedNextGrid">
-            <div class="choice-card selected" data-val="Grow in current career">
-              <div class="choice-title">Grow in current career</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Switch career">
-              <div class="choice-title">Switch career / domain</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Get a better job">
-              <div class="choice-title">Get a better high-paying job</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Learn new skills">
-              <div class="choice-title">Learn new skills & certifications</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
+          <div>
+            <label style="font-size: 14px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 10px;">What would you like to achieve next?</label>
+            <div class="cards-grid cols-2" id="employedNextGrid">
+              <div class="choice-card selected" data-val="Grow in current career">
+                <div class="choice-title">Grow in current career</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Switch career">
+                <div class="choice-title">Switch career / domain</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Get a better job">
+                <div class="choice-title">Get a better high-paying job</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Learn new skills">
+                <div class="choice-title">Learn new skills & certifications</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -407,42 +453,44 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1 class="step-title">What were you doing previously?</h1>
         <p class="step-subtitle">Tell us your background so we can connect you to immediate job opportunities or training.</p>
 
-        <div style="margin-top: 10px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">Previous Status</label>
-          <div class="cards-grid cols-3" id="unemployedPrevGrid">
-            <div class="choice-card selected" data-val="Recent Graduate">
-              <div class="choice-title">Recent Graduate</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Previously Employed">
-              <div class="choice-title">Previously Employed</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Career Break">
-              <div class="choice-title">Career Break / Sabbatical</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 12px;">
+          <div>
+            <label style="font-size: 14px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 8px;">Previous Status</label>
+            <div class="cards-grid cols-3" id="unemployedPrevGrid">
+              <div class="choice-card selected" data-val="Recent Graduate">
+                <div class="choice-title">Recent Graduate</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Previously Employed">
+                <div class="choice-title">Previously Employed</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Career Break">
+                <div class="choice-title">Career Break / Sabbatical</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div style="margin-top: 16px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">What are you looking for right now?</label>
-          <div class="cards-grid cols-2" id="unemployedLookingGrid">
-            <div class="choice-card selected" data-val="Immediate Job">
-              <div class="choice-title">Immediate Job Opportunities</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Skill Training">
-              <div class="choice-title">Free Skill Training Programs</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Government Support">
-              <div class="choice-title">Government Allowances & Schemes</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Career Guidance">
-              <div class="choice-title">1-on-1 Mentorship & Resume Help</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
+          <div>
+            <label style="font-size: 14px; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 8px;">What are you looking for right now?</label>
+            <div class="cards-grid cols-2" id="unemployedLookingGrid">
+              <div class="choice-card selected" data-val="Immediate Job">
+                <div class="choice-title">Immediate Job Opportunities</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Skill Training">
+                <div class="choice-title">Free Skill Training Programs</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Government Support">
+                <div class="choice-title">Government Allowances & Schemes</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
+              <div class="choice-card" data-val="Career Guidance">
+                <div class="choice-title">1-on-1 Mentorship & Resume Help</div>
+                <i class="fa-solid fa-circle-check choice-check"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -450,82 +498,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setupChoiceGrid(document.getElementById('unemployedPrevGrid'), false);
       setupChoiceGrid(document.getElementById('unemployedLookingGrid'), true);
-    } 
-    else if (profile.status === 'entrepreneur') {
-      dynamicStatusFormContent.innerHTML = `
-        <span class="step-badge"><i class="fa-solid fa-rocket"></i> Entrepreneurship</span>
-        <h1 class="step-title">Tell us about your business</h1>
-        <p class="step-subtitle">We'll connect you with government subsidies, grants, loans, and business mentors.</p>
-
-        <div style="margin-top: 10px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">What's your business stage?</label>
-          <div class="cards-grid cols-3" id="entrepreneurStageGrid">
-            <div class="choice-card selected" data-val="Idea Stage">
-              <div class="choice-title">Idea Stage</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Starting / Early">
-              <div class="choice-title">Starting / Early Stage</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Established">
-              <div class="choice-title">Established Business</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 16px;">
-          <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px;">What support do you need most?</label>
-          <div class="cards-grid cols-3" id="entrepreneurSupportGrid">
-            <div class="choice-card selected" data-val="Funding & Subsidies">
-              <div class="choice-title">Funding & Grants</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card selected" data-val="Government Schemes">
-              <div class="choice-title">UYEGP / MSME Schemes</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Mentorship">
-              <div class="choice-title">Business Mentorship</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Marketing">
-              <div class="choice-title">Digital Marketing</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-            <div class="choice-card" data-val="Business Training">
-              <div class="choice-title">Financial & Legal Skills</div>
-              <i class="fa-solid fa-circle-check choice-check"></i>
-            </div>
-          </div>
-        </div>
-      `;
-
-      setupChoiceGrid(document.getElementById('entrepreneurStageGrid'), false);
-      setupChoiceGrid(document.getElementById('entrepreneurSupportGrid'), true);
     }
   }
 
   // ================= SAVE DATA AT EACH STEP =================
   function saveCurrentStepData() {
     // Step 1: Status
-    const selectedStatus = statusGrid.querySelector('.choice-card.selected');
-    if (selectedStatus) {
-      profile.status = selectedStatus.getAttribute('data-status');
+    if (statusGrid) {
+      const selectedStatus = statusGrid.querySelector('.choice-card.selected');
+      if (selectedStatus) {
+        profile.status = selectedStatus.getAttribute('data-status') || 'student';
+      }
     }
 
     // Step 2: Name
-    if (nameInput && nameInput.value.trim()) {
+    if (nameInput && nameInput.value) {
       profile.basic.name = nameInput.value.trim();
     }
 
     // Step 3: Age
-    profile.basic.age = parseInt(ageSlider.value, 10);
+    if (ageSlider && ageSlider.value) {
+      profile.basic.age = parseInt(ageSlider.value, 10);
+    }
 
     // Step 4: Location
-    profile.basic.state = stateSelect.value;
-    profile.basic.district = cityInput.value.trim() || 'Chennai';
+    if (stateSelect && cityInput) {
+      profile.basic.state = stateSelect.value;
+      profile.basic.district = (cityInput.value && cityInput.value.trim()) || 'Chennai';
+    }
 
     // Step 5: Save status-specific branch fields
     if (profile.status === 'student') {
@@ -581,39 +581,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Step 7: Goals
-    const selectedQuests = Array.from(questGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-quest'));
-    if (selectedQuests.length) {
-      profile.career.goals = selectedQuests;
+    if (questGrid) {
+      const selectedQuests = Array.from(questGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-quest'));
+      if (selectedQuests.length) {
+        profile.career.goals = selectedQuests;
+      }
     }
 
     // Step 8: Target Role
-    const selectedRoles = Array.from(targetRoleGrid.querySelectorAll('.tag-chip.selected')).map(el => el.getAttribute('data-role'));
-    if (selectedRoles.length) {
-      profile.career.target_roles = selectedRoles;
+    if (targetRoleGrid) {
+      const selectedRoles = Array.from(targetRoleGrid.querySelectorAll('.tag-chip.selected')).map(el => el.getAttribute('data-role'));
+      if (selectedRoles.length) {
+        profile.career.target_roles = selectedRoles;
+      }
     }
 
     // Step 9: Work Location
-    const selectedLocs = Array.from(workLocGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-loc'));
-    if (selectedLocs.length) {
-      profile.preferences.work_location = selectedLocs;
+    if (workLocGrid) {
+      const selectedLocs = Array.from(workLocGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-loc'));
+      if (selectedLocs.length) {
+        profile.preferences.work_location = selectedLocs;
+      }
     }
 
     // Step 10: Income
-    const selectedInc = incomeGrid.querySelector('.choice-card.selected');
-    if (selectedInc) {
-      profile.financial.income_range = selectedInc.getAttribute('data-inc');
+    if (incomeGrid) {
+      const selectedInc = incomeGrid.querySelector('.choice-card.selected');
+      if (selectedInc) {
+        profile.financial.income_range = selectedInc.getAttribute('data-inc');
+      }
     }
 
     // Step 11: Learning Format
-    const selectedFmt = learningFormatGrid.querySelector('.choice-card.selected');
-    if (selectedFmt) {
-      profile.preferences.learning_mode = [selectedFmt.getAttribute('data-fmt')];
+    if (learningFormatGrid) {
+      const selectedFmt = learningFormatGrid.querySelector('.choice-card.selected');
+      if (selectedFmt) {
+        profile.preferences.learning_mode = [selectedFmt.getAttribute('data-fmt')];
+      }
     }
 
     // Step 12: Support Interests
-    const selectedSup = Array.from(supportGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-sup'));
-    if (selectedSup.length) {
-      profile.support_interests = selectedSup;
+    if (supportGrid) {
+      const selectedSup = Array.from(supportGrid.querySelectorAll('.choice-card.selected')).map(el => el.getAttribute('data-sup'));
+      if (selectedSup.length) {
+        profile.support_interests = selectedSup;
+      }
     }
   }
 
@@ -647,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnAutoLoc.addEventListener('click', () => {
     btnAutoLoc.classList.add('active');
     btnManualLoc.classList.remove('active');
-    
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         () => {
@@ -797,14 +809,14 @@ document.addEventListener('DOMContentLoaded', () => {
     profile.skills.slice(0, 4).forEach((sk, idx) => {
       const badge = document.createElement('div');
       badge.className = `floating-skill-chip ${sk.status}`;
-      
+
       const positions = [
         { top: '15%', left: '5%' },
         { top: '25%', right: '5%' },
         { bottom: '25%', left: '2%' },
         { bottom: '15%', right: '2%' }
       ];
-      
+
       const pos = positions[idx % positions.length];
       badge.style.top = pos.top || 'auto';
       badge.style.bottom = pos.bottom || 'auto';
@@ -853,8 +865,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto advance to Step 14 after 2.8s
     setTimeout(() => {
-      if (currentStep === 13) {
-        currentStep = 14;
+      const sequence = getStepSequence(profile.status);
+      if (sequence[currentStepIndex] === 13) {
+        currentStepIndex = sequence.length - 1;
         updateStepView();
       }
     }, 2800);

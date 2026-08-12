@@ -6,18 +6,18 @@
 
 :root {
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  
+
   --color-primary: #FF1744;
   --color-primary-hover: #D50000;
   --color-primary-light: #FFEBEE;
   --color-primary-glow: rgba(255, 23, 68, 0.25);
-  
+
   --color-secondary: #6C5CE7;
   --color-secondary-light: #F0EDFF;
-  
+
   --color-success: #00B894;
   --color-success-light: #E6F9F5;
-  
+
   --color-accent: #FFB300;
   --color-accent-light: #FFF8E1;
 
@@ -191,8 +191,15 @@ body.onboarding-page {
 }
 
 @keyframes pulseOrb {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
 }
 
 /* Dynamic Character Speech Bubble */
@@ -227,8 +234,15 @@ body.onboarding-page {
 }
 
 @keyframes bubblePop {
-  0% { transform: scale(0.8) translateY(10px); opacity: 0; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
+  0% {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Main Character Image & Animation Wrapper */
@@ -253,9 +267,17 @@ body.onboarding-page {
 }
 
 @keyframes floatIdle {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(0.5deg); }
-  100% { transform: translateY(0px) rotate(-0.5deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-0.5deg);
+  }
 }
 
 .guide-img.react-happy {
@@ -263,9 +285,17 @@ body.onboarding-page {
 }
 
 @keyframes jumpHappy {
-  0% { transform: translateY(0) scale(1); }
-  40% { transform: translateY(-20px) scale(1.05); }
-  100% { transform: translateY(0) scale(1); }
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-20px) scale(1.05);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Orbiting Skills Badge Container on Character */
@@ -307,8 +337,13 @@ body.onboarding-page {
 }
 
 @keyframes floatChip {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Character Environment Footer Badge */
@@ -355,8 +390,15 @@ body.onboarding-page {
 }
 
 @keyframes fadeInStep {
-  0% { opacity: 0; transform: translateX(20px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Step Header Elements */
@@ -387,7 +429,8 @@ body.onboarding-page {
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.5;
-  margin-top: -12px;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
 /* INPUTS & SELECTORS */
@@ -783,8 +826,13 @@ body.onboarding-page {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .ai-checklist {

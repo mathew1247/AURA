@@ -29,17 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Profile Menu Click to re-run Onboarding Journey
-  const profileMenuBtn = document.getElementById('profileMenuBtn');
-  if (profileMenuBtn) {
-    profileMenuBtn.title = 'Click to update your onboarding profile';
-    profileMenuBtn.style.cursor = 'pointer';
-    profileMenuBtn.addEventListener('click', () => {
-      if (confirm('Would you like to edit your onboarding profile?')) {
-        window.location.href = 'onboarding.html';
-      }
-    });
-  }
   // --- Element References ---
   const topNavItems = document.querySelectorAll('.nav-item');
   const sidebarItems = document.querySelectorAll('.menu-item');
@@ -63,31 +52,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
 
+  const heroPrevBtn = document.getElementById('heroPrevBtn');
+  const heroNextBtn = document.getElementById('heroNextBtn');
+
   // --- Card Data Details ---
   const cardData = {
-    schemes: {
-      badge: '🏛️ Matched Schemes',
-      title: 'Matched Government Schemes',
+    sukanya: {
+      badge: 'Government Scheme',
+      title: 'Sukanya Samriddhi Yojana',
       img: 'assets/sukanya_scheme.png',
-      desc: '7 personalized Tamil Nadu government schemes matched for your profile including Pudhumai Penn Scheme (₹1,000/mo), Moovalur Ramamirtham Ammiyar Higher Education Scheme, and UYEGP Self-Employment Subsidies.'
+      desc: 'A small deposit scheme for the girl child launched as a part of the "Beti Bachao Beti Padhao" campaign. Currently offering a high interest rate of 8.2% per annum with complete tax benefits under Section 80C.'
     },
-    skillgap: {
-      badge: '🎯 AI Skill Analyzer',
-      title: 'AI Skill Gap Analyzer',
+    webdev: {
+      badge: 'Online Course',
+      title: 'Full-Stack Web Development Course',
       img: 'assets/web_dev_course.png',
-      desc: 'Smart skill audit analyzing your target career role against top market demands. Recommends instant micro-courses in Python, SQL, Excel, and Data Analytics.'
+      desc: 'Master HTML, CSS, JavaScript, React, and Node.js with live mentorship, real-world hands-on projects, portfolio building, and guaranteed career placement assistance.'
     },
     job: {
-      badge: '💼 Verified Job Matches',
-      title: 'Female-Friendly Job Matches',
+      badge: 'Latest Job Openings',
+      title: 'Find Your Dream Job',
       img: 'assets/dream_job.png',
-      desc: '12 new curated job openings from verified inclusive employers offering flexible remote work, equal pay policies, and mentorship.'
+      desc: 'Explore curated high-paying job opportunities from top tech companies and organizations supporting diversity, equity, and flexible remote work setups.'
     },
     legal: {
-      badge: '⚖️ 24/7 Helpline',
-      title: '24/7 Free Legal Rights Helpline',
+      badge: 'Get Expert Support',
+      title: 'Free Legal Aid & Guidance',
       img: 'assets/legal_help.png',
-      desc: 'Direct confidential legal assistance covering workplace rights, POSH Act regulations, maternity leave benefits, and equal pay advocacy.'
+      desc: 'Connect with certified female legal counsel and rights advocates for confidential advice on workplace laws, property rights, business contracts, and personal safety.'
     }
   };
 
@@ -127,109 +119,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Quick Action Power Hub Card Handlers ---
-  const matchedSchemesModal = document.getElementById('matchedSchemesModal');
-  const skillGapModal = document.getElementById('skillGapModal');
-  const jobMatchesModal = document.getElementById('jobMatchesModal');
-  const legalHelplineModal = document.getElementById('legalHelplineModal');
-
-  // --- Dropdown Sub-Item Event Handlers ---
-  const navJobsBtn = document.getElementById('navJobsBtn');
-  const navSkillGapBtn = document.getElementById('navSkillGapBtn');
-  const navLegalBtn = document.getElementById('navLegalBtn');
-  const topOpenChatBtn = document.getElementById('topOpenChatBtn');
-
-  // Card Click Routing Handlers
-  const cardGovSchemes = document.getElementById('cardGovSchemes');
-  const cardJobs = document.getElementById('cardJobs');
-  const cardSkillGaps = document.getElementById('cardSkillGaps');
-  const cardCourses = document.getElementById('cardCourses');
-  const cardLegalSupport = document.getElementById('cardLegalSupport');
-  const cardHealthcare = document.getElementById('cardHealthcare');
-  const compactFinancialCard = document.getElementById('compactFinancialCard');
-  const compactCertificationsCard = document.getElementById('compactCertificationsCard');
-  const seeAllBtn = document.getElementById('seeAllBtn');
-  if (seeAllBtn) seeAllBtn.addEventListener('click', (e) => { e.preventDefault(); if (matchedSchemesModal) matchedSchemesModal.classList.add('active'); });
-
-  if (cardGovSchemes) cardGovSchemes.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (matchedSchemesModal) matchedSchemesModal.classList.add('active'); });
-  if (cardJobs) cardJobs.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (jobMatchesModal) jobMatchesModal.classList.add('active'); });
-
-  document.querySelectorAll('.rec-card, [data-card-id="schemes"]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const cardId = el.getAttribute('data-card-id');
-      if (cardId === 'schemes' || !cardId) {
-        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
-      } else if (cardId === 'skillgap') {
-        if (skillGapModal) skillGapModal.classList.add('active');
-      } else if (cardId === 'job') {
-        if (jobMatchesModal) jobMatchesModal.classList.add('active');
-      } else if (cardId === 'legal') {
-        if (legalHelplineModal) legalHelplineModal.classList.add('active');
+  // --- Card Click Handler for Detail Modal ---
+  recCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const cardId = card.getAttribute('data-card-id');
+      const data = cardData[cardId];
+      if (data) {
+        modalImg.src = data.img;
+        modalBadge.textContent = data.badge;
+        modalTitle.textContent = data.title;
+        modalDesc.textContent = data.desc;
+        detailModal.classList.add('active');
       }
     });
   });
 
-  if (compactFinancialCard) compactFinancialCard.addEventListener('click', () => { window.location.href = 'financial_benefits.html'; });
-  
-  if (cardSkillGaps) cardSkillGaps.addEventListener('click', () => { if (skillGapModal) skillGapModal.classList.add('active'); });
-  if (cardCourses) cardCourses.addEventListener('click', () => { alert('📚 Showing 5 AI-Recommended Courses tailored for ' + (userProfile?.goal || 'your goals') + ':\n1. Power BI Complete Bootcamp\n2. Tableau Data Visualization Masterclass\n3. Advanced SQL for Analytics\n4. Python for Data Science\n5. Data Storytelling & Business Insights'); });
-  if (cardLegalSupport) cardLegalSupport.addEventListener('click', () => { if (legalHelplineModal) legalHelplineModal.classList.add('active'); });
-  if (cardHealthcare) cardHealthcare.addEventListener('click', () => { alert('🏥 Local Healthcare & Welfare Resources (Tamil Nadu):\n1. Makkalai Thedi Maruthuvam Doorstep Healthcare\n2. Dr. Muthulakshmi Reddy Maternal Health Assistance\n3. CMCHIS Health Insurance Coverage'); });
-  if (compactCertificationsCard) compactCertificationsCard.addEventListener('click', () => { alert('🏆 Recommended Certifications for ' + (userProfile?.goal || 'your goals') + ':\n1. Google Data Analytics Professional Certificate\n2. Microsoft Certified: Power BI Data Analyst Associate\n3. Tableau Certified Data Analyst'); });
+  modalCloseBtn.addEventListener('click', () => {
+    detailModal.classList.remove('active');
+  });
 
-  if (navJobsBtn) navJobsBtn.addEventListener('click', () => { window.location.href = 'jobs.html'; });
-  if (navSkillGapBtn) navSkillGapBtn.addEventListener('click', (e) => { e.preventDefault(); if (skillGapModal) skillGapModal.classList.add('active'); });
-  if (navLegalBtn) navLegalBtn.addEventListener('click', (e) => { e.preventDefault(); if (legalHelplineModal) legalHelplineModal.classList.add('active'); });
-  if (topOpenChatBtn) topOpenChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });entDefault(); openChat(); });
-
-  // Modal Close Control Helpers
-  function setupModalClose(modalElem, closeBtnId, cancelBtnId) {
-    if (!modalElem) return;
-    const closeBtn = document.getElementById(closeBtnId);
-    const cancelBtn = document.getElementById(cancelBtnId);
-
-    if (closeBtn) closeBtn.addEventListener('click', () => modalElem.classList.remove('active'));
-    if (cancelBtn) cancelBtn.addEventListener('click', () => modalElem.classList.remove('active'));
-
-    modalElem.addEventListener('click', (e) => {
-      if (e.target === modalElem) modalElem.classList.remove('active');
-    });
-  }
-
-  setupModalClose(detailModal, 'modalCloseBtn', null);
-  setupModalClose(matchedSchemesModal, 'matchedSchemesCloseBtn', 'matchedSchemesCancelBtn');
-  setupModalClose(skillGapModal, 'skillGapCloseBtn', 'skillGapCancelBtn');
-  setupModalClose(jobMatchesModal, 'jobMatchesCloseBtn', 'jobMatchesCancelBtn');
-  setupModalClose(legalHelplineModal, 'legalHelplineCloseBtn', 'legalHelplineCancelBtn');
+  detailModal.addEventListener('click', (e) => {
+    if (e.target === detailModal) {
+      detailModal.classList.remove('active');
+    }
+  });
 
   // --- AI Chat Drawer Handler ---
   function openChat(initialPrompt = '') {
-    if (chatDrawer) chatDrawer.classList.add('active');
+    chatDrawer.classList.add('active');
     if (initialPrompt) {
       handleUserSendMessage(initialPrompt);
     }
   }
 
   function closeChat() {
-    if (chatDrawer) chatDrawer.classList.remove('active');
+    chatDrawer.classList.remove('active');
   }
 
-  if (openChatBtn) openChatBtn.addEventListener('click', () => openChat());
-  if (chatCloseBtn) chatCloseBtn.addEventListener('click', closeChat);
+  openChatBtn.addEventListener('click', () => openChat());
+  chatCloseBtn.addEventListener('click', closeChat);
 
-  if (promptChips) {
-    promptChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const prompt = chip.getAttribute('data-prompt');
-        openChat(prompt);
-      });
+  promptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const prompt = chip.getAttribute('data-prompt');
+      openChat(prompt);
     });
-  }
+  });
 
   function appendMessage(sender, text) {
-    if (!chatBody) return;
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
     msgDiv.textContent = text;
@@ -246,22 +183,24 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   function handleUserSendMessage(overrideText = null) {
-    const text = overrideText || (chatInput ? chatInput.value.trim() : '');
+    const text = overrideText || chatInput.value.trim();
     if (!text) return;
 
     appendMessage('user', text);
     chatMessages.push({ role: "user", content: text });
-    if (!overrideText && chatInput) chatInput.value = '';
+    if (!overrideText) chatInput.value = '';
 
     // Show typing indicator
     const typingIndicator = document.createElement('div');
+    typingIndicator.classList.add('chat-msg', 'bot');
     typingIndicator.style.opacity = '0.7';
     typingIndicator.textContent = "Thinking...";
     chatBody.appendChild(typingIndicator);
     chatBody.scrollTop = chatBody.scrollHeight;
 
     // Send query to the backend Cerebras endpoint
-    fetch('/api/chat', {
+    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    fetch(`${apiBase}/api/chat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -607,6 +546,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Attach Triggers to Navigation & Recommendation Cards ---
+  const matchedSchemesModal = document.getElementById('matchedSchemesModal');
+  const skillGapModal = document.getElementById('skillGapModal');
+  const jobMatchesModal = document.getElementById('jobMatchesModal');
+  const legalHelplineModal = document.getElementById('legalHelplineModal');
+
   sidebarItems.forEach(item => {
     item.addEventListener('click', (e) => {
       const viewName = item.getAttribute('data-view');
@@ -655,3 +599,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const loginBtn = document.getElementById('loginBtn');
+  if (loginBtn) {
+    loginBtn.addEventListener('click', () => {
+      localStorage.clear();
+    });
+  }
+
+});

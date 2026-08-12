@@ -4,6 +4,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // If onboarding is already completed, redirect to dashboard directly
+  const storedStatus = localStorage.getItem('userStatus');
+  const storedProfile = localStorage.getItem('userProfile');
+  if (storedStatus && storedProfile) {
+    window.location.href = 'index.html';
+    return;
+  }
+
   // ================= STATE MODEL =================
   let currentStep = 0;
   const maxSteps = 14;
@@ -173,7 +181,26 @@ document.addEventListener('DOMContentLoaded', () => {
       // Finalize and save to localStorage
       localStorage.setItem('userStatus', profile.status);
       localStorage.setItem('userProfile', JSON.stringify(profile));
-      window.location.href = 'index.html';
+
+      // Save to MongoDB database via backend
+      const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+      fetch(`${apiBase}/api/onboarding`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(profile)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Profile saved to database:', data);
+        window.location.href = 'index.html';
+      })
+      .catch(error => {
+        console.error('Failed to save profile to database:', error);
+        // Redirect anyway as a fallback
+        window.location.href = 'index.html';
+      });
       return;
     }
 

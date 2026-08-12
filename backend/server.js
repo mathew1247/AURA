@@ -19,6 +19,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Route for root path - serve onboarding.html first
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/onboarding.html"));
+});
+
 // Serve frontend static files
 app.use(express.static(path.join(__dirname, "../frontend")));
 

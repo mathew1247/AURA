@@ -5,11 +5,38 @@ const mongoose = require("mongoose");
 const path = require("path");
 const connectDB = require("./config/db");
 const Onboarding = require("./models/Onboarding");
+const Subscription = require("./models/Subscription");
+const webpush = require("web-push");
 const Groq = require("groq-sdk");
 const fs = require("fs");
 
 // Load env variables
 dotenv.config();
+
+// Configure VAPID Keys for Web Push Notifications
+let vapidPublicKey = process.env.VAPID_PUBLIC_KEY || "BGtu3qMMWkvN2B2FJh3OTkg2JJf5eA2Y8hx7DdX8zuMA5qWNXTppbHmqSUArT5dF5W6C4D5GZ4B6dnbyeD3mT_A";
+let vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
+
+if (!vapidPrivateKey) {
+  // Generate a fresh matching keypair for VAPID web-push notifications
+  const keys = webpush.generateVAPIDKeys();
+  vapidPublicKey = keys.publicKey;
+  vapidPrivateKey = keys.privateKey;
+
+  try {
+    const envPath = path.join(__dirname, ".env");
+    fs.appendFileSync(envPath, `\n# Generated VAPID Keys\nVAPID_PUBLIC_KEY=${vapidPublicKey}\nVAPID_PRIVATE_KEY=${vapidPrivateKey}\n`);
+    console.log("Generated fresh VAPID Keypair and saved to .env");
+  } catch (err) {
+    console.error("Failed to save VAPID keys to .env:", err);
+  }
+}
+
+webpush.setVapidDetails(
+  "mailto:support@empowher.tn.gov.in",
+  vapidPublicKey,
+  vapidPrivateKey
+);
 
 // Connect to database
 connectDB();
@@ -161,6 +188,70 @@ app.post("/api/onboarding", async (req, res) => {
   } catch (error) {
     console.error("Save Onboarding Error:", error);
     res.status(500).json({ success: false, error: error.message || "Failed to save onboarding details" });
+  }
+});
+
+// GET VAPID public key for frontend clients
+app.get("/api/notifications/vapid-key", (req, res) => {
+  res.json({ publicKey: vapidPublicKey });
+});
+
+// POST Subscribe to notifications
+app.post("/api/notifications/subscribe", async (req, res) => {
+  try {
+    const subscription = req.body;
+    if (!subscription || !subscription.endpoint) {
+      return res.status(400).json({ error: "Subscription endpoint is required" });
+    }
+
+    // Save or update subscription in MongoDB
+    await Subscription.findOneAndUpdate(
+      { endpoint: subscription.endpoint },
+      subscription,
+      { upsert: true, new: true }
+    );
+
+    res.status(201).json({ success: true, message: "Subscription registered successfully" });
+  } catch (err) {
+    console.error("Subscription Error:", err);
+    res.status(500).json({ error: err.message || "Failed to register subscription" });
+  }
+});
+
+// POST Send push notification to all subscribers
+app.post("/api/notifications/send", async (req, res) => {
+  try {
+    const { title, body, icon, url } = req.body;
+    if (!title || !body) {
+      return res.status(400).json({ error: "Title and body are required" });
+    }
+
+    const payload = JSON.stringify({
+      title,
+      body,
+      icon: icon || "/assets/logo_empowher.png",
+      url: url || "/index.html"
+    });
+
+    const subscriptions = await Subscription.find({});
+    const pushPromises = subscriptions.map(sub => {
+      return webpush.sendNotification(sub, payload)
+        .catch(async (err) => {
+          // Clean up expired or invalid subscriptions
+          if (err.statusCode === 410 || err.statusCode === 404) {
+            await Subscription.deleteOne({ endpoint: sub.endpoint });
+            console.log(`Cleaned up expired subscription: ${sub.endpoint}`);
+          } else {
+            console.error(`Push Notification Fail for ${sub.endpoint}:`, err);
+          }
+        });
+    });
+
+    await Promise.all(pushPromises);
+    res.json({ success: true, message: `Notification broadcasted to ${subscriptions.length} devices` });
+  } catch (err) {
+    console.error("Send Notification Error:", err);
+    res.status(500).json({ error: err.message || "Failed to send notification" });
   }
 });
 

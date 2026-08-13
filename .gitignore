@@ -9,3 +9,6 @@ backend/.env
 # Local development files
 .DS_Store
 *.log
+
+# Credentials and secrets
+backend/Notifications/*.json

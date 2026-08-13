@@ -841,11 +841,16 @@
 
     <!-- Top Header Navigation -->
     <header class="top-header">
-      <!-- Left: Brand Logo -->
-      <a href="index.html" class="top-nav-brand">
-        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
-        <span class="brand-text">EMPOWHER</span>
-      </a>
+      <!-- Left: Mobile Menu Trigger & Brand Logo -->
+      <div class="top-header-left">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="top-nav-brand">
+          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-text">EMPOWHER</span>
+        </a>
+      </div>
 
       <!-- Center Top Nav Links -->
       <ul class="top-nav-links">
@@ -857,7 +862,7 @@
 
         <!-- Opportunities Dropdown -->
         <li class="nav-item-dropdown">
-          <a class="nav-item" href="schemes.html">
+          <a class="nav-item" href="#">
             <span>Opportunities</span>
             <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
           </a>
@@ -874,43 +879,39 @@
               <i class="fa-solid fa-briefcase"></i>
               <span>Jobs</span>
             </a>
-            <a href="courses.html" class="dropdown-item active">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <span>Training & Courses</span>
-            </a>
           </div>
         </li>
 
         <!-- Learn Dropdown -->
         <li class="nav-item-dropdown">
-          <a class="nav-item active" href="courses.html">
+          <a class="nav-item active" href="#">
             <span>Learn</span>
             <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="courses.html" class="dropdown-item">
+            <a href="courses.html" class="dropdown-item active">
               <i class="fa-solid fa-book-open"></i>
               <span>Courses & Learning Hub</span>
             </a>
-            <a href="courses.html?tab=certificates" class="dropdown-item">
-              <i class="fa-solid fa-award"></i>
-              <span>Certifications</span>
+            <a href="index.html#skillgap" class="dropdown-item" id="navSkillGapBtn">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
             </a>
           </div>
         </li>
 
         <!-- Support Dropdown -->
         <li class="nav-item-dropdown">
-          <a class="nav-item" href="#">
+          <a class="nav-item" href="legal.html">
             <span>Support</span>
             <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">
+            <a href="legal.html" class="dropdown-item">
               <i class="fa-solid fa-scale-balanced"></i>
               <span>Legal Aid & POSH</span>
             </a>
-            <a href="#" class="dropdown-item">
+            <a href="healthcare_welfare.html" class="dropdown-item">
               <i class="fa-solid fa-heart-pulse"></i>
               <span>Healthcare & Welfare</span>
             </a>
@@ -925,7 +926,61 @@
           </a>
         </li>
       </ul>
+
+      <!-- Right Actions: Search Box, Notifications & User Profile -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="topSearchInput" placeholder="Search courses, skills...">
+        </div>
+
+        <button class="icon-btn" id="notificationBtn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+      </div>
     </header>
+
+    <!-- Mobile Navigation Overlay & Slide-Out Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">
+          <div class="brand-emblem" style="width: 28px; height: 28px; font-size: 12px;"><i class="fa-solid fa-bolt"></i></div>
+          <span>EMPOWHER</span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavCloseBtn" aria-label="Close navigation menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a></li>
+        
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Opportunities</span>
+          <a href="schemes.html" class="mobile-nav-subitem"><i class="fa-solid fa-building-columns"></i> Government Schemes</a>
+          <a href="jobs.html" class="mobile-nav-subitem"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+          <a href="financial_benefits.html" class="mobile-nav-subitem"><i class="fa-solid fa-indian-rupee-sign"></i> Financial Benefits</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-graduation-cap"></i> Learn</span>
+          <a href="courses.html" class="mobile-nav-subitem active"><i class="fa-solid fa-book-open"></i> Courses & Learning Hub</a>
+          <a href="courses.html#skillgap" class="mobile-nav-subitem"><i class="fa-solid fa-chart-column"></i> Skill Gap Analyzer</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-hand-holding-heart"></i> Support</span>
+          <a href="legal.html" class="mobile-nav-subitem"><i class="fa-solid fa-scale-balanced"></i> Legal Aid & POSH</a>
+          <a href="healthcare_welfare.html" class="mobile-nav-subitem"><i class="fa-solid fa-heart-pulse"></i> Healthcare & Welfare</a>
+        </li>
+
+        <li>
+          <a href="#" id="mobileOpenChatBtn" class="mobile-nav-item mobile-ai-btn">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+    </aside>
 
     <!-- Outer Main Wrapper -->
     <main class="courses-main-wrapper">
@@ -1743,9 +1798,66 @@
         requestAnimationFrame(drawConfetti);
       }
 
-    });
-  </script>
+      // Profile Dropdown & Logout Toggle
+      const profileMenuBtn = document.getElementById('profileMenuBtn');
+      const profileDropdown = document.getElementById('profileDropdown');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const userProfile = JSON.parse(localStorage.getItem('userProfile')) || { basic: { name: 'Ananya' } };
 
+      if (userProfile && userProfile.basic && userProfile.basic.name) {
+        const userNameElem = document.querySelector('.user-profile-chip .user-name');
+        if (userNameElem) userNameElem.textContent = userProfile.basic.name;
+        const dropdownNameElem = document.getElementById('dropdownUserName');
+        if (dropdownNameElem) dropdownNameElem.textContent = userProfile.basic.name;
+      }
+
+      if (profileMenuBtn && profileDropdown) {
+        profileMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          profileDropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', (e) => {
+          if (!profileDropdown.contains(e.target) && !profileMenuBtn.contains(e.target)) {
+            profileDropdown.classList.remove('active');
+          }
+        });
+      }
+
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('userStatus');
+          localStorage.removeItem('userProfile');
+          window.location.href = 'onboarding.html';
+        });
+      }
+    });
+  <!-- Interactive AI Assistant Chat Drawer -->
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="chat-title">AI Personal Assistant</div>
+          <div class="chat-status">Online & Ready to Help</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about courses, skills...">
+      <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

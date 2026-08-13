@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Rights & Protection Acts | EMPOWHER</title>
+  <meta name="description"
+    content="Explore official Tamil Nadu legal rights, women safety acts, POSH regulations, labor equality laws, and free legal aid services.">
+
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styling for Dedicated Legal Rights Page */
+    .legal-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+      border-radius: var(--radius-hero, 24px);
+      padding: 40px 48px;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+    }
+
+    .legal-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+
+    .legal-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .legal-hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .emergency-banner-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: linear-gradient(135deg, #FF1744 0%, #D50000 100%);
+      padding: 16px 24px;
+      border-radius: 16px;
+      color: #FFFFFF;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(255, 23, 68, 0.25);
+      flex-wrap: wrap;
+    }
+
+    .emergency-banner-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .emergency-banner-info i {
+      font-size: 28px;
+    }
+
+    .emergency-title {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .emergency-sub {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .emergency-call-btn {
+      background: #FFFFFF;
+      color: #D50000;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .emergency-call-btn:hover {
+      background: #FFF1F2;
+      transform: translateY(-2px);
+    }
+
+    .legal-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .legal-stat-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .legal-stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(124, 58, 237, 0.1);
+      color: #7C3AED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .legal-stat-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .legal-stat-label {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 600;
+    }
+
+    .legal-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .legal-search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .legal-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 14px;
+      color: var(--text-dark, #0F172A);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .legal-search-input:focus {
+      border-color: #7C3AED;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.18);
+    }
+
+    .legal-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 16px;
+    }
+
+    .category-pills-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+    }
+
+    .cat-pill {
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cat-pill:hover,
+    .cat-pill.active {
+      background: #7C3AED;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    }
+
+    .legal-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .legal-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .legal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      border-color: rgba(124, 58, 237, 0.3);
+    }
+
+    .legal-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .legal-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #F3E8FF;
+      color: #7C3AED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .legal-cat-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #7C3AED;
+      background: rgba(124, 58, 237, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .legal-card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    .legal-card-desc {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.55;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .rights-list-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .right-item-chip {
+      font-size: 12px;
+      color: #334155;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .right-item-chip i {
+      color: #10B981;
+      font-size: 11px;
+    }
+
+    .legal-helpline-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: #DC2626;
+      background: #FEE2E2;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .btn-view-act {
+      background: #7C3AED;
+      color: #FFFFFF;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-view-act:hover {
+      background: #6D28D9;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- Top Header Navigation -->
+    <header class="top-header">
+      <!-- Left: Mobile Menu Trigger & Brand Logo -->
+      <div class="top-header-left">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="top-nav-brand">
+          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-text">EMPOWHER</span>
+        </a>
+      </div>
+
+      <!-- Center Top Nav Links -->
+      <ul class="top-nav-links">
+        <li>
+          <a class="nav-item" href="index.html">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+
+        <!-- Opportunities Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="#">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="financial_benefits.html" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="jobs.html" class="dropdown-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="courses.html">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="courses.html" class="dropdown-item">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses & Learning Hub</span>
+            </a>
+            <a href="index.html#skillgap" class="dropdown-item" id="navSkillGapBtn">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item active" href="legal.html">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="legal.html" class="dropdown-item active">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="healthcare_welfare.html" class="dropdown-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="#" id="topOpenChatBtn"
+            style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Actions -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="topSearchInput" placeholder="Search legal acts, rights...">
+        </div>
+
+        <button class="icon-btn" id="notificationBtn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay & Slide-Out Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">
+          <div class="brand-emblem" style="width: 28px; height: 28px; font-size: 12px;"><i class="fa-solid fa-bolt"></i></div>
+          <span>EMPOWHER</span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavCloseBtn" aria-label="Close navigation menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a></li>
+        
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Opportunities</span>
+          <a href="schemes.html" class="mobile-nav-subitem"><i class="fa-solid fa-building-columns"></i> Government Schemes</a>
+          <a href="jobs.html" class="mobile-nav-subitem"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+          <a href="financial_benefits.html" class="mobile-nav-subitem"><i class="fa-solid fa-indian-rupee-sign"></i> Financial Benefits</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-graduation-cap"></i> Learn</span>
+          <a href="courses.html" class="mobile-nav-subitem"><i class="fa-solid fa-book-open"></i> Courses & Learning Hub</a>
+          <a href="courses.html#skillgap" class="mobile-nav-subitem"><i class="fa-solid fa-chart-column"></i> Skill Gap Analyzer</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-hand-holding-heart"></i> Support</span>
+          <a href="legal.html" class="mobile-nav-subitem active"><i class="fa-solid fa-scale-balanced"></i> Legal Aid & POSH</a>
+          <a href="healthcare_welfare.html" class="mobile-nav-subitem"><i class="fa-solid fa-heart-pulse"></i> Healthcare & Welfare</a>
+        </li>
+
+        <li>
+          <a href="#" id="mobileOpenChatBtn" class="mobile-nav-item mobile-ai-btn">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Container -->
+    <main class="page-content" style="max-width: 1340px; margin: 0 auto; width: 100%;">
+
+      <!-- Hero Header Banner -->
+      <section class="legal-hero">
+        <h1 class="legal-hero-title">
+          <i class="fa-solid fa-scale-balanced" style="color: #A7F3D0;"></i> Legal Rights & Women Protection Acts
+        </h1>
+        <p class="legal-hero-desc">
+          Know your statutory protections under Tamil Nadu & Indian constitutional laws. Access 10+ essential legal acts, POSH guidelines, domestic violence protection orders, workplace labor rights, and free State Legal Services (TNSLSA).
+        </p>
+      </section>
+
+      <!-- Emergency 24/7 Helpline Strip -->
+      <div class="emergency-banner-strip">
+        <div class="emergency-banner-info">
+          <i class="fa-solid fa-phone-volume"></i>
+          <div>
+            <div class="emergency-title">Need Immediate Legal Protection or Emergency Support?</div>
+            <div class="emergency-sub">24/7 Toll-Free Women Helpline & Legal Assistance in Tamil Nadu</div>
+          </div>
+        </div>
+        <a href="tel:181" class="emergency-call-btn">
+          <i class="fa-solid fa-phone"></i> Call 181 Women Helpline
+        </a>
+      </div>
+
+      <!-- Quick Legal Stats Cards -->
+      <div class="legal-stats-grid">
+        <div class="legal-stat-card">
+          <div class="legal-stat-icon"><i class="fa-solid fa-gavel"></i></div>
+          <div>
+            <div class="legal-stat-val" id="statTotalActs">10</div>
+            <div class="legal-stat-label">Statutory Acts</div>
+          </div>
+        </div>
+
+        <div class="legal-stat-card">
+          <div class="legal-stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10B981;">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <div>
+            <div class="legal-stat-val">24/7</div>
+            <div class="legal-stat-label">Free Helpline Support</div>
+          </div>
+        </div>
+
+        <div class="legal-stat-card">
+          <div class="legal-stat-icon" style="background: rgba(239, 68, 68, 0.1); color: #EF4444;">
+            <i class="fa-solid fa-building-user"></i>
+          </div>
+          <div>
+            <div class="legal-stat-val">POSH</div>
+            <div class="legal-stat-label">Workplace IC & LC Rights</div>
+          </div>
+        </div>
+
+        <div class="legal-stat-card">
+          <div class="legal-stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #F59F00;">
+            <i class="fa-solid fa-scale-unbalanced-flip"></i>
+          </div>
+          <div>
+            <div class="legal-stat-val">TNSLSA</div>
+            <div class="legal-stat-label">100% Free Legal Aid</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Category Filters -->
+      <div class="legal-filter-bar">
+        <div class="legal-search-box">
+          <i class="fa-solid fa-magnifying-glass legal-search-icon"></i>
+          <input type="text" class="legal-search-input" id="legalSearchInput"
+            placeholder="Search POSH Act, Harassment, Property Rights, Equal Pay, POCSO, Legal Aid...">
+        </div>
+
+        <div class="category-pills-container" id="categoryTrack">
+          <button class="cat-pill active" data-cat="all">All Legal Acts</button>
+          <button class="cat-pill" data-cat="Women Safety">Women Safety</button>
+          <button class="cat-pill" data-cat="Workplace">Workplace & POSH</button>
+          <button class="cat-pill" data-cat="Domestic Safety">Domestic Violence</button>
+          <button class="cat-pill" data-cat="Labor Rights">Equal Pay & Labor</button>
+          <button class="cat-pill" data-cat="Child Safety">POCSO & Children</button>
+          <button class="cat-pill" data-cat="Property Rights">Property Rights</button>
+          <button class="cat-pill" data-cat="Legal Aid">Free Legal Aid</button>
+        </div>
+      </div>
+
+      <!-- Legal Cards Grid -->
+      <div class="legal-cards-grid" id="legalCardsGrid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ================= LEGAL ACT DETAIL MODAL ================= -->
+  <div class="modal-overlay" id="legalDetailModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 680px; padding: 28px;">
+      <button class="modal-close-btn" id="legalModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header" style="margin-bottom: 20px;">
+        <div class="modal-scheme-icon" style="background: #F3E8FF; color: #7C3AED;" id="modalIconBox">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #F3E8FF; color: #7C3AED;" id="modalCategory">Women Safety</span>
+          <h2 class="modal-scheme-title" id="modalTitle">Act Title Loading...</h2>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body" style="max-height: 65vh; overflow-y: auto; padding-right: 8px;">
+        <!-- Description -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px;">
+            <i class="fa-solid fa-circle-info" style="color: #7C3AED;"></i> Overview & Purpose
+          </h4>
+          <p style="font-size: 13px; color: #475569; line-height: 1.6;" id="modalDesc"></p>
+        </div>
+
+        <!-- Rights Guaranteed -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-shield-halved" style="color: #10B981;"></i> Statutory Rights Guaranteed
+          </h4>
+          <div id="modalRightsList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <!-- Steps to Claim / File Complaint -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-list-check" style="color: #3B82F6;"></i> How to File Complaint / Take Action
+          </h4>
+          <div id="modalStepsList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <!-- Support Organizations & Helpline -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-phone" style="color: #EF4444;"></i> Support Bodies & Emergency Helplines
+          </h4>
+          <div style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 12px 16px; border-radius: 12px; color: #991B1B; font-weight: 700; font-size: 13px; margin-bottom: 8px;" id="modalHelplineBox">
+          </div>
+          <div id="modalSupportOrgs" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="modal-scheme-footer" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn-modal-cancel" id="legalModalCancelBtn" style="padding: 10px 20px;">Close</button>
+        <a href="#" target="_blank" class="btn-register-official" id="modalOfficialBtn" style="background: #7C3AED; color: #FFF; padding: 10px 20px; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 8px;">
+          Visit Official Legal Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let legalResources = [];
+      let currentCategory = "all";
+      let searchQuery = "";
+
+      const legalCardsGrid = document.getElementById("legalCardsGrid");
+      const legalSearchInput = document.getElementById("legalSearchInput");
+      const categoryPills = document.querySelectorAll(".cat-pill");
+
+      const legalDetailModal = document.getElementById("legalDetailModal");
+      const legalModalCloseBtn = document.getElementById("legalModalCloseBtn");
+      const legalModalCancelBtn = document.getElementById("legalModalCancelBtn");
+
+      // Fetch TN Legal Acts JSON Data
+      fetch("tn_legal_acts.json?t=" + Date.now())
+        .then(res => res.json())
+        .then(data => {
+          legalResources = data.legal_resources || [];
+          document.getElementById('statTotalActs').textContent = legalResources.length;
+          renderLegalCards();
+        })
+        .catch(err => {
+          console.error("Error loading TN Legal Acts database:", err);
+        });
+
+      function renderLegalCards() {
+        if (!legalCardsGrid) return;
+        legalCardsGrid.innerHTML = "";
+
+        const filtered = legalResources.filter(item => {
+          // Category filter
+          let matchCat = (currentCategory === "all") ||
+            (item.category.toLowerCase().includes(currentCategory.toLowerCase()));
+
+          // Search query
+          const q = searchQuery.toLowerCase();
+          const matchSearch = !q || (
+            item.title.toLowerCase().includes(q) ||
+            item.description.toLowerCase().includes(q) ||
+            item.category.toLowerCase().includes(q) ||
+            (item.rights && item.rights.some(r => r.toLowerCase().includes(q)))
+          );
+
+          return matchCat && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          legalCardsGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #64748B; background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0;">
+              <i class="fa-solid fa-folder-open" style="font-size: 40px; margin-bottom: 12px; opacity: 0.5;"></i>
+              <h3 style="font-size: 18px; font-weight: 700; color: #0F172A;">No Legal Acts Found</h3>
+              <p style="font-size: 13px; margin-top: 4px;">Try searching for another term like POSH, Harassment, Property, or Equal Pay.</p>
+            </div>
+          `;
+          return;
+        }
+
+        filtered.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "legal-card";
+
+          const rightsPreview = (item.rights || []).slice(0, 2).map(r => `
+            <div class="right-item-chip">
+              <i class="fa-solid fa-shield"></i> ${r}
+            </div>
+          `).join('');
+
+          card.innerHTML = `
+            <div>
+              <div class="legal-card-header">
+                <div class="legal-icon-box">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <span class="legal-cat-tag">${item.category}</span>
+              </div>
+
+              <h3 class="legal-card-title">${item.title}</h3>
+              <p class="legal-card-desc">${item.description}</p>
+
+              <div class="legal-helpline-pill">
+                <i class="fa-solid fa-phone"></i> ${item.helpline || '181 (Women Helpline)'}
+              </div>
+
+              <div class="rights-list-preview">
+                ${rightsPreview}
+              </div>
+            </div>
+
+            <button class="btn-view-act">
+              View Legal Rights & Steps <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          `;
+
+          card.addEventListener("click", () => {
+            openLegalDetailModal(item);
+          });
+
+          legalCardsGrid.appendChild(card);
+        });
+      }
+
+      function openLegalDetailModal(item) {
+        document.getElementById("modalCategory").textContent = item.category;
+        document.getElementById("modalTitle").textContent = item.title;
+        document.getElementById("modalDesc").textContent = item.description;
+
+        // Render Rights
+        const rightsContainer = document.getElementById("modalRightsList");
+        rightsContainer.innerHTML = (item.rights || []).map(r => `
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 14px; border-radius: 10px; font-size: 13px; color: #334155; display: flex; align-items: flex-start; gap: 10px;">
+            <i class="fa-solid fa-circle-check" style="color: #10B981; margin-top: 3px;"></i>
+            <div>${r}</div>
+          </div>
+        `).join('');
+
+        // Render Steps
+        const stepsContainer = document.getElementById("modalStepsList");
+        stepsContainer.innerHTML = (item.steps || []).map((s, idx) => `
+          <div style="background: #F0F9FF; border: 1px solid #BAE6FD; padding: 10px 14px; border-radius: 10px; font-size: 13px; color: #0369A1; display: flex; align-items: flex-start; gap: 10px;">
+            <span style="font-weight: 800; background: #0284C7; color: #FFF; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;">${idx + 1}</span>
+            <div>${s}</div>
+          </div>
+        `).join('');
+
+        // Helpline & Support Orgs
+        document.getElementById("modalHelplineBox").innerHTML = `
+          <i class="fa-solid fa-phone"></i> Helpline: ${item.helpline || '181 (Women Helpline)'}
+        `;
+
+        const orgsContainer = document.getElementById("modalSupportOrgs");
+        orgsContainer.innerHTML = (item.support_organizations || []).map(o => `
+          <span style="background: #F1F5F9; border: 1px solid #E2E8F0; color: #475569; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px;">
+            🏛️ ${o}
+          </span>
+        `).join('');
+
+        // Official Link
+        const officialBtn = document.getElementById("modalOfficialBtn");
+        if (item.official_sources && item.official_sources.length > 0) {
+          officialBtn.href = item.official_sources[0];
+          officialBtn.style.display = "inline-flex";
+        } else {
+          officialBtn.style.display = "none";
+        }
+
+        legalDetailModal.classList.add("active");
+      }
+
+      function closeLegalModal() {
+        legalDetailModal.classList.remove("active");
+      }
+
+      if (legalModalCloseBtn) legalModalCloseBtn.addEventListener("click", closeLegalModal);
+      if (legalModalCancelBtn) legalModalCancelBtn.addEventListener("click", closeLegalModal);
+      if (legalDetailModal) {
+        legalDetailModal.addEventListener("click", (e) => {
+          if (e.target === legalDetailModal) closeLegalModal();
+        });
+      }
+
+      // Search Input Listener
+      if (legalSearchInput) {
+        legalSearchInput.addEventListener("input", (e) => {
+          searchQuery = e.target.value;
+          renderLegalCards();
+        });
+      }
+
+      // Category Pill Listeners
+      categoryPills.forEach(pill => {
+        pill.addEventListener("click", () => {
+          categoryPills.forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+          currentCategory = pill.getAttribute("data-cat");
+          renderLegalCards();
+        });
+      // Profile Dropdown & Logout Toggle
+      const userProfile = JSON.parse(localStorage.getItem('userProfile')) || { basic: { name: 'Ananya' } };
+
+      if (userProfile && userProfile.basic && userProfile.basic.name) {
+        const userNameElem = document.querySelector('.user-profile-chip .user-name');
+        if (userNameElem) userNameElem.textContent = userProfile.basic.name;
+        const dropdownNameElem = document.getElementById('dropdownUserName');
+        if (dropdownNameElem) dropdownNameElem.textContent = userProfile.basic.name;
+      }
+
+      if (profileMenuBtn && profileDropdown) {
+        profileMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          profileDropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', (e) => {
+          if (!profileDropdown.contains(e.target) && !profileMenuBtn.contains(e.target)) {
+            profileDropdown.classList.remove('active');
+          }
+        });
+      }
+
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('userStatus');
+          localStorage.removeItem('userProfile');
+          window.location.href = 'onboarding.html';
+        });
+      }
+    });
+  <!-- Interactive AI Assistant Chat Drawer -->
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="chat-title">AI Personal Assistant</div>
+          <div class="chat-status">Online & Ready to Help</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about legal rights, POSH act...">
+      <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

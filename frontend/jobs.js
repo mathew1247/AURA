@@ -5,9 +5,37 @@
 document.addEventListener('DOMContentLoaded', () => {
   const userProfile = JSON.parse(localStorage.getItem('userProfile')) || null;
 
+  // Update profile name in header & add profile menu toggle
+  const profileMenuBtn = document.getElementById('profileMenuBtn');
+  const profileDropdown = document.getElementById('profileDropdown');
+  const logoutBtn = document.getElementById('logoutBtn');
+
   if (userProfile && userProfile.basic && userProfile.basic.name) {
     const userNameElem = document.querySelector('.user-profile-chip .user-name');
     if (userNameElem) userNameElem.textContent = userProfile.basic.name;
+    const dropdownNameElem = document.getElementById('dropdownUserName');
+    if (dropdownNameElem) dropdownNameElem.textContent = userProfile.basic.name;
+  }
+
+  if (profileMenuBtn && profileDropdown) {
+    profileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      profileDropdown.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (!profileDropdown.contains(e.target) && !profileMenuBtn.contains(e.target)) {
+        profileDropdown.classList.remove('active');
+      }
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('userStatus');
+      localStorage.removeItem('userProfile');
+      window.location.href = 'onboarding.html';
+    });
   }
 
   // References

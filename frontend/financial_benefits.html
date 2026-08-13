@@ -241,11 +241,16 @@
   <div class="app-container">
     <!-- Top Header Navigation -->
     <header class="top-header">
-      <!-- Left: Brand Logo -->
-      <a href="index.html" class="top-nav-brand">
-        <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
-        <span class="brand-text">EMPOWHER</span>
-      </a>
+      <!-- Left: Mobile Menu Trigger & Brand Logo -->
+      <div class="top-header-left">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="top-nav-brand">
+          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-text">EMPOWHER</span>
+        </a>
+      </div>
 
       <!-- Center Top Nav Links -->
       <ul class="top-nav-links">
@@ -269,10 +274,6 @@
             <a href="jobs.html" class="dropdown-item">
               <i class="fa-solid fa-briefcase"></i>
               <span>Jobs</span>
-            </a>
-            <a href="courses.html?tab=catalog" class="dropdown-item">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <span>Training</span>
             </a>
           </div>
         </li>
@@ -301,16 +302,16 @@
 
         <!-- Support Dropdown -->
         <li class="nav-item-dropdown">
-          <a class="nav-item" href="index.html">
+          <a class="nav-item" href="legal.html">
             <span>Support</span>
             <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">
+            <a href="legal.html" class="dropdown-item">
               <i class="fa-solid fa-scale-balanced"></i>
               <span>Legal Aid & POSH</span>
             </a>
-            <a href="index.html" class="dropdown-item">
+            <a href="healthcare_welfare.html" class="dropdown-item">
               <i class="fa-solid fa-heart-pulse"></i>
               <span>Healthcare & Welfare</span>
             </a>
@@ -319,7 +320,7 @@
 
         <!-- AI Assistant -->
         <li>
-          <a class="nav-item" href="index.html"
+          <a class="nav-item" href="#" id="topOpenChatBtn"
             style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
             <i class="fa-solid fa-robot"></i> AI Assistant
           </a>
@@ -338,13 +339,48 @@
           <span class="notification-badge"></span>
         </button>
 
-        <div class="user-profile-chip" id="profileMenuBtn">
-          <img src="assets/hero_ai_woman.png" alt="User Profile" class="user-avatar">
-          <span class="user-name">Welcome</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
       </div>
     </header>
+
+    <!-- Mobile Navigation Overlay & Slide-Out Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">
+          <div class="brand-emblem" style="width: 28px; height: 28px; font-size: 12px;"><i class="fa-solid fa-bolt"></i></div>
+          <span>EMPOWHER</span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavCloseBtn" aria-label="Close navigation menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a></li>
+        
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Opportunities</span>
+          <a href="schemes.html" class="mobile-nav-subitem"><i class="fa-solid fa-building-columns"></i> Government Schemes</a>
+          <a href="jobs.html" class="mobile-nav-subitem"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+          <a href="financial_benefits.html" class="mobile-nav-subitem active"><i class="fa-solid fa-indian-rupee-sign"></i> Financial Benefits</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-graduation-cap"></i> Learn</span>
+          <a href="courses.html" class="mobile-nav-subitem"><i class="fa-solid fa-book-open"></i> Courses & Learning Hub</a>
+          <a href="courses.html#skillgap" class="mobile-nav-subitem"><i class="fa-solid fa-chart-column"></i> Skill Gap Analyzer</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-hand-holding-heart"></i> Support</span>
+          <a href="legal.html" class="mobile-nav-subitem"><i class="fa-solid fa-scale-balanced"></i> Legal Aid & POSH</a>
+          <a href="healthcare_welfare.html" class="mobile-nav-subitem"><i class="fa-solid fa-heart-pulse"></i> Healthcare & Welfare</a>
+        </li>
+
+        <li>
+          <a href="#" id="mobileOpenChatBtn" class="mobile-nav-item mobile-ai-btn">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+    </aside>
 
     <!-- Main Content Area -->
     <main class="main-content" style="width: 100%; padding-top: 24px;">
@@ -436,9 +472,32 @@
           Apply for Benefit <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
+  <!-- Interactive AI Assistant Chat Drawer -->
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="chat-title">AI Personal Assistant</div>
+          <div class="chat-status">Online & Ready to Help</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about financial benefits, loans...">
+      <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
   </div>
 
+  <script src="script.js"></script>
   <script src="financial_benefits.js"></script>
 </body>
 

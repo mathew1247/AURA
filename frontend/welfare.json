@@ -1,0 +1,1699 @@
+{
+  "welfare_resources": [
+    {
+      "welfare_id": "WF001",
+      "name": "Tamil Nadu Social Welfare & Women Empowerment Department",
+      "provider_type": "Government Department",
+      "category": "Women Welfare",
+      "service_type": [
+        "Women Safety & Protection",
+        "Maternity Financial Support",
+        "Marriage Assistance Schemes",
+        "Working Women Hostels",
+        "Self Help Group Empowerment"
+      ],
+      "target_users": [
+        "women",
+        "single_mothers",
+        "below_poverty_line",
+        "widows",
+        "students"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Chennai",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Resident of Tamil Nadu",
+        "Women, widows, destitute women, or female students meeting individual scheme income criteria"
+      ],
+      "services": [
+        "Pudhumai Penn Scheme (₹1,000/month for female higher education students)",
+        "Moovalur Ramamirtham Ammiyar Marriage Assistance",
+        "E.V.R. Maniammaiyar Widow Daughter Marriage Scheme",
+        "Free Supply of Sewing Machines to Destitute Women"
+      ],
+      "cost": {
+        "type": "Free / Grant Assistance",
+        "description": "100% Free Financial Grants and Social Security Support"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Community Certificate",
+        "Income Certificate from VAO / Tahsildar",
+        "Bank Account Passbook (Aadhaar Seeded)",
+        "Educational Certificates (Class 6-12 School TC)"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "tnsocialwelfare@tn.gov.in",
+        "address": "Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "State nodal welfare department implementing comprehensive social security, financial grants, marriage assistance, higher education stipends, and protective services for women and children across Tamil Nadu.",
+      "source": "Government of Tamil Nadu",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF002",
+      "name": "Pudhumai Penn Scheme (Moovalur Ramamirtham Ammiyar Higher Education Assurance)",
+      "provider_type": "Government Educational Welfare Program",
+      "category": "Women Welfare",
+      "service_type": [
+        "Higher Education Financial Assistance",
+        "Monthly Cash Transfer",
+        "Female Student Empowerment"
+      ],
+      "target_users": [
+        "female_students",
+        "youth",
+        "women",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Female students who studied from Class 6 to Class 12 in Tamil Nadu Government schools",
+        "Enrolled in undergraduate degree, diploma, ITI, or professional courses in TN"
+      ],
+      "services": [
+        "Direct Bank Transfer of ₹1,000 per month until course completion",
+        "Financial support for college fees, books, hostel, and transportation"
+      ],
+      "cost": {
+        "type": "Free / Direct Cash Benefit",
+        "description": "₹1,000 monthly grant credited directly to student bank account"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "School Study Certificates (Class 6 to 12)",
+        "College Admission Fee Receipt & Student ID",
+        "Aadhaar-seeded Bank Passbook"
+      ],
+      "contact": {
+        "phone": "044-28523777",
+        "email": "pudhumai.penn@tn.gov.in",
+        "address": "Directorate of Social Welfare, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://penkalvi.tn.gov.in/",
+      "description": "Transformative state scheme providing ₹1,000 monthly financial assistance to girl students who studied in government schools to pursue higher education without dropping out.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF003",
+      "name": "One Stop Centre (Sakhi OSC) Tamil Nadu - Women Crisis Shelter",
+      "provider_type": "Government Women Protection Center",
+      "category": "Women Protection",
+      "service_type": [
+        "24/7 Emergency Shelter",
+        "Legal Counselling & Aid",
+        "Medical Assistance",
+        "Psychological Counselling",
+        "Police Assistance Desk"
+      ],
+      "target_users": [
+        "women_in_distress",
+        "domestic_violence_survivors",
+        "women",
+        "single_mothers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "All 38 TN District Headquarters",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any woman or girl facing violence, abuse, harassment, or homelessness in Tamil Nadu"
+      ],
+      "services": [
+        "Free temporary shelter up to 5 days with meals and security",
+        "On-site police facilitation and FIR registration assistance",
+        "Free legal counsel and court protection orders",
+        "Medical checkup and emergency treatment"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free emergency shelter, food, legal, and medical assistance"
+      },
+      "documents_required": [
+        "None required for immediate emergency admission"
+      ],
+      "contact": {
+        "phone": "181 (Women Helpline) / 044-24351270",
+        "email": "osc.tn@tn.gov.in",
+        "address": "District Headquarters Hospital Campus in all 38 Districts of Tamil Nadu"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "24/7 integrated emergency relief centers operating in all 38 district headquarters of Tamil Nadu to provide shelter, medical aid, legal support, and police protection to women facing domestic or public abuse.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF004",
+      "name": "Tamil Nadu Working Women Hostels Corporation (Thozhi Hostels)",
+      "provider_type": "Government Housing & Welfare Body",
+      "category": "Housing Support",
+      "service_type": [
+        "Safe & Affordable Accommodation",
+        "24/7 Biometric Security & CCTV",
+        "Working Women Housing",
+        "Female Student Lodging"
+      ],
+      "target_users": [
+        "working_women",
+        "female_students",
+        "women",
+        "job_seekers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Chennai, Coimbatore, Madurai, Trichy, Salem, Hosur, Chengalpattu",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Working women, female interns, job seekers, and students in Tamil Nadu",
+        "Monthly income rules applicable per hostel tier"
+      ],
+      "services": [
+        "Air-conditioned & non-AC secure room rentals at subsidized rates",
+        "24/7 security guards, CCTV surveillance, Wi-Fi, and mess facilities",
+        "Flexible daily, monthly, and short-term stay options"
+      ],
+      "cost": {
+        "type": "Subsidized",
+        "description": "Subsidized monthly rents starting from ₹1,000 to ₹3,500 depending on location"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Employment Offer Letter / Student ID",
+        "Passport Size Photograph"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "thozhihostels@tn.gov.in",
+        "address": "TNWWHCL, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://www.thozhihostels.com/",
+      "description": "State government initiative operating modern, secure, and affordable hostels ('Thozhi') for working women and female students across major urban centers in Tamil Nadu.",
+      "source": "Tamil Nadu Working Women Hostels Corporation",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF005",
+      "name": "Tamil Nadu Corporation for Development of Women (TNCDW) & Mahalir Thittam SHGs",
+      "provider_type": "Government Women Development Body",
+      "category": "Community Support",
+      "service_type": [
+        "Self Help Group (SHG) Formation",
+        "Micro-Credit & Bank Linkage",
+        "Skill Training & Entrepreneurship Grants",
+        "Livelihood Development"
+      ],
+      "target_users": [
+        "rural_women",
+        "urban_women",
+        "women_entrepreneurs",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Women aged 18 to 60 years organized into Self Help Groups (SHGs) in Tamil Nadu"
+      ],
+      "services": [
+        "Revolving fund grants and community investment funds for SHGs",
+        "Low-interest bank credit loans up to ₹20 Lakhs per group",
+        "Free EDP & vocational trade training via Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)"
+      ],
+      "cost": {
+        "type": "Free / Subsidized Loans",
+        "description": "Free skill training and interest-subsidized micro-credit bank loans"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "SHG Member Resolution & Bank Savings Account"
+      ],
+      "contact": {
+        "phone": "044-28190450",
+        "email": "tncdw@tn.gov.in",
+        "address": "Mother Teresa Women's Complex, Valluvar Kottam High Road, Nungambakkam, Chennai 600034"
+      },
+      "official_url": "https://www.mathi.tn.gov.in/",
+      "description": "Nodal state agency empowering over 7.2 million women in Tamil Nadu through 4.5 Lakh Self Help Groups, revolving financial credit, micro-enterprise incubation, and vocational skill training.",
+      "source": "Tamil Nadu Rural Development Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF006",
+      "name": "Tamil Nadu State Commission for Women",
+      "provider_type": "Statutory Women Commission",
+      "category": "Women Protection",
+      "service_type": [
+        "Legal Counselling & Dispute Adjudication",
+        "Investigation of Rights Violations",
+        "Free Legal Aid Referral",
+        "Workplace & Marital Dispute Conciliation"
+      ],
+      "target_users": [
+        "women",
+        "women_in_distress",
+        "working_women"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Chennai",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any woman facing injustice, harassment, rights violation, or marital dispute in TN"
+      ],
+      "services": [
+        "Summoning inquiry hearings and legal conciliation meetings",
+        "Direct intervention in police inaction or domestic abuse complaints",
+        "Free legal advocate assistance via State Legal Services"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free dispute hearing, legal conciliation, and counseling"
+      },
+      "documents_required": [
+        "Written Complaint Petition",
+        "Aadhaar Card / ID Proof",
+        "Supporting Evidence (if any)"
+      ],
+      "contact": {
+        "phone": "044-28592750",
+        "email": "tnscw@tn.gov.in",
+        "address": "Kalasa Mahal, Chepauk, Chennai, Tamil Nadu 600005"
+      },
+      "official_url": "http://www.tnscw.tn.gov.in/",
+      "description": "Statutory state commission protecting women's constitutional rights, investigating abuse complaints, conducting free conciliation hearings, and recommending legal action.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF007",
+      "name": "District Protection Officers (DPO) Domestic Violence Protection Cell TN",
+      "provider_type": "Government Statutory Protection Unit",
+      "category": "Women Protection",
+      "service_type": [
+        "Domestic Incident Report (DIR) Filing",
+        "Ex-Parte Court Protection Orders",
+        "Residence Rights Enforcement",
+        "Emergency Maintenance Orders"
+      ],
+      "target_users": [
+        "women",
+        "domestic_abuse_survivors",
+        "wives",
+        "mothers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "All 38 District Collectorates",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any woman facing physical, mental, emotional, or financial abuse in a shared domestic household"
+      ],
+      "services": [
+        "Free preparation and submission of Domestic Incident Report (DIR) to Magistrate",
+        "Securing protection orders preventing abuser entry or communication",
+        "Enforcing right to reside in marital home and monetary interim maintenance"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free statutory legal assistance and protection filing"
+      },
+      "documents_required": [
+        "Aadhaar Card / Photo ID",
+        "Marriage Certificate / Proof of Shared Household (if available)"
+      ],
+      "contact": {
+        "phone": "181",
+        "email": "dpo.tn@tn.gov.in",
+        "address": "District Social Welfare Office inside District Collectorate in all 38 Districts"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Statutory protection officers appointed in all 38 districts of Tamil Nadu to provide immediate legal intervention, court protection orders, and shelter for victims of domestic abuse.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF008",
+      "name": "181 Women Helpline Tamil Nadu (24/7 Crisis Support)",
+      "provider_type": "Government 24/7 Helpline",
+      "category": "Emergency Support",
+      "services": [
+        "24/7 Crisis Intervention & Rescue",
+        "Immediate Police & Ambulance Dispatch",
+        "Tele-Counselling & Psychological Support",
+        "Referral to One Stop Centres & Shelter Homes"
+      ],
+      "target_users": [
+        "women",
+        "girls",
+        "women_in_distress",
+        "victims_of_harassment"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any woman or girl facing violence, threat, stalking, or distress anywhere in Tamil Nadu"
+      ],
+      "services": [
+        "Instant emergency dispatch to nearest All-Women Police Station (AWPS)",
+        "Direct link to 108 Ambulance, One Stop Shelter Homes, and Legal Aid Authorities"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Toll-free round-the-clock emergency support"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "181",
+        "email": "womenhelpline181@tn.gov.in",
+        "address": "State Command Centre, Amma Maaligai, Chennai 600009"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Statewide 24/7 toll-free helpline providing instant crisis rescue, tele-counseling, shelter referral, and emergency police dispatch for women across Tamil Nadu.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF009",
+      "name": "Tamil Nadu Social Security Pension Scheme for Destitute Women & Widows",
+      "provider_type": "Government Financial Welfare Program",
+      "category": "Social Security",
+      "services": [
+        "Destitute Widow Pension (DWP)",
+        "Destitute Deserted Women Pension (DDWP)",
+        "Unmarried Destitute Women Pension",
+        "Monthly Cash Security Allowance"
+      ],
+      "target_users": [
+        "widows",
+        "destitute_women",
+        "single_women",
+        "senior_citizens",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Destitute widows, deserted women aged 30+, or unmarried destitute women aged 50+",
+        "Family income below poverty line criteria"
+      ],
+      "services": [
+        "Direct monthly pension transfer of ₹1,200 per month into bank account",
+        "Free supply of rice through Public Distribution System (PDS)"
+      ],
+      "cost": {
+        "type": "Free / Monthly Financial Pension",
+        "description": "₹1,200 monthly pension credited directly to beneficiary bank account"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Widow Certificate / Deserted Woman Certificate from Tahsildar",
+        "Income Certificate from VAO",
+        "Bank Passbook"
+      ],
+      "contact": {
+        "phone": "044-28521100",
+        "email": "socialsecurity@tn.gov.in",
+        "address": "Commissionerate of Revenue Administration, Chepauk, Chennai 600005"
+      },
+      "official_url": "https://www.tn.gov.in/",
+      "description": "Statewide social security scheme granting ₹1,200 monthly pensions and free food security to destitute widows, deserted wives, and unmarried poor women.",
+      "source": "Tamil Nadu Revenue Administration Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF010",
+      "name": "Tamil Nadu Transgender Welfare Board (Moovendhar Welfare Schemes)",
+      "provider_type": "Government Welfare Board",
+      "category": "Community Support",
+      "services": [
+        "Official Identity Card & Gender Certificate",
+        "Monthly Maintenance Pension of ₹1,500",
+        "Free Housing Site Patta & Slum Clearance Flats",
+        "Self-Employment Subsidy Loans up to ₹50,000"
+      ],
+      "target_users": [
+        "transgender_women",
+        "third_gender",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Transgender individuals residing in Tamil Nadu certified by District Screening Committee"
+      ],
+      "services": [
+        "Free sex reassignment surgery at government medical college hospitals",
+        "Subsidized self-employment group grants and education fee waiver"
+      ],
+      "cost": {
+        "type": "Free / Monthly Pension & Grant",
+        "description": "100% Free ID certification, medical surgeries, housing grants, and ₹1,500 monthly pension"
+      },
+      "documents_required": [
+        "District Screening Committee Identity Certificate",
+        "Aadhaar Card",
+        "Bank Passbook"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "tntwb@tn.gov.in",
+        "address": "Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "India's first statutory welfare board dedicated to transgender equality, offering free identity certification, monthly pensions, free housing, and medical transition care.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF011",
+      "name": "Tamil Nadu Differently Abled Welfare Department & Maintenance Allowance",
+      "provider_type": "Government Welfare Department",
+      "category": "Disability Support",
+      "services": [
+        "Monthly Maintenance Allowance of ₹2,000 for Severely Disabled",
+        "Free Motorized Retrofitted Tricycles & Wheelchairs",
+        "Free Bus Passes & Rail Concessions",
+        "Marriage Assistance Financial Grant of ₹50,000"
+      ],
+      "target_users": [
+        "differently_abled",
+        "disabled_women",
+        "children",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Persons with 40% or higher certified disability residing in Tamil Nadu"
+      ],
+      "services": [
+        "Monthly allowance of ₹2,000 credited to bank accounts of severely disabled persons",
+        "Free retrofitted motorized scooters for disabled working individuals and students"
+      ],
+      "cost": {
+        "type": "Free / Financial Allowance",
+        "description": "100% Free assistive equipment, travel passes, and ₹2,000 monthly maintenance allowance"
+      },
+      "documents_required": [
+        "National Disability Identity Card (UDID Card)",
+        "Aadhaar Card",
+        "Disability Certificate from Medical Board",
+        "Bank Passbook"
+      ],
+      "contact": {
+        "phone": "1800-425-0111 / 044-28444940",
+        "email": "scda@tn.gov.in",
+        "address": "Lady Willingdon College Campus, Kamarajar Salai, Chennai 600005"
+      },
+      "official_url": "https://www.scda.tn.gov.in/",
+      "description": "Statewide comprehensive welfare program delivering ₹2,000 monthly pensions, free motorized tricycles, bus travel passes, and marriage grants to disabled persons.",
+      "source": "Welfare of Differently Abled Persons Department TN",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF012",
+      "name": "Elder Line 14567 - Senior Citizens Welfare & Crisis Helpline Tamil Nadu",
+      "provider_type": "Government Elder Welfare Service",
+      "category": "Elderly Support",
+      "services": [
+        "24/7 Toll-Free Senior Citizen Crisis Intervention",
+        "Rescue of Homeless & Abandoned Elderly",
+        "Legal Support under Senior Citizens Act",
+        "Counselling for Emotional Abuse & Care Neglect"
+      ],
+      "target_users": [
+        "senior_citizens",
+        "elderly_women",
+        "destitute_elderly"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Senior citizens aged 60 years and above residing in Tamil Nadu"
+      ],
+      "services": [
+        "Filing maintenance petitions before Revenue Divisional Officer (RDO) Tribunals",
+        "Admission to free government senior citizen shelter homes",
+        "Free legal advice for property dispute resolution"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free toll-free helpline, rescue, legal aid, and shelter referral"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "14567",
+        "email": "elderline@tn.gov.in",
+        "address": "Directorate of Social Welfare, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "National & Tamil Nadu 24/7 toll-free helpline dedicated to senior citizen welfare, providing field rescue for abandoned elderly, abuse intervention, and legal maintenance filing.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF013",
+      "name": "Childline 1098 & District Child Protection Units (DCPU) Tamil Nadu",
+      "provider_type": "Government Child Protection Network",
+      "category": "Child Welfare",
+      "services": [
+        "24/7 Toll-Free Emergency Child Rescue",
+        "Prevention of Child Marriage & Child Labor",
+        "POCSO Abuse Reporting & Support",
+        "Foster Care & Child Care Institution Admissions"
+      ],
+      "target_users": [
+        "children",
+        "orphans",
+        "girls",
+        "adolescents"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any child under 18 years in need of care, protection, or emergency rescue in TN"
+      ],
+      "services": [
+        "Field rescue teams dispatched within 60 minutes of call",
+        "Production before Child Welfare Committee (CWC) for safe shelter placement",
+        "Sponsorship assistance of ₹4,000 per month for vulnerable children"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free emergency rescue, shelter, medical, and legal assistance"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "1098 / 112",
+        "email": "dcpu.tn@tn.gov.in",
+        "address": "Directorate of Social Defence, 300, Purasawalkam High Road, Kellys, Chennai 600010"
+      },
+      "official_url": "https://www.childlineindia.org/",
+      "description": "Statewide 24/7 child protection emergency system responding to child abuse, child marriage prevention, orphan care, and educational sponsorship across all TN districts.",
+      "source": "Department of Social Defence Tamil Nadu",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF014",
+      "name": "Tamil Nadu Urban Habitat Development Board (TNUHDB) Free Housing Scheme",
+      "provider_type": "Government Housing Board",
+      "category": "Housing Support",
+      "service_type": [
+        "Permanent Concrete Allotment Housing",
+        "Slum Rehabilitation Tenements",
+        "Subsidized Housing Grants",
+        "Single Women Allotment Priority"
+      ],
+      "target_users": [
+        "urban_poor",
+        "slum_dwellers",
+        "single_mothers",
+        "widows",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Major Cities across Tamil Nadu",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "EWS (Economically Weaker Section) families in urban slum areas of Tamil Nadu",
+        "Priority allotment given to widows, destitute women, and disabled individuals"
+      ],
+      "services": [
+        "Allotment of 400 sq.ft multi-storey concrete flats with water, sewage, and electricity",
+        "Government subsidy covering up to 90% of total housing construction cost"
+      ],
+      "cost": {
+        "type": "Subsidized",
+        "description": "Government subsidizes 90%+ of unit cost; nominal beneficiary contribution in easy EMI"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate from Tahsildar",
+        "Smart Family Ration Card",
+        "Bank Account Passbook"
+      ],
+      "contact": {
+        "phone": "044-24640280",
+        "email": "tnuhdb@tn.gov.in",
+        "address": "No. 5, Kamarajar Salai, Triplicane, Chennai, Tamil Nadu 600005"
+      },
+      "official_url": "https://www.tnuhdb.tn.gov.in/",
+      "description": "State urban housing development authority providing permanent fire-proof concrete tenements, slum rehabilitation homes, and priority allotments to poor women.",
+      "source": "Tamil Nadu Urban Habitat Development Board",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF015",
+      "name": "Tamil Nadu Free Rice Public Distribution System & Amma Unavagam",
+      "provider_type": "Government Food & Nutrition Body",
+      "category": "Food Support",
+      "service_type": [
+        "Free Monthly Rice & Wheat Quota",
+        "Subsidized Pulses, Oil & Sugar",
+        "Amma Unavagam Subsidized Prepared Meals",
+        "Universal Public Distribution System"
+      ],
+      "target_users": [
+        "below_poverty_line",
+        "women",
+        "laborers",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "All Smart Family Card holders in Tamil Nadu"
+      ],
+      "services": [
+        "Free 20 kg to 35 kg quality rice per month per family",
+        "Fresh prepared meals at ₹1 (Idli), ₹5 (Sambar/Curd Rice) at 400+ Amma Canteens"
+      ],
+      "cost": {
+        "type": "Free / Ultra Low Cost",
+        "description": "100% Free rice via Ration Shops; ₹1 to ₹5 per meal at Amma Unavagam"
+      },
+      "documents_required": [
+        "Smart Family Card / TN PDS Card"
+      ],
+      "contact": {
+        "phone": "1967 / 1800-425-5901",
+        "email": "support@tnpds.gov.in",
+        "address": "Department of Civil Supplies and Consumer Protection, Chepauk, Chennai 600005"
+      },
+      "official_url": "https://www.tnpds.gov.in/",
+      "description": "Pioneering universal food security system delivering 100% free monthly rice to 2.2 crore family cardholders and ultra-cheap hygienic meals via 600+ municipal canteens.",
+      "source": "Tamil Nadu Civil Supplies Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF016",
+      "name": "Tamil Nadu Manual Workers & Unorganised Workers Welfare Board",
+      "provider_type": "Government Labor Welfare Board",
+      "category": "Social Security",
+      "service_type": [
+        "Accident Death & Disability Insurance Relief",
+        "Maternity Financial Benefit of ₹6,000",
+        "Children Educational Scholarships",
+        "Natural Death Pension Assistance"
+      ],
+      "target_users": [
+        "unorganised_workers",
+        "domestic_workers",
+        "construction_workers",
+        "women_laborers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Unorganised manual workers, domestic helps, tailoring workers aged 18 to 60 years in TN"
+      ],
+      "services": [
+        "Maternity financial assistance of ₹6,000 for female unorganised workers",
+        "Accidental death relief of ₹5,00,000 and natural death benefit of ₹50,000",
+        "Annual school and college scholarships from ₹1,000 to ₹8,000 for children"
+      ],
+      "cost": {
+        "type": "Free Registration / Welfare Grants",
+        "description": "Free registration and statutory monetary welfare payouts"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Family Card",
+        "Bank Passbook",
+        "Worker Self-Declaration / VAO Certificate"
+      ],
+      "contact": {
+        "phone": "044-24321438",
+        "email": "tnuwwb@tn.gov.in",
+        "address": "Tamil Nadu Labour Welfare Board Building, DMS Complex, Teynampet, Chennai 600006"
+      },
+      "official_url": "https://tnuwwb.tn.gov.in/",
+      "description": "State statutory welfare board offering comprehensive social security, maternity assistance, education scholarships, and life insurance for unorganised female and male manual workers.",
+      "source": "Department of Labour Welfare TN",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF017",
+      "name": "Chief Minister's Educational Support for Orphans & Single Parent Children",
+      "provider_type": "Government Child & Student Welfare Program",
+      "category": "Child Welfare",
+      "service_type": [
+        "Full Higher Education Fee Sponsorship",
+        "Hostel & Living Allowance",
+        "Orphan Student Protection"
+      ],
+      "target_users": [
+        "orphans",
+        "single_parent_children",
+        "students",
+        "youth"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Children who lost both parents or single-parent destitute students studying in TN"
+      ],
+      "services": [
+        "100% college tuition fee waiver in engineering, medical, arts, and polytechnic colleges",
+        "Free accommodation in government social welfare hostels"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Fully funded by Government of Tamil Nadu"
+      },
+      "documents_required": [
+        "Death Certificates of Parent(s)",
+        "Aadhaar Card",
+        "Income Certificate from Tahsildar",
+        "Class 10/12 Marksheet"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "socialwelfare@tn.gov.in",
+        "address": "Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Special government welfare measure providing 100% free higher education, hostel stay, and living maintenance to orphans and single-parent poor children.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF018",
+      "name": "The Banyan NGO Homeless Women Mental Health Rehabilitation Centre",
+      "provider_type": "Registered Non-Governmental Organization (NGO)",
+      "category": "Rehabilitation",
+      "service_type": [
+        "Emergency Psychiatric Rescue & Admission",
+        "Inpatient Mental Health Treatment",
+        "Vocational & Skill Rehabilitation",
+        "Family Tracing & Home Reintegration"
+      ],
+      "target_users": [
+        "homeless_women",
+        "mentally_ill_women",
+        "women_in_distress"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Mogappair West, Chennai / Kovalam, Chengalpattu",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Homeless, destitute, or mentally ill women in need of emergency shelter and psychiatric rehabilitation"
+      ],
+      "services": [
+        "Free medical, psychiatric, and psychological residential care",
+        "Inclusive eco-system housing ('Home Again' initiative)",
+        "Vocational trade training in tailoring, bakery, craft work, and retail"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free residential care, therapy, meals, and rehabilitation"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "044-26530599 / 9840291983",
+        "email": "contact@thebanyan.org",
+        "address": "6th Main Road, Mogappair West, Chennai, Tamil Nadu 600037"
+      },
+      "official_url": "https://thebanyan.org/",
+      "description": "Pioneering NGO partner operating residential rehabilitation centers, crisis care units, and community mental health programs for homeless mentally ill women in Tamil Nadu.",
+      "source": "The Banyan Official Portal",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF019",
+      "name": "Guild of Service (Central) Women Welfare & Short Stay Shelter Home",
+      "provider_type": "Charitable Welfare Organization",
+      "category": "Shelter Services",
+      "service_type": [
+        "Short Stay Shelter for Women in Distress",
+        "Family Dispute Counselling",
+        "Vocational Skill Training",
+        "Orphanage & Working Girls Support"
+      ],
+      "target_users": [
+        "women_in_distress",
+        "single_mothers",
+        "abandoned_women",
+        "orphans"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Egmore, Chennai",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "Women facing marital desertion, domestic cruelty, or social distress"
+      ],
+      "services": [
+        "Free food, clothing, shelter, and legal counseling for up to 3 years",
+        "Certified vocational training in tailoring, nursing aid, and computer skills"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free residential accommodation, food, and skill training"
+      },
+      "documents_required": [
+        "ID Proof (if available)"
+      ],
+      "contact": {
+        "phone": "044-28194279",
+        "email": "guildofservicecentral@gmail.com",
+        "address": "18, Casa Major Road, Egmore, Chennai, Tamil Nadu 600008"
+      },
+      "official_url": "http://guildofservice.org/",
+      "description": "Historic charitable organization operating short-stay shelter homes, skill development schools, and legal counseling centers for vulnerable women and children in Chennai.",
+      "source": "Guild of Service Central",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF020",
+      "name": "District Social Welfare Office (DSWO) Coimbatore",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Marriage Assistance Sanctions",
+        "Pudhumai Penn Verification",
+        "Domestic Violence Complaint Processing",
+        "Dowry Prohibition Enforcement"
+      ],
+      "target_users": [
+        "women",
+        "female_students",
+        "widows",
+        "destitute_women"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Coimbatore",
+        "city": "Coimbatore",
+        "coverage": "Coimbatore"
+      },
+      "eligibility": [
+        "Residents of Coimbatore district"
+      ],
+      "services": [
+        "Nodal district implementation of state marriage schemes and Pudhumai Penn",
+        "Free counselling and referral to One Stop Centre Coimbatore"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free service processing"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income & Community Certificates",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "0422-2305673",
+        "email": "dswo.cbe@tn.gov.in",
+        "address": "Old Collectorate Campus, State Bank Road, Coimbatore, Tamil Nadu 641018"
+      },
+      "official_url": "https://coimbatore.nic.in/",
+      "description": "District social welfare administration office in Coimbatore handling state financial assistance schemes, women protection, and widow pensions.",
+      "source": "Coimbatore District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF021",
+      "name": "District Social Welfare Office (DSWO) Madurai",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Marriage Grant & Sewing Machine Sanction",
+        "Pudhumai Penn Verification",
+        "Protection Officer Domestic Violence Desk"
+      ],
+      "target_users": [
+        "women",
+        "widows",
+        "students",
+        "destitute_women"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Madurai",
+        "city": "Madurai",
+        "coverage": "Madurai"
+      },
+      "eligibility": [
+        "Residents of Madurai district"
+      ],
+      "services": [
+        "Sanctioning widow daughter marriage assistance and free sewing machines",
+        "Processing female higher education monthly ₹1,000 stipends"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free application processing and direct bank benefit transfer"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate",
+        "School Study Certificates"
+      ],
+      "contact": {
+        "phone": "0452-2530430",
+        "email": "dswomadurai@tn.gov.in",
+        "address": "Additional Collectorate Building, Madurai, Tamil Nadu 625020"
+      },
+      "official_url": "https://madurai.nic.in/",
+      "description": "District level social welfare department office executing women empowerment programs and protective relief across Madurai district.",
+      "source": "Madurai District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF022",
+      "name": "District Social Welfare Office (DSWO) Tiruchirappalli",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "State Financial Assistance Schemes",
+        "Working Women Hostel Inspection",
+        "Child Marriage Prevention Unit"
+      ],
+      "target_users": [
+        "women",
+        "girls",
+        "widows",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tiruchirappalli",
+        "city": "Tiruchirappalli",
+        "coverage": "Tiruchirappalli"
+      },
+      "eligibility": [
+        "Residents of Trichy district"
+      ],
+      "services": [
+        "Preventing child marriages through field enforcement teams",
+        "Sanctioning monthly pensions for destitute deserted women"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free government welfare services"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "VAO Income Certificate"
+      ],
+      "contact": {
+        "phone": "0431-2413796",
+        "email": "dswotrichy@tn.gov.in",
+        "address": "District Collectorate Campus, Cantonment, Tiruchirappalli 620001"
+      },
+      "official_url": "https://tiruchirappalli.nic.in/",
+      "description": "District administration office in Trichy delivering government financial assistance, social security pensions, and child protection services.",
+      "source": "Tiruchirappalli District Administration",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF023",
+      "name": "District Social Welfare Office (DSWO) Salem",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Pudhumai Penn College Grant Verification",
+        "Domestic Violence DIR Filing Desk",
+        "Free Sewing Machine Scheme"
+      ],
+      "target_users": [
+        "women",
+        "female_students",
+        "widows",
+        "single_mothers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Salem",
+        "city": "Salem",
+        "coverage": "Salem"
+      },
+      "eligibility": [
+        "Residents of Salem district"
+      ],
+      "services": [
+        "Verifying Pudhumai Penn college enrollment",
+        "Issuing free motor sewing machines to destitute widows"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free scheme enrollment"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Community & Income Certificates"
+      ],
+      "contact": {
+        "phone": "0427-2451559",
+        "email": "dswosalem@tn.gov.in",
+        "address": "Collectorate Complex, Salem, Tamil Nadu 636001"
+      },
+      "official_url": "https://salem.nic.in/",
+      "description": "District social welfare department office serving Salem district with women's financial grants, sewing machine distribution, and crisis support.",
+      "source": "Salem District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF024",
+      "name": "District Social Welfare Office (DSWO) Tirunelveli",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "State Marriage Grants Processing",
+        "One Stop Centre Supervision",
+        "Senior Citizen Pension Verification"
+      ],
+      "target_users": [
+        "women",
+        "senior_citizens",
+        "widows",
+        "female_students"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tirunelveli",
+        "city": "Tirunelveli",
+        "coverage": "Tirunelveli"
+      },
+      "eligibility": [
+        "Residents of Tirunelveli district"
+      ],
+      "services": [
+        "Supervising One Stop Centre Tirunelveli emergency shelter operations",
+        "Processing monthly financial aid for poor female students"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free scheme processing"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Ration Card"
+      ],
+      "contact": {
+        "phone": "0462-2500854",
+        "email": "dswotirunelveli@tn.gov.in",
+        "address": "District Collectorate Campus, Kokkirakulam, Tirunelveli, Tamil Nadu 627009"
+      },
+      "official_url": "https://tirunelveli.nic.in/",
+      "description": "Nodal government welfare administrative office in Tirunelveli overseeing women's safety, higher education stipends, and widow pensions.",
+      "source": "Tirunelveli District Administration",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF025",
+      "name": "District Social Welfare Office (DSWO) Vellore",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Pudhumai Penn Scheme Desk",
+        "Domestic Abuse Protection Unit",
+        "Marriage Assistance Sanctions"
+      ],
+      "target_users": [
+        "women",
+        "female_students",
+        "widows"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Vellore",
+        "city": "Vellore",
+        "coverage": "Vellore"
+      },
+      "eligibility": [
+        "Residents of Vellore district"
+      ],
+      "services": [
+        "Processing higher education financial grants for girl students",
+        "Facilitating court protection orders for victims of domestic abuse"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free government service"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate"
+      ],
+      "contact": {
+        "phone": "0416-2253055",
+        "email": "dswovellore@tn.gov.in",
+        "address": "Collectorate Campus, Sathuvachari, Vellore, Tamil Nadu 632009"
+      },
+      "official_url": "https://vellore.nic.in/",
+      "description": "District social welfare department in Vellore ensuring women safety, higher education financial assurance, and legal protection.",
+      "source": "Vellore District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF026",
+      "name": "District Social Welfare Office (DSWO) Tiruppur",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Industrial Women Worker Protection",
+        "Pudhumai Penn Student Verification",
+        "Free Sewing Machine Scheme"
+      ],
+      "target_users": [
+        "women",
+        "textile_workers",
+        "destitute_women",
+        "female_students"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tiruppur",
+        "city": "Tiruppur",
+        "coverage": "Tiruppur"
+      },
+      "eligibility": [
+        "Residents and industrial working women in Tiruppur district"
+      ],
+      "services": [
+        "Protecting female garment factory workers against workplace harassment",
+        "Distributing self-employment sewing machines to poor widows"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free welfare assistance"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate"
+      ],
+      "contact": {
+        "phone": "0421-2270054",
+        "email": "dswotiruppur@tn.gov.in",
+        "address": "District Collectorate, Palladam Road, Tiruppur, Tamil Nadu 641604"
+      },
+      "official_url": "https://tiruppur.nic.in/",
+      "description": "District administration office in Tiruppur focusing on industrial female worker welfare, student higher education stipends, and widow rehabilitation.",
+      "source": "Tiruppur District Administration",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF027",
+      "name": "District Social Welfare Office (DSWO) Erode",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Financial Assistance Verification",
+        "Child Marriage Injunction Orders",
+        "One Stop Centre Erode Supervision"
+      ],
+      "target_users": [
+        "women",
+        "girls",
+        "widows"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Erode",
+        "city": "Erode",
+        "coverage": "Erode"
+      },
+      "eligibility": [
+        "Residents of Erode district"
+      ],
+      "services": [
+        "Intervening to stop underage child marriages",
+        "Providing short stay shelter referral at One Stop Centre Erode"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free service"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "0424-2262575",
+        "email": "dswoerode@tn.gov.in",
+        "address": "District Collectorate Campus, Erode, Tamil Nadu 638011"
+      },
+      "official_url": "https://erode.nic.in/",
+      "description": "District social welfare administrative unit in Erode implementing state women empowerment initiatives and child protection laws.",
+      "source": "Erode District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF028",
+      "name": "District Social Welfare Office (DSWO) Kanyakumari",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "State Marriage Grants",
+        "Pudhumai Penn Verification",
+        "Protection Officer Desk"
+      ],
+      "target_users": [
+        "women",
+        "female_students",
+        "widows"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Kanyakumari",
+        "city": "Nagercoil",
+        "coverage": "Kanyakumari"
+      },
+      "eligibility": [
+        "Residents of Kanyakumari district"
+      ],
+      "services": [
+        "Processing female higher education ₹1,000 monthly stipends",
+        "Providing legal domestic violence DIR reports"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free service processing"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Community & Income Certificates"
+      ],
+      "contact": {
+        "phone": "04652-279284",
+        "email": "dswoknm@tn.gov.in",
+        "address": "District Collectorate Campus, Nagercoil, Tamil Nadu 629001"
+      },
+      "official_url": "https://kanniyakumari.nic.in/",
+      "description": "District welfare office in Nagercoil supporting southern women with higher education stipends, legal protection, and widow welfare.",
+      "source": "Kanyakumari District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF029",
+      "name": "District Social Welfare Office (DSWO) Thanjavur",
+      "provider_type": "Government District Administration Unit",
+      "category": "Women Welfare",
+      "service_type": [
+        "Pudhumai Penn Verification",
+        "Marriage Financial Grants",
+        "Free Sewing Machine Scheme"
+      ],
+      "target_users": [
+        "women",
+        "female_students",
+        "widows"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Thanjavur",
+        "city": "Thanjavur",
+        "coverage": "Thanjavur"
+      },
+      "eligibility": [
+        "Residents of Thanjavur district"
+      ],
+      "services": [
+        "Processing Pudhumai Penn monthly college stipends",
+        "Distributing free sewing machines for self-employment"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free welfare benefit processing"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate"
+      ],
+      "contact": {
+        "phone": "04362-230357",
+        "email": "dswothanjavur@tn.gov.in",
+        "address": "District Collectorate Complex, Thanjavur, Tamil Nadu 613010"
+      },
+      "official_url": "https://thanjavur.nic.in/",
+      "description": "District social welfare department office executing state female empowerment and social security schemes across Thanjavur district.",
+      "source": "Thanjavur District Collectorate",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF030",
+      "name": "Tamil Nadu Backward Classes, MBC & Minorities Welfare Department",
+      "provider_type": "Government Welfare Department",
+      "category": "Financial Welfare",
+      "service_type": [
+        "Post-Matric Scholarships for BC/MBC/Minority Female Students",
+        "Free College Hostel Accommodation",
+        "Bicycles Distribution Scheme",
+        "Loan Subsidies for Women Micro-Enterprises"
+      ],
+      "target_users": [
+        "female_students",
+        "women_entrepreneurs",
+        "bc_mbc_minority_women",
+        "youth"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "BC, MBC, Denotified Communities, and Minority female students/women residing in TN",
+        "Annual family income less than ₹2.5 Lakhs per annum"
+      ],
+      "services": [
+        "100% Free college post-matric tuition fees and exam fee waiver",
+        "Free stay and food in 1,300+ BC/MBC government college hostels",
+        "Term loans up to ₹5 Lakhs at 6% interest for minority women entrepreneurs"
+      ],
+      "cost": {
+        "type": "Free / Subsidized Loans",
+        "description": "100% Free scholarships & hostels; subsidized low-interest business loans"
+      },
+      "documents_required": [
+        "Community Certificate",
+        "Income Certificate from Tahsildar",
+        "Aadhaar Card",
+        "College Marksheets & Fee Receipt"
+      ],
+      "contact": {
+        "phone": "044-28551462",
+        "email": "tbcwelfare@tn.gov.in",
+        "address": "Ezhilagam, Chepauk, Chennai, Tamil Nadu 600005"
+      },
+      "official_url": "https://www.tn.gov.in/bcmbcw/",
+      "description": "State department providing free college education scholarships, free hostel stay, and low-interest self-employment loans for BC, MBC, and minority women.",
+      "source": "Government of Tamil Nadu",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF031",
+      "name": "TAHDCO (Tamil Nadu Adi Dravidar Housing and Development Corporation)",
+      "provider_type": "Government Development Corporation",
+      "category": "Financial Welfare",
+      "service_type": [
+        "Capital Subsidy for Women Entrepreneurs (30% to 50%)",
+        "Commercial Vehicle Purchase Loan Subsidy",
+        "Collector's Discretionary Financial Fund",
+        "Vocational Skill Development Grants"
+      ],
+      "target_users": [
+        "sc_st_women",
+        "women_entrepreneurs",
+        "below_poverty_line",
+        "single_mothers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Scheduled Caste (SC) and Scheduled Tribe (ST) women residing in Tamil Nadu aged 18 to 55"
+      ],
+      "services": [
+        "Front-end capital subsidy up to ₹2.25 Lakhs for starting small business enterprises",
+        "Free training for competitive exams, aviation, nursing, and IT soft skills"
+      ],
+      "cost": {
+        "type": "Subsidized Grant",
+        "description": "30% to 50% direct capital subsidy funded by Government of Tamil Nadu"
+      },
+      "documents_required": [
+        "SC/ST Community Certificate",
+        "Aadhaar Card",
+        "Income Certificate from VAO",
+        "Project Business Plan Proposal"
+      ],
+      "contact": {
+        "phone": "044-25891624",
+        "email": "tahdco@tn.gov.in",
+        "address": "No. 31, Cenotaph Road, Teynampet, Chennai, Tamil Nadu 600018"
+      },
+      "official_url": "https://tahdco.tn.gov.in/",
+      "description": "Nodal development agency providing up to 50% business capital subsidies, commercial vehicle loans, and skill training for SC/ST female entrepreneurs.",
+      "source": "TAHDCO Official Portal",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF032",
+      "name": "Tamil Nadu State Legal Services Authority (TNSLSA) Free Legal Representation",
+      "provider_type": "Statutory Legal Authority",
+      "category": "Emergency Support",
+      "service_type": [
+        "100% Free Court Advocate Services for Women",
+        "Court Fee & Process Fee Exemption",
+        "Lok Adalat Amicable Dispute Settlement",
+        "Legal Aid Clinics in all Taluks"
+      ],
+      "target_users": [
+        "women",
+        "children",
+        "below_poverty_line",
+        "victims_of_crime"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "All women regardless of income in Tamil Nadu (Section 12 of Legal Services Authorities Act)"
+      ],
+      "services": [
+        "Free appointment of panel advocate to represent women in civil, family, or criminal courts",
+        "Exemption from court fees, typing, drafting, and witness expenses"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free advocate services and court fee waiver"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Simple Legal Aid Request Application Form"
+      ],
+      "contact": {
+        "phone": "15100 / 044-25342834",
+        "email": "tnslsa@tn.gov.in",
+        "address": "High Court Campus, Chennai, Tamil Nadu 600104"
+      },
+      "official_url": "https://slsa.tn.gov.in/",
+      "description": "Statutory legal services authority offering 100% free advocate representation and court fee waivers for all women in Tamil Nadu without any income restriction.",
+      "source": "Tamil Nadu State Legal Services Authority",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF033",
+      "name": "Kavalan SOS Mobile App & TN Police Women Safety Command Centre",
+      "provider_type": "Government Police Emergency App",
+      "category": "Women Protection",
+      "service_type": [
+        "Instant One-Tap Police SOS Trigger",
+        "Live GPS Tracking to Police Control Room",
+        "Automatic Video & Audio Recording",
+        "Immediate All-Women Police Dispatch"
+      ],
+      "target_users": [
+        "women",
+        "girls",
+        "working_women",
+        "female_students"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any resident or traveling woman in Tamil Nadu with a smartphone"
+      ],
+      "services": [
+        "Pressing SOS button sends immediate alert with live location to Master Police Command Room",
+        "Automated SMS dispatched to 3 pre-registered emergency contacts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free smartphone application download"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "112 / 1091",
+        "email": "kavalan.sos@tnpolice.gov.in",
+        "address": "Tamil Nadu Police Headquarters, Radhakrishnan Salai, Mylapore, Chennai 600004"
+      },
+      "official_url": "https://eservices.tnpolice.gov.in/",
+      "description": "Official Tamil Nadu Police safety mobile application featuring a one-tap emergency panic button that dispatches nearest police patrol vehicles using real-time GPS tracking.",
+      "source": "Tamil Nadu Police Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF034",
+      "name": "Dr. Dharmambal Ammaiyar Widow Remarriage Financial Assistance Scheme",
+      "provider_type": "Government Marriage Welfare Program",
+      "category": "Financial Welfare",
+      "service_type": [
+        "Financial Grant for Widow Remarriage",
+        "Gold Coin for Thirumangalyam",
+        "Widow Rehabilitation & Social Dignity"
+      ],
+      "target_users": [
+        "widows",
+        "women",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Widow remarrying aged 20 to 30 years in Tamil Nadu",
+        "Minimum groom age 21 years"
+      ],
+      "services": [
+        "Financial grant of ₹25,000 (or ₹50,000 for degree/diploma holders)",
+        "1 Sovereign (8 Grams) 22-carat gold coin for Thirumangalyam"
+      ],
+      "cost": {
+        "type": "Free / Grant & Gold Coin",
+        "description": "100% Grant assistance and free gold coin for marriage"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Death Certificate of First Husband",
+        "Widow Certificate",
+        "Marriage Invitation Card & Marriage Registration Certificate"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "socialwelfare@tn.gov.in",
+        "address": "Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Pioneering social reform scheme providing financial grants up to ₹50,000 and an 8-gram gold coin to young widows who remarry in Tamil Nadu.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "welfare_id": "WF035",
+      "name": "E.V.R. Maniammaiyar Destitute Widow Daughter Marriage Assistance Scheme",
+      "provider_type": "Government Marriage Welfare Program",
+      "category": "Financial Welfare",
+      "service_type": [
+        "Marriage Grant for Poor Widow Daughters",
+        "Gold Coin for Thirumangalyam",
+        "Single Mother Assistance"
+      ],
+      "target_users": [
+        "widows",
+        "single_mothers",
+        "destitute_women",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Poor poor widow mother residing in Tamil Nadu for her daughter's marriage",
+        "Daughter minimum age 18 years; family income below poverty line"
+      ],
+      "services": [
+        "Financial assistance of ₹25,000 (or ₹50,000 for degree/diploma holder daughters)",
+        "8 Gram 22-carat gold coin for Thirumangalyam"
+      ],
+      "cost": {
+        "type": "Free / Grant Assistance",
+        "description": "100% Financial grant and free gold coin"
+      },
+      "documents_required": [
+        "Aadhaar Card of Mother & Daughter",
+        "Widow Certificate of Mother",
+        "Income Certificate from Tahsildar",
+        "Daughter's Educational Certificates"
+      ],
+      "contact": {
+        "phone": "044-24351270",
+        "email": "socialwelfare@tn.gov.in",
+        "address": "Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "State welfare scheme offering up to ₹50,000 cash grant and an 8-gram gold coin to destitute widow mothers for conducting their daughters' marriages.",
+      "source": "Tamil Nadu Social Welfare Department",
+      "last_verified": "2026-08-14"
+    }
+  ]
+}

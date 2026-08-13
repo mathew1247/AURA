@@ -4,13 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // If onboarding is already completed, redirect to dashboard directly
-  const storedStatus = localStorage.getItem('userStatus');
-  const storedProfile = localStorage.getItem('userProfile');
-  if (storedStatus && storedProfile) {
-    window.location.href = 'index.html';
-    return;
-  }
 
   // ================= STATE MODEL =================
   let currentStep = 0;
@@ -257,13 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Continue button text
     if (btnContinueText && btnContinueIcon) {
       if (activeStepNumber === 0) {
-        btnContinueText.textContent = "Start My Journey →";
+        btnContinueText.textContent = "Start My Journey";
         btnContinueIcon.className = "fa-solid fa-arrow-right";
       } else if (activeStepNumber === 14) {
-        btnContinueText.textContent = "Explore My Journey →";
+        btnContinueText.textContent = "Explore My Journey";
         btnContinueIcon.className = "fa-solid fa-rocket";
       } else {
-        btnContinueText.textContent = "Continue →";
+        btnContinueText.textContent = "Continue";
         btnContinueIcon.className = "fa-solid fa-arrow-right";
       }
     }
@@ -657,29 +650,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ================= STEP 3: AGE SLIDER CONTROLS =================
-  ageSlider.addEventListener('input', (e) => {
-    ageDisplay.textContent = e.target.value;
-    profile.basic.age = parseInt(e.target.value, 10);
-  });
+  function updateAgeValue(val) {
+    val = parseInt(val, 10);
+    if (isNaN(val)) val = 21;
+    if (val < 18) val = 18;
+    if (val > 60) val = 60;
+    if (ageSlider) ageSlider.value = val;
+    if (ageDisplay) ageDisplay.textContent = val;
+    profile.basic.age = val;
 
-  ageMinusBtn.addEventListener('click', () => {
-    let val = parseInt(ageSlider.value, 10);
-    if (val > 18) {
-      val--;
-      ageSlider.value = val;
-      ageDisplay.textContent = val;
-      profile.basic.age = val;
+    const ageStageTag = document.getElementById('ageStageTag');
+    if (ageStageTag) {
+      if (val <= 22) {
+        ageStageTag.textContent = '🎓 Student & Higher Education (Pudhumai Penn & Grants Eligible)';
+      } else if (val <= 30) {
+        ageStageTag.textContent = '💼 Early Career & Entrepreneurship Subsidies (UYEGP Eligible)';
+      } else if (val <= 45) {
+        ageStageTag.textContent = '🌟 Experienced Professional & Self-Employment Opportunities';
+      } else {
+        ageStageTag.textContent = '🏆 Senior Professional & Financial Security Schemes';
+      }
     }
-  });
 
-  agePlusBtn.addEventListener('click', () => {
-    let val = parseInt(ageSlider.value, 10);
-    if (val < 60) {
-      val++;
-      ageSlider.value = val;
-      ageDisplay.textContent = val;
-      profile.basic.age = val;
-    }
+    document.querySelectorAll('.age-pill').forEach(pill => {
+      const pVal = parseInt(pill.getAttribute('data-age'), 10);
+      if (pVal === val || (pVal === 45 && val >= 45)) {
+        pill.classList.add('active');
+      } else {
+        pill.classList.remove('active');
+      }
+    });
+  }
+
+  if (ageSlider) {
+    ageSlider.addEventListener('input', (e) => {
+      updateAgeValue(e.target.value);
+    });
+  }
+
+  if (ageMinusBtn) {
+    ageMinusBtn.addEventListener('click', () => {
+      let val = parseInt(ageSlider ? ageSlider.value : 21, 10);
+      updateAgeValue(val - 1);
+    });
+  }
+
+  if (agePlusBtn) {
+    agePlusBtn.addEventListener('click', () => {
+      let val = parseInt(ageSlider ? ageSlider.value : 21, 10);
+      updateAgeValue(val + 1);
+    });
+  }
+
+  document.querySelectorAll('.age-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const pAge = pill.getAttribute('data-age');
+      updateAgeValue(pAge);
+    });
   });
 
   // ================= STEP 4: LOCATION HANDLER =================

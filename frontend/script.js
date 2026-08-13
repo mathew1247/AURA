@@ -15,12 +15,72 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userNameElem) {
       userNameElem.textContent = userProfile.basic.name;
     }
+    const dropdownNameElem = document.getElementById('dropdownUserName');
+    if (dropdownNameElem) {
+      dropdownNameElem.textContent = userProfile.basic.name;
+    }
 
     const firstBotMsg = document.querySelector('#chatBody .chat-msg.bot');
     if (firstBotMsg) {
       const firstName = userProfile.basic.name.split(' ')[0];
       firstBotMsg.textContent = `Hello ${firstName}! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?`;
     }
+  }
+
+  // Mobile Hamburger Navigation Drawer Logic
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileNavCloseBtn = document.getElementById('mobileNavCloseBtn');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileOpenChatBtn = document.getElementById('mobileOpenChatBtn');
+
+  function openMobileNav() {
+    if (mobileNavDrawer) mobileNavDrawer.classList.add('active');
+    if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+  }
+
+  function closeMobileNav() {
+    if (mobileNavDrawer) mobileNavDrawer.classList.remove('active');
+    if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+  }
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileNav);
+  if (mobileNavCloseBtn) mobileNavCloseBtn.addEventListener('click', closeMobileNav);
+  if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeMobileNav);
+
+  if (mobileOpenChatBtn) {
+    mobileOpenChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMobileNav();
+      openChat();
+    });
+  }
+
+  // User Profile Dropdown & Logout Toggle Logic
+  const profileMenuBtn = document.getElementById('profileMenuBtn');
+  const profileDropdown = document.getElementById('profileDropdown');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  if (profileMenuBtn && profileDropdown) {
+    profileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      profileDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!profileDropdown.contains(e.target) && !profileMenuBtn.contains(e.target)) {
+        profileDropdown.classList.remove('active');
+      }
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('userStatus');
+      localStorage.removeItem('userProfile');
+      window.location.href = 'onboarding.html';
+    });
   }
 
   // --- Element References ---
@@ -38,13 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatSendBtn = document.getElementById('chatSendBtn');
   const chatBody = document.getElementById('chatBody');
   const promptChips = document.querySelectorAll('.btn-chip');
-
-  const detailModal = document.getElementById('detailModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalImg = document.getElementById('modalImg');
-  const modalBadge = document.getElementById('modalBadge');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
 
   const heroPrevBtn = document.getElementById('heroPrevBtn');
   const heroNextBtn = document.getElementById('heroNextBtn');
@@ -116,45 +169,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Card Click Handler for Detail Modal ---
-  recCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const cardId = card.getAttribute('data-card-id');
-      const data = cardData[cardId];
-      if (data) {
-        modalImg.src = data.img;
-        modalBadge.textContent = data.badge;
-        modalTitle.textContent = data.title;
-        modalDesc.textContent = data.desc;
-        detailModal.classList.add('active');
-      }
-    });
-  });
-
-  modalCloseBtn.addEventListener('click', () => {
-    detailModal.classList.remove('active');
-  });
-
-  detailModal.addEventListener('click', (e) => {
-    if (e.target === detailModal) {
-      detailModal.classList.remove('active');
-    }
-  });
-
   // --- AI Chat Drawer Handler ---
+  const topOpenChatBtn = document.getElementById('topOpenChatBtn');
+
   function openChat(initialPrompt = '') {
-    chatDrawer.classList.add('active');
+    if (chatDrawer) {
+      chatDrawer.classList.add('active');
+    }
     if (initialPrompt) {
       handleUserSendMessage(initialPrompt);
     }
   }
 
   function closeChat() {
-    chatDrawer.classList.remove('active');
+    if (chatDrawer) {
+      chatDrawer.classList.remove('active');
+    }
   }
 
-  openChatBtn.addEventListener('click', () => openChat());
-  chatCloseBtn.addEventListener('click', closeChat);
+  if (openChatBtn) {
+    openChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openChat();
+    });
+  }
+
+  if (topOpenChatBtn) {
+    topOpenChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openChat();
+    });
+  }
+
+  if (chatCloseBtn) {
+    chatCloseBtn.addEventListener('click', closeChat);
+  }
+
+  // Check URL query for openChat flag
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('openChat') === 'true') {
+    openChat();
+  }
 
   promptChips.forEach(chip => {
     chip.addEventListener('click', () => {

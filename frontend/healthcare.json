@@ -1,0 +1,1556 @@
+{
+  "healthcare_resources": [
+    {
+      "healthcare_id": "HC001",
+      "name": "Rajiv Gandhi Government General Hospital (RGGGH) Chennai",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Emergency & Trauma Care",
+        "Maternal & Obstetric Care",
+        "Cardiology & Cardiac Surgery",
+        "Free Dialysis & Nephrology",
+        "Free Outpatient & Inpatient Care",
+        "Oncology & Cancer Care"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line",
+        "students",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Chennai",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "Open to all citizens of Tamil Nadu",
+        "Free Cashless Inpatient Treatment for Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS) cardholders"
+      ],
+      "cost": {
+        "type": "Free / Subsidized",
+        "description": "100% Free Outpatient consultation, medicines, and CMCHIS cashless surgeries"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "CMCHIS Smart Card (for cashless hospitalization)",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "044-25305000",
+        "email": "rgggh@tn.gov.in",
+        "address": "EVR Periyar Salai, Park Town, Chennai, Tamil Nadu 600003"
+      },
+      "official_url": "https://www.rgggh.tn.gov.in/",
+      "description": "Premier tertiary care government medical college hospital in Tamil Nadu providing multi-specialty medical services, emergency trauma care, maternity, and free cashless treatments under CMCHIS.",
+      "source": "Tamil Nadu Health and Family Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC002",
+      "name": "Government Kasturba Gandhi Hospital for Women and Children",
+      "provider_type": "Government Women & Children Specialty Hospital",
+      "category": "Women's Healthcare",
+      "services": [
+        "Antenatal & Postnatal Care",
+        "High-Risk Pregnancy Management",
+        "Neonatal Intensive Care Unit (NICU)",
+        "Free Normal & Caesarean Deliveries",
+        "Gynecological Surgeries",
+        "Immunization & Nutrition Support"
+      ],
+      "target_users": [
+        "pregnant_women",
+        "mothers",
+        "infants",
+        "women",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Triplicane, Chennai",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "Pregnant women, mothers, and infants residing in Tamil Nadu",
+        "Beneficiaries registered under PICME / Dr. Muthulakshmi Reddy Maternity Benefit Scheme"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free delivery services, newborn care, nutrition, and financial assistance under MRMBS"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "RCH ID / PICME Registration Number",
+        "Bank Account Passbook"
+      ],
+      "contact": {
+        "phone": "044-28444158",
+        "email": "kghtriplicane@tn.gov.in",
+        "address": "Triplicane High Road, Triplicane, Chennai, Tamil Nadu 600005"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Specialized government hospital dedicated exclusively to maternal, obstetric, and newborn healthcare in Tamil Nadu, offering free deliveries and comprehensive neonatal care.",
+      "source": "Tamil Nadu Health and Family Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC003",
+      "name": "Government Rajaji Hospital (GRH) Madurai",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Casualty & Trauma Care",
+        "Comprehensive Emergency Obstetric & Newborn Care (CEmONC)",
+        "Pediatric Intensive Care (PICU)",
+        "Cardiology & Nephrology",
+        "Free OP/IP Diagnostics & Surgeries"
+      ],
+      "target_users": [
+        "women",
+        "pregnant_women",
+        "general_public",
+        "below_poverty_line",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Madurai",
+        "city": "Madurai",
+        "coverage": "Madurai"
+      },
+      "eligibility": [
+        "Open to all residents of Madurai and southern districts of Tamil Nadu",
+        "CMCHIS insurance scheme beneficiaries"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free medical care, emergency services, and surgeries under government welfare schemes"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card",
+        "CMCHIS Card"
+      ],
+      "contact": {
+        "phone": "0452-2532535",
+        "email": "grhmadurai@tn.gov.in",
+        "address": "Panagal Road, Goripalayam, Madurai, Tamil Nadu 625020"
+      },
+      "official_url": "https://www.grh.tn.gov.in/",
+      "description": "Major referral tertiary medical care center for southern Tamil Nadu offering multi-specialty healthcare, maternal and child emergency care, and specialty surgeries.",
+      "source": "Tamil Nadu Medical Education Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC004",
+      "name": "Coimbatore Medical College Hospital (CMCH)",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Multi-Specialty Inpatient & Outpatient Care",
+        "Comprehensive Maternity & NICU Services",
+        "Emergency Trauma Center",
+        "Free Dialysis & Organ Transplant Unit",
+        "CMCHIS Cashless Treatment Wing"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line",
+        "workers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Coimbatore",
+        "city": "Coimbatore",
+        "coverage": "Coimbatore"
+      },
+      "eligibility": [
+        "All residents of Western Tamil Nadu (Coimbatore, Tiruppur, Nilgiris)",
+        "Free cashless treatments for CMCHIS beneficiaries"
+      ],
+      "cost": {
+        "type": "Free / Subsidized",
+        "description": "Free OP/IP treatment and diagnostics for public patients"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "CMCHIS Health Card"
+      ],
+      "contact": {
+        "phone": "0422-2301393",
+        "email": "cmchcoimbatore@tn.gov.in",
+        "address": "Trichy Road, Coimbatore, Tamil Nadu 641018"
+      },
+      "official_url": "http://www.cmch.tn.gov.in/",
+      "description": "Principal tertiary teaching hospital serving western Tamil Nadu with advanced medical specialties, maternal healthcare, and free government insurance coverage.",
+      "source": "Tamil Nadu Health and Family Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC005",
+      "name": "Mahatma Gandhi Memorial Government Hospital (MGMGH) Tiruchirappalli",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Emergency Medical Services",
+        "Maternal & Child Health Wing (MCH)",
+        "Special Newborn Care Unit (SNCU)",
+        "Oncology, Cardiology & Urology",
+        "CMCHIS Cashless Surgery"
+      ],
+      "target_users": [
+        "women",
+        "mothers",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tiruchirappalli",
+        "city": "Tiruchirappalli",
+        "coverage": "Tiruchirappalli"
+      },
+      "eligibility": [
+        "Open to all patients in Trichy and central Tamil Nadu districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free consultations, diagnostic tests, essential drugs, and deliveries"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card",
+        "PICME Registration Card (for pregnant women)"
+      ],
+      "contact": {
+        "phone": "0431-2412521",
+        "email": "mgmgh.trichy@tn.gov.in",
+        "address": "Collector Office Road, Tiruchirappalli, Tamil Nadu 620001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Premier government hospital in Trichy delivering comprehensive specialized healthcare, emergency obstetric care, and free pediatric care.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC006",
+      "name": "Government Mohan Kumaramangalam Medical College Hospital Salem",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Trauma & Emergency Care",
+        "Obstetrics, Gynecology & NICU",
+        "Super-Specialty Cardiology & Neurosurgery",
+        "Free Chemotherapy & Radiation Therapy",
+        "CMCHIS Insurance Desk"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Salem",
+        "city": "Salem",
+        "coverage": "Salem"
+      },
+      "eligibility": [
+        "Residents of Salem, Namakkal, Dharmapuri, and Krishnagiri districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free OP/IP treatment and government health scheme coverage"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card",
+        "CMCHIS Insurance Card"
+      ],
+      "contact": {
+        "phone": "0427-2211025",
+        "email": "gmkmchsalem@tn.gov.in",
+        "address": "Brindavan Road, Fairlands, Salem, Tamil Nadu 636030"
+      },
+      "official_url": "https://www.gmkmch.tn.gov.in/",
+      "description": "Major tertiary referral institution in Salem district offering advanced super-specialty treatment, maternal healthcare, and free inpatient care.",
+      "source": "Tamil Nadu Medical Education Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC007",
+      "name": "Tirunelveli Medical College Hospital (TVMCH)",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Emergency & ICU Services",
+        "Comprehensive Maternity & Pediatric Services",
+        "Cardiothoracic & Vascular Surgeries",
+        "Free Nephrology & Dialysis Care",
+        "CMCHIS Insurance Desk"
+      ],
+      "target_users": [
+        "women",
+        "mothers",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tirunelveli",
+        "city": "Palayamkottai, Tirunelveli",
+        "coverage": "Tirunelveli"
+      },
+      "eligibility": [
+        "Residents of Tirunelveli, Tenkasi, and Tuticorin districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free OPD consultations, diagnostics, and inpatient surgical procedures"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card",
+        "CMCHIS Card"
+      ],
+      "contact": {
+        "phone": "0462-2572733",
+        "email": "tvmch@tn.gov.in",
+        "address": "High Ground Road, Palayamkottai, Tirunelveli, Tamil Nadu 627011"
+      },
+      "official_url": "https://www.tvmch.ac.in/",
+      "description": "Leading tertiary referral hospital in Southern Tamil Nadu providing specialty maternity care, trauma resuscitation, and free government health schemes.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC008",
+      "name": "Christian Medical College (CMC) Vellore - Subsidized Care Services",
+      "provider_type": "Charitable / Subsidized Specialty Hospital",
+      "category": "Affordable/Subsidized healthcare",
+      "services": [
+        "Multi-Specialty Clinical Consultations",
+        "Low Cost Effective Care Unit (LCECU) for Women & Low Income Families",
+        "Maternal & Child Health Care",
+        "Specialty Surgeries & Cancer Care",
+        "Community Health & Development (CHAD) Services"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line",
+        "low_income_families"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Vellore",
+        "city": "Vellore",
+        "coverage": "Vellore"
+      },
+      "eligibility": [
+        "Low-income and underprivileged patients seeking subsidized high-quality medical care"
+      ],
+      "cost": {
+        "type": "Subsidized",
+        "description": "Concessional rates and free financial assistance for deserving underprivileged patients"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Income Certificate / Ration Card (for financial concessions)"
+      ],
+      "contact": {
+        "phone": "0416-2281000",
+        "email": "pro@cmcvellore.ac.in",
+        "address": "IDA Scudder Road, Vellore, Tamil Nadu 632004"
+      },
+      "official_url": "https://www.cmcvellore.ac.in/",
+      "description": "World-renowned charitable healthcare institution providing subsidized medical treatment, community maternal care, and financial assistance to underprivileged patients.",
+      "source": "CMC Vellore Official Portal",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC009",
+      "name": "Government Kilpauk Medical College Hospital (KMC) Chennai",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Burns & Plastic Surgery Center of Excellence",
+        "Obstetrics, Gynecology & Maternity Services",
+        "Pediatrics & Neonatal Care",
+        "General Medicine & Surgery",
+        "CMCHIS Cashless Treatment"
+      ],
+      "target_users": [
+        "women",
+        "burn_survivors",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Kilpauk, Chennai",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "All Tamil Nadu citizens, with specialized free care for burn injuries and maternity cases"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free emergency care, burn reconstruction, maternity, and CMCHIS surgeries"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Ration Card",
+        "CMCHIS Card"
+      ],
+      "contact": {
+        "phone": "044-28364951",
+        "email": "kmc@tn.gov.in",
+        "address": "EVR Periyar Salai, Kilpauk, Chennai, Tamil Nadu 600010"
+      },
+      "official_url": "http://www.gkmc.in/",
+      "description": "Major government hospital in Chennai famous for its state-of-the-art Burns Department, maternity services, and comprehensive free emergency medical care.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC010",
+      "name": "Government Stanley Medical College Hospital Chennai",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Government Institute for Surgical Gastroenterology",
+        "Hand Surgery & Reconstructive Microsurgery",
+        "Maternal & Child Health Services",
+        "Free Kidney & Liver Transplant Care",
+        "24/7 Trauma Care"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line",
+        "workers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Royapuram, Chennai",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "Open to all patients in North Chennai and across Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free inpatient and outpatient care, surgical gastroenterology, and transplants"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card",
+        "CMCHIS Card"
+      ],
+      "contact": {
+        "phone": "044-25281351",
+        "email": "stanleyhospital@tn.gov.in",
+        "address": "Old Jail Road, Royapuram, Chennai, Tamil Nadu 600001"
+      },
+      "official_url": "http://www.stanleymedicalcollege.in/",
+      "description": "Renowned tertiary referral government hospital specializing in hand surgery, liver transplants, gastroenterology, and comprehensive maternity care in North Chennai.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC011",
+      "name": "Institute of Obstetrics and Gynaecology (IOG) & Government Hospital for Women and Children Egmore",
+      "provider_type": "Government Women Specialty Center",
+      "category": "Maternal Healthcare",
+      "services": [
+        "Premier Obstetric & Gynecological Care",
+        "Fetal Medicine & Prenatal Screening",
+        "High-Risk Maternity Management",
+        "Advanced NICU & Neonatal Care",
+        "Infertility Clinic & Cervical Cancer Screening"
+      ],
+      "target_users": [
+        "women",
+        "pregnant_women",
+        "mothers",
+        "infants",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Egmore, Chennai",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "All women and expectant mothers in Tamil Nadu seeking specialized maternity care"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free specialized maternity consultations, deliveries, and newborn treatment"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "PICME RCH ID Number",
+        "Bank Account Details"
+      ],
+      "contact": {
+        "phone": "044-28191981",
+        "email": "iogegmore@tn.gov.in",
+        "address": "Police Commissioner Office Road, Egmore, Chennai, Tamil Nadu 600008"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Asia's oldest and premier specialty institute for obstetrics, gynecology, and child health, offering free comprehensive maternal care and high-risk pregnancy management.",
+      "source": "Tamil Nadu Health and Family Welfare Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC012",
+      "name": "Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS) Tamil Nadu",
+      "provider_type": "Government Health Insurance Program",
+      "category": "Health insurance/support programs",
+      "services": [
+        "Cashless Hospitalization Coverage up to ₹5,000,000 per family per year",
+        "Coverage for 1,500+ Medical and Surgical Procedures",
+        "Free Surgeries, Organ Transplants & Cancer Care",
+        "Coverage at Embanked Government & Private Hospitals"
+      ],
+      "target_users": [
+        "below_poverty_line",
+        "low_income_families",
+        "women",
+        "senior_citizens",
+        "differently_abled"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Annual family income less than ₹1,20,000 per annum (or smart ration card holders in TN)",
+        "Sri Lankan Tamil refugees living in camps in TN"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Premium funded by the Government of Tamil Nadu"
+      },
+      "documents_required": [
+        "Smart Family Card / Ration Card",
+        "Income Certificate from VAO / Tahsildar",
+        "Aadhaar Card of Family Members"
+      ],
+      "contact": {
+        "phone": "1800-425-3993",
+        "email": "cmchis@tn.gov.in",
+        "address": "TNSHMS, 3rd Floor, DMS Complex, Teynampet, Chennai 600018"
+      },
+      "official_url": "https://www.cmchistn.com/",
+      "description": "Flagship statewide health insurance scheme providing up to ₹5 Lakh cashless medical and surgical coverage to low-income families at empaneled government and private hospitals.",
+      "source": "Tamil Nadu Health Systems Project",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC013",
+      "name": "Dr. Muthulakshmi Reddy Maternity Benefit Scheme (MRMBS) & PICME",
+      "provider_type": "Government Health & Welfare Program",
+      "category": "Maternal Healthcare",
+      "services": [
+        "₹18,000 Financial Assistance to Pregnant Women",
+        "2 Free Amma Maternity Nutrition Kits (valued at ₹4,000)",
+        "Free Pregnancy Tracking via PICME RCH ID System",
+        "Institutional Delivery & Postnatal Monitoring"
+      ],
+      "target_users": [
+        "pregnant_women",
+        "mothers",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Pregnant women aged 19 years and above for first 2 deliveries",
+        "Resident of Tamil Nadu registered in PICME system before 12 weeks of pregnancy"
+      ],
+      "cost": {
+        "type": "Free / Grant Benefit",
+        "description": "100% Financial Grant transferred directly to mother's bank account in 5 installments"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "PICME RCH Registration Number",
+        "Aadhaar-seeded Bank Account Passbook"
+      ],
+      "contact": {
+        "phone": "102 / 181",
+        "email": "picme@tn.gov.in",
+        "address": "Directorate of Public Health & Preventive Medicine, DMS Campus, Chennai 600006"
+      },
+      "official_url": "https://picme.tn.gov.in/",
+      "description": "Statewide maternal assistance program providing ₹18,000 in cash incentives and nutrition kits to pregnant poor women to ensure healthy delivery and prevent infant mortality.",
+      "source": "Directorate of Public Health & Preventive Medicine TN",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC014",
+      "name": "Makkalai Thedi Maruthuvam (Doorstep Healthcare Scheme TN)",
+      "provider_type": "Government Healthcare Program",
+      "category": "Preventive Healthcare",
+      "services": [
+        "Doorstep Screening for Hypertension & Diabetes",
+        "Doorstep Delivery of Non-Communicable Disease (NCD) Medicines",
+        "Home-based Palliative Care & Dialysis Support",
+        "Physiotherapy for Elderly & Disabled at Home"
+      ],
+      "target_users": [
+        "senior_citizens",
+        "women",
+        "differently_abled",
+        "chronically_ill_patients"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "All residents of Tamil Nadu, prioritizing elderly, women, and bedridden patients"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free doorstep screening, home medical visits, and medicine supply"
+      },
+      "documents_required": [
+        "Aadhaar Card / Family Ration Card"
+      ],
+      "contact": {
+        "phone": "104",
+        "email": "dph@tn.gov.in",
+        "address": "Directorate of Public Health, Teynampet, Chennai 600006"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Pioneering doorstep healthcare initiative delivering essential non-communicable disease medicines, screening, and palliative care directly to citizens' homes.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC015",
+      "name": "108 Emergency Ambulance Service (EMRI Tamil Nadu)",
+      "provider_type": "Emergency Healthcare Service",
+      "category": "Emergency Healthcare",
+      "services": [
+        "24/7 Toll-Free Medical Emergency Dispatch",
+        "Neonatal & High-Risk Maternal Transport Ambulances",
+        "Basic & Advanced Life Support (ALS) Ambulances",
+        "Accident & Trauma Resuscitation Transport"
+      ],
+      "target_users": [
+        "general_public",
+        "women",
+        "pregnant_women",
+        "accident_victims"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any person experiencing a medical, obstetric, or trauma emergency in Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Toll-free emergency ambulance transport to government & empanelled hospitals"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "108",
+        "email": "statehead_tn@emri.in",
+        "address": "GVK EMRI Campus, Kasturba Gandhi Hospital Campus, Triplicane, Chennai 600005"
+      },
+      "official_url": "https://www.emri.in/",
+      "description": "Statewide 24/7 free emergency ambulance service operating thousands of life support and maternity transport vehicles across all 38 districts of Tamil Nadu.",
+      "source": "Tamil Nadu Health Systems Project",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC016",
+      "name": "104 Health Helpline & Tele-Consultation Services Tamil Nadu",
+      "provider_type": "Telemedicine & Helpline",
+      "category": "Telemedicine",
+      "services": [
+        "24/7 Toll-Free Medical Advice & Tele-Consultation",
+        "Psychological Counselling & Stress Management",
+        "Information on Government Health Schemes & Hospitals",
+        "Grievance Redressal for Hospital Services"
+      ],
+      "target_users": [
+        "women",
+        "students",
+        "general_public",
+        "senior_citizens"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Open to all citizens seeking health advice or emergency guidance in Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free 24/7 toll-free tele-consultation call"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "104",
+        "email": "healthhelpline104@tn.gov.in",
+        "address": "DMS Complex, Teynampet, Chennai, Tamil Nadu 600018"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Official 24/7 state medical helpline providing free telephonic doctor consultation, mental health advice, and health scheme information.",
+      "source": "National Health Mission Tamil Nadu",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC017",
+      "name": "Tele-MANAS Mental Health Helpline (Tamil Nadu State Cell)",
+      "provider_type": "Government Mental Health Service",
+      "category": "Mental Healthcare",
+      "services": [
+        "24/7 Toll-Free Confidential Psychological Counselling",
+        "Suicide Prevention & Crisis Intervention",
+        "Anxiety, Depression & Academic Stress Counselling",
+        "Referral to District Mental Health Program (DMHP) Clinics"
+      ],
+      "target_users": [
+        "women",
+        "students",
+        "youth",
+        "general_public"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Anyone in emotional distress, mental crisis, or seeking psychiatric guidance in TN"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Toll-free 24/7 confidential mental healthcare counselling"
+      },
+      "documents_required": [],
+      "contact": {
+        "phone": "14416 / 1800-891-4416",
+        "email": "telemanas@imh.tn.gov.in",
+        "address": "Institute of Mental Health Campus, Kilpauk, Chennai 600010"
+      },
+      "official_url": "https://telemanas.mohfw.gov.in/",
+      "description": "Government of India & Tamil Nadu 24/7 tele-mental health cell offering free round-the-clock psychiatric support, distress intervention, and counselling in Tamil.",
+      "source": "Institute of Mental Health Kilpauk TN",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC018",
+      "name": "Institute of Mental Health (IMH) Kilpauk Chennai",
+      "provider_type": "Government Mental Health Specialty Hospital",
+      "category": "Mental Healthcare",
+      "services": [
+        "Outpatient & Inpatient Psychiatric Treatment",
+        "De-addiction & Substance Abuse Rehabilitation",
+        "Child & Adolescent Mental Health Clinic",
+        "Women's Psychiatric Care & Rehabilitation Wing",
+        "Day Care & Vocational Therapy"
+      ],
+      "target_users": [
+        "women",
+        "youth",
+        "general_public",
+        "differently_abled"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Kilpauk, Chennai",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Open to all individuals suffering from mental health conditions"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free OP/IP treatment, medications, and psychiatric rehabilitation"
+      },
+      "documents_required": [
+        "Aadhaar Card / Photo Identity Proof"
+      ],
+      "contact": {
+        "phone": "044-26421041",
+        "email": "imhchennai@tn.gov.in",
+        "address": "Medavakkam Tank Road, Kilpauk, Chennai, Tamil Nadu 600010"
+      },
+      "official_url": "http://www.imh.tn.gov.in/",
+      "description": "Asia's second oldest psychiatric institution offering specialized inpatient, outpatient, and rehabilitation services for women and general public in Tamil Nadu.",
+      "source": "Tamil Nadu Medical Education Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC019",
+      "name": "Government Medical College Hospital Chengalpattu",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Trauma Care & Emergency Department",
+        "Maternity & NICU Services",
+        "General Medicine, Pediatrics & Orthopedics",
+        "CMCHIS Health Insurance Coverage"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chengalpattu",
+        "city": "Chengalpattu",
+        "coverage": "Chengalpattu"
+      },
+      "eligibility": [
+        "Residents of Chengalpattu, Kanchipuram, and surrounding districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free outpatient consultations and inpatient medical care"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "044-27426566",
+        "email": "cmchcpt@tn.gov.in",
+        "address": "GST Road, Chengalpattu, Tamil Nadu 603001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Major referral medical hospital in Chengalpattu district providing comprehensive emergency, pediatric, and maternal health services.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC020",
+      "name": "Government Medical College Hospital Thanjavur",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Comprehensive Emergency Obstetric Care (CEmONC)",
+        "Special Newborn Care Unit (SNCU)",
+        "Cardiology & Neurosurgery Specialty Wings",
+        "CMCHIS Cashless Surgery"
+      ],
+      "target_users": [
+        "women",
+        "mothers",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Thanjavur",
+        "city": "Thanjavur",
+        "coverage": "Thanjavur"
+      },
+      "eligibility": [
+        "Residents of Thanjavur, Tiruvarur, Nagapattinam, and Delta districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free healthcare services under Tamil Nadu government medical programs"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "CMCHIS Health Card"
+      ],
+      "contact": {
+        "phone": "04362-240024",
+        "email": "tmchthanjavur@tn.gov.in",
+        "address": "Medical College Road, Thanjavur, Tamil Nadu 613004"
+      },
+      "official_url": "https://www.tmch.ac.in/",
+      "description": "Leading referral hospital for Delta districts of Tamil Nadu offering specialized obstetrics, child healthcare, and advanced surgical care.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC021",
+      "name": "Kanyakumari Government Medical College Hospital Nagercoil",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Multi-Specialty Clinical Care",
+        "Maternal & Infant Healthcare Wing",
+        "24/7 Trauma Emergency Unit",
+        "Free Dialysis & Oncology Care"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Kanyakumari",
+        "city": "Nagercoil",
+        "coverage": "Kanyakumari"
+      },
+      "eligibility": [
+        "Residents of Kanyakumari district and southern border areas"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free treatment for public and CMCHIS beneficiaries"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "04652-223216",
+        "email": "kgmch@tn.gov.in",
+        "address": "Asaripallam, Nagercoil, Tamil Nadu 629201"
+      },
+      "official_url": "https://www.kgmch.ac.in/",
+      "description": "Principal government referral medical institution in Kanyakumari district delivering free specialty care, maternity support, and emergency treatment.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC022",
+      "name": "Government District Head Quarters Hospital Erode",
+      "provider_type": "District Government Hospital",
+      "category": "District Government Hospitals",
+      "services": [
+        "Comprehensive Maternal & Newborn Care",
+        "General Medicine & Surgical Wards",
+        "Emergency Casualty & Ambulance",
+        "Free Diagnostic Labs & Pharmacy"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Erode",
+        "city": "Erode",
+        "coverage": "Erode"
+      },
+      "eligibility": [
+        "Residents of Erode district"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free outpatient and inpatient care"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "0424-2258324",
+        "email": "hqhrode@tn.gov.in",
+        "address": "EVN Road, Erode, Tamil Nadu 638009"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Nodal district hospital in Erode providing secondary-level healthcare, maternal care, and emergency response services.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC023",
+      "name": "Government District Head Quarters Hospital Tiruppur",
+      "provider_type": "District Government Hospital",
+      "category": "District Government Hospitals",
+      "services": [
+        "Emergency Care & Industrial Trauma Response",
+        "Maternity & Child Health Center",
+        "Free OP/IP Diagnostics",
+        "CMCHIS Insurance Counter"
+      ],
+      "target_users": [
+        "women",
+        "textile_workers",
+        "below_poverty_line",
+        "general_public"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Tiruppur",
+        "city": "Tiruppur",
+        "coverage": "Tiruppur"
+      },
+      "eligibility": [
+        "All industrial workers, women, and residents of Tiruppur district"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free healthcare and emergency treatment"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "0421-2242100",
+        "email": "ghdqtiruppur@tn.gov.in",
+        "address": "Dharapuram Road, Tiruppur, Tamil Nadu 641604"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "District headquarters government hospital supporting Tiruppur's workforce and residents with specialized maternal health and emergency medicine.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC024",
+      "name": "Government District Head Quarters Hospital Dindigul",
+      "provider_type": "District Government Hospital",
+      "category": "District Government Hospitals",
+      "services": [
+        "Emergency & Casualty Ward",
+        "Antenatal & Postnatal Care",
+        "Dialysis Unit & General Surgery",
+        "Free Medicines & Lab Testing"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Dindigul",
+        "city": "Dindigul",
+        "coverage": "Dindigul"
+      },
+      "eligibility": [
+        "Residents of Dindigul district"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free medical services"
+      },
+      "documents_required": [
+        "Aadhaar Card"
+      ],
+      "contact": {
+        "phone": "0451-2423200",
+        "email": "ghdindigul@tn.gov.in",
+        "address": "Hospital Road, Dindigul, Tamil Nadu 624001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Main secondary healthcare hospital for Dindigul district providing essential maternal health, emergency trauma, and general medicine.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC025",
+      "name": "Government Medical College Hospital Ramanathapuram",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "24/7 Trauma Emergency Care",
+        "CEmONC Maternity Services",
+        "Special Newborn Care Unit (SNCU)",
+        "Free Dialysis & General Surgery"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "coastal_communities",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Ramanathapuram",
+        "city": "Ramanathapuram",
+        "coverage": "Ramanathapuram"
+      },
+      "eligibility": [
+        "Residents of Ramanathapuram and coastal island regions"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free healthcare under TN Government welfare programs"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "04567-220200",
+        "email": "ghramnad@tn.gov.in",
+        "address": "Kenikarai, Ramanathapuram, Tamil Nadu 623501"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Newly upgraded tertiary medical college hospital catering to the coastal and rural communities of Ramanathapuram district.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC026",
+      "name": "Government District Head Quarters Hospital Cuddalore",
+      "provider_type": "District Government Hospital",
+      "category": "District Government Hospitals",
+      "services": [
+        "Emergency Casualty & Ambulance",
+        "Maternal & Pediatric Ward",
+        "Blood Bank & Diagnostic Services",
+        "CMCHIS Insurance Counter"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Cuddalore",
+        "city": "Cuddalore",
+        "coverage": "Cuddalore"
+      },
+      "eligibility": [
+        "Residents of Cuddalore district"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free government health services"
+      },
+      "documents_required": [
+        "Aadhaar Card"
+      ],
+      "contact": {
+        "phone": "04142-230350",
+        "email": "ghcuddalore@tn.gov.in",
+        "address": "Medical House Road, Cuddalore, Tamil Nadu 607001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Primary district government hospital serving coastal Cuddalore with emergency trauma care, blood bank, and maternity support.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC027",
+      "name": "Government Medical College Hospital Villupuram",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Trauma & Emergency Resuscitation",
+        "Maternity, Gynecological Care & NICU",
+        "Pediatrics & Orthopedics",
+        "CMCHIS Cashless Surgery"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Villupuram",
+        "city": "Mundiyampakkam, Villupuram",
+        "coverage": "Villupuram"
+      },
+      "eligibility": [
+        "Residents of Villupuram and Kallakurichi districts"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free medical services and diagnostic testing"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "04146-232500",
+        "email": "vmch@tn.gov.in",
+        "address": "Mundiyampakkam, Villupuram, Tamil Nadu 605601"
+      },
+      "official_url": "https://www.vmc.ac.in/",
+      "description": "Premier medical college hospital catering to Villupuram district with specialized maternity, emergency trauma, and pediatric care.",
+      "source": "Tamil Nadu Medical Education Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC028",
+      "name": "Government Medical College Hospital Dharmapuri",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "CEmONC Obstetric & Gynecological Services",
+        "Special Newborn Care Unit (SNCU)",
+        "General Medicine & Emergency Trauma",
+        "CMCHIS Insurance Counter"
+      ],
+      "target_users": [
+        "women",
+        "mothers",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Dharmapuri",
+        "city": "Dharmapuri",
+        "coverage": "Dharmapuri"
+      },
+      "eligibility": [
+        "Residents of Dharmapuri and rural northwest Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free healthcare under state medical welfare programs"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Smart Ration Card"
+      ],
+      "contact": {
+        "phone": "04342-233000",
+        "email": "dmch@tn.gov.in",
+        "address": "Nethaji Bypass Road, Dharmapuri, Tamil Nadu 636701"
+      },
+      "official_url": "https://www.dmch.ac.in/",
+      "description": "Key government referral institution in Dharmapuri district offering maternal care, infant resuscitation, and emergency medicine.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC029",
+      "name": "Government Medical College Hospital Krishnagiri",
+      "provider_type": "Government Medical College Hospital",
+      "category": "Government Hospitals",
+      "services": [
+        "Emergency Trauma Response",
+        "Maternal & Child Health Wing",
+        "Free Dialysis & General Surgery",
+        "Blood Bank & Pharmacy"
+      ],
+      "target_users": [
+        "women",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Krishnagiri",
+        "city": "Krishnagiri",
+        "coverage": "Krishnagiri"
+      },
+      "eligibility": [
+        "Residents of Krishnagiri, Hosur, and border regions"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free government healthcare services"
+      },
+      "documents_required": [
+        "Aadhaar Card"
+      ],
+      "contact": {
+        "phone": "04343-232200",
+        "email": "gmc.krishnagiri@tn.gov.in",
+        "address": "Royakottai Road, Krishnagiri, Tamil Nadu 635001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "State-of-the-art government medical college hospital serving Krishnagiri district with emergency trauma and maternal care.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC030",
+      "name": "Government District Head Quarters Hospital Ooty (The Nilgiris)",
+      "provider_type": "District Government Hospital",
+      "category": "District Government Hospitals",
+      "services": [
+        "High Altitude Emergency Medical Response",
+        "Maternity & Pediatric Services",
+        "Free OP Consultations & Medicines",
+        "CMCHIS Insurance Counter"
+      ],
+      "target_users": [
+        "women",
+        "tribal_communities",
+        "general_public",
+        "below_poverty_line"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Nilgiris",
+        "city": "Udhagamandalam (Ooty)",
+        "coverage": "Nilgiris"
+      },
+      "eligibility": [
+        "Residents and tribal communities of Nilgiris district"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "Free medical care for hill and tribal populations"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Ration Card"
+      ],
+      "contact": {
+        "phone": "0423-2442212",
+        "email": "ghooty@tn.gov.in",
+        "address": "Hospital Road, Ooty, The Nilgiris, Tamil Nadu 643001"
+      },
+      "official_url": "https://www.tnhealth.tn.gov.in/",
+      "description": "Nodal hill district government hospital serving Ooty, Coonoor, and tribal communities with maternal care and emergency medicine.",
+      "source": "Tamil Nadu Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC031",
+      "name": "National Urban Health Mission (NUHM) Urban Primary Health Centres (UPHC) Greater Chennai",
+      "provider_type": "Urban Primary Health Centre",
+      "category": "Urban Primary Health Centres",
+      "services": [
+        "Free Outpatient Consultation & Medicines",
+        "Antenatal Care & Immunization Clinics",
+        "Diabetes & Hypertension Screening",
+        "Lab Diagnostic Tests & Counseling"
+      ],
+      "target_users": [
+        "women",
+        "urban_poor",
+        "slum_dwellers",
+        "children"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "Chennai",
+        "city": "Greater Chennai Corporation",
+        "coverage": "Chennai"
+      },
+      "eligibility": [
+        "Urban residents, slum dwellers, and daily wage workers in Chennai"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free primary healthcare consultations and medications"
+      },
+      "documents_required": [
+        "Aadhaar Card / Ration Card"
+      ],
+      "contact": {
+        "phone": "1913 (GCC Helpline)",
+        "email": "health@chennaicorporation.gov.in",
+        "address": "Greater Chennai Corporation Health Department, Ripon Building, Chennai 600003"
+      },
+      "official_url": "https://www.chennaicorporation.gov.in/",
+      "description": "Network of 140+ urban primary health centers across Greater Chennai providing free neighborhood healthcare, maternal checkups, and chronic disease screening.",
+      "source": "Greater Chennai Corporation Health Department",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC032",
+      "name": "National Rural Health Mission Primary Health Centres (PHCs) Tamil Nadu",
+      "provider_type": "Primary Health Centre (PHC)",
+      "category": "Primary Health Centres (PHCs)",
+      "services": [
+        "24/7 Normal Delivery Services",
+        "Immunization & Child Growth Monitoring",
+        "Maternal Antenatal Registration (PICME)",
+        "Free Essential Drugs & Lab Testing"
+      ],
+      "target_users": [
+        "rural_women",
+        "pregnant_women",
+        "infants",
+        "farmers"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Rural population residing in panchayats across Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free delivery services, child immunization, and drugs"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "PICME Registration Card"
+      ],
+      "contact": {
+        "phone": "104",
+        "email": "nrhm@tn.gov.in",
+        "address": "State Health Society, DMS Complex, Teynampet, Chennai 600018"
+      },
+      "official_url": "https://www.nhm.tn.gov.in/",
+      "description": "Network of 1,800+ rural Primary Health Centres across Tamil Nadu delivering round-the-clock maternal deliveries, child vaccinations, and primary care.",
+      "source": "National Health Mission Tamil Nadu",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC033",
+      "name": "Tamil Nadu State AIDS Control Society (TNSACS) ICTC Clinics",
+      "provider_type": "Government Preventive Specialty Clinic",
+      "category": "Preventive Healthcare",
+      "services": [
+        "Confidential Voluntary HIV Counseling & Testing (ICTC)",
+        "Prevention of Parent-to-Child Transmission (PPTCT) Services for Pregnant Women",
+        "Free Antiretroviral Therapy (ART) Medications",
+        "Stigma-Free Reproductive Health Counseling"
+      ],
+      "target_users": [
+        "women",
+        "pregnant_women",
+        "high_risk_groups",
+        "general_public"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Any person seeking voluntary testing, pregnancy screening, or ART treatment in TN"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free testing, counseling, and lifelong ART medication"
+      },
+      "documents_required": [
+        "Identity Proof (Optional for confidential testing)"
+      ],
+      "contact": {
+        "phone": "1097 (National AIDS Helpline) / 044-28190467",
+        "email": "tnsacs@tn.gov.in",
+        "address": "471, Anna Salai, Nandanam, Chennai, Tamil Nadu 600035"
+      },
+      "official_url": "http://www.tnsacs.in/",
+      "description": "Statewide network of integrated testing and counseling centers providing free, confidential HIV testing, maternal screening, and ART treatment.",
+      "source": "Tamil Nadu State AIDS Control Society",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC034",
+      "name": "Tamil Nadu Differently Abled Welfare Board Medical Assessment Camps",
+      "provider_type": "Government Specialty Healthcare Service",
+      "category": "Disability-related healthcare",
+      "services": [
+        "Free Disability Medical Assessment & UDID Card Issuance",
+        "Free Supply of Assistive Devices & Hearing Aids",
+        "Physiotherapy & Speech Therapy Services",
+        "Rehabilitative Surgeries under CMCHIS"
+      ],
+      "target_users": [
+        "differently_abled",
+        "children",
+        "senior_citizens",
+        "women"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "Persons with 40% or more certified disability residing in Tamil Nadu"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free medical assessment, UDID cards, and mobility aids"
+      },
+      "documents_required": [
+        "Aadhaar Card",
+        "Medical Disability Certificate from District Medical Board",
+        "Passport Size Photographs"
+      ],
+      "contact": {
+        "phone": "1800-425-0111 / 044-28444940",
+        "email": "scda@tn.gov.in",
+        "address": "State Commissionerate for Differently Abled, Lady Willingdon College Campus, Kamarajar Salai, Chennai 600005"
+      },
+      "official_url": "https://www.scda.tn.gov.in/",
+      "description": "Statewide specialized medical assessment and rehabilitation program providing free UDID cards, assistive appliances, and corrective surgeries for disabled citizens.",
+      "source": "Welfare of Differently Abled Persons Department TN",
+      "last_verified": "2026-08-14"
+    },
+    {
+      "healthcare_id": "HC035",
+      "name": "Tamil Nadu Chief Minister's Breakfast & Child Nutrition Scheme Health Monitoring",
+      "provider_type": "Government Child & School Healthcare Program",
+      "category": "Child Healthcare",
+      "services": [
+        "Nutritious Free Morning Meals for Primary School Students",
+        "Regular Height, Weight & BMI Growth Monitoring",
+        "De-worming & Iron Folic Acid Supplementation",
+        "Routine School Health Screenings by Rashtriya Bal Swasthya Karyakram (RBSK)"
+      ],
+      "target_users": [
+        "children",
+        "students",
+        "primary_school_children"
+      ],
+      "location": {
+        "state": "Tamil Nadu",
+        "district": "",
+        "city": "",
+        "coverage": "Tamil Nadu"
+      },
+      "eligibility": [
+        "All primary school children (Classes 1 to 5) studying in Tamil Nadu government schools"
+      ],
+      "cost": {
+        "type": "Free",
+        "description": "100% Free nutritious meals and health screening"
+      },
+      "documents_required": [
+        "Government School Admission Roll Number"
+      ],
+      "contact": {
+        "phone": "1800-425-6110",
+        "email": "socialwelfare@tn.gov.in",
+        "address": "Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"
+      },
+      "official_url": "https://www.tnsocialwelfare.tn.gov.in/",
+      "description": "Pioneering child welfare and health scheme providing free nutritious hot breakfasts and regular health screenings to over 1.7 million primary school children across Tamil Nadu.",
+      "source": "Government of Tamil Nadu",
+      "last_verified": "2026-08-14"
+    }
+  ]
+}

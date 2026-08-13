@@ -35,31 +35,7 @@
     <!-- MAIN SPLIT STAGE -->
     <main class="onboarding-stage">
 
-      <!-- LEFT PANEL: GUIDE CHARACTER & SPEECH BUBBLE -->
-      <aside class="character-panel">
-        <div class="bg-glow-orb"></div>
 
-        <!-- Dynamic Speech Bubble -->
-        <div class="speech-bubble" id="characterSpeechBubble">
-          Hi! I'm your Empowher Guide. Let's start by choosing where you are right now! ✨
-        </div>
-
-        <!-- Guide Character & Orbiting Badges -->
-        <div class="character-display-wrapper">
-          <img src="assets/guide_character.png" alt="Empowher Guide" class="guide-img" id="guideCharacterImg">
-          <div class="orbit-skills-container" id="orbitSkillsContainer">
-            <!-- Dynamic Floating Skill Badges will render here -->
-          </div>
-        </div>
-
-        <!-- Character Badge Footer -->
-        <div class="character-env-footer">
-          <i class="fa-solid fa-sparkles"></i>
-          <span id="envFooterText">Your Journey Starts Here</span>
-        </div>
-      </aside>
-
-      <!-- RIGHT PANEL: INTERACTIVE QUESTIONS & CONTROLS -->
       <section class="content-panel">
 
         <!-- ================= STEP 0: WELCOME ================= -->
@@ -130,14 +106,25 @@
         <div class="step-container" id="step3">
           <span class="step-badge"><i class="fa-solid fa-cake-candles"></i> Age</span>
           <h1 class="step-title">How old are you?</h1>
-          <p class="step-subtitle">Drag the slider or use +/- to set your current age.</p>
+          <p class="step-subtitle">Drag the slider, use +/- or pick a quick preset to set your age.</p>
 
           <div class="age-selector-box">
             <div class="age-display-counter" id="ageDisplay">21</div>
+            <div class="age-stage-badge" id="ageStageTag">🎓 Student & Higher Education (Pudhumai Penn & Grants Eligible)</div>
+
             <div class="age-controls-row">
               <button type="button" class="age-btn" id="ageMinusBtn"><i class="fa-solid fa-minus"></i></button>
               <input type="range" id="ageSlider" class="age-slider" min="18" max="60" value="21">
               <button type="button" class="age-btn" id="agePlusBtn"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="age-pills-row">
+              <button type="button" class="age-pill" data-age="18">18 yrs</button>
+              <button type="button" class="age-pill active" data-age="21">21 yrs</button>
+              <button type="button" class="age-pill" data-age="25">25 yrs</button>
+              <button type="button" class="age-pill" data-age="30">30 yrs</button>
+              <button type="button" class="age-pill" data-age="35">35 yrs</button>
+              <button type="button" class="age-pill" data-age="45">45+ yrs</button>
             </div>
           </div>
         </div>
@@ -469,7 +456,7 @@
           </button>
 
           <button type="button" class="btn-nav-continue" id="btnContinue">
-            <span id="btnContinueText">Start My Journey →</span>
+            <span id="btnContinueText">Start My Journey</span>
             <i class="fa-solid fa-arrow-right" id="btnContinueIcon"></i>
           </button>
         </footer>

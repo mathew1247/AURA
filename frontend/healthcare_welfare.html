@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Services & Social Welfare Hub | EMPOWHER</title>
+  <meta name="description"
+    content="Explore official Tamil Nadu government hospitals, maternal healthcare, CMCHIS health coverage, women shelters, pensions, and emergency helplines.">
+
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styling for Dedicated Healthcare & Welfare Page */
+    .hw-hero {
+      background: linear-gradient(135deg, #0F766E 0%, #115E59 100%);
+      border-radius: var(--radius-hero, 24px);
+      padding: 40px 48px;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 118, 110, 0.2);
+    }
+
+    .hw-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hw-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hw-hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .emergency-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 16px 24px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      flex-wrap: wrap;
+    }
+
+    .emergency-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .em-pill {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+      color: #E11D48;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .em-pill:hover {
+      background: #E11D48;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .em-pill.teal {
+      background: #CCFBF1;
+      border-color: #99F6E4;
+      color: #0F766E;
+    }
+
+    .em-pill.teal:hover {
+      background: #0F766E;
+      color: #FFFFFF;
+    }
+
+    /* Tab Switching System */
+    .hw-tab-bar {
+      display: flex;
+      gap: 12px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hw-tab-btn {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .hw-tab-btn:hover {
+      background: #FFFFFF;
+      color: #0F172A;
+    }
+
+    .hw-tab-btn.active {
+      background: #0F766E;
+      color: #FFFFFF;
+      border-color: #0F766E;
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.25);
+    }
+
+    .hw-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .hw-stat-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .hw-stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(15, 118, 110, 0.1);
+      color: #0F766E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .hw-stat-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .hw-stat-label {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 600;
+    }
+
+    .hw-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hw-search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .hw-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 14px;
+      color: #0F172A;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .hw-search-input:focus {
+      border-color: #0F766E;
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.18);
+    }
+
+    .hw-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 16px;
+    }
+
+    .category-pills-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+    }
+
+    .cat-pill {
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cat-pill:hover,
+    .cat-pill.active {
+      background: #0F766E;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+    }
+
+    .hw-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .hw-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hw-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      border-color: rgba(15, 118, 110, 0.3);
+    }
+
+    .hw-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hw-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #CCFBF1;
+      color: #0F766E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .hw-cat-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #0F766E;
+      background: rgba(15, 118, 110, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .hw-card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    .hw-card-desc {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.55;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .hw-services-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .service-chip {
+      font-size: 11px;
+      font-weight: 600;
+      color: #334155;
+      background: #F1F5F9;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .hw-contact-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0D9488;
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .btn-view-details {
+      background: #0F766E;
+      color: #FFFFFF;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-view-details:hover {
+      background: #115E59;
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- Top Header Navigation -->
+    <header class="top-header">
+      <!-- Left: Mobile Menu Trigger & Brand Logo -->
+      <div class="top-header-left">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="top-nav-brand">
+          <div class="brand-emblem"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-text">EMPOWHER</span>
+        </a>
+      </div>
+
+      <!-- Center Top Nav Links -->
+      <ul class="top-nav-links">
+        <li>
+          <a class="nav-item" href="index.html">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+
+        <!-- Opportunities Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="#">
+            <span>Opportunities</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="schemes.html" class="dropdown-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Government Schemes</span>
+            </a>
+            <a href="financial_benefits.html" class="dropdown-item">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <span>Financial Benefits</span>
+            </a>
+            <a href="jobs.html" class="dropdown-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Jobs</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Learn Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item" href="courses.html">
+            <span>Learn</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="courses.html" class="dropdown-item">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Courses & Learning Hub</span>
+            </a>
+            <a href="index.html#skillgap" class="dropdown-item" id="navSkillGapBtn">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Skill Gap Analyzer</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Support Dropdown -->
+        <li class="nav-item-dropdown">
+          <a class="nav-item active" href="healthcare_welfare.html">
+            <span>Support</span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 11px; opacity: 0.7;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="legal.html" class="dropdown-item">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Legal Aid & POSH</span>
+            </a>
+            <a href="healthcare_welfare.html" class="dropdown-item active">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Healthcare & Welfare</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- AI Assistant -->
+        <li>
+          <a class="nav-item" href="#" id="topOpenChatBtn"
+            style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Actions -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="topSearchInput" placeholder="Search hospitals, welfare, CMCHIS...">
+        </div>
+
+        <button class="icon-btn" id="notificationBtn" title="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge"></span>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay & Slide-Out Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">
+          <div class="brand-emblem" style="width: 28px; height: 28px; font-size: 12px;"><i class="fa-solid fa-bolt"></i>
+          </div>
+          <span>EMPOWHER</span>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavCloseBtn" aria-label="Close navigation menu"><i
+            class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a></li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Opportunities</span>
+          <a href="schemes.html" class="mobile-nav-subitem"><i class="fa-solid fa-building-columns"></i> Government
+            Schemes</a>
+          <a href="jobs.html" class="mobile-nav-subitem"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+          <a href="financial_benefits.html" class="mobile-nav-subitem"><i class="fa-solid fa-indian-rupee-sign"></i>
+            Financial Benefits</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-graduation-cap"></i> Learn</span>
+          <a href="courses.html" class="mobile-nav-subitem"><i class="fa-solid fa-book-open"></i> Courses & Learning
+            Hub</a>
+          <a href="courses.html#skillgap" class="mobile-nav-subitem"><i class="fa-solid fa-chart-column"></i> Skill Gap
+            Analyzer</a>
+        </li>
+
+        <li class="mobile-nav-group">
+          <span class="mobile-nav-group-title"><i class="fa-solid fa-hand-holding-heart"></i> Support</span>
+          <a href="legal.html" class="mobile-nav-subitem"><i class="fa-solid fa-scale-balanced"></i> Legal Aid &
+            POSH</a>
+          <a href="healthcare_welfare.html" class="mobile-nav-subitem active"><i class="fa-solid fa-heart-pulse"></i>
+            Healthcare & Welfare</a>
+        </li>
+
+        <li>
+          <a href="#" id="mobileOpenChatBtn" class="mobile-nav-item mobile-ai-btn">
+            <i class="fa-solid fa-robot"></i> AI Assistant
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="page-content" style="max-width: 1340px; margin: 0 auto; width: 100%;">
+
+      <!-- Hero Header Banner -->
+      <section class="hw-hero">
+        <h1 class="hw-hero-title">
+          <i class="fa-solid fa-heart-pulse" style="color: #5EEAD4;"></i> Tamil Nadu Healthcare & Welfare Hub
+        </h1>
+        <p class="hw-hero-desc">
+          Discover 70+ government medical college hospitals, maternal centers, CMCHIS ₹5 Lakh health insurance, doorstep
+          medical delivery, women shelters, destitute pensions, and 24/7 crisis support across all 38 districts of Tamil
+          Nadu.
+        </p>
+      </section>
+
+      <!-- 24/7 Emergency Helplines Strip -->
+      <div class="emergency-strip">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-headset" style="font-size: 24px; color: #0F766E;"></i>
+          <div>
+            <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Emergency & Toll-Free Medical Helplines
+            </div>
+            <div style="font-size: 12px; color: #64748B;">Direct statewide government support numbers in Tamil Nadu
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-pills">
+          <a href="tel:108" class="em-pill"><i class="fa-solid fa-truck-medical"></i> 108 Emergency Ambulance</a>
+          <a href="tel:104" class="em-pill teal"><i class="fa-solid fa-user-doctor"></i> 104 Medical Advice</a>
+          <a href="tel:181" class="em-pill"><i class="fa-solid fa-person-breastfeeding"></i> 181 Women Helpline</a>
+          <a href="tel:14416" class="em-pill teal"><i class="fa-solid fa-brain"></i> 14416 Tele-MANAS</a>
+          <a href="tel:14567" class="em-pill teal"><i class="fa-solid fa-person-cane"></i> 14567 Elder Line</a>
+        </div>
+      </div>
+
+      <!-- Tab Switcher (Healthcare vs Welfare) -->
+      <nav class="hw-tab-bar">
+        <button class="hw-tab-btn active" data-type="healthcare" id="tabHealthcareBtn">
+          <i class="fa-solid fa-hospital"></i> Healthcare Services & Hospitals (<span id="hcCount">35</span>)
+        </button>
+        <button class="hw-tab-btn" data-type="welfare" id="tabWelfareBtn">
+          <i class="fa-solid fa-hand-holding-heart"></i> Welfare & Social Support (<span id="wfCount">35</span>)
+        </button>
+      </nav>
+
+      <!-- Quick Stats Cards Grid -->
+      <div class="hw-stats-grid">
+        <div class="hw-stat-card">
+          <div class="hw-stat-icon"><i class="fa-solid fa-hospital-user"></i></div>
+          <div>
+            <div class="hw-stat-val" id="statHcTotal">35</div>
+            <div class="hw-stat-label">Hospitals & Centers</div>
+          </div>
+        </div>
+
+        <div class="hw-stat-card">
+          <div class="hw-stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10B981;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="hw-stat-val">₹5 Lakh</div>
+            <div class="hw-stat-label">CMCHIS Health Insurance</div>
+          </div>
+        </div>
+
+        <div class="hw-stat-card">
+          <div class="hw-stat-icon" style="background: rgba(239, 68, 68, 0.1); color: #EF4444;">
+            <i class="fa-solid fa-baby-carriage"></i>
+          </div>
+          <div>
+            <div class="hw-stat-val">₹18,000</div>
+            <div class="hw-stat-label">MRMBS Maternity Support</div>
+          </div>
+        </div>
+
+        <div class="hw-stat-card">
+          <div class="hw-stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #F59F00;">
+            <i class="fa-solid fa-house-chimney-medical"></i>
+          </div>
+          <div>
+            <div class="hw-stat-val" id="statWfTotal">35</div>
+            <div class="hw-stat-label">Welfare Schemes & Homes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Category Filters -->
+      <div class="hw-filter-bar">
+        <div class="hw-search-box">
+          <i class="fa-solid fa-magnifying-glass hw-search-icon"></i>
+          <input type="text" class="hw-search-input" id="hwSearchInput"
+            placeholder="Search hospitals, maternity care, CMCHIS, pensions, district, services...">
+        </div>
+
+        <div class="category-pills-container" id="categoryPillTrack">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Cards Grid Container -->
+      <div class="hw-cards-grid" id="hwCardsGrid">
+        <!-- Loaded dynamically via JavaScript -->
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ================= HEALTHCARE & WELFARE DETAIL MODAL ================= -->
+  <div class="modal-overlay" id="hwDetailModal">
+    <div class="modal-card scheme-detail-card" style="max-width: 700px; padding: 28px;">
+      <button class="modal-close-btn" id="hwModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-scheme-header" style="margin-bottom: 20px;">
+        <div class="modal-scheme-icon" style="background: #CCFBF1; color: #0F766E;" id="modalIconBox">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="modal-scheme-header-text">
+          <span class="modal-badge" style="background: #CCFBF1; color: #0F766E;" id="modalCategory">Category</span>
+          <h2 class="modal-scheme-title" id="modalTitle">Resource Name Loading...</h2>
+          <span class="modal-scheme-sub" id="modalSubLocation">Location Info</span>
+        </div>
+      </div>
+
+      <div class="modal-scheme-body" style="max-height: 65vh; overflow-y: auto; padding-right: 8px;">
+        <!-- Description -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px;">
+            <i class="fa-solid fa-circle-info" style="color: #0F766E;"></i> Overview & Key Description
+          </h4>
+          <p style="font-size: 13px; color: #475569; line-height: 1.6;" id="modalDesc"></p>
+        </div>
+
+        <!-- Services / Benefits -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-briefcase-medical" style="color: #10B981;"></i> Services Offered / Key Benefits
+          </h4>
+          <div id="modalServicesList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <!-- Eligibility & Target Users -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-user-check" style="color: #3B82F6;"></i> Eligibility Criteria
+          </h4>
+          <div id="modalEligibilityList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <!-- Cost & Documents -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px;">
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: 12px;">
+            <div style="font-size: 11px; font-weight: 800; color: #64748B; text-transform: uppercase;">Cost / Fee</div>
+            <div style="font-size: 13px; font-weight: 700; color: #0F766E; margin-top: 4px;" id="modalCostType">Free
+            </div>
+            <div style="font-size: 12px; color: #64748B; margin-top: 2px;" id="modalCostDesc">100% Free</div>
+          </div>
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: 12px;">
+            <div style="font-size: 11px; font-weight: 800; color: #64748B; text-transform: uppercase;">Required
+              Documents</div>
+            <div style="font-size: 12px; color: #334155; margin-top: 4px;" id="modalDocsList">Aadhaar Card, Ration Card
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="modal-section" style="margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+            <i class="fa-solid fa-address-book" style="color: #EC4899;"></i> Contact & Address Details
+          </h4>
+          <div
+            style="background: #F0FDFA; border: 1px solid #CCFBF1; padding: 14px; border-radius: 12px; font-size: 13px; color: #0F766E; display: flex; flex-direction: column; gap: 6px;"
+            id="modalContactBox">
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="modal-scheme-footer"
+        style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn-modal-cancel" id="hwModalCancelBtn" style="padding: 10px 20px;">Close</button>
+        <a href="#" target="_blank" class="btn-register-official" id="modalOfficialBtn"
+          style="background: #0F766E; color: #FFF; padding: 10px 20px; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 8px;">
+          Visit Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+<script>
+window.EMPOWHER_HEALTHCARE = [{"healthcare_id":"HC001","name":"Rajiv Gandhi Government General Hospital (RGGGH) Chennai","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Emergency & Trauma Care","Maternal & Obstetric Care","Cardiology & Cardiac Surgery","Free Dialysis & Nephrology","Free Outpatient & Inpatient Care","Oncology & Cancer Care"],"target_users":["women","general_public","below_poverty_line","students","senior_citizens"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Chennai","coverage":"Chennai"},"eligibility":["Open to all citizens of Tamil Nadu","Free Cashless Inpatient Treatment for Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS) cardholders"],"cost":{"type":"Free / Subsidized","description":"100% Free Outpatient consultation, medicines, and CMCHIS cashless surgeries"},"documents_required":["Aadhaar Card","CMCHIS Smart Card (for cashless hospitalization)","Ration Card"],"contact":{"phone":"044-25305000","email":"rgggh@tn.gov.in","address":"EVR Periyar Salai, Park Town, Chennai, Tamil Nadu 600003"},"official_url":"https://www.rgggh.tn.gov.in/","description":"Premier tertiary care government medical college hospital in Tamil Nadu providing multi-specialty medical services, emergency trauma care, maternity, and free cashless treatments under CMCHIS.","source":"Tamil Nadu Health and Family Welfare Department","last_verified":"2026-08-14"},{"healthcare_id":"HC002","name":"Government Kasturba Gandhi Hospital for Women and Children","provider_type":"Government Women & Children Specialty Hospital","category":"Women's Healthcare","services":["Antenatal & Postnatal Care","High-Risk Pregnancy Management","Neonatal Intensive Care Unit (NICU)","Free Normal & Caesarean Deliveries","Gynecological Surgeries","Immunization & Nutrition Support"],"target_users":["pregnant_women","mothers","infants","women","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Triplicane, Chennai","coverage":"Chennai"},"eligibility":["Pregnant women, mothers, and infants residing in Tamil Nadu","Beneficiaries registered under PICME / Dr. Muthulakshmi Reddy Maternity Benefit Scheme"],"cost":{"type":"Free","description":"100% Free delivery services, newborn care, nutrition, and financial assistance under MRMBS"},"documents_required":["Aadhaar Card","RCH ID / PICME Registration Number","Bank Account Passbook"],"contact":{"phone":"044-28444158","email":"kghtriplicane@tn.gov.in","address":"Triplicane High Road, Triplicane, Chennai, Tamil Nadu 600005"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Specialized government hospital dedicated exclusively to maternal, obstetric, and newborn healthcare in Tamil Nadu, offering free deliveries and comprehensive neonatal care.","source":"Tamil Nadu Health and Family Welfare Department","last_verified":"2026-08-14"},{"healthcare_id":"HC003","name":"Government Rajaji Hospital (GRH) Madurai","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Casualty & Trauma Care","Comprehensive Emergency Obstetric & Newborn Care (CEmONC)","Pediatric Intensive Care (PICU)","Cardiology & Nephrology","Free OP/IP Diagnostics & Surgeries"],"target_users":["women","pregnant_women","general_public","below_poverty_line","senior_citizens"],"location":{"state":"Tamil Nadu","district":"Madurai","city":"Madurai","coverage":"Madurai"},"eligibility":["Open to all residents of Madurai and southern districts of Tamil Nadu","CMCHIS insurance scheme beneficiaries"],"cost":{"type":"Free","description":"Free medical care, emergency services, and surgeries under government welfare schemes"},"documents_required":["Aadhaar Card","Ration Card","CMCHIS Card"],"contact":{"phone":"0452-2532535","email":"grhmadurai@tn.gov.in","address":"Panagal Road, Goripalayam, Madurai, Tamil Nadu 625020"},"official_url":"https://www.grh.tn.gov.in/","description":"Major referral tertiary medical care center for southern Tamil Nadu offering multi-specialty healthcare, maternal and child emergency care, and specialty surgeries.","source":"Tamil Nadu Medical Education Department","last_verified":"2026-08-14"},{"healthcare_id":"HC004","name":"Coimbatore Medical College Hospital (CMCH)","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Multi-Specialty Inpatient & Outpatient Care","Comprehensive Maternity & NICU Services","Emergency Trauma Center","Free Dialysis & Organ Transplant Unit","CMCHIS Cashless Treatment Wing"],"target_users":["women","general_public","below_poverty_line","workers"],"location":{"state":"Tamil Nadu","district":"Coimbatore","city":"Coimbatore","coverage":"Coimbatore"},"eligibility":["All residents of Western Tamil Nadu (Coimbatore, Tiruppur, Nilgiris)","Free cashless treatments for CMCHIS beneficiaries"],"cost":{"type":"Free / Subsidized","description":"Free OP/IP treatment and diagnostics for public patients"},"documents_required":["Aadhaar Card","Smart Ration Card","CMCHIS Health Card"],"contact":{"phone":"0422-2301393","email":"cmchcoimbatore@tn.gov.in","address":"Trichy Road, Coimbatore, Tamil Nadu 641018"},"official_url":"http://www.cmch.tn.gov.in/","description":"Principal tertiary teaching hospital serving western Tamil Nadu with advanced medical specialties, maternal healthcare, and free government insurance coverage.","source":"Tamil Nadu Health and Family Welfare Department","last_verified":"2026-08-14"},{"healthcare_id":"HC005","name":"Mahatma Gandhi Memorial Government Hospital (MGMGH) Tiruchirappalli","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Emergency Medical Services","Maternal & Child Health Wing (MCH)","Special Newborn Care Unit (SNCU)","Oncology, Cardiology & Urology","CMCHIS Cashless Surgery"],"target_users":["women","mothers","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Tiruchirappalli","city":"Tiruchirappalli","coverage":"Tiruchirappalli"},"eligibility":["Open to all patients in Trichy and central Tamil Nadu districts"],"cost":{"type":"Free","description":"100% Free consultations, diagnostic tests, essential drugs, and deliveries"},"documents_required":["Aadhaar Card","Ration Card","PICME Registration Card (for pregnant women)"],"contact":{"phone":"0431-2412521","email":"mgmgh.trichy@tn.gov.in","address":"Collector Office Road, Tiruchirappalli, Tamil Nadu 620001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Premier government hospital in Trichy delivering comprehensive specialized healthcare, emergency obstetric care, and free pediatric care.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC006","name":"Government Mohan Kumaramangalam Medical College Hospital Salem","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Trauma & Emergency Care","Obstetrics, Gynecology & NICU","Super-Specialty Cardiology & Neurosurgery","Free Chemotherapy & Radiation Therapy","CMCHIS Insurance Desk"],"target_users":["women","general_public","below_poverty_line","senior_citizens"],"location":{"state":"Tamil Nadu","district":"Salem","city":"Salem","coverage":"Salem"},"eligibility":["Residents of Salem, Namakkal, Dharmapuri, and Krishnagiri districts"],"cost":{"type":"Free","description":"Free OP/IP treatment and government health scheme coverage"},"documents_required":["Aadhaar Card","Ration Card","CMCHIS Insurance Card"],"contact":{"phone":"0427-2211025","email":"gmkmchsalem@tn.gov.in","address":"Brindavan Road, Fairlands, Salem, Tamil Nadu 636030"},"official_url":"https://www.gmkmch.tn.gov.in/","description":"Major tertiary referral institution in Salem district offering advanced super-specialty treatment, maternal healthcare, and free inpatient care.","source":"Tamil Nadu Medical Education Department","last_verified":"2026-08-14"},{"healthcare_id":"HC007","name":"Tirunelveli Medical College Hospital (TVMCH)","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Emergency & ICU Services","Comprehensive Maternity & Pediatric Services","Cardiothoracic & Vascular Surgeries","Free Nephrology & Dialysis Care","CMCHIS Insurance Desk"],"target_users":["women","mothers","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Tirunelveli","city":"Palayamkottai, Tirunelveli","coverage":"Tirunelveli"},"eligibility":["Residents of Tirunelveli, Tenkasi, and Tuticorin districts"],"cost":{"type":"Free","description":"Free OPD consultations, diagnostics, and inpatient surgical procedures"},"documents_required":["Aadhaar Card","Ration Card","CMCHIS Card"],"contact":{"phone":"0462-2572733","email":"tvmch@tn.gov.in","address":"High Ground Road, Palayamkottai, Tirunelveli, Tamil Nadu 627011"},"official_url":"https://www.tvmch.ac.in/","description":"Leading tertiary referral hospital in Southern Tamil Nadu providing specialty maternity care, trauma resuscitation, and free government health schemes.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC008","name":"Christian Medical College (CMC) Vellore - Subsidized Care Services","provider_type":"Charitable / Subsidized Specialty Hospital","category":"Affordable/Subsidized healthcare","services":["Multi-Specialty Clinical Consultations","Low Cost Effective Care Unit (LCECU) for Women & Low Income Families","Maternal & Child Health Care","Specialty Surgeries & Cancer Care","Community Health & Development (CHAD) Services"],"target_users":["women","general_public","below_poverty_line","low_income_families"],"location":{"state":"Tamil Nadu","district":"Vellore","city":"Vellore","coverage":"Vellore"},"eligibility":["Low-income and underprivileged patients seeking subsidized high-quality medical care"],"cost":{"type":"Subsidized","description":"Concessional rates and free financial assistance for deserving underprivileged patients"},"documents_required":["Aadhaar Card","Income Certificate / Ration Card (for financial concessions)"],"contact":{"phone":"0416-2281000","email":"pro@cmcvellore.ac.in","address":"IDA Scudder Road, Vellore, Tamil Nadu 632004"},"official_url":"https://www.cmcvellore.ac.in/","description":"World-renowned charitable healthcare institution providing subsidized medical treatment, community maternal care, and financial assistance to underprivileged patients.","source":"CMC Vellore Official Portal","last_verified":"2026-08-14"},{"healthcare_id":"HC009","name":"Government Kilpauk Medical College Hospital (KMC) Chennai","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Burns & Plastic Surgery Center of Excellence","Obstetrics, Gynecology & Maternity Services","Pediatrics & Neonatal Care","General Medicine & Surgery","CMCHIS Cashless Treatment"],"target_users":["women","burn_survivors","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Kilpauk, Chennai","coverage":"Chennai"},"eligibility":["All Tamil Nadu citizens, with specialized free care for burn injuries and maternity cases"],"cost":{"type":"Free","description":"100% Free emergency care, burn reconstruction, maternity, and CMCHIS surgeries"},"documents_required":["Aadhaar Card","Smart Ration Card","CMCHIS Card"],"contact":{"phone":"044-28364951","email":"kmc@tn.gov.in","address":"EVR Periyar Salai, Kilpauk, Chennai, Tamil Nadu 600010"},"official_url":"http://www.gkmc.in/","description":"Major government hospital in Chennai famous for its state-of-the-art Burns Department, maternity services, and comprehensive free emergency medical care.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC010","name":"Government Stanley Medical College Hospital Chennai","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Government Institute for Surgical Gastroenterology","Hand Surgery & Reconstructive Microsurgery","Maternal & Child Health Services","Free Kidney & Liver Transplant Care","24/7 Trauma Care"],"target_users":["women","general_public","below_poverty_line","workers"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Royapuram, Chennai","coverage":"Chennai"},"eligibility":["Open to all patients in North Chennai and across Tamil Nadu"],"cost":{"type":"Free","description":"Free inpatient and outpatient care, surgical gastroenterology, and transplants"},"documents_required":["Aadhaar Card","Ration Card","CMCHIS Card"],"contact":{"phone":"044-25281351","email":"stanleyhospital@tn.gov.in","address":"Old Jail Road, Royapuram, Chennai, Tamil Nadu 600001"},"official_url":"http://www.stanleymedicalcollege.in/","description":"Renowned tertiary referral government hospital specializing in hand surgery, liver transplants, gastroenterology, and comprehensive maternity care in North Chennai.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC011","name":"Institute of Obstetrics and Gynaecology (IOG) & Government Hospital for Women and Children Egmore","provider_type":"Government Women Specialty Center","category":"Maternal Healthcare","services":["Premier Obstetric & Gynecological Care","Fetal Medicine & Prenatal Screening","High-Risk Maternity Management","Advanced NICU & Neonatal Care","Infertility Clinic & Cervical Cancer Screening"],"target_users":["women","pregnant_women","mothers","infants","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Egmore, Chennai","coverage":"Tamil Nadu"},"eligibility":["All women and expectant mothers in Tamil Nadu seeking specialized maternity care"],"cost":{"type":"Free","description":"100% Free specialized maternity consultations, deliveries, and newborn treatment"},"documents_required":["Aadhaar Card","PICME RCH ID Number","Bank Account Details"],"contact":{"phone":"044-28191981","email":"iogegmore@tn.gov.in","address":"Police Commissioner Office Road, Egmore, Chennai, Tamil Nadu 600008"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Asia's oldest and premier specialty institute for obstetrics, gynecology, and child health, offering free comprehensive maternal care and high-risk pregnancy management.","source":"Tamil Nadu Health and Family Welfare Department","last_verified":"2026-08-14"},{"healthcare_id":"HC012","name":"Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS) Tamil Nadu","provider_type":"Government Health Insurance Program","category":"Health insurance/support programs","services":["Cashless Hospitalization Coverage up to ₹5,000,000 per family per year","Coverage for 1,500+ Medical and Surgical Procedures","Free Surgeries, Organ Transplants & Cancer Care","Coverage at Embanked Government & Private Hospitals"],"target_users":["below_poverty_line","low_income_families","women","senior_citizens","differently_abled"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Annual family income less than ₹1,20,000 per annum (or smart ration card holders in TN)","Sri Lankan Tamil refugees living in camps in TN"],"cost":{"type":"Free","description":"100% Premium funded by the Government of Tamil Nadu"},"documents_required":["Smart Family Card / Ration Card","Income Certificate from VAO / Tahsildar","Aadhaar Card of Family Members"],"contact":{"phone":"1800-425-3993","email":"cmchis@tn.gov.in","address":"TNSHMS, 3rd Floor, DMS Complex, Teynampet, Chennai 600018"},"official_url":"https://www.cmchistn.com/","description":"Flagship statewide health insurance scheme providing up to ₹5 Lakh cashless medical and surgical coverage to low-income families at empaneled government and private hospitals.","source":"Tamil Nadu Health Systems Project","last_verified":"2026-08-14"},{"healthcare_id":"HC013","name":"Dr. Muthulakshmi Reddy Maternity Benefit Scheme (MRMBS) & PICME","provider_type":"Government Health & Welfare Program","category":"Maternal Healthcare","services":["₹18,000 Financial Assistance to Pregnant Women","2 Free Amma Maternity Nutrition Kits (valued at ₹4,000)","Free Pregnancy Tracking via PICME RCH ID System","Institutional Delivery & Postnatal Monitoring"],"target_users":["pregnant_women","mothers","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Pregnant women aged 19 years and above for first 2 deliveries","Resident of Tamil Nadu registered in PICME system before 12 weeks of pregnancy"],"cost":{"type":"Free / Grant Benefit","description":"100% Financial Grant transferred directly to mother's bank account in 5 installments"},"documents_required":["Aadhaar Card","PICME RCH Registration Number","Aadhaar-seeded Bank Account Passbook"],"contact":{"phone":"102 / 181","email":"picme@tn.gov.in","address":"Directorate of Public Health & Preventive Medicine, DMS Campus, Chennai 600006"},"official_url":"https://picme.tn.gov.in/","description":"Statewide maternal assistance program providing ₹18,000 in cash incentives and nutrition kits to pregnant poor women to ensure healthy delivery and prevent infant mortality.","source":"Directorate of Public Health & Preventive Medicine TN","last_verified":"2026-08-14"},{"healthcare_id":"HC014","name":"Makkalai Thedi Maruthuvam (Doorstep Healthcare Scheme TN)","provider_type":"Government Healthcare Program","category":"Preventive Healthcare","services":["Doorstep Screening for Hypertension & Diabetes","Doorstep Delivery of Non-Communicable Disease (NCD) Medicines","Home-based Palliative Care & Dialysis Support","Physiotherapy for Elderly & Disabled at Home"],"target_users":["senior_citizens","women","differently_abled","chronically_ill_patients"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["All residents of Tamil Nadu, prioritizing elderly, women, and bedridden patients"],"cost":{"type":"Free","description":"100% Free doorstep screening, home medical visits, and medicine supply"},"documents_required":["Aadhaar Card / Family Ration Card"],"contact":{"phone":"104","email":"dph@tn.gov.in","address":"Directorate of Public Health, Teynampet, Chennai 600006"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Pioneering doorstep healthcare initiative delivering essential non-communicable disease medicines, screening, and palliative care directly to citizens' homes.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC015","name":"108 Emergency Ambulance Service (EMRI Tamil Nadu)","provider_type":"Emergency Healthcare Service","category":"Emergency Healthcare","services":["24/7 Toll-Free Medical Emergency Dispatch","Neonatal & High-Risk Maternal Transport Ambulances","Basic & Advanced Life Support (ALS) Ambulances","Accident & Trauma Resuscitation Transport"],"target_users":["general_public","women","pregnant_women","accident_victims"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Any person experiencing a medical, obstetric, or trauma emergency in Tamil Nadu"],"cost":{"type":"Free","description":"100% Toll-free emergency ambulance transport to government & empanelled hospitals"},"documents_required":[],"contact":{"phone":"108","email":"statehead_tn@emri.in","address":"GVK EMRI Campus, Kasturba Gandhi Hospital Campus, Triplicane, Chennai 600005"},"official_url":"https://www.emri.in/","description":"Statewide 24/7 free emergency ambulance service operating thousands of life support and maternity transport vehicles across all 38 districts of Tamil Nadu.","source":"Tamil Nadu Health Systems Project","last_verified":"2026-08-14"},{"healthcare_id":"HC016","name":"104 Health Helpline & Tele-Consultation Services Tamil Nadu","provider_type":"Telemedicine & Helpline","category":"Telemedicine","services":["24/7 Toll-Free Medical Advice & Tele-Consultation","Psychological Counselling & Stress Management","Information on Government Health Schemes & Hospitals","Grievance Redressal for Hospital Services"],"target_users":["women","students","general_public","senior_citizens"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Open to all citizens seeking health advice or emergency guidance in Tamil Nadu"],"cost":{"type":"Free","description":"100% Free 24/7 toll-free tele-consultation call"},"documents_required":[],"contact":{"phone":"104","email":"healthhelpline104@tn.gov.in","address":"DMS Complex, Teynampet, Chennai, Tamil Nadu 600018"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Official 24/7 state medical helpline providing free telephonic doctor consultation, mental health advice, and health scheme information.","source":"National Health Mission Tamil Nadu","last_verified":"2026-08-14"},{"healthcare_id":"HC017","name":"Tele-MANAS Mental Health Helpline (Tamil Nadu State Cell)","provider_type":"Government Mental Health Service","category":"Mental Healthcare","services":["24/7 Toll-Free Confidential Psychological Counselling","Suicide Prevention & Crisis Intervention","Anxiety, Depression & Academic Stress Counselling","Referral to District Mental Health Program (DMHP) Clinics"],"target_users":["women","students","youth","general_public"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Anyone in emotional distress, mental crisis, or seeking psychiatric guidance in TN"],"cost":{"type":"Free","description":"100% Toll-free 24/7 confidential mental healthcare counselling"},"documents_required":[],"contact":{"phone":"14416 / 1800-891-4416","email":"telemanas@imh.tn.gov.in","address":"Institute of Mental Health Campus, Kilpauk, Chennai 600010"},"official_url":"https://telemanas.mohfw.gov.in/","description":"Government of India & Tamil Nadu 24/7 tele-mental health cell offering free round-the-clock psychiatric support, distress intervention, and counselling in Tamil.","source":"Institute of Mental Health Kilpauk TN","last_verified":"2026-08-14"},{"healthcare_id":"HC018","name":"Institute of Mental Health (IMH) Kilpauk Chennai","provider_type":"Government Mental Health Specialty Hospital","category":"Mental Healthcare","services":["Outpatient & Inpatient Psychiatric Treatment","De-addiction & Substance Abuse Rehabilitation","Child & Adolescent Mental Health Clinic","Women's Psychiatric Care & Rehabilitation Wing","Day Care & Vocational Therapy"],"target_users":["women","youth","general_public","differently_abled"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Kilpauk, Chennai","coverage":"Tamil Nadu"},"eligibility":["Open to all individuals suffering from mental health conditions"],"cost":{"type":"Free","description":"Free OP/IP treatment, medications, and psychiatric rehabilitation"},"documents_required":["Aadhaar Card / Photo Identity Proof"],"contact":{"phone":"044-26421041","email":"imhchennai@tn.gov.in","address":"Medavakkam Tank Road, Kilpauk, Chennai, Tamil Nadu 600010"},"official_url":"http://www.imh.tn.gov.in/","description":"Asia's second oldest psychiatric institution offering specialized inpatient, outpatient, and rehabilitation services for women and general public in Tamil Nadu.","source":"Tamil Nadu Medical Education Department","last_verified":"2026-08-14"},{"healthcare_id":"HC019","name":"Government Medical College Hospital Chengalpattu","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Trauma Care & Emergency Department","Maternity & NICU Services","General Medicine, Pediatrics & Orthopedics","CMCHIS Health Insurance Coverage"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Chengalpattu","city":"Chengalpattu","coverage":"Chengalpattu"},"eligibility":["Residents of Chengalpattu, Kanchipuram, and surrounding districts"],"cost":{"type":"Free","description":"100% Free outpatient consultations and inpatient medical care"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"044-27426566","email":"cmchcpt@tn.gov.in","address":"GST Road, Chengalpattu, Tamil Nadu 603001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Major referral medical hospital in Chengalpattu district providing comprehensive emergency, pediatric, and maternal health services.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC020","name":"Government Medical College Hospital Thanjavur","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Comprehensive Emergency Obstetric Care (CEmONC)","Special Newborn Care Unit (SNCU)","Cardiology & Neurosurgery Specialty Wings","CMCHIS Cashless Surgery"],"target_users":["women","mothers","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Thanjavur","city":"Thanjavur","coverage":"Thanjavur"},"eligibility":["Residents of Thanjavur, Tiruvarur, Nagapattinam, and Delta districts"],"cost":{"type":"Free","description":"Free healthcare services under Tamil Nadu government medical programs"},"documents_required":["Aadhaar Card","CMCHIS Health Card"],"contact":{"phone":"04362-240024","email":"tmchthanjavur@tn.gov.in","address":"Medical College Road, Thanjavur, Tamil Nadu 613004"},"official_url":"https://www.tmch.ac.in/","description":"Leading referral hospital for Delta districts of Tamil Nadu offering specialized obstetrics, child healthcare, and advanced surgical care.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC021","name":"Kanyakumari Government Medical College Hospital Nagercoil","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Multi-Specialty Clinical Care","Maternal & Infant Healthcare Wing","24/7 Trauma Emergency Unit","Free Dialysis & Oncology Care"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Kanyakumari","city":"Nagercoil","coverage":"Kanyakumari"},"eligibility":["Residents of Kanyakumari district and southern border areas"],"cost":{"type":"Free","description":"Free treatment for public and CMCHIS beneficiaries"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"04652-223216","email":"kgmch@tn.gov.in","address":"Asaripallam, Nagercoil, Tamil Nadu 629201"},"official_url":"https://www.kgmch.ac.in/","description":"Principal government referral medical institution in Kanyakumari district delivering free specialty care, maternity support, and emergency treatment.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC022","name":"Government District Head Quarters Hospital Erode","provider_type":"District Government Hospital","category":"District Government Hospitals","services":["Comprehensive Maternal & Newborn Care","General Medicine & Surgical Wards","Emergency Casualty & Ambulance","Free Diagnostic Labs & Pharmacy"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Erode","city":"Erode","coverage":"Erode"},"eligibility":["Residents of Erode district"],"cost":{"type":"Free","description":"100% Free outpatient and inpatient care"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"0424-2258324","email":"hqhrode@tn.gov.in","address":"EVN Road, Erode, Tamil Nadu 638009"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Nodal district hospital in Erode providing secondary-level healthcare, maternal care, and emergency response services.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC023","name":"Government District Head Quarters Hospital Tiruppur","provider_type":"District Government Hospital","category":"District Government Hospitals","services":["Emergency Care & Industrial Trauma Response","Maternity & Child Health Center","Free OP/IP Diagnostics","CMCHIS Insurance Counter"],"target_users":["women","textile_workers","below_poverty_line","general_public"],"location":{"state":"Tamil Nadu","district":"Tiruppur","city":"Tiruppur","coverage":"Tiruppur"},"eligibility":["All industrial workers, women, and residents of Tiruppur district"],"cost":{"type":"Free","description":"Free healthcare and emergency treatment"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"0421-2242100","email":"ghdqtiruppur@tn.gov.in","address":"Dharapuram Road, Tiruppur, Tamil Nadu 641604"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"District headquarters government hospital supporting Tiruppur's workforce and residents with specialized maternal health and emergency medicine.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC024","name":"Government District Head Quarters Hospital Dindigul","provider_type":"District Government Hospital","category":"District Government Hospitals","services":["Emergency & Casualty Ward","Antenatal & Postnatal Care","Dialysis Unit & General Surgery","Free Medicines & Lab Testing"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Dindigul","city":"Dindigul","coverage":"Dindigul"},"eligibility":["Residents of Dindigul district"],"cost":{"type":"Free","description":"100% Free medical services"},"documents_required":["Aadhaar Card"],"contact":{"phone":"0451-2423200","email":"ghdindigul@tn.gov.in","address":"Hospital Road, Dindigul, Tamil Nadu 624001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Main secondary healthcare hospital for Dindigul district providing essential maternal health, emergency trauma, and general medicine.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC025","name":"Government Medical College Hospital Ramanathapuram","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["24/7 Trauma Emergency Care","CEmONC Maternity Services","Special Newborn Care Unit (SNCU)","Free Dialysis & General Surgery"],"target_users":["women","general_public","coastal_communities","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Ramanathapuram","city":"Ramanathapuram","coverage":"Ramanathapuram"},"eligibility":["Residents of Ramanathapuram and coastal island regions"],"cost":{"type":"Free","description":"Free healthcare under TN Government welfare programs"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"04567-220200","email":"ghramnad@tn.gov.in","address":"Kenikarai, Ramanathapuram, Tamil Nadu 623501"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Newly upgraded tertiary medical college hospital catering to the coastal and rural communities of Ramanathapuram district.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC026","name":"Government District Head Quarters Hospital Cuddalore","provider_type":"District Government Hospital","category":"District Government Hospitals","services":["Emergency Casualty & Ambulance","Maternal & Pediatric Ward","Blood Bank & Diagnostic Services","CMCHIS Insurance Counter"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Cuddalore","city":"Cuddalore","coverage":"Cuddalore"},"eligibility":["Residents of Cuddalore district"],"cost":{"type":"Free","description":"Free government health services"},"documents_required":["Aadhaar Card"],"contact":{"phone":"04142-230350","email":"ghcuddalore@tn.gov.in","address":"Medical House Road, Cuddalore, Tamil Nadu 607001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Primary district government hospital serving coastal Cuddalore with emergency trauma care, blood bank, and maternity support.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC027","name":"Government Medical College Hospital Villupuram","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Trauma & Emergency Resuscitation","Maternity, Gynecological Care & NICU","Pediatrics & Orthopedics","CMCHIS Cashless Surgery"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Villupuram","city":"Mundiyampakkam, Villupuram","coverage":"Villupuram"},"eligibility":["Residents of Villupuram and Kallakurichi districts"],"cost":{"type":"Free","description":"100% Free medical services and diagnostic testing"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"04146-232500","email":"vmch@tn.gov.in","address":"Mundiyampakkam, Villupuram, Tamil Nadu 605601"},"official_url":"https://www.vmc.ac.in/","description":"Premier medical college hospital catering to Villupuram district with specialized maternity, emergency trauma, and pediatric care.","source":"Tamil Nadu Medical Education Department","last_verified":"2026-08-14"},{"healthcare_id":"HC028","name":"Government Medical College Hospital Dharmapuri","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["CEmONC Obstetric & Gynecological Services","Special Newborn Care Unit (SNCU)","General Medicine & Emergency Trauma","CMCHIS Insurance Counter"],"target_users":["women","mothers","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Dharmapuri","city":"Dharmapuri","coverage":"Dharmapuri"},"eligibility":["Residents of Dharmapuri and rural northwest Tamil Nadu"],"cost":{"type":"Free","description":"Free healthcare under state medical welfare programs"},"documents_required":["Aadhaar Card","Smart Ration Card"],"contact":{"phone":"04342-233000","email":"dmch@tn.gov.in","address":"Nethaji Bypass Road, Dharmapuri, Tamil Nadu 636701"},"official_url":"https://www.dmch.ac.in/","description":"Key government referral institution in Dharmapuri district offering maternal care, infant resuscitation, and emergency medicine.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC029","name":"Government Medical College Hospital Krishnagiri","provider_type":"Government Medical College Hospital","category":"Government Hospitals","services":["Emergency Trauma Response","Maternal & Child Health Wing","Free Dialysis & General Surgery","Blood Bank & Pharmacy"],"target_users":["women","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Krishnagiri","city":"Krishnagiri","coverage":"Krishnagiri"},"eligibility":["Residents of Krishnagiri, Hosur, and border regions"],"cost":{"type":"Free","description":"Free government healthcare services"},"documents_required":["Aadhaar Card"],"contact":{"phone":"04343-232200","email":"gmc.krishnagiri@tn.gov.in","address":"Royakottai Road, Krishnagiri, Tamil Nadu 635001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"State-of-the-art government medical college hospital serving Krishnagiri district with emergency trauma and maternal care.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC030","name":"Government District Head Quarters Hospital Ooty (The Nilgiris)","provider_type":"District Government Hospital","category":"District Government Hospitals","services":["High Altitude Emergency Medical Response","Maternity & Pediatric Services","Free OP Consultations & Medicines","CMCHIS Insurance Counter"],"target_users":["women","tribal_communities","general_public","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Nilgiris","city":"Udhagamandalam (Ooty)","coverage":"Nilgiris"},"eligibility":["Residents and tribal communities of Nilgiris district"],"cost":{"type":"Free","description":"Free medical care for hill and tribal populations"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"0423-2442212","email":"ghooty@tn.gov.in","address":"Hospital Road, Ooty, The Nilgiris, Tamil Nadu 643001"},"official_url":"https://www.tnhealth.tn.gov.in/","description":"Nodal hill district government hospital serving Ooty, Coonoor, and tribal communities with maternal care and emergency medicine.","source":"Tamil Nadu Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC031","name":"National Urban Health Mission (NUHM) Urban Primary Health Centres (UPHC) Greater Chennai","provider_type":"Urban Primary Health Centre","category":"Urban Primary Health Centres","services":["Free Outpatient Consultation & Medicines","Antenatal Care & Immunization Clinics","Diabetes & Hypertension Screening","Lab Diagnostic Tests & Counseling"],"target_users":["women","urban_poor","slum_dwellers","children"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Greater Chennai Corporation","coverage":"Chennai"},"eligibility":["Urban residents, slum dwellers, and daily wage workers in Chennai"],"cost":{"type":"Free","description":"100% Free primary healthcare consultations and medications"},"documents_required":["Aadhaar Card / Ration Card"],"contact":{"phone":"1913 (GCC Helpline)","email":"health@chennaicorporation.gov.in","address":"Greater Chennai Corporation Health Department, Ripon Building, Chennai 600003"},"official_url":"https://www.chennaicorporation.gov.in/","description":"Network of 140+ urban primary health centers across Greater Chennai providing free neighborhood healthcare, maternal checkups, and chronic disease screening.","source":"Greater Chennai Corporation Health Department","last_verified":"2026-08-14"},{"healthcare_id":"HC032","name":"National Rural Health Mission Primary Health Centres (PHCs) Tamil Nadu","provider_type":"Primary Health Centre (PHC)","category":"Primary Health Centres (PHCs)","services":["24/7 Normal Delivery Services","Immunization & Child Growth Monitoring","Maternal Antenatal Registration (PICME)","Free Essential Drugs & Lab Testing"],"target_users":["rural_women","pregnant_women","infants","farmers"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Rural population residing in panchayats across Tamil Nadu"],"cost":{"type":"Free","description":"100% Free delivery services, child immunization, and drugs"},"documents_required":["Aadhaar Card","PICME Registration Card"],"contact":{"phone":"104","email":"nrhm@tn.gov.in","address":"State Health Society, DMS Complex, Teynampet, Chennai 600018"},"official_url":"https://www.nhm.tn.gov.in/","description":"Network of 1,800+ rural Primary Health Centres across Tamil Nadu delivering round-the-clock maternal deliveries, child vaccinations, and primary care.","source":"National Health Mission Tamil Nadu","last_verified":"2026-08-14"},{"healthcare_id":"HC033","name":"Tamil Nadu State AIDS Control Society (TNSACS) ICTC Clinics","provider_type":"Government Preventive Specialty Clinic","category":"Preventive Healthcare","services":["Confidential Voluntary HIV Counseling & Testing (ICTC)","Prevention of Parent-to-Child Transmission (PPTCT) Services for Pregnant Women","Free Antiretroviral Therapy (ART) Medications","Stigma-Free Reproductive Health Counseling"],"target_users":["women","pregnant_women","high_risk_groups","general_public"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Any person seeking voluntary testing, pregnancy screening, or ART treatment in TN"],"cost":{"type":"Free","description":"100% Free testing, counseling, and lifelong ART medication"},"documents_required":["Identity Proof (Optional for confidential testing)"],"contact":{"phone":"1097 (National AIDS Helpline) / 044-28190467","email":"tnsacs@tn.gov.in","address":"471, Anna Salai, Nandanam, Chennai, Tamil Nadu 600035"},"official_url":"http://www.tnsacs.in/","description":"Statewide network of integrated testing and counseling centers providing free, confidential HIV testing, maternal screening, and ART treatment.","source":"Tamil Nadu State AIDS Control Society","last_verified":"2026-08-14"},{"healthcare_id":"HC034","name":"Tamil Nadu Differently Abled Welfare Board Medical Assessment Camps","provider_type":"Government Specialty Healthcare Service","category":"Disability-related healthcare","services":["Free Disability Medical Assessment & UDID Card Issuance","Free Supply of Assistive Devices & Hearing Aids","Physiotherapy & Speech Therapy Services","Rehabilitative Surgeries under CMCHIS"],"target_users":["differently_abled","children","senior_citizens","women"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Persons with 40% or more certified disability residing in Tamil Nadu"],"cost":{"type":"Free","description":"100% Free medical assessment, UDID cards, and mobility aids"},"documents_required":["Aadhaar Card","Medical Disability Certificate from District Medical Board","Passport Size Photographs"],"contact":{"phone":"1800-425-0111 / 044-28444940","email":"scda@tn.gov.in","address":"State Commissionerate for Differently Abled, Lady Willingdon College Campus, Kamarajar Salai, Chennai 600005"},"official_url":"https://www.scda.tn.gov.in/","description":"Statewide specialized medical assessment and rehabilitation program providing free UDID cards, assistive appliances, and corrective surgeries for disabled citizens.","source":"Welfare of Differently Abled Persons Department TN","last_verified":"2026-08-14"},{"healthcare_id":"HC035","name":"Tamil Nadu Chief Minister's Breakfast & Child Nutrition Scheme Health Monitoring","provider_type":"Government Child & School Healthcare Program","category":"Child Healthcare","services":["Nutritious Free Morning Meals for Primary School Students","Regular Height, Weight & BMI Growth Monitoring","De-worming & Iron Folic Acid Supplementation","Routine School Health Screenings by Rashtriya Bal Swasthya Karyakram (RBSK)"],"target_users":["children","students","primary_school_children"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["All primary school children (Classes 1 to 5) studying in Tamil Nadu government schools"],"cost":{"type":"Free","description":"100% Free nutritious meals and health screening"},"documents_required":["Government School Admission Roll Number"],"contact":{"phone":"1800-425-6110","email":"socialwelfare@tn.gov.in","address":"Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Pioneering child welfare and health scheme providing free nutritious hot breakfasts and regular health screenings to over 1.7 million primary school children across Tamil Nadu.","source":"Government of Tamil Nadu","last_verified":"2026-08-14"}];
+window.EMPOWHER_WELFARE = [{"welfare_id":"WF001","name":"Tamil Nadu Social Welfare & Women Empowerment Department","provider_type":"Government Department","category":"Women Welfare","service_type":["Women Safety & Protection","Maternity Financial Support","Marriage Assistance Schemes","Working Women Hostels","Self Help Group Empowerment"],"target_users":["women","single_mothers","below_poverty_line","widows","students"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Chennai","coverage":"Tamil Nadu"},"eligibility":["Resident of Tamil Nadu","Women, widows, destitute women, or female students meeting individual scheme income criteria"],"services":["Pudhumai Penn Scheme (₹1,000/month for female higher education students)","Moovalur Ramamirtham Ammiyar Marriage Assistance","E.V.R. Maniammaiyar Widow Daughter Marriage Scheme","Free Supply of Sewing Machines to Destitute Women"],"cost":{"type":"Free / Grant Assistance","description":"100% Free Financial Grants and Social Security Support"},"documents_required":["Aadhaar Card","Community Certificate","Income Certificate from VAO / Tahsildar","Bank Account Passbook (Aadhaar Seeded)","Educational Certificates (Class 6-12 School TC)"],"contact":{"phone":"044-24351270","email":"tnsocialwelfare@tn.gov.in","address":"Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"State nodal welfare department implementing comprehensive social security, financial grants, marriage assistance, higher education stipends, and protective services for women and children across Tamil Nadu.","source":"Government of Tamil Nadu","last_verified":"2026-08-14"},{"welfare_id":"WF002","name":"Pudhumai Penn Scheme (Moovalur Ramamirtham Ammiyar Higher Education Assurance)","provider_type":"Government Educational Welfare Program","category":"Women Welfare","service_type":["Higher Education Financial Assistance","Monthly Cash Transfer","Female Student Empowerment"],"target_users":["female_students","youth","women","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Female students who studied from Class 6 to Class 12 in Tamil Nadu Government schools","Enrolled in undergraduate degree, diploma, ITI, or professional courses in TN"],"services":["Direct Bank Transfer of ₹1,000 per month until course completion","Financial support for college fees, books, hostel, and transportation"],"cost":{"type":"Free / Direct Cash Benefit","description":"₹1,000 monthly grant credited directly to student bank account"},"documents_required":["Aadhaar Card","School Study Certificates (Class 6 to 12)","College Admission Fee Receipt & Student ID","Aadhaar-seeded Bank Passbook"],"contact":{"phone":"044-28523777","email":"pudhumai.penn@tn.gov.in","address":"Directorate of Social Welfare, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://penkalvi.tn.gov.in/","description":"Transformative state scheme providing ₹1,000 monthly financial assistance to girl students who studied in government schools to pursue higher education without dropping out.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF003","name":"One Stop Centre (Sakhi OSC) Tamil Nadu - Women Crisis Shelter","provider_type":"Government Women Protection Center","category":"Women Protection","service_type":["24/7 Emergency Shelter","Legal Counselling & Aid","Medical Assistance","Psychological Counselling","Police Assistance Desk"],"target_users":["women_in_distress","domestic_violence_survivors","women","single_mothers"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"All 38 TN District Headquarters","coverage":"Tamil Nadu"},"eligibility":["Any woman or girl facing violence, abuse, harassment, or homelessness in Tamil Nadu"],"services":["Free temporary shelter up to 5 days with meals and security","On-site police facilitation and FIR registration assistance","Free legal counsel and court protection orders","Medical checkup and emergency treatment"],"cost":{"type":"Free","description":"100% Free emergency shelter, food, legal, and medical assistance"},"documents_required":["None required for immediate emergency admission"],"contact":{"phone":"181 (Women Helpline) / 044-24351270","email":"osc.tn@tn.gov.in","address":"District Headquarters Hospital Campus in all 38 Districts of Tamil Nadu"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"24/7 integrated emergency relief centers operating in all 38 district headquarters of Tamil Nadu to provide shelter, medical aid, legal support, and police protection to women facing domestic or public abuse.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF004","name":"Tamil Nadu Working Women Hostels Corporation (Thozhi Hostels)","provider_type":"Government Housing & Welfare Body","category":"Housing Support","service_type":["Safe & Affordable Accommodation","24/7 Biometric Security & CCTV","Working Women Housing","Female Student Lodging"],"target_users":["working_women","female_students","women","job_seekers"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Chennai, Coimbatore, Madurai, Trichy, Salem, Hosur, Chengalpattu","coverage":"Tamil Nadu"},"eligibility":["Working women, female interns, job seekers, and students in Tamil Nadu","Monthly income rules applicable per hostel tier"],"services":["Air-conditioned & non-AC secure room rentals at subsidized rates","24/7 security guards, CCTV surveillance, Wi-Fi, and mess facilities","Flexible daily, monthly, and short-term stay options"],"cost":{"type":"Subsidized","description":"Subsidized monthly rents starting from ₹1,000 to ₹3,500 depending on location"},"documents_required":["Aadhaar Card","Employment Offer Letter / Student ID","Passport Size Photograph"],"contact":{"phone":"044-24351270","email":"thozhihostels@tn.gov.in","address":"TNWWHCL, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://www.thozhihostels.com/","description":"State government initiative operating modern, secure, and affordable hostels ('Thozhi') for working women and female students across major urban centers in Tamil Nadu.","source":"Tamil Nadu Working Women Hostels Corporation","last_verified":"2026-08-14"},{"welfare_id":"WF005","name":"Tamil Nadu Corporation for Development of Women (TNCDW) & Mahalir Thittam SHGs","provider_type":"Government Women Development Body","category":"Community Support","service_type":["Self Help Group (SHG) Formation","Micro-Credit & Bank Linkage","Skill Training & Entrepreneurship Grants","Livelihood Development"],"target_users":["rural_women","urban_women","women_entrepreneurs","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Women aged 18 to 60 years organized into Self Help Groups (SHGs) in Tamil Nadu"],"services":["Revolving fund grants and community investment funds for SHGs","Low-interest bank credit loans up to ₹20 Lakhs per group","Free EDP & vocational trade training via Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)"],"cost":{"type":"Free / Subsidized Loans","description":"Free skill training and interest-subsidized micro-credit bank loans"},"documents_required":["Aadhaar Card","Smart Ration Card","SHG Member Resolution & Bank Savings Account"],"contact":{"phone":"044-28190450","email":"tncdw@tn.gov.in","address":"Mother Teresa Women's Complex, Valluvar Kottam High Road, Nungambakkam, Chennai 600034"},"official_url":"https://www.mathi.tn.gov.in/","description":"Nodal state agency empowering over 7.2 million women in Tamil Nadu through 4.5 Lakh Self Help Groups, revolving financial credit, micro-enterprise incubation, and vocational skill training.","source":"Tamil Nadu Rural Development Department","last_verified":"2026-08-14"},{"welfare_id":"WF006","name":"Tamil Nadu State Commission for Women","provider_type":"Statutory Women Commission","category":"Women Protection","service_type":["Legal Counselling & Dispute Adjudication","Investigation of Rights Violations","Free Legal Aid Referral","Workplace & Marital Dispute Conciliation"],"target_users":["women","women_in_distress","working_women"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Chennai","coverage":"Tamil Nadu"},"eligibility":["Any woman facing injustice, harassment, rights violation, or marital dispute in TN"],"services":["Summoning inquiry hearings and legal conciliation meetings","Direct intervention in police inaction or domestic abuse complaints","Free legal advocate assistance via State Legal Services"],"cost":{"type":"Free","description":"100% Free dispute hearing, legal conciliation, and counseling"},"documents_required":["Written Complaint Petition","Aadhaar Card / ID Proof","Supporting Evidence (if any)"],"contact":{"phone":"044-28592750","email":"tnscw@tn.gov.in","address":"Kalasa Mahal, Chepauk, Chennai, Tamil Nadu 600005"},"official_url":"http://www.tnscw.tn.gov.in/","description":"Statutory state commission protecting women's constitutional rights, investigating abuse complaints, conducting free conciliation hearings, and recommending legal action.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF007","name":"District Protection Officers (DPO) Domestic Violence Protection Cell TN","provider_type":"Government Statutory Protection Unit","category":"Women Protection","service_type":["Domestic Incident Report (DIR) Filing","Ex-Parte Court Protection Orders","Residence Rights Enforcement","Emergency Maintenance Orders"],"target_users":["women","domestic_abuse_survivors","wives","mothers"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"All 38 District Collectorates","coverage":"Tamil Nadu"},"eligibility":["Any woman facing physical, mental, emotional, or financial abuse in a shared domestic household"],"services":["Free preparation and submission of Domestic Incident Report (DIR) to Magistrate","Securing protection orders preventing abuser entry or communication","Enforcing right to reside in marital home and monetary interim maintenance"],"cost":{"type":"Free","description":"100% Free statutory legal assistance and protection filing"},"documents_required":["Aadhaar Card / Photo ID","Marriage Certificate / Proof of Shared Household (if available)"],"contact":{"phone":"181","email":"dpo.tn@tn.gov.in","address":"District Social Welfare Office inside District Collectorate in all 38 Districts"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Statutory protection officers appointed in all 38 districts of Tamil Nadu to provide immediate legal intervention, court protection orders, and shelter for victims of domestic abuse.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF008","name":"181 Women Helpline Tamil Nadu (24/7 Crisis Support)","provider_type":"Government 24/7 Helpline","category":"Emergency Support","services":["Instant emergency dispatch to nearest All-Women Police Station (AWPS)","Direct link to 108 Ambulance, One Stop Shelter Homes, and Legal Aid Authorities"],"target_users":["women","girls","women_in_distress","victims_of_harassment"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Any woman or girl facing violence, threat, stalking, or distress anywhere in Tamil Nadu"],"cost":{"type":"Free","description":"100% Toll-free round-the-clock emergency support"},"documents_required":[],"contact":{"phone":"181","email":"womenhelpline181@tn.gov.in","address":"State Command Centre, Amma Maaligai, Chennai 600009"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Statewide 24/7 toll-free helpline providing instant crisis rescue, tele-counseling, shelter referral, and emergency police dispatch for women across Tamil Nadu.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF009","name":"Tamil Nadu Social Security Pension Scheme for Destitute Women & Widows","provider_type":"Government Financial Welfare Program","category":"Social Security","services":["Direct monthly pension transfer of ₹1,200 per month into bank account","Free supply of rice through Public Distribution System (PDS)"],"target_users":["widows","destitute_women","single_women","senior_citizens","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Destitute widows, deserted women aged 30+, or unmarried destitute women aged 50+","Family income below poverty line criteria"],"cost":{"type":"Free / Monthly Financial Pension","description":"₹1,200 monthly pension credited directly to beneficiary bank account"},"documents_required":["Aadhaar Card","Widow Certificate / Deserted Woman Certificate from Tahsildar","Income Certificate from VAO","Bank Passbook"],"contact":{"phone":"044-28521100","email":"socialsecurity@tn.gov.in","address":"Commissionerate of Revenue Administration, Chepauk, Chennai 600005"},"official_url":"https://www.tn.gov.in/","description":"Statewide social security scheme granting ₹1,200 monthly pensions and free food security to destitute widows, deserted wives, and unmarried poor women.","source":"Tamil Nadu Revenue Administration Department","last_verified":"2026-08-14"},{"welfare_id":"WF010","name":"Tamil Nadu Transgender Welfare Board (Moovendhar Welfare Schemes)","provider_type":"Government Welfare Board","category":"Community Support","services":["Free sex reassignment surgery at government medical college hospitals","Subsidized self-employment group grants and education fee waiver"],"target_users":["transgender_women","third_gender","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Transgender individuals residing in Tamil Nadu certified by District Screening Committee"],"cost":{"type":"Free / Monthly Pension & Grant","description":"100% Free ID certification, medical surgeries, housing grants, and ₹1,500 monthly pension"},"documents_required":["District Screening Committee Identity Certificate","Aadhaar Card","Bank Passbook"],"contact":{"phone":"044-24351270","email":"tntwb@tn.gov.in","address":"Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"India's first statutory welfare board dedicated to transgender equality, offering free identity certification, monthly pensions, free housing, and medical transition care.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF011","name":"Tamil Nadu Differently Abled Welfare Department & Maintenance Allowance","provider_type":"Government Welfare Department","category":"Disability Support","services":["Monthly allowance of ₹2,000 credited to bank accounts of severely disabled persons","Free retrofitted motorized scooters for disabled working individuals and students"],"target_users":["differently_abled","disabled_women","children","senior_citizens"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Persons with 40% or higher certified disability residing in Tamil Nadu"],"cost":{"type":"Free / Financial Allowance","description":"100% Free assistive equipment, travel passes, and ₹2,000 monthly maintenance allowance"},"documents_required":["National Disability Identity Card (UDID Card)","Aadhaar Card","Disability Certificate from Medical Board","Bank Passbook"],"contact":{"phone":"1800-425-0111 / 044-28444940","email":"scda@tn.gov.in","address":"Lady Willingdon College Campus, Kamarajar Salai, Chennai 600005"},"official_url":"https://www.scda.tn.gov.in/","description":"Statewide comprehensive welfare program delivering ₹2,000 monthly pensions, free motorized tricycles, bus travel passes, and marriage grants to disabled persons.","source":"Welfare of Differently Abled Persons Department TN","last_verified":"2026-08-14"},{"welfare_id":"WF012","name":"Elder Line 14567 - Senior Citizens Welfare & Crisis Helpline Tamil Nadu","provider_type":"Government Elder Welfare Service","category":"Elderly Support","services":["Filing maintenance petitions before Revenue Divisional Officer (RDO) Tribunals","Admission to free government senior citizen shelter homes","Free legal advice for property dispute resolution"],"target_users":["senior_citizens","elderly_women","destitute_elderly"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Senior citizens aged 60 years and above residing in Tamil Nadu"],"cost":{"type":"Free","description":"100% Free toll-free helpline, rescue, legal aid, and shelter referral"},"documents_required":[],"contact":{"phone":"14567","email":"elderline@tn.gov.in","address":"Directorate of Social Welfare, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"National & Tamil Nadu 24/7 toll-free helpline dedicated to senior citizen welfare, providing field rescue for abandoned elderly, abuse intervention, and legal maintenance filing.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF013","name":"Childline 1098 & District Child Protection Units (DCPU) Tamil Nadu","provider_type":"Government Child Protection Network","category":"Child Welfare","services":["Field rescue teams dispatched within 60 minutes of call","Production before Child Welfare Committee (CWC) for safe shelter placement","Sponsorship assistance of ₹4,000 per month for vulnerable children"],"target_users":["children","orphans","girls","adolescents"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Any child under 18 years in need of care, protection, or emergency rescue in TN"],"cost":{"type":"Free","description":"100% Free emergency rescue, shelter, medical, and legal assistance"},"documents_required":[],"contact":{"phone":"1098 / 112","email":"dcpu.tn@tn.gov.in","address":"Directorate of Social Defence, 300, Purasawalkam High Road, Kellys, Chennai 600010"},"official_url":"https://www.childlineindia.org/","description":"Statewide 24/7 child protection emergency system responding to child abuse, child marriage prevention, orphan care, and educational sponsorship across all TN districts.","source":"Department of Social Defence Tamil Nadu","last_verified":"2026-08-14"},{"welfare_id":"WF014","name":"Tamil Nadu Urban Habitat Development Board (TNUHDB) Free Housing Scheme","provider_type":"Government Housing Board","category":"Housing Support","service_type":["Permanent Concrete Allotment Housing","Slum Rehabilitation Tenements","Subsidized Housing Grants","Single Women Allotment Priority"],"target_users":["urban_poor","slum_dwellers","single_mothers","widows","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Major Cities across Tamil Nadu","coverage":"Tamil Nadu"},"eligibility":["EWS (Economically Weaker Section) families in urban slum areas of Tamil Nadu","Priority allotment given to widows, destitute women, and disabled individuals"],"services":["Allotment of 400 sq.ft multi-storey concrete flats with water, sewage, and electricity","Government subsidy covering up to 90% of total housing construction cost"],"cost":{"type":"Subsidized","description":"Government subsidizes 90%+ of unit cost; nominal beneficiary contribution in easy EMI"},"documents_required":["Aadhaar Card","Income Certificate from Tahsildar","Smart Family Ration Card","Bank Account Passbook"],"contact":{"phone":"044-24640280","email":"tnuhdb@tn.gov.in","address":"No. 5, Kamarajar Salai, Triplicane, Chennai, Tamil Nadu 600005"},"official_url":"https://www.tnuhdb.tn.gov.in/","description":"State urban housing development authority providing permanent fire-proof concrete tenements, slum rehabilitation homes, and priority allotments to poor women.","source":"Tamil Nadu Urban Habitat Development Board","last_verified":"2026-08-14"},{"welfare_id":"WF015","name":"Tamil Nadu Free Rice Public Distribution System & Amma Unavagam","provider_type":"Government Food & Nutrition Body","category":"Food Support","service_type":["Free Monthly Rice & Wheat Quota","Subsidized Pulses, Oil & Sugar","Amma Unavagam Subsidized Prepared Meals","Universal Public Distribution System"],"target_users":["below_poverty_line","women","laborers","senior_citizens"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["All Smart Family Card holders in Tamil Nadu"],"services":["Free 20 kg to 35 kg quality rice per month per family","Fresh prepared meals at ₹1 (Idli), ₹5 (Sambar/Curd Rice) at 400+ Amma Canteens"],"cost":{"type":"Free / Ultra Low Cost","description":"100% Free rice via Ration Shops; ₹1 to ₹5 per meal at Amma Unavagam"},"documents_required":["Smart Family Card / TN PDS Card"],"contact":{"phone":"1967 / 1800-425-5901","email":"support@tnpds.gov.in","address":"Department of Civil Supplies and Consumer Protection, Chepauk, Chennai 600005"},"official_url":"https://www.tnpds.gov.in/","description":"Pioneering universal food security system delivering 100% free monthly rice to 2.2 crore family cardholders and ultra-cheap hygienic meals via 600+ municipal canteens.","source":"Tamil Nadu Civil Supplies Department","last_verified":"2026-08-14"},{"welfare_id":"WF016","name":"Tamil Nadu Manual Workers & Unorganised Workers Welfare Board","provider_type":"Government Labor Welfare Board","category":"Social Security","service_type":["Accident Death & Disability Insurance Relief","Maternity Financial Benefit of ₹6,000","Children Educational Scholarships","Natural Death Pension Assistance"],"target_users":["unorganised_workers","domestic_workers","construction_workers","women_laborers"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Unorganised manual workers, domestic helps, tailoring workers aged 18 to 60 years in TN"],"services":["Maternity financial assistance of ₹6,000 for female unorganised workers","Accidental death relief of ₹5,00,000 and natural death benefit of ₹50,000","Annual school and college scholarships from ₹1,000 to ₹8,000 for children"],"cost":{"type":"Free Registration / Welfare Grants","description":"Free registration and statutory monetary welfare payouts"},"documents_required":["Aadhaar Card","Smart Family Card","Bank Passbook","Worker Self-Declaration / VAO Certificate"],"contact":{"phone":"044-24321438","email":"tnuwwb@tn.gov.in","address":"Tamil Nadu Labour Welfare Board Building, DMS Complex, Teynampet, Chennai 600006"},"official_url":"https://tnuwwb.tn.gov.in/","description":"State statutory welfare board offering comprehensive social security, maternity assistance, education scholarships, and life insurance for unorganised female and male manual workers.","source":"Department of Labour Welfare TN","last_verified":"2026-08-14"},{"welfare_id":"WF017","name":"Chief Minister's Educational Support for Orphans & Single Parent Children","provider_type":"Government Child & Student Welfare Program","category":"Child Welfare","service_type":["Full Higher Education Fee Sponsorship","Hostel & Living Allowance","Orphan Student Protection"],"target_users":["orphans","single_parent_children","students","youth"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Children who lost both parents or single-parent destitute students studying in TN"],"services":["100% college tuition fee waiver in engineering, medical, arts, and polytechnic colleges","Free accommodation in government social welfare hostels"],"cost":{"type":"Free","description":"100% Fully funded by Government of Tamil Nadu"},"documents_required":["Death Certificates of Parent(s)","Aadhaar Card","Income Certificate from Tahsildar","Class 10/12 Marksheet"],"contact":{"phone":"044-24351270","email":"socialwelfare@tn.gov.in","address":"Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Special government welfare measure providing 100% free higher education, hostel stay, and living maintenance to orphans and single-parent poor children.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF018","name":"The Banyan NGO Homeless Women Mental Health Rehabilitation Centre","provider_type":"Registered Non-Governmental Organization (NGO)","category":"Rehabilitation","service_type":["Emergency Psychiatric Rescue & Admission","Inpatient Mental Health Treatment","Vocational & Skill Rehabilitation","Family Tracing & Home Reintegration"],"target_users":["homeless_women","mentally_ill_women","women_in_distress"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Mogappair West, Chennai / Kovalam, Chengalpattu","coverage":"Tamil Nadu"},"eligibility":["Homeless, destitute, or mentally ill women in need of emergency shelter and psychiatric rehabilitation"],"services":["Free medical, psychiatric, and psychological residential care","Inclusive eco-system housing ('Home Again' initiative)","Vocational trade training in tailoring, bakery, craft work, and retail"],"cost":{"type":"Free","description":"100% Free residential care, therapy, meals, and rehabilitation"},"documents_required":[],"contact":{"phone":"044-26530599 / 9840291983","email":"contact@thebanyan.org","address":"6th Main Road, Mogappair West, Chennai, Tamil Nadu 600037"},"official_url":"https://thebanyan.org/","description":"Pioneering NGO partner operating residential rehabilitation centers, crisis care units, and community mental health programs for homeless mentally ill women in Tamil Nadu.","source":"The Banyan Official Portal","last_verified":"2026-08-14"},{"welfare_id":"WF019","name":"Guild of Service (Central) Women Welfare & Short Stay Shelter Home","provider_type":"Charitable Welfare Organization","category":"Shelter Services","service_type":["Short Stay Shelter for Women in Distress","Family Dispute Counselling","Vocational Skill Training","Orphanage & Working Girls Support"],"target_users":["women_in_distress","single_mothers","abandoned_women","orphans"],"location":{"state":"Tamil Nadu","district":"Chennai","city":"Egmore, Chennai","coverage":"Chennai"},"eligibility":["Women facing marital desertion, domestic cruelty, or social distress"],"services":["Free food, clothing, shelter, and legal counseling for up to 3 years","Certified vocational training in tailoring, nursing aid, and computer skills"],"cost":{"type":"Free","description":"100% Free residential accommodation, food, and skill training"},"documents_required":["ID Proof (if available)"],"contact":{"phone":"044-28194279","email":"guildofservicecentral@gmail.com","address":"18, Casa Major Road, Egmore, Chennai, Tamil Nadu 600008"},"official_url":"http://guildofservice.org/","description":"Historic charitable organization operating short-stay shelter homes, skill development schools, and legal counseling centers for vulnerable women and children in Chennai.","source":"Guild of Service Central","last_verified":"2026-08-14"},{"welfare_id":"WF020","name":"District Social Welfare Office (DSWO) Coimbatore","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Marriage Assistance Sanctions","Pudhumai Penn Verification","Domestic Violence Complaint Processing","Dowry Prohibition Enforcement"],"target_users":["women","female_students","widows","destitute_women"],"location":{"state":"Tamil Nadu","district":"Coimbatore","city":"Coimbatore","coverage":"Coimbatore"},"eligibility":["Residents of Coimbatore district"],"services":["Nodal district implementation of state marriage schemes and Pudhumai Penn","Free counselling and referral to One Stop Centre Coimbatore"],"cost":{"type":"Free","description":"100% Free service processing"},"documents_required":["Aadhaar Card","Income & Community Certificates","Ration Card"],"contact":{"phone":"0422-2305673","email":"dswo.cbe@tn.gov.in","address":"Old Collectorate Campus, State Bank Road, Coimbatore, Tamil Nadu 641018"},"official_url":"https://coimbatore.nic.in/","description":"District social welfare administration office in Coimbatore handling state financial assistance schemes, women protection, and widow pensions.","source":"Coimbatore District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF021","name":"District Social Welfare Office (DSWO) Madurai","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Marriage Grant & Sewing Machine Sanction","Pudhumai Penn Verification","Protection Officer Domestic Violence Desk"],"target_users":["women","widows","students","destitute_women"],"location":{"state":"Tamil Nadu","district":"Madurai","city":"Madurai","coverage":"Madurai"},"eligibility":["Residents of Madurai district"],"services":["Sanctioning widow daughter marriage assistance and free sewing machines","Processing female higher education monthly ₹1,000 stipends"],"cost":{"type":"Free","description":"Free application processing and direct bank benefit transfer"},"documents_required":["Aadhaar Card","Income Certificate","School Study Certificates"],"contact":{"phone":"0452-2530430","email":"dswomadurai@tn.gov.in","address":"Additional Collectorate Building, Madurai, Tamil Nadu 625020"},"official_url":"https://madurai.nic.in/","description":"District level social welfare department office executing women empowerment programs and protective relief across Madurai district.","source":"Madurai District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF022","name":"District Social Welfare Office (DSWO) Tiruchirappalli","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["State Financial Assistance Schemes","Working Women Hostel Inspection","Child Marriage Prevention Unit"],"target_users":["women","girls","widows","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"Tiruchirappalli","city":"Tiruchirappalli","coverage":"Tiruchirappalli"},"eligibility":["Residents of Trichy district"],"services":["Preventing child marriages through field enforcement teams","Sanctioning monthly pensions for destitute deserted women"],"cost":{"type":"Free","description":"Free government welfare services"},"documents_required":["Aadhaar Card","VAO Income Certificate"],"contact":{"phone":"0431-2413796","email":"dswotrichy@tn.gov.in","address":"District Collectorate Campus, Cantonment, Tiruchirappalli 620001"},"official_url":"https://tiruchirappalli.nic.in/","description":"District administration office in Trichy delivering government financial assistance, social security pensions, and child protection services.","source":"Tiruchirappalli District Administration","last_verified":"2026-08-14"},{"welfare_id":"WF023","name":"District Social Welfare Office (DSWO) Salem","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Pudhumai Penn College Grant Verification","Domestic Violence DIR Filing Desk","Free Sewing Machine Scheme"],"target_users":["women","female_students","widows","single_mothers"],"location":{"state":"Tamil Nadu","district":"Salem","city":"Salem","coverage":"Salem"},"eligibility":["Residents of Salem district"],"services":["Verifying Pudhumai Penn college enrollment","Issuing free motor sewing machines to destitute widows"],"cost":{"type":"Free","description":"Free scheme enrollment"},"documents_required":["Aadhaar Card","Community & Income Certificates"],"contact":{"phone":"0427-2451559","email":"dswosalem@tn.gov.in","address":"Collectorate Complex, Salem, Tamil Nadu 636001"},"official_url":"https://salem.nic.in/","description":"District social welfare department office serving Salem district with women's financial grants, sewing machine distribution, and crisis support.","source":"Salem District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF024","name":"District Social Welfare Office (DSWO) Tirunelveli","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["State Marriage Grants Processing","One Stop Centre Supervision","Senior Citizen Pension Verification"],"target_users":["women","senior_citizens","widows","female_students"],"location":{"state":"Tamil Nadu","district":"Tirunelveli","city":"Tirunelveli","coverage":"Tirunelveli"},"eligibility":["Residents of Tirunelveli district"],"services":["Supervising One Stop Centre Tirunelveli emergency shelter operations","Processing monthly financial aid for poor female students"],"cost":{"type":"Free","description":"Free scheme processing"},"documents_required":["Aadhaar Card","Smart Ration Card"],"contact":{"phone":"0462-2500854","email":"dswotirunelveli@tn.gov.in","address":"District Collectorate Campus, Kokkirakulam, Tirunelveli, Tamil Nadu 627009"},"official_url":"https://tirunelveli.nic.in/","description":"Nodal government welfare administrative office in Tirunelveli overseeing women's safety, higher education stipends, and widow pensions.","source":"Tirunelveli District Administration","last_verified":"2026-08-14"},{"welfare_id":"WF025","name":"District Social Welfare Office (DSWO) Vellore","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Pudhumai Penn Scheme Desk","Domestic Abuse Protection Unit","Marriage Assistance Sanctions"],"target_users":["women","female_students","widows"],"location":{"state":"Tamil Nadu","district":"Vellore","city":"Vellore","coverage":"Vellore"},"eligibility":["Residents of Vellore district"],"services":["Processing higher education financial grants for girl students","Facilitating court protection orders for victims of domestic abuse"],"cost":{"type":"Free","description":"Free government service"},"documents_required":["Aadhaar Card","Income Certificate"],"contact":{"phone":"0416-2253055","email":"dswovellore@tn.gov.in","address":"Collectorate Campus, Sathuvachari, Vellore, Tamil Nadu 632009"},"official_url":"https://vellore.nic.in/","description":"District social welfare department in Vellore ensuring women safety, higher education financial assurance, and legal protection.","source":"Vellore District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF026","name":"District Social Welfare Office (DSWO) Tiruppur","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Industrial Women Worker Protection","Pudhumai Penn Student Verification","Free Sewing Machine Scheme"],"target_users":["women","textile_workers","destitute_women","female_students"],"location":{"state":"Tamil Nadu","district":"Tiruppur","city":"Tiruppur","coverage":"Tiruppur"},"eligibility":["Residents and industrial working women in Tiruppur district"],"services":["Protecting female garment factory workers against workplace harassment","Distributing self-employment sewing machines to poor widows"],"cost":{"type":"Free","description":"Free welfare assistance"},"documents_required":["Aadhaar Card","Income Certificate"],"contact":{"phone":"0421-2270054","email":"dswotiruppur@tn.gov.in","address":"District Collectorate, Palladam Road, Tiruppur, Tamil Nadu 641604"},"official_url":"https://tiruppur.nic.in/","description":"District administration office in Tiruppur focusing on industrial female worker welfare, student higher education stipends, and widow rehabilitation.","source":"Tiruppur District Administration","last_verified":"2026-08-14"},{"welfare_id":"WF027","name":"District Social Welfare Office (DSWO) Erode","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Financial Assistance Verification","Child Marriage Injunction Orders","One Stop Centre Erode Supervision"],"target_users":["women","girls","widows"],"location":{"state":"Tamil Nadu","district":"Erode","city":"Erode","coverage":"Erode"},"eligibility":["Residents of Erode district"],"services":["Intervening to stop underage child marriages","Providing short stay shelter referral at One Stop Centre Erode"],"cost":{"type":"Free","description":"Free service"},"documents_required":["Aadhaar Card","Ration Card"],"contact":{"phone":"0424-2262575","email":"dswoerode@tn.gov.in","address":"District Collectorate Campus, Erode, Tamil Nadu 638011"},"official_url":"https://erode.nic.in/","description":"District social welfare administrative unit in Erode implementing state women empowerment initiatives and child protection laws.","source":"Erode District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF028","name":"District Social Welfare Office (DSWO) Kanyakumari","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["State Marriage Grants","Pudhumai Penn Verification","Protection Officer Desk"],"target_users":["women","female_students","widows"],"location":{"state":"Tamil Nadu","district":"Kanyakumari","city":"Nagercoil","coverage":"Kanyakumari"},"eligibility":["Residents of Kanyakumari district"],"services":["Processing female higher education ₹1,000 monthly stipends","Providing legal domestic violence DIR reports"],"cost":{"type":"Free","description":"Free service processing"},"documents_required":["Aadhaar Card","Community & Income Certificates"],"contact":{"phone":"04652-279284","email":"dswoknm@tn.gov.in","address":"District Collectorate Campus, Nagercoil, Tamil Nadu 629001"},"official_url":"https://kanniyakumari.nic.in/","description":"District welfare office in Nagercoil supporting southern women with higher education stipends, legal protection, and widow welfare.","source":"Kanyakumari District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF029","name":"District Social Welfare Office (DSWO) Thanjavur","provider_type":"Government District Administration Unit","category":"Women Welfare","service_type":["Pudhumai Penn Verification","Marriage Financial Grants","Free Sewing Machine Scheme"],"target_users":["women","female_students","widows"],"location":{"state":"Tamil Nadu","district":"Thanjavur","city":"Thanjavur","coverage":"Thanjavur"},"eligibility":["Residents of Thanjavur district"],"services":["Processing Pudhumai Penn monthly college stipends","Distributing free sewing machines for self-employment"],"cost":{"type":"Free","description":"Free welfare benefit processing"},"documents_required":["Aadhaar Card","Income Certificate"],"contact":{"phone":"04362-230357","email":"dswothanjavur@tn.gov.in","address":"District Collectorate Complex, Thanjavur, Tamil Nadu 613010"},"official_url":"https://thanjavur.nic.in/","description":"District social welfare department office executing state female empowerment and social security schemes across Thanjavur district.","source":"Thanjavur District Collectorate","last_verified":"2026-08-14"},{"welfare_id":"WF030","name":"Tamil Nadu Backward Classes, MBC & Minorities Welfare Department","provider_type":"Government Welfare Department","category":"Financial Welfare","service_type":["Post-Matric Scholarships for BC/MBC/Minority Female Students","Free College Hostel Accommodation","Bicycles Distribution Scheme","Loan Subsidies for Women Micro-Enterprises"],"target_users":["female_students","women_entrepreneurs","bc_mbc_minority_women","youth"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["BC, MBC, Denotified Communities, and Minority female students/women residing in TN","Annual family income less than ₹2.5 Lakhs per annum"],"services":["100% Free college post-matric tuition fees and exam fee waiver","Free stay and food in 1,300+ BC/MBC government college hostels","Term loans up to ₹5 Lakhs at 6% interest for minority women entrepreneurs"],"cost":{"type":"Free / Subsidized Loans","description":"100% Free scholarships & hostels; subsidized low-interest business loans"},"documents_required":["Community Certificate","Income Certificate from Tahsildar","Aadhaar Card","College Marksheets & Fee Receipt"],"contact":{"phone":"044-28551462","email":"tbcwelfare@tn.gov.in","address":"Ezhilagam, Chepauk, Chennai, Tamil Nadu 600005"},"official_url":"https://www.tn.gov.in/bcmbcw/","description":"State department providing free college education scholarships, free hostel stay, and low-interest self-employment loans for BC, MBC, and minority women.","source":"Government of Tamil Nadu","last_verified":"2026-08-14"},{"welfare_id":"WF031","name":"TAHDCO (Tamil Nadu Adi Dravidar Housing and Development Corporation)","provider_type":"Government Development Corporation","category":"Financial Welfare","service_type":["Capital Subsidy for Women Entrepreneurs (30% to 50%)","Commercial Vehicle Purchase Loan Subsidy","Collector's Discretionary Financial Fund","Vocational Skill Development Grants"],"target_users":["sc_st_women","women_entrepreneurs","below_poverty_line","single_mothers"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Scheduled Caste (SC) and Scheduled Tribe (ST) women residing in Tamil Nadu aged 18 to 55"],"services":["Front-end capital subsidy up to ₹2.25 Lakhs for starting small business enterprises","Free training for competitive exams, aviation, nursing, and IT soft skills"],"cost":{"type":"Subsidized Grant","description":"30% to 50% direct capital subsidy funded by Government of Tamil Nadu"},"documents_required":["SC/ST Community Certificate","Aadhaar Card","Income Certificate from VAO","Project Business Plan Proposal"],"contact":{"phone":"044-25891624","email":"tahdco@tn.gov.in","address":"No. 31, Cenotaph Road, Teynampet, Chennai, Tamil Nadu 600018"},"official_url":"https://tahdco.tn.gov.in/","description":"Nodal development agency providing up to 50% business capital subsidies, commercial vehicle loans, and skill training for SC/ST female entrepreneurs.","source":"TAHDCO Official Portal","last_verified":"2026-08-14"},{"welfare_id":"WF032","name":"Tamil Nadu State Legal Services Authority (TNSLSA) Free Legal Representation","provider_type":"Statutory Legal Authority","category":"Emergency Support","service_type":["100% Free Court Advocate Services for Women","Court Fee & Process Fee Exemption","Lok Adalat Amicable Dispute Settlement","Legal Aid Clinics in all Taluks"],"target_users":["women","children","below_poverty_line","victims_of_crime"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["All women regardless of income in Tamil Nadu (Section 12 of Legal Services Authorities Act)"],"services":["Free appointment of panel advocate to represent women in civil, family, or criminal courts","Exemption from court fees, typing, drafting, and witness expenses"],"cost":{"type":"Free","description":"100% Free advocate services and court fee waiver"},"documents_required":["Aadhaar Card","Simple Legal Aid Request Application Form"],"contact":{"phone":"15100 / 044-25342834","email":"tnslsa@tn.gov.in","address":"High Court Campus, Chennai, Tamil Nadu 600104"},"official_url":"https://slsa.tn.gov.in/","description":"Statutory legal services authority offering 100% free advocate representation and court fee waivers for all women in Tamil Nadu without any income restriction.","source":"Tamil Nadu State Legal Services Authority","last_verified":"2026-08-14"},{"welfare_id":"WF033","name":"Kavalan SOS Mobile App & TN Police Women Safety Command Centre","provider_type":"Government Police Emergency App","category":"Women Protection","service_type":["Instant One-Tap Police SOS Trigger","Live GPS Tracking to Police Control Room","Automatic Video & Audio Recording","Immediate All-Women Police Dispatch"],"target_users":["women","girls","working_women","female_students"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Any resident or traveling woman in Tamil Nadu with a smartphone"],"services":["Pressing SOS button sends immediate alert with live location to Master Police Command Room","Automated SMS dispatched to 3 pre-registered emergency contacts"],"cost":{"type":"Free","description":"100% Free smartphone application download"},"documents_required":[],"contact":{"phone":"112 / 1091","email":"kavalan.sos@tnpolice.gov.in","address":"Tamil Nadu Police Headquarters, Radhakrishnan Salai, Mylapore, Chennai 600004"},"official_url":"https://eservices.tnpolice.gov.in/","description":"Official Tamil Nadu Police safety mobile application featuring a one-tap emergency panic button that dispatches nearest police patrol vehicles using real-time GPS tracking.","source":"Tamil Nadu Police Department","last_verified":"2026-08-14"},{"welfare_id":"WF034","name":"Dr. Dharmambal Ammaiyar Widow Remarriage Financial Assistance Scheme","provider_type":"Government Marriage Welfare Program","category":"Financial Welfare","service_type":["Financial Grant for Widow Remarriage","Gold Coin for Thirumangalyam","Widow Rehabilitation & Social Dignity"],"target_users":["widows","women","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Widow remarrying aged 20 to 30 years in Tamil Nadu","Minimum groom age 21 years"],"services":["Financial grant of ₹25,000 (or ₹50,000 for degree/diploma holders)","1 Sovereign (8 Grams) 22-carat gold coin for Thirumangalyam"],"cost":{"type":"Free / Grant & Gold Coin","description":"100% Grant assistance and free gold coin for marriage"},"documents_required":["Aadhaar Card","Death Certificate of First Husband","Widow Certificate","Marriage Invitation Card & Marriage Registration Certificate"],"contact":{"phone":"044-24351270","email":"socialwelfare@tn.gov.in","address":"Panagal Building, Saidapet, Chennai, Tamil Nadu 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"Pioneering social reform scheme providing financial grants up to ₹50,000 and an 8-gram gold coin to young widows who remarry in Tamil Nadu.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"},{"welfare_id":"WF035","name":"E.V.R. Maniammaiyar Destitute Widow Daughter Marriage Assistance Scheme","provider_type":"Government Marriage Welfare Program","category":"Financial Welfare","service_type":["Marriage Grant for Poor Widow Daughters","Gold Coin for Thirumangalyam","Single Mother Assistance"],"target_users":["widows","single_mothers","destitute_women","below_poverty_line"],"location":{"state":"Tamil Nadu","district":"","city":"","coverage":"Tamil Nadu"},"eligibility":["Poor poor widow mother residing in Tamil Nadu for her daughter's marriage","Daughter minimum age 18 years; family income below poverty line"],"services":["Financial assistance of ₹25,000 (or ₹50,000 for degree/diploma holder daughters)","8 Gram 22-carat gold coin for Thirumangalyam"],"cost":{"type":"Free / Grant Assistance","description":"100% Financial grant and free gold coin"},"documents_required":["Aadhaar Card of Mother & Daughter","Widow Certificate of Mother","Income Certificate from Tahsildar","Daughter's Educational Certificates"],"contact":{"phone":"044-24351270","email":"socialwelfare@tn.gov.in","address":"Social Welfare Department, Panagal Building, Saidapet, Chennai 600015"},"official_url":"https://www.tnsocialwelfare.tn.gov.in/","description":"State welfare scheme offering up to ₹50,000 cash grant and an 8-gram gold coin to destitute widow mothers for conducting their daughters' marriages.","source":"Tamil Nadu Social Welfare Department","last_verified":"2026-08-14"}];
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let activeTab = "healthcare";
+    let healthcareData = window.EMPOWHER_HEALTHCARE || [];
+    let welfareData = window.EMPOWHER_WELFARE || [];
+    let currentCategory = "all";
+    let searchQuery = "";
+
+    const hwCardsGrid = document.getElementById("hwCardsGrid");
+    const hwSearchInput = document.getElementById("hwSearchInput");
+    const categoryPillTrack = document.getElementById("categoryPillTrack");
+    const tabHealthcareBtn = document.getElementById("tabHealthcareBtn");
+    const tabWelfareBtn = document.getElementById("tabWelfareBtn");
+    const hwDetailModal = document.getElementById("hwDetailModal");
+    const hwModalCloseBtn = document.getElementById("hwModalCloseBtn");
+    const hwModalCancelBtn = document.getElementById("hwModalCancelBtn");
+
+    function updateCountsAndRender() {
+      const hcElem = document.getElementById("hcCount");
+      const wfElem = document.getElementById("wfCount");
+      const statHcElem = document.getElementById("statHcTotal");
+      const statWfElem = document.getElementById("statWfTotal");
+      if (hcElem) hcElem.textContent = healthcareData.length;
+      if (wfElem) wfElem.textContent = welfareData.length;
+      if (statHcElem) statHcElem.textContent = healthcareData.length;
+      if (statWfElem) statWfElem.textContent = welfareData.length;
+      renderCategoryPills();
+      renderActiveCards();
+    }
+
+    // Try fetching external JSON if available
+    Promise.all([
+      fetch("healthcare.json?t=" + Date.now()).then(r => r.json()).catch(() => null),
+      fetch("welfare.json?t=" + Date.now()).then(r => r.json()).catch(() => null)
+    ]).then(([hcRes, wfRes]) => {
+      if (hcRes && hcRes.healthcare_resources && hcRes.healthcare_resources.length > 0) {
+        healthcareData = hcRes.healthcare_resources;
+      }
+      if (wfRes && wfRes.welfare_resources && wfRes.welfare_resources.length > 0) {
+        welfareData = wfRes.welfare_resources;
+      }
+      updateCountsAndRender();
+    }).catch(err => {
+      console.warn("Fetch warning, using embedded datasets:", err);
+      updateCountsAndRender();
+    });
+
+    // Immediate render using embedded fallback data
+    updateCountsAndRender();
+
+    if (tabHealthcareBtn) {
+      tabHealthcareBtn.addEventListener("click", () => {
+        activeTab = "healthcare";
+        tabHealthcareBtn.classList.add("active");
+        if (tabWelfareBtn) tabWelfareBtn.classList.remove("active");
+        currentCategory = "all";
+        renderCategoryPills();
+        renderActiveCards();
+      });
+    }
+
+    if (tabWelfareBtn) {
+      tabWelfareBtn.addEventListener("click", () => {
+        activeTab = "welfare";
+        tabWelfareBtn.classList.add("active");
+        if (tabHealthcareBtn) tabHealthcareBtn.classList.remove("active");
+        currentCategory = "all";
+        renderCategoryPills();
+        renderActiveCards();
+      });
+    }
+
+    function renderCategoryPills() {
+      if (!categoryPillTrack) return;
+      let categories = ["all"];
+      if (activeTab === "healthcare") {
+        categories = ["all", "Government Hospitals", "Women's Healthcare", "Maternal Healthcare", "Preventive Healthcare", "Telemedicine", "Mental Healthcare", "Emergency Healthcare", "Disability-related healthcare"];
+      } else {
+        categories = ["all", "Women Welfare", "Child Welfare", "Women Protection", "Housing Support", "Food Support", "Social Security", "Community Support", "Financial Welfare", "Disability Support", "Elderly Support"];
+      }
+      categoryPillTrack.innerHTML = categories.map(cat => {
+        const label = cat === "all" ? (activeTab === "healthcare" ? "All Healthcare" : "All Welfare") : cat;
+        const activeClass = cat === currentCategory ? "active" : "";
+        return '<button class="cat-pill ' + activeClass + '" data-cat="' + cat + '">' + label + '</button>';
+      }).join("");
+
+      categoryPillTrack.querySelectorAll(".cat-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+          categoryPillTrack.querySelectorAll(".cat-pill").forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+          currentCategory = pill.getAttribute("data-cat");
+          renderActiveCards();
+        });
+      });
+    }
+
+    function renderActiveCards() {
+      if (!hwCardsGrid) return;
+      hwCardsGrid.innerHTML = "";
+      const dataset = (activeTab === "healthcare") ? healthcareData : welfareData;
+      const filtered = dataset.filter(item => {
+        if (!item) return false;
+        let matchCat = false;
+        if (currentCategory === "all") matchCat = true;
+        else if (item.category && item.category.toLowerCase().includes(currentCategory.toLowerCase())) matchCat = true;
+
+        const q = (searchQuery || "").toLowerCase().trim();
+        const nameMatch = item.name && item.name.toLowerCase().includes(q);
+        const descMatch = item.description && item.description.toLowerCase().includes(q);
+        const catMatch = item.category && item.category.toLowerCase().includes(q);
+        const locMatch = item.location && item.location.district && item.location.district.toLowerCase().includes(q);
+        const servMatch = item.services && Array.isArray(item.services) && item.services.some(s => s && s.toLowerCase().includes(q));
+        const stMatch = item.service_type && Array.isArray(item.service_type) && item.service_type.some(st => st && st.toLowerCase().includes(q));
+
+        const matchSearch = !q || (nameMatch || descMatch || catMatch || locMatch || servMatch || stMatch);
+        return matchCat && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        hwCardsGrid.innerHTML = [
+          '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #64748B; background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0;">',
+            '<i class="fa-solid fa-folder-open" style="font-size: 40px; margin-bottom: 12px; opacity: 0.5;"></i>',
+            '<h3 style="font-size: 18px; font-weight: 700; color: #0F172A;">No Matching Resources Found</h3>',
+            '<p style="font-size: 13px; margin-top: 4px;">Try searching another keyword or district name like Chennai, Madurai, or Maternity.</p>',
+          '</div>'
+        ].join("");
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "hw-card";
+        const servicesList = item.services || item.service_type || [];
+        const servicesChips = servicesList.slice(0, 3).map(s => '<span class="service-chip">' + s + '</span>').join("");
+        const locationText = (item.location && item.location.district) ? item.location.district : (item.location && item.location.coverage ? item.location.coverage : "Tamil Nadu");
+        const iconClass = (activeTab === "healthcare") ? "fa-user-doctor" : "fa-hand-holding-heart";
+
+        card.innerHTML = [
+          '<div>',
+            '<div class="hw-card-header">',
+              '<div class="hw-icon-box">',
+                '<i class="fa-solid ' + iconClass + '"></i>',
+              '</div>',
+              '<span class="hw-cat-tag">' + (item.category || "Support") + '</span>',
+            '</div>',
+            '<div style="font-size: 11px; font-weight: 700; color: #64748B; margin-bottom: 4px;">',
+              '📍 ' + locationText + ' • ' + (item.provider_type || "Government"),
+            '</div>',
+            '<h3 class="hw-card-title">' + item.name + '</h3>',
+            '<p class="hw-card-desc">' + item.description + '</p>',
+            '<div class="hw-contact-pill">',
+              '<i class="fa-solid fa-phone"></i> ' + (item.contact ? item.contact.phone : "104 / 181"),
+            '</div>',
+            '<div class="hw-services-chips">',
+              servicesChips,
+            '</div>',
+          '</div>',
+          '<button class="btn-view-details">',
+            'View Full Details & Official Link <i class="fa-solid fa-arrow-right"></i>',
+          '</button>'
+        ].join("");
+
+        card.addEventListener("click", () => openHWDetailModal(item));
+        hwCardsGrid.appendChild(card);
+      });
+    }
+
+    function openHWDetailModal(item) {
+      document.getElementById("modalCategory").textContent = item.category || "Support";
+      document.getElementById("modalTitle").textContent = item.name;
+      document.getElementById("modalDesc").textContent = item.description;
+      const locStr = (item.location && item.location.district) ? (item.location.district + ", Tamil Nadu") : (item.location && item.location.coverage ? item.location.coverage : "Tamil Nadu State");
+      document.getElementById("modalSubLocation").textContent = locStr + " • " + (item.provider_type || "Government Initiative");
+      const services = item.services || item.service_type || [];
+      document.getElementById("modalServicesList").innerHTML = services.map(s => [
+        '<div style="background: #F0FDFA; border: 1px solid #CCFBF1; padding: 10px 14px; border-radius: 10px; font-size: 13px; color: #0F766E; display: flex; align-items: flex-start; gap: 10px;">',
+          '<i class="fa-solid fa-circle-check" style="color: #0D9488; margin-top: 3px;"></i>',
+          '<div>' + s + '</div>',
+        '</div>'
+      ].join("")).join("");
+
+      const elig = item.eligibility || [];
+      document.getElementById("modalEligibilityList").innerHTML = elig.map(e => [
+        '<div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 14px; border-radius: 10px; font-size: 13px; color: #334155; display: flex; align-items: flex-start; gap: 10px;">',
+          '<i class="fa-solid fa-user-check" style="color: #3B82F6; margin-top: 3px;"></i>',
+          '<div>' + e + '</div>',
+        '</div>'
+      ].join("")).join("");
+
+      if (item.cost) {
+        document.getElementById("modalCostType").textContent = item.cost.type || "Free";
+        document.getElementById("modalCostDesc").textContent = item.cost.description || "100% Free Government Assistance";
+      }
+      const docs = item.documents_required || [];
+      document.getElementById("modalDocsList").textContent = docs.length > 0 ? docs.join(", ") : "No mandatory documents required for emergency assistance.";
+      const c = item.contact || {};
+      document.getElementById("modalContactBox").innerHTML = [
+        '<div><strong>📞 Phone / Helpline:</strong> ' + (c.phone || "104 / 181") + '</div>',
+        '<div><strong>✉️ Email:</strong> ' + (c.email || "support.tnhealth@tn.gov.in") + '</div>',
+        '<div><strong>📍 Address:</strong> ' + (c.address || "Tamil Nadu District Medical Headquarters / Social Welfare Office") + '</div>'
+      ].join("");
+
+      const officialBtn = document.getElementById("modalOfficialBtn");
+      if (item.official_url) {
+        officialBtn.href = item.official_url;
+        officialBtn.style.display = "inline-flex";
+      } else {
+        officialBtn.style.display = "none";
+      }
+      if (hwDetailModal) hwDetailModal.classList.add("active");
+    }
+
+    function closeHWModal() {
+      if (hwDetailModal) hwDetailModal.classList.remove("active");
+    }
+    if (hwModalCloseBtn) hwModalCloseBtn.addEventListener("click", closeHWModal);
+    if (hwModalCancelBtn) hwModalCancelBtn.addEventListener("click", closeHWModal);
+    if (hwDetailModal) {
+      hwDetailModal.addEventListener("click", (e) => {
+        if (e.target === hwDetailModal) closeHWModal();
+      });
+    }
+
+    if (hwSearchInput) {
+      hwSearchInput.addEventListener("input", (e) => {
+        searchQuery = e.target.value;
+        renderActiveCards();
+      });
+    }
+    const topSearchInput = document.getElementById("topSearchInput");
+    if (topSearchInput) {
+      topSearchInput.addEventListener("input", (e) => {
+        searchQuery = e.target.value;
+        renderActiveCards();
+      });
+    }
+  });
+</script>
+
+  <!-- Interactive AI Assistant Chat Drawer -->
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="chat-title">AI Personal Assistant</div>
+          <div class="chat-status">Online & Ready to Help</div>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI Personal Assistant. How can I help empower your personal and professional growth today?
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything...">
+      <button class="chat-send-btn" id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

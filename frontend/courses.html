@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMPOWHER - AI-Powered Learning Hub & Classroom</title>
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Outfit & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #FF1744;
+      --primary-hover: #D50000;
+      --secondary: #7C3AED;
+      --secondary-hover: #6D28D9;
+      --bg-gradient: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+      --glow-purple: 0 0 15px rgba(124, 58, 237, 0.4);
+      --glow-green: 0 0 15px rgba(5, 150, 105, 0.4);
+      --glow-red: 0 0 15px rgba(255, 23, 68, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar Navigation Styles */
+    .sidebar {
+      width: 260px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-right: 1px solid var(--glass-border);
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      position: fixed;
+      height: 100vh;
+      z-index: 100;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 36px;
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    .sidebar-item a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-item a:hover,
+    .sidebar-item.active a {
+      background: var(--glass-bg);
+      color: var(--primary);
+      box-shadow: var(--glass-shadow);
+      transform: translateX(4px);
+    }
+
+    .sidebar-footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding-top: 16px;
+    }
+
+    .sidebar-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .profile-info {
+      font-size: 13px;
+    }
+
+    .profile-name {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .profile-role {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 260px;
+      flex-grow: 1;
+      padding: 32px 48px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation bar */
+    .top-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .breadcrumb span {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .top-widgets {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .streak-widget {
+      background: rgba(255, 241, 242, 0.85);
+      border: 1px solid rgba(254, 205, 211, 0.5);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(255, 23, 68, 0.08);
+      animation: pulse-ring 2s infinite;
+    }
+
+    .level-widget {
+      background: rgba(243, 232, 255, 0.85);
+      border: 1px solid rgba(216, 180, 254, 0.5);
+      color: var(--secondary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.08);
+    }
+
+    /* Tab Switchers */
+    .tab-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding-bottom: 12px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #FFF;
+      box-shadow: var(--glow-red);
+    }
+
+    /* Views Layout */
+    .tab-view {
+      display: none;
+      flex-direction: column;
+      animation: fade-reveal 0.5s ease-out forwards;
+    }
+
+    .tab-view.active {
+      display: flex;
+    }
+
+    /* ================= TAB 1: LEARNING HUB ================= */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .stats-card-container {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--glass-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 23, 68, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .stat-card:nth-child(2) .stat-icon {
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--secondary);
+    }
+
+    .stat-card:nth-child(3) .stat-icon {
+      background: rgba(5, 150, 105, 0.1);
+      color: #059669;
+    }
+
+    .stat-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Streak & gamification elements */
+    .dashboard-left-col {
+      grid-column: span 8;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .dashboard-right-col {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hub-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .panel-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Visual Roadmap Learning Path */
+    .roadmap-track {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 20px 10px;
+      margin-top: 10px;
+    }
+
+    .roadmap-line {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      right: 30px;
+      height: 4px;
+      background: #E2E8F0;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+
+    .roadmap-progress-line {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      z-index: 2;
+      transform: translateY(-50%);
+    }
+
+    .roadmap-node {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .node-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FFF;
+      border: 3px solid #CBD5E1;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .roadmap-node.completed .node-circle {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      border-color: #A7F3D0;
+      color: #FFF;
+      box-shadow: var(--glow-green);
+    }
+
+    .roadmap-node.active .node-circle {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-color: #FFF;
+      color: #FFF;
+      box-shadow: var(--glow-red);
+      animation: pulse-ring 2.0s infinite;
+    }
+
+    .node-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .roadmap-node.active .node-label {
+      color: var(--primary);
+    }
+
+    /* Skill Progression List */
+    .skill-progress-bar {
+      margin-bottom: 12px;
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-progress-bar:hover {
+      background: rgba(255, 255, 255, 0.6);
+      transform: scale(1.01);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .skill-progress-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .skill-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .skill-body {
+      flex-grow: 1;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .skill-details-pane {
+      display: none;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px dashed rgba(0, 0, 0, 0.05);
+      animation: slide-down-reveal 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .skill-details-pane.active {
+      display: block;
+    }
+
+    /* Unique Animations for Icon Classes on click */
+    .spin-animation {
+      animation: spin-once 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bounce-animation {
+      animation: bounce-once 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .pulse-animation {
+      animation: pulse-once 0.6s ease-out;
+    }
+
+    .shake-animation {
+      animation: shake-once 0.6s ease-in-out;
+    }
+
+    @keyframes spin-once {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce-once {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse-once {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shake-once {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    @keyframes slide-down-reveal {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .progress-track {
+      height: 8px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 4px;
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* AI Career Connections Card */
+    .career-match-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 16px;
+      padding: 20px;
+      color: #FFF;
+      margin-top: 16px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    }
+
+    .career-match-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .match-tag {
+      background: #ECFDF5;
+      color: #059669;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Streak Calendar visualization */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .calendar-day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .day-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border: 2px solid transparent;
+    }
+
+    .calendar-day.completed .day-dot {
+      background: rgba(5, 150, 105, 0.15);
+      border-color: #059669;
+      color: #059669;
+      box-shadow: var(--glow-green);
+    }
+
+    .calendar-day.today .day-dot {
+      background: rgba(255, 23, 68, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: var(--glow-red);
+      font-weight: 800;
+    }
+
+    /* ================= TAB 2: COURSE CATALOG ================= */
+    .catalog-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .search-input-box {
+      flex-grow: 1;
+      position: relative;
+    }
+
+    .search-input-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 14px 14px 14px 44px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.1);
+    }
+
+    .filter-pill-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      background: #FFF;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: var(--primary);
+      color: #FFF;
+      border-color: var(--primary);
+      box-shadow: var(--glow-red);
+    }
+
+    .dropdown-filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      background: #FFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Course Cards Grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+
+    .course-card {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--glass-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(31, 38, 135, 0.12);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .course-card:hover::before {
+      opacity: 1;
+    }
+
+    .course-thumb-container {
+      width: 100%;
+      height: 140px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(255, 23, 68, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+      margin-bottom: 16px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .thumb-visual-art {
+      font-size: 48px;
+      color: var(--primary);
+      opacity: 0.85;
+      transition: transform 0.3s ease;
+    }
+
+    .course-card:hover .thumb-visual-art {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .course-category-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ai-match-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #FF1744 0%, #7C3AED 100%);
+      color: #FFF;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      box-shadow: var(--glow-red);
+    }
+
+    .course-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .course-card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .course-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-item i {
+      color: var(--primary);
+    }
+
+    .course-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .skill-badge {
+      background: rgba(0, 0, 0, 0.04);
+      color: var(--text-muted);
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .course-card-desc-box {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .course-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .instructor-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .instructor-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #CBD5E1;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .instructor-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .course-rating {
+      font-size: 11px;
+      font-weight: 800;
+      color: #E2B93B;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .progress-slider {
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .progress-slider-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    /* ================= TAB 3: LESSON VIEWERS ================= */
+    .classroom-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr 280px;
+      gap: 24px;
+      height: calc(100vh - 160px);
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--glass-shadow);
+    }
+
+    /* Left panel: modules */
+    .classroom-nav {
+      background: rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .classroom-nav-header {
+      padding: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .classroom-nav-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .classroom-nav-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .module-list {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .module-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .module-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+      padding: 4px 8px;
+    }
+
+    .lesson-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lesson-item:hover {
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--text-main);
+    }
+
+    .lesson-item.active {
+      background: var(--glass-bg);
+      color: var(--primary);
+      font-weight: 700;
+      border: 1px solid rgba(255, 23, 68, 0.15);
+      box-shadow: 0 4px 12px rgba(255, 23, 68, 0.05);
+    }
+
+    .lesson-item.completed {
+      color: #059669;
+    }
+
+    .lesson-item.locked {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Center panel: video/content */
+    .classroom-main {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .video-player-box {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-mock-bg {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      gap: 12px;
+    }
+
+    .play-btn-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #FFF;
+      cursor: pointer;
+      box-shadow: var(--glow-red);
+      transition: all 0.3s ease;
+    }
+
+    .play-btn-circle:hover {
+      transform: scale(1.1);
+    }
+
+    .lesson-title-display {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .lesson-overview-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    /* Right panel: AI learning drawer */
+    .classroom-ai-side {
+      background: rgba(255, 255, 255, 0.45);
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .classroom-ai-header {
+      padding: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .classroom-ai-header i {
+      color: var(--secondary);
+      animation: pulse-ring 2s infinite;
+    }
+
+    .ai-chat-body {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-msg {
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+      max-width: 90%;
+    }
+
+    .ai-msg.bot {
+      background: #FFF;
+      color: var(--text-main);
+      border-left: 3px solid var(--secondary);
+      align-self: flex-start;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .ai-msg.user {
+      background: var(--secondary);
+      color: #FFF;
+      align-self: flex-end;
+    }
+
+    .ai-chip-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .ai-prompt-chip {
+      background: #FFF;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      color: var(--secondary);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ai-prompt-chip:hover {
+      background: var(--secondary);
+      color: #FFF;
+    }
+
+    .ai-chat-input-box {
+      padding: 12px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 8px;
+    }
+
+    .ai-chat-input {
+      flex-grow: 1;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .ai-chat-send-btn {
+      background: var(--secondary);
+      color: #FFF;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .ai-chat-send-btn:hover {
+      background: var(--secondary-hover);
+    }
+
+    /* ================= TAB 4: CERTIFICATES ================= */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .cert-thumbnail-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: var(--glass-shadow);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .cert-thumbnail-card:hover {
+      transform: scale(1.03);
+    }
+
+    .cert-mock-frame {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #FFF 0%, #F1F5F9 100%);
+      border: 6px double #CBD5E1;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .cert-mock-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .cert-mock-subtitle {
+      font-size: 8px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Buttons */
+    .btn-primary-red {
+      background: var(--primary);
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary-red:hover {
+      background: var(--primary-hover);
+      box-shadow: var(--glow-red);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary-hover);
+      box-shadow: var(--glow-purple);
+    }
+
+    /* Celebration & Modal overlays */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #FFF;
+      border-radius: 28px;
+      padding: 32px;
+      width: 90%;
+      max-width: 580px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      animation: spring-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #F1F5F9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    /* Confetti implementation in pure JS */
+    .confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2000;
+      display: none;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fade-reveal {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes spring-up {
+      from {
+        opacity: 0;
+        transform: scale(0.85) translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 23, 68, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 23, 68, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <a href="index.html" class="brand-logo">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> EMPOWHER
+    </a>
+    <ul class="sidebar-menu">
+      <li class="sidebar-item">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home Dashboard</a>
+      </li>
+      <li class="sidebar-item">
+        <a href="schemes.html"><i class="fa-solid fa-building-columns"></i> Govt Schemes</a>
+      </li>
+      <li class="sidebar-item">
+        <a href="financial_benefits.html"><i class="fa-solid fa-indian-rupee-sign"></i> Welfare Benefits</a>
+      </li>
+      <li class="sidebar-item">
+        <a href="jobs.html"><i class="fa-solid fa-briefcase"></i> Female Jobs</a>
+      </li>
+      <li class="sidebar-item active">
+        <a href="courses.html"><i class="fa-solid fa-graduation-cap"></i> Learning Hub</a>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <div class="profile-avatar" id="avatarLetter">A</div>
+        <div class="profile-info">
+          <div class="profile-name" id="userNameLabel">Ananya</div>
+          <div class="profile-role">Level 12 Skill Builder</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Screen Area -->
+  <main class="main-content">
+    
+    <!-- Top Nav bar -->
+    <header class="top-navbar">
+      <div class="breadcrumb">Learning Ecosystem / <span id="viewSubtitleName">Discover</span></div>
+      
+      <div class="top-widgets">
+        <div class="streak-widget">
+          <i class="fa-solid fa-fire"></i> <span id="streakWidgetVal">12</span> Day Streak
+        </div>
+        <div class="level-widget">
+          <i class="fa-solid fa-award"></i> Level <span id="levelWidgetVal">12</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Bar navigation -->
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="dashboard">
+        <i class="fa-solid fa-chart-line"></i> Dashboard & Path
+      </button>
+      <button class="tab-btn" data-tab="catalog">
+        <i class="fa-solid fa-magnifying-glass"></i> Browse Catalog
+      </button>
+      <button class="tab-btn" data-tab="classroom" id="navClassroomBtn" style="display: none;">
+        <i class="fa-solid fa-video"></i> Classroom
+      </button>
+      <button class="tab-btn" data-tab="certificates">
+        <i class="fa-solid fa-certificate"></i> My Certificates (<span id="certsCount">4</span>)
+      </button>
+    </nav>
+
+    <!-- ================= VIEW 1: DASHBOARD & ROADMAP ================= -->
+    <div class="tab-view active" id="viewDashboard">
+      <div class="hub-grid">
+        
+        <!-- Stats panel -->
+        <div class="stats-card-container">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div class="stat-val" id="statEnrolled">12</div>
+            <div class="stat-label">Courses Enrolled</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="stat-val" id="statCompleted">5</div>
+            <div class="stat-label">Courses Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="stat-val" id="statHours">48h</div>
+            <div class="stat-label">Learning Hours</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="stat-val" id="statCertifications">4</div>
+            <div class="stat-label">Certificates Earned</div>
+          </div>
+        </div>
+
+        <!-- Left col panels -->
+        <div class="dashboard-left-col">
+          
+          <!-- Visual Learning Path Roadmap -->
+          <div class="hub-panel">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-route" style="color: var(--primary);"></i> Your Visual Learning Path</h3>
+              <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">DISCOVER TO EARN</span>
+            </div>
+            
+            <div class="roadmap-track">
+              <div class="roadmap-line"></div>
+              <div class="roadmap-progress-line" id="roadmapProgressLine"></div>
+              
+              <div class="roadmap-node completed" title="Discover Matches">
+                <div class="node-circle"><i class="fa-solid fa-eye"></i></div>
+                <span class="node-label">Discover</span>
+              </div>
+              <div class="roadmap-node completed" title="Base Foundations">
+                <div class="node-circle"><i class="fa-solid fa-seedling"></i></div>
+                <span class="node-label">Foundations</span>
+              </div>
+              <div class="roadmap-node active" title="Active Skill Building">
+                <div class="node-circle"><i class="fa-solid fa-gears"></i></div>
+                <span class="node-label">Skills</span>
+              </div>
+              <div class="roadmap-node" title="Practice Projects">
+                <div class="node-circle"><i class="fa-solid fa-diagram-project"></i></div>
+                <span class="node-label">Projects</span>
+              </div>
+              <div class="roadmap-node" title="Certification exams">
+                <div class="node-circle"><i class="fa-solid fa-certificate"></i></div>
+                <span class="node-label">Certify</span>
+              </div>
+              <div class="roadmap-node" title="Job Match Opportunities">
+                <div class="node-circle"><i class="fa-solid fa-briefcase"></i></div>
+                <span class="node-label">Job Match</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills graph & analytics -->
+          <div class="hub-panel">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-chart-simple" style="color: var(--secondary);"></i> Interactive Skill Graph</h3>
+              <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">ACTIVE SKILLS IN PROFILE</span>
+            </div>
+
+            <!-- Skill Row 1: Python -->
+            <div class="skill-progress-bar" onclick="animateSkillRow(this, 'spin')">
+              <div class="skill-progress-row">
+                <div class="skill-icon-box" style="background: rgba(37, 117, 196, 0.15); color: #2575C4;">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <div class="skill-body">
+                  <div class="skill-info">
+                    <span>Python Programming</span>
+                    <span>92%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-details-pane">
+                <strong>🎯 Career Track:</strong> Data Scientist, ML Engineer<br>
+                <strong>✓ Projects Completed:</strong> 4 verified coding portfolios<br>
+                <strong>💡 Next Recommendation:</strong> <a href="courses.html?tab=catalog" style="color: var(--primary); text-decoration: none; font-weight: 700;">Generative AI Course</a>
+              </div>
+            </div>
+
+            <!-- Skill Row 2: SQL -->
+            <div class="skill-progress-bar" onclick="animateSkillRow(this, 'bounce')">
+              <div class="skill-progress-row">
+                <div class="skill-icon-box" style="background: rgba(0, 184, 148, 0.15); color: #00B894;">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="skill-body">
+                  <div class="skill-info">
+                    <span>SQL & Database Management</span>
+                    <span>78%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-details-pane">
+                <strong>🎯 Career Track:</strong> Business Analyst, Data Architect<br>
+                <strong>✓ Projects Completed:</strong> 2 database schemas deployed<br>
+                <strong>💡 Next Recommendation:</strong> <a href="courses.html?tab=catalog" style="color: var(--primary); text-decoration: none; font-weight: 700;">SQL Masterclass</a>
+              </div>
+            </div>
+
+            <!-- Skill Row 3: React -->
+            <div class="skill-progress-bar" onclick="animateSkillRow(this, 'spin')">
+              <div class="skill-progress-row">
+                <div class="skill-icon-box" style="background: rgba(97, 218, 251, 0.15); color: #0284C7;">
+                  <i class="fa-brands fa-react"></i>
+                </div>
+                <div class="skill-body">
+                  <div class="skill-info">
+                    <span>React.js Development</span>
+                    <span>65%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-details-pane">
+                <strong>🎯 Career Track:</strong> Frontend Engineer, UI Developer<br>
+                <strong>✓ Projects Completed:</strong> 1 interactive Single Page App<br>
+                <strong>💡 Next Recommendation:</strong> <a href="courses.html?tab=catalog" style="color: var(--primary); text-decoration: none; font-weight: 700;">React Hooks Course</a>
+              </div>
+            </div>
+
+            <!-- Skill Row 4: Machine Learning -->
+            <div class="skill-progress-bar" onclick="animateSkillRow(this, 'pulse')">
+              <div class="skill-progress-row">
+                <div class="skill-icon-box" style="background: rgba(124, 58, 237, 0.15); color: #7C3AED;">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="skill-body">
+                  <div class="skill-info">
+                    <span>Machine Learning & Data Models</span>
+                    <span>58%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 58%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-details-pane">
+                <strong>🎯 Career Track:</strong> AI Researcher, ML Engineer<br>
+                <strong>✓ Projects Completed:</strong> 3 data cleansing frameworks<br>
+                <strong>💡 Next Recommendation:</strong> <a href="courses.html?tab=catalog" style="color: var(--primary); text-decoration: none; font-weight: 700;">Data Science & ML Course</a>
+              </div>
+            </div>
+
+            <!-- Skill Row 5: Communication -->
+            <div class="skill-progress-bar" onclick="animateSkillRow(this, 'shake')">
+              <div class="skill-progress-row">
+                <div class="skill-icon-box" style="background: rgba(255, 23, 68, 0.15); color: #FF1744;">
+                  <i class="fa-solid fa-comments"></i>
+                </div>
+                <div class="skill-body">
+                  <div class="skill-info">
+                    <span>Communication & Soft Skills</span>
+                    <span>88%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 88%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-details-pane">
+                <strong>🎯 Career Track:</strong> Team Manager, Project Lead<br>
+                <strong>✓ Achievements:</strong> Cleared 2 professional presentations<br>
+                <strong>💡 Next Recommendation:</strong> <a href="courses.html?tab=catalog" style="color: var(--primary); text-decoration: none; font-weight: 700;">Interview Prep Course</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right col panels -->
+        <div class="dashboard-right-col">
+          
+          <!-- Gamification level progress -->
+          <div class="hub-panel">
+            <div class="panel-title" style="margin-bottom: 16px;"><i class="fa-solid fa-trophy" style="color: #E2B93B;"></i> Level 12 Progression</div>
+            
+            <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-weight: 600;">
+              You are <span style="color: var(--text-main); font-weight: 700;">850 XP</span> away from unlocking Level 13!
+            </div>
+            
+            <div class="progress-track" style="height: 12px; border-radius: 6px; margin-bottom: 14px;">
+              <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            
+            <div style="font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; font-weight: 700;">
+              <span>LEVEL 12 (1,200 XP)</span>
+              <span>LEVEL 13 (2,050 XP)</span>
+            </div>
+          </div>
+
+          <!-- Streak calendar widget -->
+          <div class="hub-panel">
+            <div class="panel-header" style="margin-bottom: 10px;">
+              <div class="panel-title"><i class="fa-solid fa-calendar-days" style="color: var(--primary);"></i> Streak Tracker</div>
+              <span style="font-size: 11px; color: var(--primary); font-weight: 800;">🔥 12 Days</span>
+            </div>
+            
+            <p style="font-size: 11px; color: var(--text-muted); line-height: 1.4;">Daily target: 32 / 45 minutes completed today</p>
+            
+            <div class="calendar-grid">
+              <div class="calendar-day completed">
+                <span>M</span>
+                <div class="day-dot"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="calendar-day completed">
+                <span>T</span>
+                <div class="day-dot"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="calendar-day completed">
+                <span>W</span>
+                <div class="day-dot"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="calendar-day completed">
+                <span>T</span>
+                <div class="day-dot"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="calendar-day today">
+                <span>F</span>
+                <div class="day-dot">14</div>
+              </div>
+              <div class="calendar-day">
+                <span>S</span>
+                <div class="day-dot">15</div>
+              </div>
+              <div class="calendar-day">
+                <span>S</span>
+                <div class="day-dot">16</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Career matches widget -->
+          <div class="career-match-card">
+            <h4 style="font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-wand-magic-sparkles" style="color: #7C3AED;"></i> Next Career Steps
+            </h4>
+            <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Based on your updated skills audit:</p>
+            
+            <div class="career-match-item">
+              <div style="font-size: 12px; font-weight: 700;">Data Analyst</div>
+              <span class="match-tag">92% Match</span>
+            </div>
+            <div class="career-match-item">
+              <div style="font-size: 12px; font-weight: 700;">Business Analyst</div>
+              <span class="match-tag">81% Match</span>
+            </div>
+            
+            <button class="btn-primary-red" style="width: 100%; margin-top: 14px; padding: 10px; font-size: 12px; justify-content: center;" onclick="window.location.href='jobs.html'">
+              Explore Job Opportunities <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= VIEW 2: BROWSE CATALOG ================= -->
+    <div class="tab-view" id="viewCatalog">
+      
+      <!-- Catalog Search Filter system -->
+      <div class="catalog-filters">
+        <div class="search-row">
+          <div class="search-input-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="search-bar" id="courseSearchInput" placeholder="Search Python, Java, AI, Soft Skills...">
+          </div>
+          <button class="btn-secondary" id="searchBtn"><i class="fa-solid fa-sliders"></i> Filters</button>
+        </div>
+
+        <div class="filter-pill-container" id="categoryPillTrack">
+          <div class="filter-pill active" data-cat="all">All</div>
+          <div class="filter-pill" data-cat="programming">Programming</div>
+          <div class="filter-pill" data-cat="web development">Web Dev</div>
+          <div class="filter-pill" data-cat="ai">Artificial Intelligence</div>
+          <div class="filter-pill" data-cat="data">Data Science</div>
+          <div class="filter-pill" data-cat="cybersecurity">Cybersecurity</div>
+          <div class="filter-pill" data-cat="cloud">Cloud Computing</div>
+          <div class="filter-pill" data-cat="design">UI/UX Design</div>
+          <div class="filter-pill" data-cat="finance">Finance & Savings</div>
+          <div class="filter-pill" data-cat="entrepreneurship">Entrepreneurship</div>
+          <div class="filter-pill" data-cat="career">Soft Skills</div>
+          <div class="filter-pill" data-cat="income">Remote Work</div>
+        </div>
+
+        <div class="dropdown-filters">
+          <select class="filter-select" id="levelSelect">
+            <option value="all">Any Difficulty</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+          
+          <select class="filter-select" id="certSelect">
+            <option value="all">Any Certification</option>
+            <option value="true">Certificate Included</option>
+          </select>
+
+          <select class="filter-select" id="typeSelect">
+            <option value="all">Any Price</option>
+            <option value="free">Free Courses</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Catalog Cards Grid -->
+      <div class="courses-grid" id="catalogGridTrack">
+        <!-- Javascript renders 30 premium courses cards here -->
+      </div>
+
+    </div>
+
+    <!-- ================= VIEW 3: CLASSROOM LESSON INTERFACE ================= -->
+    <div class="tab-view" id="viewClassroom">
+      <div class="classroom-layout">
+        
+        <!-- Left: module lesson list navigator -->
+        <div class="classroom-nav">
+          <div class="classroom-nav-header">
+            <div class="classroom-nav-title" id="classNavTitle">Python Programming</div>
+            <div class="classroom-nav-subtitle" id="classNavProgress">12 of 24 lessons complete</div>
+          </div>
+          
+          <div class="module-list" id="classModuleList">
+            <!-- Module details loaded dynamically -->
+          </div>
+        </div>
+
+        <!-- Center: video display window & controls -->
+        <div class="classroom-main">
+          <div class="video-player-box">
+            <div class="video-mock-bg">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              <div style="font-size: 14px; font-weight: 700; opacity: 0.9;" id="videoMockLabel">Module 3, Lesson 8: Function Scope Rules</div>
+            </div>
+          </div>
+
+          <h2 class="lesson-title-display" id="lessonDisplayTitle">Lesson 8: Function Scope & Execution Rules</h2>
+          <p class="lesson-overview-text" id="lessonDisplayOverview">
+            Learn the scope rules in Python including local, enclosed, global, and built-in namespace checks. We explore variable lifetime, arguments mapping, and return closures.
+          </p>
+
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px;">
+            <button class="btn-secondary" id="btnPrevLesson"><i class="fa-solid fa-chevron-left"></i> Previous Lesson</button>
+            <button class="btn-primary-red" id="btnCompleteLesson">Mark Lesson Complete & Next <i class="fa-solid fa-check"></i></button>
+          </div>
+        </div>
+
+        <!-- Right: AI interactive assistant chat side panel -->
+        <div class="classroom-ai-side">
+          <div class="classroom-ai-header">
+            <i class="fa-solid fa-robot"></i>
+            <div>
+              <div style="font-size: 12px; font-weight: 800; color: var(--text-main);">Ask EMPOWER AI</div>
+              <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">Real-time learning helper</div>
+            </div>
+          </div>
+
+          <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-msg bot">
+              Hi Ananya! 👋 I can explain scope rules, provide quiz questions, or summarize this lesson. What would you like to do?
+            </div>
+          </div>
+
+          <div class="ai-chip-suggestions">
+            <div class="ai-prompt-chip" data-query="Explain the concept of local vs global scope simply.">Explain Scope</div>
+            <div class="ai-prompt-chip" data-query="Give me a practice code snippet to test scope rules.">Practice Code</div>
+            <div class="ai-prompt-chip" data-query="Summarize this lesson.">Summarize</div>
+          </div>
+
+          <div class="ai-chat-input-box">
+            <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Ask details about scope...">
+            <button class="ai-chat-send-btn" id="aiChatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= VIEW 4: CERTIFICATES GALLERY ================= -->
+    <div class="tab-view" id="viewCertificates">
+      <div class="certs-grid" id="certsGridTrack">
+        <!-- Render completed certificates dynamically -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= OVERLAY 1: COURSE DETAIL MODAL ================= -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-card">
+      <button class="modal-close" id="detailCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
+        <div style="width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 32px;" id="modalCourseIcon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div>
+          <span class="modal-badge" id="modalCourseCat" style="background: rgba(255, 23, 68, 0.1); color: var(--primary); font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 20px;">AI & DATA</span>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--text-main); margin-top: 6px;" id="modalCourseTitle">Generative AI & Prompt Engineering</h2>
+        </div>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 18px; border-radius: 16px; font-size: 13px; line-height: 1.5; color: var(--text-muted); margin-bottom: 20px;" id="modalCourseDesc">
+        Learn how modern generative AI models work, their safety measures, and how to write effective prompts to extract logical inferences.
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; margin-bottom: 24px;">
+        <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 10px; border-radius: 12px;">
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">DURATION</div>
+          <div style="font-size: 14px; font-weight: 800; color: var(--text-main); margin-top: 2px;" id="modalCourseDuration">8 Weeks</div>
+        </div>
+        <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 10px; border-radius: 12px;">
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">LESSONS</div>
+          <div style="font-size: 14px; font-weight: 800; color: var(--text-main); margin-top: 2px;" id="modalCourseLessons">42 Lessons</div>
+        </div>
+        <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 10px; border-radius: 12px;">
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">DIFFICULTY</div>
+          <div style="font-size: 14px; font-weight: 800; color: var(--text-main); margin-top: 2px;" id="modalCourseLevel">Intermediate</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: flex-end;">
+        <button class="btn-secondary" style="background: #E2E8F0; color: var(--text-main);" id="modalCancelBtn">Cancel</button>
+        <button class="btn-primary-red" id="modalStartBtn">Start Course Now <i class="fa-solid fa-circle-play"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= OVERLAY 2: COURSE CELEBRATION MODAL ================= -->
+  <div class="modal-overlay" id="celebrationModal">
+    <div class="modal-card" style="text-align: center; max-width: 500px;">
+      <button class="modal-close" id="celebCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="font-size: 56px; margin-bottom: 16px;">🎉</div>
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: var(--text-main);">Course Completed!</h2>
+      <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;" id="celebCourseName">Generative AI & Prompt Engineering</p>
+      
+      <div style="background: #FFF9DB; border: 1px solid #FFE066; border-radius: 16px; padding: 14px; font-weight: 800; color: #F59F00; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin: 20px 0;">
+        <i class="fa-solid fa-medal"></i> CERTIFICATE UNLOCKED
+      </div>
+
+      <!-- Certificate Mock Frame in modal -->
+      <div class="cert-mock-frame" style="width: 100%; border-width: 4px; padding: 16px; margin-bottom: 24px;">
+        <div class="cert-mock-title">EMPOWHER ACADEMY</div>
+        <div style="font-size: 14px; font-weight: 800; color: var(--text-main); margin-top: 8px;" id="celebStudentName">Ananya</div>
+        <div style="font-size: 9px; color: var(--text-muted); margin-top: 4px;">has successfully completed</div>
+        <div style="font-size: 11px; font-weight: 700; color: var(--secondary); margin-top: 4px;" id="celebCourseTitle">Generative AI & Prompt Engineering</div>
+        <div style="font-size: 8px; color: var(--text-muted); margin-top: 6px;">AI-Verified Learning Achievement</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button class="btn-primary-red" style="justify-content: center;" id="btnViewCertInTab">View & Print Certificate <i class="fa-solid fa-file-pdf"></i></button>
+        <button class="btn-secondary" style="background: #E2E8F0; color: var(--text-main);" id="btnContinueHub">Continue to Learning Hub</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti particle overlay canvas -->
+  <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+
+  <script>
+    // Global function for skill progress click animations and detail toggles
+    window.animateSkillRow = function(element, animationType) {
+      const iconBox = element.querySelector('.skill-icon-box');
+      const detailsPane = element.querySelector('.skill-details-pane');
+      
+      if (iconBox) {
+        const animClass = animationType + '-animation';
+        iconBox.classList.add(animClass);
+        setTimeout(() => {
+          iconBox.classList.remove(animClass);
+        }, 600);
+      }
+      
+      if (detailsPane) {
+        detailsPane.classList.toggle('active');
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Global profile & matching states
+      const userProfile = JSON.parse(localStorage.getItem('userProfile')) || { basic: { name: "Ananya" }, status: "Student" };
+      const matchedData = JSON.parse(localStorage.getItem('matchedData')) || { matchedCourses: [] };
+
+      // Set user details
+      document.getElementById('userNameLabel').textContent = userProfile.basic.name || "Ananya";
+      document.getElementById('avatarLetter').textContent = (userProfile.basic.name || "A")[0].toUpperCase();
+      document.getElementById('celebStudentName').textContent = userProfile.basic.name || "Ananya";
+
+      // Tab switcher logic
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabViews = document.querySelectorAll(".tab-view");
+      const viewSubtitle = document.getElementById("viewSubtitleName");
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const targetTab = btn.getAttribute("data-tab");
+          
+          tabBtns.forEach(b => b.classList.remove("active"));
+          tabViews.forEach(v => v.classList.remove("active"));
+          
+          btn.classList.add("active");
+          const activeView = document.getElementById("view" + targetTab.charAt(0).toUpperCase() + targetTab.slice(1));
+          if (activeView) activeView.classList.add("active");
+          
+          viewSubtitle.textContent = btn.innerText.trim();
+        });
+      });
+
+      // Check query params to switch tabs on page load
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab');
+      if (tabParam) {
+        const matchingBtn = document.querySelector(`.tab-btn[data-tab="${tabParam}"]`);
+        if (matchingBtn) {
+          matchingBtn.click();
+        }
+      }
+
+      // Filter catalog variables
+      let allCourses = [];
+      let currentCategory = "all";
+      let searchQuery = "";
+      
+      const catalogGridTrack = document.getElementById("catalogGridTrack");
+      const courseSearchInput = document.getElementById("courseSearchInput");
+      const levelSelect = document.getElementById("levelSelect");
+      const certSelect = document.getElementById("certSelect");
+      const typeSelect = document.getElementById("typeSelect");
+
+      // Load courses from JSON file
+      fetch("courses.json?t=" + Date.now())
+        .then(res => res.json())
+        .then(data => {
+          allCourses = data.courses || [];
+          renderCatalog();
+          renderStats();
+          renderCertificatesGallery();
+        })
+        .catch(err => console.error("Error loading courses catalog database:", err));
+
+      function renderStats() {
+        const enrolled = allCourses.filter(c => c.enrolled).length;
+        const completed = allCourses.filter(c => c.progress === 100).length;
+        
+        document.getElementById('statEnrolled').textContent = enrolled;
+        document.getElementById('statCompleted').textContent = completed;
+        document.getElementById('statCertifications').textContent = completed;
+        document.getElementById('certsCount').textContent = completed;
+      }
+
+      function renderCatalog() {
+        if (!catalogGridTrack) return;
+        catalogGridTrack.innerHTML = '';
+
+        const matchedCourses = matchedData.matchedCourses || [];
+
+        const filtered = allCourses.filter(c => {
+          // Category pill filter
+          let matchCat = false;
+          if (currentCategory === 'all') matchCat = true;
+          else if (c.category.toLowerCase().includes(currentCategory)) matchCat = true;
+
+          // Search query check
+          const q = searchQuery.toLowerCase();
+          const matchSearch = !q || (
+            c.title.toLowerCase().includes(q) ||
+            c.description.toLowerCase().includes(q) ||
+            c.skills.some(s => s.toLowerCase().includes(q))
+          );
+
+          // Level drop filter
+          const levelVal = levelSelect.value;
+          const matchLevel = (levelVal === 'all') || (c.level === levelVal);
+
+          // Cert filter
+          const certVal = certSelect.value;
+          const matchCert = (certVal === 'all') || (c.certificate.toString() === certVal);
+
+          // Price track filter
+          const typeVal = typeSelect.value;
+          const matchType = (typeVal === 'all') || (typeVal === 'free' && c.progress === 100); // mock free parameter
+
+          return matchCat && matchSearch && matchLevel && matchCert && matchType;
+        });
+
+        // Sort AI recommendations to the top
+        filtered.sort((a, b) => {
+          const aMatch = matchedCourses.includes(a.id) ? 1 : 0;
+          const bMatch = matchedCourses.includes(b.id) ? 1 : 0;
+          return bMatch - aMatch;
+        });
+
+        if (filtered.length === 0) {
+          catalogGridTrack.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-muted);">
+              <i class="fa-solid fa-folder-open" style="font-size: 40px; margin-bottom: 12px; opacity: 0.5;"></i>
+              <h3>No Courses Found</h3>
+              <p>Try searching with another keyword or selecting another filter pill.</p>
+            </div>
+          `;
+          return;
+        }
+
+        filtered.forEach(c => {
+          const card = document.createElement('div');
+          card.className = 'course-card';
+          
+          const isMatched = matchedCourses.includes(c.id);
+          const aiMatchHtml = isMatched ? `<span class="ai-match-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AI MATCH 94%</span>` : '';
+          
+          const skillsHtml = c.skills.map(s => `<span class="skill-badge">${s}</span>`).join('');
+          
+          // Determine progress bar or details
+          let progressHtml = `
+            <div class="course-meta-grid">
+              <div class="meta-item"><i class="fa-solid fa-calendar"></i> ${c.duration}</div>
+              <div class="meta-item"><i class="fa-solid fa-list-check"></i> ${c.lessons} Lessons</div>
+            </div>
+          `;
+          
+          if (c.enrolled) {
+            progressHtml = `
+              <div class="progress-slider">
+                <div class="progress-slider-info">
+                  <span>Progress</span>
+                  <span>${c.progress}%</span>
+                </div>
+                <div class="progress-track" style="height: 6px;">
+                  <div class="progress-fill" style="width: ${c.progress}%; background: var(--primary);"></div>
+                </div>
+              </div>
+            `;
+          }
+
+          const btnText = c.enrolled ? (c.progress === 100 ? "Review Certificate" : "Continue Learning →") : "Start Course";
+
+          card.innerHTML = `
+            <div>
+              <div class="course-thumb-container">
+                <div class="thumb-visual-art"><i class="fa-solid fa-laptop-code"></i></div>
+                <span class="course-category-badge">${c.category}</span>
+                ${aiMatchHtml}
+              </div>
+              
+              <h3 class="course-card-title">${c.title}</h3>
+              <p class="course-card-desc">${c.description}</p>
+              
+              ${progressHtml}
+              
+              <div class="course-skills-list">
+                ${skillsHtml}
+              </div>
+            </div>
+            
+            <div class="course-card-footer">
+              <div class="instructor-box">
+                <div class="instructor-avatar">${c.instructor[0]}</div>
+                <span class="instructor-name">${c.instructor}</span>
+              </div>
+              <span class="course-rating"><i class="fa-solid fa-star"></i> ${c.rating}</span>
+            </div>
+            
+            <button class="btn-primary-red" style="width: 100%; margin-top: 14px; justify-content: center; font-size: 12px; font-weight: 800;">
+              ${btnText}
+            </button>
+          `;
+
+          // Card click details trigger
+          card.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+              startClassroomActiveCourse(c);
+            } else {
+              openCourseDetailModal(c);
+            }
+          });
+
+          catalogGridTrack.appendChild(card);
+        });
+      }
+
+      // Search & category triggers
+      if (courseSearchInput) {
+        courseSearchInput.addEventListener("input", (e) => {
+          searchQuery = e.target.value;
+          renderCatalog();
+        });
+      }
+
+      const categoryPills = document.querySelectorAll(".filter-pill");
+      categoryPills.forEach(pill => {
+        pill.addEventListener("click", () => {
+          categoryPills.forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+          currentCategory = pill.getAttribute("data-cat");
+          renderCatalog();
+        });
+      });
+
+      levelSelect.addEventListener("change", renderCatalog);
+      certSelect.addEventListener("change", renderCatalog);
+      typeSelect.addEventListener("change", renderCatalog);
+
+      // ================= CLASSROOM CONTROLLERS =================
+      let activeCourse = null;
+      let activeLessonIndex = 0;
+
+      const navClassroomBtn = document.getElementById("navClassroomBtn");
+      const classNavTitle = document.getElementById("classNavTitle");
+      const classNavProgress = document.getElementById("classNavProgress");
+      const classModuleList = document.getElementById("classModuleList");
+      const lessonDisplayTitle = document.getElementById("lessonDisplayTitle");
+      const lessonDisplayOverview = document.getElementById("lessonDisplayOverview");
+      const videoMockLabel = document.getElementById("videoMockLabel");
+
+      function startClassroomActiveCourse(course) {
+        activeCourse = course;
+        
+        // Show Classroom tab button
+        navClassroomBtn.style.display = "flex";
+        navClassroomBtn.click(); // navigate to classroom view
+
+        classNavTitle.textContent = course.title;
+        classNavProgress.textContent = `${course.progress === 100 ? course.lessons : Math.round(course.lessons * (course.progress / 100))} of ${course.lessons} completed`;
+
+        // Render mock syllabus modules
+        renderClassSyllabus(course);
+      }
+
+      function renderClassSyllabus(course) {
+        classModuleList.innerHTML = '';
+        
+        const modules = [
+          {
+            name: "Module 1: Foundations & Scope",
+            lessons: ["1. Introduction to Core Variables", "2. Data Structures Overview", "3. Control Blocks & Logic Flow"]
+          },
+          {
+            name: "Module 2: Advanced Design Patterns",
+            lessons: ["4. Methods & Invocation", "5. Custom Class Instances", "6. Asynchronous Pipelines"]
+          }
+        ];
+
+        modules.forEach((mod, modIdx) => {
+          const div = document.createElement("div");
+          div.className = "module-item";
+          
+          let lessonsHtml = '';
+          mod.lessons.forEach((l, lesIdx) => {
+            const index = modIdx * 3 + lesIdx;
+            const completed = index < Math.round(course.lessons * (course.progress / 100));
+            const active = index === activeLessonIndex;
+            
+            const checkIcon = completed ? `<i class="fa-solid fa-circle-check" style="color: #059669;"></i>` : `<i class="fa-regular fa-circle"></i>`;
+            const activeClass = active ? 'active' : '';
+            
+            lessonsHtml += `
+              <div class="lesson-item ${activeClass} ${completed ? 'completed' : ''}" data-index="${index}">
+                ${checkIcon} <span>${l}</span>
+              </div>
+            `;
+          });
+
+          div.innerHTML = `
+            <div class="module-title">${mod.name}</div>
+            ${lessonsHtml}
+          `;
+
+          // Bind lesson click events
+          div.querySelectorAll(".lesson-item").forEach(item => {
+            item.addEventListener("click", () => {
+              activeLessonIndex = parseInt(item.getAttribute("data-index"));
+              const text = item.querySelector("span").textContent;
+              
+              lessonDisplayTitle.textContent = text;
+              videoMockLabel.textContent = text;
+              
+              renderClassSyllabus(course);
+            });
+          });
+
+          classModuleList.appendChild(div);
+        });
+      }
+
+      // Complete lesson triggers checkmark confetti
+      const btnCompleteLesson = document.getElementById("btnCompleteLesson");
+      btnCompleteLesson.addEventListener("click", () => {
+        if (!activeCourse) return;
+
+        // Play spring checkmark sound/animation triggers
+        triggerConfettiEffect();
+        
+        // Increase progress
+        activeCourse.progress = Math.min(100, activeCourse.progress + 15);
+        if (activeCourse.progress === 100) {
+          triggerCourseCompletionModal(activeCourse);
+        } else {
+          // Advance lesson
+          activeLessonIndex++;
+          renderClassSyllabus(activeCourse);
+          renderCatalog();
+          renderStats();
+        }
+      });
+
+      // ================= AI LEARNING ASSISTANT DRAWERS =================
+      const aiChatBody = document.getElementById("aiChatBody");
+      const aiChatInput = document.getElementById("aiChatInput");
+      const aiChatSendBtn = document.getElementById("aiChatSendBtn");
+      const aiPromptChips = document.querySelectorAll(".ai-prompt-chip");
+
+      function sendChatMessage(text) {
+        if (!text.trim()) return;
+
+        // User bubble
+        const userDiv = document.createElement("div");
+        userDiv.className = "ai-msg user";
+        userDiv.textContent = text;
+        aiChatBody.appendChild(userDiv);
+        aiChatBody.scrollTop = aiChatBody.scrollHeight;
+
+        aiChatInput.value = '';
+
+        // Bot typing answer
+        setTimeout(() => {
+          const botDiv = document.createElement("div");
+          botDiv.className = "ai-msg bot";
+          botDiv.innerHTML = `<strong>EMPOWER AI:</strong> Here is a detailed guide on scope rules for Python variables. Variables declared inside functions remain localized to their execution frame unless explicitly flagged <code>global</code> or <code>nonlocal</code>.`;
+          aiChatBody.appendChild(botDiv);
+          aiChatBody.scrollTop = aiChatBody.scrollHeight;
+        }, 800);
+      }
+
+      aiChatSendBtn.addEventListener("click", () => sendChatMessage(aiChatInput.value));
+      aiChatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") sendChatMessage(aiChatInput.value);
+      });
+
+      aiPromptChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          sendChatMessage(chip.getAttribute("data-query"));
+        });
+      });
+
+      // ================= CERTIFICATES GALLERY =================
+      const certsGridTrack = document.getElementById("certsGridTrack");
+      
+      function renderCertificatesGallery() {
+        if (!certsGridTrack) return;
+        certsGridTrack.innerHTML = '';
+
+        const completedCourses = allCourses.filter(c => c.progress === 100);
+
+        if (completedCourses.length === 0) {
+          certsGridTrack.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-muted);">
+              <i class="fa-solid fa-award" style="font-size: 40px; margin-bottom: 12px; opacity: 0.5;"></i>
+              <h3>No Certificates Earned Yet</h3>
+              <p>Complete any course 100% to generate your university-verified digital certificate here!</p>
+            </div>
+          `;
+          return;
+        }
+
+        completedCourses.forEach(c => {
+          const card = document.createElement('div');
+          card.className = 'cert-thumbnail-card';
+
+          card.innerHTML = `
+            <div class="cert-mock-frame">
+              <div class="cert-mock-title">EMPOWHER CREDENTIAL</div>
+              <div style="font-size: 8px; font-weight: 700; color: var(--text-main); margin-top: 4px;">${userProfile.basic.name || "Ananya"}</div>
+              <div style="font-size: 6px; color: var(--text-muted); margin-top: 2px;">Completed ${c.title}</div>
+            </div>
+            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">${c.title}</h4>
+            <button class="btn-primary-red" style="padding: 6px 12px; font-size: 11px; width: 100%; justify-content: center;">
+              View Certificate <i class="fa-solid fa-circle-check"></i>
+            </button>
+          `;
+
+          card.querySelector("button").addEventListener("click", () => {
+            triggerCourseCompletionModal(c);
+          });
+
+          certsGridTrack.appendChild(card);
+        });
+      }
+
+      // ================= DETAILS MODAL CONTROLLERS =================
+      const detailModal = document.getElementById("detailModal");
+      const detailCloseBtn = document.getElementById("detailCloseBtn");
+      const modalCancelBtn = document.getElementById("modalCancelBtn");
+      const modalStartBtn = document.getElementById("modalStartBtn");
+
+      const modalCourseIcon = document.getElementById("modalCourseIcon");
+      const modalCourseCat = document.getElementById("modalCourseCat");
+      const modalCourseTitle = document.getElementById("modalCourseTitle");
+      const modalCourseDesc = document.getElementById("modalCourseDesc");
+      const modalCourseDuration = document.getElementById("modalCourseDuration");
+      const modalCourseLessons = document.getElementById("modalCourseLessons");
+      const modalCourseLevel = document.getElementById("modalCourseLevel");
+
+      let selectedDetailCourse = null;
+
+      function openCourseDetailModal(course) {
+        selectedDetailCourse = course;
+        detailModal.classList.add("active");
+
+        modalCourseTitle.textContent = course.title;
+        modalCourseCat.textContent = course.category;
+        modalCourseDesc.textContent = course.description;
+        modalCourseDuration.textContent = course.duration;
+        modalCourseLessons.textContent = `${course.lessons} Lessons`;
+        modalCourseLevel.textContent = course.level;
+
+        modalStartBtn.textContent = course.enrolled ? "Resume Course Now" : "Enroll & Start Now";
+      }
+
+      function closeCourseDetailModal() {
+        detailModal.classList.remove("active");
+      }
+
+      detailCloseBtn.addEventListener("click", closeCourseDetailModal);
+      modalCancelBtn.addEventListener("click", closeCourseDetailModal);
+      
+      modalStartBtn.addEventListener("click", () => {
+        if (selectedDetailCourse) {
+          selectedDetailCourse.enrolled = true;
+          closeCourseDetailModal();
+          startClassroomActiveCourse(selectedDetailCourse);
+          renderCatalog();
+          renderStats();
+        }
+      });
+
+      // Close modals when clicking outside window
+      detailModal.addEventListener("click", (e) => {
+        if (e.target === detailModal) closeCourseDetailModal();
+      });
+
+      // ================= CELEBRATION MODAL CONTROLLERS =================
+      const celebrationModal = document.getElementById("celebrationModal");
+      const celebCloseBtn = document.getElementById("celebCloseBtn");
+      const btnContinueHub = document.getElementById("btnContinueHub");
+      const btnViewCertInTab = document.getElementById("btnViewCertInTab");
+      const celebCourseTitle = document.getElementById("celebCourseTitle");
+      const celebCourseName = document.getElementById("celebCourseName");
+
+      function triggerCourseCompletionModal(course) {
+        celebrationModal.classList.add("active");
+        celebCourseTitle.textContent = course.title;
+        celebCourseName.textContent = course.title;
+        triggerConfettiEffect();
+      }
+
+      function closeCelebrationModal() {
+        celebrationModal.classList.remove("active");
+      }
+
+      celebCloseBtn.addEventListener("click", closeCelebrationModal);
+      btnContinueHub.addEventListener("click", closeCelebrationModal);
+      btnViewCertInTab.addEventListener("click", () => {
+        alert("Preparing printable high-resolution PDF certificate verification...");
+        closeCelebrationModal();
+      });
+
+      celebrationModal.addEventListener("click", (e) => {
+        if (e.target === celebrationModal) closeCelebrationModal();
+      });
+
+      // ================= CONFETTI CANVAS IMPLEMENTATION =================
+      const canvas = document.getElementById("confettiCanvas");
+      const ctx = canvas.getContext("2d");
+      let confettiActive = false;
+      let particles = [];
+
+      function triggerConfettiEffect() {
+        canvas.style.display = "block";
+        confettiActive = true;
+        particles = [];
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        for (let i = 0; i < 100; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            r: Math.random() * 6 + 4,
+            d: Math.random() * canvas.height,
+            color: `hsl(${Math.random() * 360}, 90%, 60%)`,
+            tilt: Math.random() * 10 - 5,
+            tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+            tiltAngle: 0
+          });
+        }
+
+        setTimeout(() => {
+          confettiActive = false;
+          canvas.style.display = "none";
+        }, 2200);
+
+        requestAnimationFrame(drawConfetti);
+      }
+
+      function drawConfetti() {
+        if (!confettiActive) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p, idx) => {
+          p.tiltAngle += p.tiltAngleIncremental;
+          p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+          p.x += Math.sin(p.tiltAngle);
+          p.tilt = Math.sin(p.tiltAngle - idx / 3) * 15;
+
+          ctx.beginPath();
+          ctx.lineWidth = p.r;
+          ctx.strokeStyle = p.color;
+          ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+          ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+          ctx.stroke();
+        });
+
+        requestAnimationFrame(drawConfetti);
+      }
+    });
+  </script>
+</body>
+
+</html>

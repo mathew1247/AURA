@@ -25,9 +25,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, "../frontend")));
-app.use("/frontend", express.static(path.join(__dirname, "../frontend")));
+// Serve frontend static files (supporting clean URLs without .html extension)
+app.use(express.static(path.join(__dirname, "../frontend"), { extensions: ["html", "htm"] }));
+app.use("/frontend", express.static(path.join(__dirname, "../frontend"), { extensions: ["html", "htm"] }));
 
 // Initialize Groq client
 const groq = new Groq({
@@ -172,9 +172,13 @@ app.get("/health", (req, res) => {
   });
 });
 
-// Fallback route to serve index.html for unmatched GET requests
+// Fallback route to serve index.html for unmatched GET requests (supporting Single Page Application routing)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+  if (req.accepts("html")) {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+  } else {
+    res.status(404).end();
+  }
 });
 
 const PORT = process.env.PORT || 5000;

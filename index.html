@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Check if user has completed onboarding
+    const userStatus = localStorage.getItem('userStatus');
+    const userProfile = localStorage.getItem('userProfile');
+
+    if (userStatus && userProfile) {
+      // Redirect to dashboard
+      window.location.href = 'frontend/index.html';
+    } else {
+      // Redirect to onboarding
+      window.location.href = 'frontend/onboarding.html';
+    }
+  </script>
+</head>
+<body>
+  <p style="font-family: sans-serif; text-align: center; margin-top: 50px;">Redirecting to Empowher...</p>
+</body>
+</html>

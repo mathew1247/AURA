@@ -421,6 +421,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Attach Close/Cancel Trigger Listeners for all custom Modals ---
+  const customModalCloseTriggers = [
+    { modal: document.getElementById('matchedSchemesModal'), triggers: ['matchedSchemesCloseBtn', 'matchedSchemesCancelBtn'] },
+    { modal: document.getElementById('skillGapModal'), triggers: ['skillGapCloseBtn', 'skillGapCancelBtn'] },
+    { modal: document.getElementById('jobMatchesModal'), triggers: ['jobMatchesCloseBtn', 'jobMatchesCancelBtn'] },
+    { modal: document.getElementById('legalHelplineModal'), triggers: ['legalHelplineCloseBtn', 'legalHelplineCancelBtn'] }
+  ];
+
+  customModalCloseTriggers.forEach(item => {
+    if (item.modal) {
+      item.triggers.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.addEventListener('click', () => {
+            item.modal.classList.remove('active');
+          });
+        }
+      });
+      // Close modal when clicking on the outside overlay
+      item.modal.addEventListener('click', (e) => {
+        if (e.target === item.modal) {
+          item.modal.classList.remove('active');
+        }
+      });
+    }
+  });
+
   // --- Show Schemes View in Main Dashboard ---
   function showGovernmentSchemesView() {
     const mainContent = document.querySelector('.dashboard-content');
@@ -545,18 +572,132 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Dynamic Personal Opportunities Renderer ---
+  function renderPersonalOpportunities() {
+    const matchedData = JSON.parse(localStorage.getItem('matchedData')) || null;
+    const popupSchemesList = document.getElementById('popupSchemesList');
+    const popupJobsList = document.getElementById('popupJobsList');
+    
+    if (!matchedSchemesModal) return;
+    
+    const titleSub = matchedSchemesModal.querySelector('.modal-scheme-sub');
+    if (titleSub && userProfile) {
+      const targetRolesStr = (userProfile.career && userProfile.career.target_roles) ? userProfile.career.target_roles.join(', ') : 'User';
+      titleSub.textContent = `Personalized matches for ${userProfile.basic.name || 'User'} (${userProfile.basic.age || 21} • ${userProfile.basic.district || 'Tamil Nadu'}, TN • ${targetRolesStr})`;
+    }
+
+    if (!matchedData) return;
+
+    // Update red and blue card counts
+    const schemeCardTag = matchedSchemesModal.querySelector('div[onclick*="popupSchemesList"] span');
+    if (schemeCardTag) {
+      schemeCardTag.textContent = `🏛️ ${matchedData.matchedSchemes.length} Matched Schemes`;
+    }
+    const jobCardTag = matchedSchemesModal.querySelector('div[onclick*="popupJobsList"] span');
+    if (jobCardTag) {
+      jobCardTag.textContent = `💼 ${matchedData.matchedJobs.length} New Openings`;
+    }
+
+    // Render schemes
+    if (popupSchemesList) {
+      popupSchemesList.innerHTML = `
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-building-columns" style="color: #FF1744;"></i> ${matchedData.matchedSchemes.length} Matched Government Welfare Schemes
+        </h4>
+      `;
+      
+      fetch('tamil_nadu_schemes.json')
+        .then(res => res.json())
+        .then(data => {
+          const schemes = data.schemes || [];
+          const matched = schemes.filter(s => matchedData.matchedSchemes.includes(s.id));
+          if (matched.length === 0) {
+            popupSchemesList.innerHTML += `<p style="font-size: 12px; color: #64748B; padding: 10px;">No exact matched schemes found. Try reviewing your profile.</p>`;
+          }
+          matched.forEach(scheme => {
+            const div = document.createElement('div');
+            div.style = "background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; margin-top: 8px;";
+            
+            let benefitText = 'Direct Welfare Aid';
+            if (scheme.Benefits && scheme.Benefits.length > 0) {
+              benefitText = scheme.Benefits[0];
+            }
+            
+            div.innerHTML = `
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: #0F172A;">${scheme.Name}</div>
+                <div style="font-size: 11px; color: #00B894; font-weight: 700;">🎁 ${benefitText.slice(0, 50)}...</div>
+              </div>
+              <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer; border-radius: 20px;">Apply</button>
+            `;
+            
+            const applyBtn = div.querySelector('button');
+            applyBtn.addEventListener('click', () => {
+              window.open(scheme['Official URL'] || 'https://penkalvi.tn.gov.in/', '_blank');
+            });
+            
+            popupSchemesList.appendChild(div);
+          });
+        });
+    }
+
+    // Render jobs
+    if (popupJobsList) {
+      popupJobsList.innerHTML = `
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-briefcase" style="color: #2563EB;"></i> ${matchedData.matchedJobs.length} Matched Female-Friendly Jobs
+        </h4>
+      `;
+      
+      fetch('jobs.json')
+        .then(res => res.json())
+        .then(data => {
+          const jobs = data.jobs || [];
+          const matched = jobs.filter(j => matchedData.matchedJobs.includes(j.job_id));
+          if (matched.length === 0) {
+            popupJobsList.innerHTML += `<p style="font-size: 12px; color: #64748B; padding: 10px;">No exact matched jobs found. Try reviewing your profile.</p>`;
+          }
+          matched.forEach(job => {
+            const div = document.createElement('div');
+            div.style = "background: #FFFFFF; padding: 12px 14px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; margin-top: 8px;";
+            
+            div.innerHTML = `
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: #0F172A;">${job.title} • ${job.company}</div>
+                <div style="font-size: 11px; color: #00B894; font-weight: 700;">💰 ${job.salary_range} • ${job.work_mode}</div>
+              </div>
+              <button class="btn-primary-red" style="padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer; border-radius: 20px; background: #2563EB; border-color: #2563EB;">Apply</button>
+            `;
+            
+            const applyBtn = div.querySelector('button');
+            applyBtn.addEventListener('click', () => {
+              window.open(job.application_url || 'https://www.zoho.com/careers/', '_blank');
+            });
+            
+            popupJobsList.appendChild(div);
+          });
+        });
+    }
+  }
+
   // --- Attach Triggers to Navigation & Recommendation Cards ---
   const matchedSchemesModal = document.getElementById('matchedSchemesModal');
   const skillGapModal = document.getElementById('skillGapModal');
   const jobMatchesModal = document.getElementById('jobMatchesModal');
   const legalHelplineModal = document.getElementById('legalHelplineModal');
 
+  // Load once initially
+  renderPersonalOpportunities();
+
   sidebarItems.forEach(item => {
     item.addEventListener('click', (e) => {
       const viewName = item.getAttribute('data-view');
       if (viewName === 'gov-schemes') {
         e.preventDefault();
-        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+        if (matchedSchemesModal) {
+          renderPersonalOpportunities();
+          matchedSchemesModal.classList.add('active');
+        }
       }
     });
   });
@@ -566,7 +707,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const tabName = item.getAttribute('data-tab');
       if (tabName === 'opportunities') {
         e.preventDefault();
-        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+        if (matchedSchemesModal) {
+          renderPersonalOpportunities();
+          matchedSchemesModal.classList.add('active');
+        }
       }
     });
   });
@@ -577,13 +721,22 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       const cardId = card.getAttribute('data-card-id');
       if (cardId === 'schemes' || !cardId) {
-        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+        if (matchedSchemesModal) {
+          renderPersonalOpportunities();
+          matchedSchemesModal.classList.add('active');
+        }
       } else if (cardId === 'skillgap') {
-        if (skillGapModal) skillGapModal.classList.add('active');
+        if (skillGapModal) {
+          skillGapModal.classList.add('active');
+        }
       } else if (cardId === 'job') {
-        if (jobMatchesModal) jobMatchesModal.classList.add('active');
+        if (jobMatchesModal) {
+          jobMatchesModal.classList.add('active');
+        }
       } else if (cardId === 'legal') {
-        if (legalHelplineModal) legalHelplineModal.classList.add('active');
+        if (legalHelplineModal) {
+          legalHelplineModal.classList.add('active');
+        }
       }
     });
   });
@@ -593,7 +746,10 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const promptText = chip.getAttribute('data-prompt');
       if (promptText && promptText.includes('schemes')) {
-        if (matchedSchemesModal) matchedSchemesModal.classList.add('active');
+        if (matchedSchemesModal) {
+          renderPersonalOpportunities();
+          matchedSchemesModal.classList.add('active');
+        }
       } else {
         openChat(promptText);
       }

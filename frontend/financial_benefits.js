@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!finGridTrack) return;
     finGridTrack.innerHTML = '';
 
+    const matchedData = JSON.parse(localStorage.getItem('matchedData')) || null;
+    const matchedBenefits = matchedData ? (matchedData.matchedBenefits || []) : [];
+
     const filtered = allFinancialData.filter(item => {
       const typeLower = (item.type || '').toLowerCase();
       const nameLower = (item.name || '').toLowerCase();
@@ -74,6 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return matchCat && matchSearch;
     });
 
+    // Sort matched financial benefits to the top
+    filtered.sort((a, b) => {
+      const aMatched = matchedBenefits.includes(a.id) ? 1 : 0;
+      const bMatched = matchedBenefits.includes(b.id) ? 1 : 0;
+      return bMatched - aMatched;
+    });
+
     if (filtered.length === 0) {
       finGridTrack.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #64748B;">
@@ -94,13 +104,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (eligStr.includes('gender: male')) genderTag = 'Male Students';
       else if (eligStr.includes('gender: female') || eligStr.includes('female student') || eligStr.includes('pregnant women')) genderTag = 'Female';
 
+      const isMatched = matchedBenefits.includes(item.id);
+      const aiBadgeHtml = isMatched ? `<span class="fin-type-tag" style="background: #FFF1F2; color: #FF1744; border-color: #FECDD3; margin-left: 8px;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Match</span>` : '';
+
       card.innerHTML = `
         <div>
           <div class="fin-card-header">
             <div class="fin-icon-box">
               <i class="fa-solid fa-indian-rupee-sign"></i>
             </div>
-            <span class="fin-type-tag">${item.type}</span>
+            <div style="display: flex; gap: 6px;">
+              <span class="fin-type-tag">${item.type}</span>
+              ${aiBadgeHtml}
+            </div>
           </div>
 
           <h3 class="fin-card-title">${item.name}</h3>

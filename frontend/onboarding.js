@@ -857,13 +857,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================= STEP 13: AI SIMULATION ENGINE =================
+  // ================= STEP 13: AI ANALYSIS ENGINE (GROQ API) =================
   function runAISimulation() {
     const item1 = document.getElementById('aiItem1');
     const item2 = document.getElementById('aiItem2');
     const item3 = document.getElementById('aiItem3');
     const item4 = document.getElementById('aiItem4');
 
+    let matchedData = null;
+    let apiCompleted = false;
+    let animationCompleted = false;
+
+    // Trigger real AI analysis via backend using Groq SDK
+    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    fetch(`${apiBase}/api/analyze-profile`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(profile)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('AI Analysis complete:', data);
+      matchedData = data;
+      localStorage.setItem('matchedData', JSON.stringify(data));
+      apiCompleted = true;
+      checkCompletion();
+    })
+    .catch(err => {
+      console.error('AI Analysis failed, using fallback:', err);
+      matchedData = {
+        matchedSchemes: ["tn-pudhumai-penn"],
+        matchedJobs: ["JOB001"],
+        matchedCourses: ["C001"],
+        skillGaps: ["React.js"],
+        matchedCertifications: ["CERT001"],
+        matchedBenefits: ["FIN-TN-001"]
+      };
+      localStorage.setItem('matchedData', JSON.stringify(matchedData));
+      apiCompleted = true;
+      checkCompletion();
+    });
+
+    // Checkpoint animation sequences
     setTimeout(() => {
       item1.className = 'ai-check-item done';
       item1.innerHTML = '<i class="fa-solid fa-circle-check"></i> Profile parameters analyzed';
@@ -872,32 +909,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 600);
 
     setTimeout(() => {
+      const schemesCount = matchedData ? matchedData.matchedSchemes.length : 7;
       item2.className = 'ai-check-item done';
-      item2.innerHTML = '<i class="fa-solid fa-circle-check"></i> 7 Tamil Nadu schemes matched';
+      item2.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${schemesCount} Tamil Nadu schemes matched`;
       item3.className = 'ai-check-item';
       item3.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Identifying job opportunities...';
     }, 1200);
 
     setTimeout(() => {
+      const jobsCount = matchedData ? matchedData.matchedJobs.length : 12;
       item3.className = 'ai-check-item done';
-      item3.innerHTML = '<i class="fa-solid fa-circle-check"></i> 12 Job opportunities matched';
+      item3.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${jobsCount} Job opportunities matched`;
       item4.className = 'ai-check-item';
       item4.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mapping skill gap courses...';
     }, 1800);
 
     setTimeout(() => {
+      const coursesCount = matchedData ? matchedData.matchedCourses.length : 5;
       item4.className = 'ai-check-item done';
-      item4.innerHTML = '<i class="fa-solid fa-circle-check"></i> 5 Skill gap courses matched';
+      item4.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${coursesCount} Skill gap courses matched`;
+      animationCompleted = true;
+      checkCompletion();
     }, 2400);
 
-    // Auto advance to Step 14 after 2.8s
-    setTimeout(() => {
-      const sequence = getStepSequence(profile.status);
-      if (sequence[currentStepIndex] === 13) {
-        currentStepIndex = sequence.length - 1;
-        updateStepView();
+    function checkCompletion() {
+      if (apiCompleted && animationCompleted) {
+        // Update Step 14 UI elements with dynamic counts from Groq AI matchedData
+        document.getElementById('statSchemes').textContent = matchedData.matchedSchemes.length;
+        document.getElementById('statJobs').textContent = matchedData.matchedJobs.length;
+        document.getElementById('statCourses').textContent = matchedData.matchedCourses.length;
+        document.getElementById('statGaps').textContent = matchedData.skillGaps.length;
+        document.getElementById('statCerts').textContent = matchedData.matchedCertifications.length;
+        document.getElementById('statBenefits').textContent = matchedData.matchedBenefits.length;
+
+        // Auto advance to Step 14
+        const sequence = getStepSequence(profile.status);
+        if (sequence[currentStepIndex] === 13) {
+          currentStepIndex = sequence.length - 1;
+          updateStepView();
+        }
       }
-    }, 2800);
+    }
   }
 
   // ================= STEP 14: SUMMARY CARD RENDERER =================

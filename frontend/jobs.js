@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!jobsGridTrack) return;
     jobsGridTrack.innerHTML = '';
 
+    const matchedData = JSON.parse(localStorage.getItem('matchedData')) || null;
+    const matchedJobs = matchedData ? (matchedData.matchedJobs || []) : [];
+
     const filtered = allJobsData.filter(item => {
       const catLower = (item.category || '').toLowerCase();
       const modeLower = (item.work_mode || '').toLowerCase();
@@ -73,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return matchCat && matchSearch;
     });
 
+    // Sort matched jobs to the top
+    filtered.sort((a, b) => {
+      const aMatched = matchedJobs.includes(a.job_id) ? 1 : 0;
+      const bMatched = matchedJobs.includes(b.job_id) ? 1 : 0;
+      return bMatched - aMatched;
+    });
+
     if (filtered.length === 0) {
       jobsGridTrack.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #64748B;">
@@ -90,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const skillsHtml = (item.required_skills || []).slice(0, 4).map(s => `<span class="job-skill-chip">${s}</span>`).join('');
       const genderTag = item.gender_eligibility || 'Both (Male & Female)';
+      const isMatched = matchedJobs.includes(item.job_id);
+      const aiBadgeHtml = isMatched ? `<span class="job-mode-tag" style="background: #FFF1F2; color: #FF1744; border-color: #FECDD3; margin-left: 8px;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Match</span>` : '';
 
       card.innerHTML = `
         <div>
@@ -97,7 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="job-icon-box">
               <i class="fa-solid fa-briefcase"></i>
             </div>
-            <span class="job-mode-tag">${item.work_mode || 'Full-time'}</span>
+            <div style="display: flex; gap: 6px;">
+              <span class="job-mode-tag">${item.work_mode || 'Full-time'}</span>
+              ${aiBadgeHtml}
+            </div>
           </div>
 
           <h3 class="job-card-title">${item.title}</h3>

@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!schemesGridTrack) return;
     schemesGridTrack.innerHTML = '';
 
+    const matchedData = JSON.parse(localStorage.getItem('matchedData')) || null;
+    const matchedSchemes = matchedData ? (matchedData.matchedSchemes || []) : [];
+
     const filtered = allSchemesData.filter(scheme => {
       const catLower = (scheme.Category || '').toLowerCase();
       const genderVal = ((scheme.Eligibility && scheme.Eligibility.Gender) || '').toLowerCase();
@@ -79,6 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return matchCat && matchSearch;
     });
 
+    // Sort matched schemes to the top
+    filtered.sort((a, b) => {
+      const aMatched = matchedSchemes.includes(a.id) ? 1 : 0;
+      const bMatched = matchedSchemes.includes(b.id) ? 1 : 0;
+      return bMatched - aMatched;
+    });
+
     if (filtered.length === 0) {
       schemesGridTrack.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #64748B;">
@@ -101,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const genderTag = (scheme.Eligibility && scheme.Eligibility.Gender) ? scheme.Eligibility.Gender : 'Both (Men & Women)';
+      const isMatched = matchedSchemes.includes(scheme.id);
+      const aiBadgeHtml = isMatched ? `<span class="scheme-tag" style="background: #FFF1F2; color: #FF1744; border-color: #FECDD3;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Recommended</span>` : '';
 
       card.innerHTML = `
         <div>
@@ -115,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="scheme-card-desc">${scheme.Description}</p>
 
           <div class="scheme-badge-tags">
+            ${aiBadgeHtml}
             <span class="scheme-tag" style="background: #EEF2FF; color: #4F46E5; border-color: #C7D2FE;">👥 ${genderTag}</span>
             <span class="scheme-tag">${scheme.Category}</span>
           </div>

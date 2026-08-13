@@ -5,15 +5,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Retrieve stored user status & profile for future personalization foundation ---
-  const userStatus = localStorage.getItem('userStatus');
-  const userProfile = JSON.parse(localStorage.getItem('userProfile')) || null;
+  const userStatus = localStorage.getItem('userStatus') || 'completed';
+  const userProfile = JSON.parse(localStorage.getItem('userProfile')) || { basic: { name: 'Ananya' } };
   console.log('EMPowHER Dashboard loaded for userStatus:', userStatus, 'userProfile:', userProfile);
-
-  // If onboarding is not completed, redirect to onboarding page first
-  if (!userStatus || !userProfile) {
-    window.location.href = 'onboarding.html';
-    return;
-  }
 
   // Update UI with stored profile name if available
   if (userProfile && userProfile.basic && userProfile.basic.name) {
@@ -86,9 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Top Navigation Tabs Handler ---
   topNavItems.forEach(tab => {
     tab.addEventListener('click', (e) => {
-      e.preventDefault();
-      topNavItems.forEach(item => item.classList.remove('active'));
-      tab.classList.add('active');
+      const href = tab.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('javascript:')) {
+        e.preventDefault();
+        topNavItems.forEach(item => item.classList.remove('active'));
+        tab.classList.add('active');
+      }
     });
   });
 

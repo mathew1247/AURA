@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jobs & Career Matches | EMPOWHER</title>
-  <meta name="description" content="Explore verified female-friendly jobs, inclusive workplaces, remote work setups, and equal pay opportunities in Tamil Nadu.">
-  
+  <meta name="description"
+    content="Explore verified female-friendly jobs, inclusive workplaces, remote work setups, and equal pay opportunities in Tamil Nadu.">
+
   <!-- Font Awesome Icons & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Custom Styling for Dedicated Jobs Page */
@@ -23,7 +26,7 @@
       margin-bottom: 32px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .jobs-hero::after {
@@ -33,7 +36,7 @@
       right: -10%;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(0,0,0,0) 70%);
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
       pointer-events: none;
     }
 
@@ -77,7 +80,7 @@
       background: #FFFFFF;
       font-size: 14px;
       color: var(--text-dark);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       outline: none;
       transition: all 0.2s ease;
     }
@@ -116,7 +119,8 @@
       transition: all 0.2s ease;
     }
 
-    .jobs-pill:hover, .jobs-pill.active {
+    .jobs-pill:hover,
+    .jobs-pill.active {
       background: #4F46E5;
       color: #FFFFFF;
       box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
@@ -136,13 +140,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .job-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       border-color: rgba(79, 70, 229, 0.3);
     }
 
@@ -249,6 +253,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="app-container">
     <!-- Top Header Navigation -->
@@ -331,7 +336,8 @@
 
         <!-- AI Assistant -->
         <li>
-          <a class="nav-item" href="index.html" style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+          <a class="nav-item" href="index.html"
+            style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
             <i class="fa-solid fa-robot"></i> AI Assistant
           </a>
         </li>
@@ -367,7 +373,8 @@
             Female-Friendly Job Opportunities & Careers
           </h1>
           <p class="jobs-hero-desc">
-            Explore curated job vacancies from inclusive employers in Tamil Nadu featuring equal pay assurances, maternity leave protection, flexible remote options, and day-shift security.
+            Explore curated job vacancies from inclusive employers in Tamil Nadu featuring equal pay assurances,
+            maternity leave protection, flexible remote options, and day-shift security.
           </p>
         </div>
 
@@ -375,7 +382,8 @@
         <div class="jobs-filter-bar">
           <div class="jobs-search-box">
             <i class="fa-solid fa-magnifying-glass jobs-search-icon"></i>
-            <input type="text" id="jobSearchFilterInput" class="jobs-search-input" placeholder="Search by job title, company, or skills...">
+            <input type="text" id="jobSearchFilterInput" class="jobs-search-input"
+              placeholder="Search by job title, company, or skills...">
           </div>
 
           <div class="jobs-pills-container">
@@ -402,7 +410,8 @@
       <button class="modal-close-btn" id="jobModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
 
       <div class="modal-scheme-header">
-        <div class="modal-scheme-icon" style="background: #EEF2FF; color: #4F46E5;"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="modal-scheme-icon" style="background: #EEF2FF; color: #4F46E5;"><i
+            class="fa-solid fa-briefcase"></i></div>
         <div class="modal-scheme-header-text">
           <span class="modal-badge" style="background: #EEF2FF; color: #4F46E5;" id="modalJobMode">Hybrid</span>
           <h2 class="modal-scheme-title" id="modalJobTitle">Job Title</h2>
@@ -411,12 +420,16 @@
       </div>
 
       <div class="modal-scheme-body">
-        <div style="background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 16px; padding: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+        <div
+          style="background: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 16px; padding: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
           <div>
-            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #4F46E5;">Salary Package</div>
-            <div style="font-size: 20px; font-weight: 800; color: #3730A3; margin-top: 2px;" id="modalJobSalary">₹6,00,000 / year</div>
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #4F46E5;">Salary Package
+            </div>
+            <div style="font-size: 20px; font-weight: 800; color: #3730A3; margin-top: 2px;" id="modalJobSalary">
+              ₹6,00,000 / year</div>
           </div>
-          <span class="modal-badge" style="background: #4F46E5; color: #FFFFFF; font-weight: 700;" id="modalJobType">Full-time</span>
+          <span class="modal-badge" style="background: #4F46E5; color: #FFFFFF; font-weight: 700;"
+            id="modalJobType">Full-time</span>
         </div>
 
         <div class="modal-section">
@@ -432,7 +445,8 @@
 
       <div class="modal-scheme-footer">
         <button class="btn-modal-cancel" id="jobModalCancelBtn">Close</button>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" style="background: #4F46E5;" id="modalJobApplyBtn">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-register-official" style="background: #4F46E5;"
+          id="modalJobApplyBtn">
           Apply Now <i class="fa-solid fa-paper-plane"></i>
         </a>
       </div>
@@ -441,4 +455,5 @@
 
   <script src="jobs.js"></script>
 </body>
+
 </html>

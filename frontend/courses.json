@@ -11,11 +11,18 @@
       "lessons": 24,
       "rating": 4.8,
       "students": "15.4K",
-      "skills": ["Python Basics", "Loops & Lists", "OOP Principles"],
+      "skills": [
+        "Python Basics",
+        "Loops & Lists",
+        "OOP Principles"
+      ],
       "certificate": true,
       "instructor": "Dr. Anjali Mehta",
       "progress": 75,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://docs.python.org/3/tutorial/",
+      "video_url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+      "video_embed": "https://www.youtube-nocookie.com/embed/rfscVS0vtbw"
     },
     {
       "id": "C002",
@@ -28,11 +35,18 @@
       "lessons": 32,
       "rating": 4.7,
       "students": "12.8K",
-      "skills": ["Java Syntax", "Object Oriented Design", "Multithreading"],
+      "skills": [
+        "Java Syntax",
+        "Object Oriented Design",
+        "Multithreading"
+      ],
       "certificate": true,
       "instructor": "Prof. David Clark",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://dev.java/learn/",
+      "video_url": "https://www.youtube.com/watch?v=grEKMHGYysc",
+      "video_embed": "https://www.youtube-nocookie.com/embed/grEKMHGYysc"
     },
     {
       "id": "C003",
@@ -45,11 +59,18 @@
       "lessons": 38,
       "rating": 4.9,
       "students": "22.5K",
-      "skills": ["DOM Manipulation", "ES6+ Features", "Asynchronous Fetch API"],
+      "skills": [
+        "DOM Manipulation",
+        "ES6+ Features",
+        "Asynchronous Fetch API"
+      ],
       "certificate": true,
       "instructor": "Sarah Jenkins",
       "progress": 40,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript",
+      "video_url": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+      "video_embed": "https://www.youtube-nocookie.com/embed/W6NZfCO5SIk"
     },
     {
       "id": "C004",
@@ -62,11 +83,18 @@
       "lessons": 28,
       "rating": 4.8,
       "students": "19.3K",
-      "skills": ["React Hooks", "Component Design", "State Management (Redux)"],
+      "skills": [
+        "React Hooks",
+        "Component Design",
+        "State Management (Redux)"
+      ],
       "certificate": true,
       "instructor": "Amit Verma",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://react.dev/learn",
+      "video_url": "https://www.youtube.com/watch?v=bMknfKXIFA8",
+      "video_embed": "https://www.youtube-nocookie.com/embed/bMknfKXIFA8"
     },
     {
       "id": "C005",
@@ -79,11 +107,18 @@
       "lessons": 54,
       "rating": 4.9,
       "students": "14.1K",
-      "skills": ["Node.js Express", "MongoDB Schemas", "JWT Authentication"],
+      "skills": [
+        "Node.js Express",
+        "MongoDB Schemas",
+        "JWT Authentication"
+      ],
       "certificate": true,
       "instructor": "Karan Ramaswamy",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.mongodb.com/mern-stack",
+      "video_url": "https://www.youtube.com/watch?v=7CqJlxBYj-M",
+      "video_embed": "https://www.youtube-nocookie.com/embed/7CqJlxBYj-M"
     },
     {
       "id": "C006",
@@ -96,11 +131,18 @@
       "lessons": 20,
       "rating": 4.8,
       "students": "18.6K",
-      "skills": ["Data Wrangling", "Pandas DataFrames", "Data Plotting"],
+      "skills": [
+        "Data Wrangling",
+        "Pandas DataFrames",
+        "Data Plotting"
+      ],
       "certificate": true,
       "instructor": "Nisha Iyer",
       "progress": 80,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://pandas.pydata.org/docs/getting_started/index.html",
+      "video_url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+      "video_embed": "https://www.youtube-nocookie.com/embed/r-uOLxNrNk8"
     },
     {
       "id": "C007",
@@ -113,11 +155,18 @@
       "lessons": 40,
       "rating": 4.7,
       "students": "11.2K",
-      "skills": ["Supervised Learning", "Model Evaluation", "Scikit-Learn"],
+      "skills": [
+        "Supervised Learning",
+        "Model Evaluation",
+        "Scikit-Learn"
+      ],
       "certificate": true,
       "instructor": "Dr. Alan Turing",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://scikit-learn.org/stable/tutorial/index.html",
+      "video_url": "https://www.youtube.com/watch?v=i_LwzRVP7bg",
+      "video_embed": "https://www.youtube-nocookie.com/embed/i_LwzRVP7bg"
     },
     {
       "id": "C008",
@@ -130,11 +179,18 @@
       "lessons": 18,
       "rating": 4.6,
       "students": "9.4K",
-      "skills": ["Search Trees", "NLP Basics", "Neural Networks Overview"],
+      "skills": [
+        "Search Trees",
+        "NLP Basics",
+        "Neural Networks Overview"
+      ],
       "certificate": true,
       "instructor": "Dr. Sarah Jenkins",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://elementsofai.com/",
+      "video_url": "https://www.youtube.com/watch?v=JMUxmLyrhSk",
+      "video_embed": "https://www.youtube-nocookie.com/embed/JMUxmLyrhSk"
     },
     {
       "id": "C009",
@@ -147,11 +203,18 @@
       "lessons": 16,
       "rating": 4.9,
       "students": "12.4K",
-      "skills": ["LLM Architecture", "Prompt Optimization", "AI Safety Protocols"],
+      "skills": [
+        "LLM Architecture",
+        "Prompt Optimization",
+        "AI Safety Protocols"
+      ],
       "certificate": true,
       "instructor": "Emily Wong",
       "progress": 72,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://learnprompting.org/",
+      "video_url": "https://www.youtube.com/watch?v=_ZvnD73u40o",
+      "video_embed": "https://www.youtube-nocookie.com/embed/_ZvnD73u40o"
     },
     {
       "id": "C010",
@@ -164,11 +227,18 @@
       "lessons": 22,
       "rating": 4.7,
       "students": "10.1K",
-      "skills": ["Network Security", "RSA Cryptography", "Firewall Rules"],
+      "skills": [
+        "Network Security",
+        "RSA Cryptography",
+        "Firewall Rules"
+      ],
       "certificate": true,
       "instructor": "Mark Sterling",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.cybrary.it/",
+      "video_url": "https://www.youtube.com/watch?v=inWWhr5tnEA",
+      "video_embed": "https://www.youtube-nocookie.com/embed/inWWhr5tnEA"
     },
     {
       "id": "C011",
@@ -181,11 +251,18 @@
       "lessons": 30,
       "rating": 4.8,
       "students": "14.7K",
-      "skills": ["AWS EC2 Instances", "S3 Storage Buckets", "IAM Roles & Security"],
+      "skills": [
+        "AWS EC2 Instances",
+        "S3 Storage Buckets",
+        "IAM Roles & Security"
+      ],
       "certificate": true,
       "instructor": "John Doe",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://aws.amazon.com/training/",
+      "video_url": "https://www.youtube.com/watch?v=3hLmDS179YE",
+      "video_embed": "https://www.youtube-nocookie.com/embed/3hLmDS179YE"
     },
     {
       "id": "C012",
@@ -198,11 +275,18 @@
       "lessons": 34,
       "rating": 4.7,
       "students": "8.9K",
-      "skills": ["Docker Containers", "Jenkins CI/CD Pipelines", "Kubernetes Clustering"],
+      "skills": [
+        "Docker Containers",
+        "Jenkins CI/CD Pipelines",
+        "Kubernetes Clustering"
+      ],
       "certificate": true,
       "instructor": "Linux Torvalds",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://roadmap.sh/devops",
+      "video_url": "https://www.youtube.com/watch?v=hQcFE0RDbSU",
+      "video_embed": "https://www.youtube-nocookie.com/embed/hQcFE0RDbSU"
     },
     {
       "id": "C013",
@@ -215,11 +299,18 @@
       "lessons": 26,
       "rating": 4.9,
       "students": "16.8K",
-      "skills": ["Figma Typography", "Interactive Prototyping", "Design Systems"],
+      "skills": [
+        "Figma Typography",
+        "Interactive Prototyping",
+        "Design Systems"
+      ],
       "certificate": true,
       "instructor": "Aisha Rahman",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.figma.com/resource-library/design-basics/",
+      "video_url": "https://www.youtube.com/watch?v=c9Wg6Cb_YlU",
+      "video_embed": "https://www.youtube-nocookie.com/embed/c9Wg6Cb_YlU"
     },
     {
       "id": "C014",
@@ -232,11 +323,18 @@
       "lessons": 20,
       "rating": 4.6,
       "students": "13.2K",
-      "skills": ["SEO Auditing", "Google Analytics", "Email Marketing Funnels"],
+      "skills": [
+        "SEO Auditing",
+        "Google Analytics",
+        "Email Marketing Funnels"
+      ],
       "certificate": true,
       "instructor": "Monica Geller",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://skillshop.exceedlms.com/",
+      "video_url": "https://www.youtube.com/watch?v=nU-IIXBWlS4",
+      "video_embed": "https://www.youtube-nocookie.com/embed/nU-IIXBWlS4"
     },
     {
       "id": "C015",
@@ -249,11 +347,18 @@
       "lessons": 15,
       "rating": 4.5,
       "students": "11.6K",
-      "skills": ["Content Scheduling", "Social Ads Buying", "Audience Engagement"],
+      "skills": [
+        "Content Scheduling",
+        "Social Ads Buying",
+        "Audience Engagement"
+      ],
       "certificate": true,
       "instructor": "Chandler Bing",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.meta.com/blueprint/",
+      "video_url": "https://www.youtube.com/watch?v=4tWpWqJ8zLw",
+      "video_embed": "https://www.youtube-nocookie.com/embed/4tWpWqJ8zLw"
     },
     {
       "id": "C016",
@@ -266,11 +371,18 @@
       "lessons": 12,
       "rating": 4.8,
       "students": "20.1K",
-      "skills": ["Compound Interest", "Inflation Hedging", "Tax Filings"],
+      "skills": [
+        "Compound Interest",
+        "Inflation Hedging",
+        "Tax Filings"
+      ],
       "certificate": true,
       "instructor": "Raghuram Rajan",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.investopedia.com/financial-literacy-4689798",
+      "video_url": "https://www.youtube.com/watch?v=PHe0bXAIuk0",
+      "video_embed": "https://www.youtube-nocookie.com/embed/PHe0bXAIuk0"
     },
     {
       "id": "C017",
@@ -283,11 +395,18 @@
       "lessons": 14,
       "rating": 4.9,
       "students": "17.4K",
-      "skills": ["50/30/20 Budget Rule", "Emergency Funds Planning", "SIP Investments"],
+      "skills": [
+        "50/30/20 Budget Rule",
+        "Emergency Funds Planning",
+        "SIP Investments"
+      ],
       "certificate": true,
       "instructor": "Komal Sharma",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.khanacademy.org/college-careers-more/personal-finance",
+      "video_url": "https://www.youtube.com/watch?v=HQzoZfc3GwQ",
+      "video_embed": "https://www.youtube-nocookie.com/embed/HQzoZfc3GwQ"
     },
     {
       "id": "C018",
@@ -300,11 +419,18 @@
       "lessons": 22,
       "rating": 4.8,
       "students": "9.8K",
-      "skills": ["Lean Canvas Drafting", "Customer Development", "MVP Testing"],
+      "skills": [
+        "Lean Canvas Drafting",
+        "Customer Development",
+        "MVP Testing"
+      ],
       "certificate": true,
       "instructor": "Kiran Mazumdar-Shaw",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.startupindia.gov.in/",
+      "video_url": "https://www.youtube.com/watch?v=13DqgWfQdI0",
+      "video_embed": "https://www.youtube-nocookie.com/embed/13DqgWfQdI0"
     },
     {
       "id": "C019",
@@ -317,11 +443,18 @@
       "lessons": 18,
       "rating": 4.7,
       "students": "7.5K",
-      "skills": ["Pitch Deck Creation", "Competitive Landscape Matrix", "Go-To-Market Design"],
+      "skills": [
+        "Pitch Deck Creation",
+        "Competitive Landscape Matrix",
+        "Go-To-Market Design"
+      ],
       "certificate": true,
       "instructor": "Nandan Nilekani",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.sba.gov/business-guide/plan-your-business/write-your-business-plan",
+      "video_url": "https://www.youtube.com/watch?v=Fqch5OrUPvA",
+      "video_embed": "https://www.youtube-nocookie.com/embed/Fqch5OrUPvA"
     },
     {
       "id": "C020",
@@ -334,11 +467,18 @@
       "lessons": 20,
       "rating": 4.8,
       "students": "5.6K",
-      "skills": ["Cashflow Modeling", "Cap Table Management", "VC Term Sheet Evaluation"],
+      "skills": [
+        "Cashflow Modeling",
+        "Cap Table Management",
+        "VC Term Sheet Evaluation"
+      ],
       "certificate": true,
       "instructor": "Radhika Gupta",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.ycombinator.com/library",
+      "video_url": "https://www.youtube.com/watch?v=3iXk_v1eF-U",
+      "video_embed": "https://www.youtube-nocookie.com/embed/3iXk_v1eF-U"
     },
     {
       "id": "C021",
@@ -351,11 +491,18 @@
       "lessons": 16,
       "rating": 4.8,
       "students": "21.6K",
-      "skills": ["Active Listening", "Corporate Email Design", "Conflict Management"],
+      "skills": [
+        "Active Listening",
+        "Corporate Email Design",
+        "Conflict Management"
+      ],
       "certificate": true,
       "instructor": "Priyanka Chopra",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.coursera.org/courses?query=communication%20skills",
+      "video_url": "https://www.youtube.com/watch?v=HAnw168huqA",
+      "video_embed": "https://www.youtube-nocookie.com/embed/HAnw168huqA"
     },
     {
       "id": "C022",
@@ -368,11 +515,18 @@
       "lessons": 24,
       "rating": 4.7,
       "students": "25.3K",
-      "skills": ["Interview Conversation", "Grammar & Vocab", "Formal Presenting"],
+      "skills": [
+        "Interview Conversation",
+        "Grammar & Vocab",
+        "Formal Presenting"
+      ],
       "certificate": true,
       "instructor": "Dr. Rachel Green",
       "progress": 50,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://learnenglish.britishcouncil.org/business-english",
+      "video_url": "https://www.youtube.com/watch?v=845vA42c4kE",
+      "video_embed": "https://www.youtube-nocookie.com/embed/845vA42c4kE"
     },
     {
       "id": "C023",
@@ -385,11 +539,18 @@
       "lessons": 12,
       "rating": 4.9,
       "students": "30.4K",
-      "skills": ["ATS Resume Styling", "STAR Interview Model", "LinkedIn Auditing"],
+      "skills": [
+        "ATS Resume Styling",
+        "STAR Interview Model",
+        "LinkedIn Auditing"
+      ],
       "certificate": true,
       "instructor": "Vijay Shekhar",
       "progress": 15,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.interviewbit.com/",
+      "video_url": "https://www.youtube.com/watch?v=ttWl6a4R2P8",
+      "video_embed": "https://www.youtube-nocookie.com/embed/ttWl6a4R2P8"
     },
     {
       "id": "C024",
@@ -402,11 +563,18 @@
       "lessons": 18,
       "rating": 4.8,
       "students": "11.2K",
-      "skills": ["Task Delegation Protocols", "OKR Goal Tracking", "Empathetic Mentoring"],
+      "skills": [
+        "Task Delegation Protocols",
+        "OKR Goal Tracking",
+        "Empathetic Mentoring"
+      ],
       "certificate": true,
       "instructor": "Sheryl Sandberg",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.mindtools.com/pages/main/newRL_LDR.htm",
+      "video_url": "https://www.youtube.com/watch?v=vlpKyL54A0s",
+      "video_embed": "https://www.youtube-nocookie.com/embed/vlpKyL54A0s"
     },
     {
       "id": "C025",
@@ -420,11 +588,18 @@
       "lessons": 14,
       "rating": 4.8,
       "students": "14.5K",
-      "skills": ["Root Cause Analysis", "Logical Fallacy Checks", "Decision Matrices"],
+      "skills": [
+        "Root Cause Analysis",
+        "Logical Fallacy Checks",
+        "Decision Matrices"
+      ],
       "certificate": true,
       "instructor": "Dr. Stephen Hawking",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.edx.org/learn/critical-thinking",
+      "video_url": "https://www.youtube.com/watch?v=dItUGF8GdTw",
+      "video_embed": "https://www.youtube-nocookie.com/embed/dItUGF8GdTw"
     },
     {
       "id": "C026",
@@ -437,11 +612,18 @@
       "lessons": 20,
       "rating": 4.8,
       "students": "28.6K",
-      "skills": ["Pivot Tables & Charts", "XLOOKUP & INDEX/MATCH", "Analytical Charts Design"],
+      "skills": [
+        "Pivot Tables & Charts",
+        "XLOOKUP & INDEX/MATCH",
+        "Analytical Charts Design"
+      ],
       "certificate": true,
       "instructor": "John Microsoft",
       "progress": 90,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://support.microsoft.com/en-us/excel",
+      "video_url": "https://www.youtube.com/watch?v=Vl0H-qTclOg",
+      "video_embed": "https://www.youtube-nocookie.com/embed/Vl0H-qTclOg"
     },
     {
       "id": "C027",
@@ -454,11 +636,18 @@
       "lessons": 22,
       "rating": 4.8,
       "students": "23.4K",
-      "skills": ["SQL SELECT Queries", "Relational INNER/LEFT JOIN", "Subqueries & Groupings"],
+      "skills": [
+        "SQL SELECT Queries",
+        "Relational INNER/LEFT JOIN",
+        "Subqueries & Groupings"
+      ],
       "certificate": true,
       "instructor": "Grace Hopper",
       "progress": 100,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.w3schools.com/sql/",
+      "video_url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+      "video_embed": "https://www.youtube-nocookie.com/embed/HXV3zeQKqGY"
     },
     {
       "id": "C028",
@@ -471,11 +660,18 @@
       "lessons": 20,
       "rating": 4.7,
       "students": "8.5K",
-      "skills": ["SaaS Modeling", "Affiliate Networks", "Content Strategy"],
+      "skills": [
+        "SaaS Modeling",
+        "Affiliate Networks",
+        "Content Strategy"
+      ],
       "certificate": true,
       "instructor": "Gary Vaynerchuk",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.edx.org/learn/entrepreneurship",
+      "video_url": "https://www.youtube.com/watch?v=7gW5i7_n9Ww",
+      "video_embed": "https://www.youtube-nocookie.com/embed/7gW5i7_n9Ww"
     },
     {
       "id": "C029",
@@ -488,11 +684,18 @@
       "lessons": 15,
       "rating": 4.8,
       "students": "19.8K",
-      "skills": ["Freelancing Proposals Writing", "Pricing & Bidding Strategies", "Remote Time Management"],
+      "skills": [
+        "Freelancing Proposals Writing",
+        "Pricing & Bidding Strategies",
+        "Remote Time Management"
+      ],
       "certificate": true,
       "instructor": "Tim Ferriss",
       "progress": 30,
-      "enrolled": true
+      "enrolled": true,
+      "official_url": "https://www.upwork.com/resources/how-to-freelance",
+      "video_url": "https://www.youtube.com/watch?v=bQc6C5QvL9M",
+      "video_embed": "https://www.youtube-nocookie.com/embed/bQc6C5QvL9M"
     },
     {
       "id": "C030",
@@ -505,11 +708,18 @@
       "lessons": 18,
       "rating": 4.7,
       "students": "15.9K",
-      "skills": ["Shopify Store Setup", "Stripe Payment Setup", "Inventory Management"],
+      "skills": [
+        "Shopify Store Setup",
+        "Stripe Payment Setup",
+        "Inventory Management"
+      ],
       "certificate": true,
       "instructor": "Jeff Bezos",
       "progress": 0,
-      "enrolled": false
+      "enrolled": false,
+      "official_url": "https://www.shopify.com/blog/topics/ecommerce-business",
+      "video_url": "https://www.youtube.com/watch?v=l_Q368Y3uE0",
+      "video_embed": "https://www.youtube-nocookie.com/embed/l_Q368Y3uE0"
     }
   ]
 }

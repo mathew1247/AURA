@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Government Schemes & Welfare Initiatives | EMPOWHER</title>
-  <meta name="description" content="Explore official Tamil Nadu government schemes, higher education assurance, financial assistance, and self-employment subsidies for women.">
-  
+  <meta name="description"
+    content="Explore official Tamil Nadu government schemes, higher education assurance, financial assistance, and self-employment subsidies for women.">
+
   <!-- Font Awesome Icons & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Custom Styling for Dedicated Schemes Page */
@@ -23,9 +26,9 @@
       margin-bottom: 32px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
-    
+
     .schemes-hero::after {
       content: '';
       position: absolute;
@@ -33,7 +36,7 @@
       right: -10%;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(230, 57, 70, 0.25) 0%, rgba(0,0,0,0) 70%);
+      background: radial-gradient(circle, rgba(230, 57, 70, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
       pointer-events: none;
     }
 
@@ -77,7 +80,7 @@
       background: #FFFFFF;
       font-size: 14px;
       color: var(--text-dark);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       outline: none;
       transition: all 0.2s ease;
     }
@@ -116,7 +119,8 @@
       transition: all 0.2s ease;
     }
 
-    .cat-pill:hover, .cat-pill.active {
+    .cat-pill:hover,
+    .cat-pill.active {
       background: var(--color-primary-red);
       color: #FFFFFF;
       box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
@@ -136,13 +140,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .scheme-page-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       border-color: rgba(230, 57, 70, 0.3);
     }
 
@@ -242,6 +246,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="app-container">
     <!-- Top Header Navigation (Full Width with Logo & Topic Dropdowns) -->
@@ -328,7 +333,8 @@
 
         <!-- AI Assistant -->
         <li>
-          <a class="nav-item" href="index.html" style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
+          <a class="nav-item" href="index.html"
+            style="background: rgba(255, 23, 68, 0.08); color: var(--color-primary-red);">
             <i class="fa-solid fa-robot"></i> AI Assistant
           </a>
         </li>
@@ -366,7 +372,8 @@
             Government Schemes & Welfare Initiatives
           </h1>
           <p class="schemes-hero-desc">
-            Explore verified financial assistance, higher education assurances, maternity benefits, and self-employment capital subsidies provided by the Government of Tamil Nadu and Central Government.
+            Explore verified financial assistance, higher education assurances, maternity benefits, and self-employment
+            capital subsidies provided by the Government of Tamil Nadu and Central Government.
           </p>
         </div>
 
@@ -374,7 +381,8 @@
         <div class="schemes-filter-bar">
           <div class="schemes-search-box">
             <i class="fa-solid fa-magnifying-glass schemes-search-icon"></i>
-            <input type="text" id="schemeSearchInput" class="schemes-search-input" placeholder="Search schemes by name, eligibility, or benefit...">
+            <input type="text" id="schemeSearchInput" class="schemes-search-input"
+              placeholder="Search schemes by name, eligibility, or benefit...">
           </div>
 
           <div class="category-pills-container">
@@ -402,7 +410,7 @@
   <div class="modal-overlay" id="schemePageDetailModal">
     <div class="modal-card scheme-detail-card">
       <button class="modal-close-btn" id="schemePageModalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-      
+
       <div class="modal-scheme-header">
         <div class="modal-scheme-icon"><i class="fa-solid fa-building-columns"></i></div>
         <div class="modal-scheme-header-text">
@@ -450,4 +458,5 @@
 
   <script src="schemes.js"></script>
 </body>
+
 </html>
